@@ -1,0 +1,33 @@
+-------------------------------------------------------------
+/usr/bin/sudo ip netns exec VRF_1 ip -4 neighbor show
+-------------------------------------------------------------
+10.233.255.1 dev eth0 lladdr 02:02:00:bb:cc:01 REACHABLE
+-------------------------------------------------------------
+/usr/bin/sudo ip netns exec VRF_1 ip -4 route show table all
+-------------------------------------------------------------
+default via 10.233.255.1 dev eth0 proto static
+10.233.255.0/24 dev eth0 proto kernel scope link src 10.233.255.91
+local 10.233.255.91 dev eth0 table local proto kernel scope host src 10.233.255.91
+-------------------------------------------------------------
+/usr/bin/sudo ip netns exec VRF_1 ip -s -s link show
+-------------------------------------------------------------
+1: lo: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 65536 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped missed  mcast   
+    273158078  862827   0       0       0       0       
+    RX errors: length   crc     frame   fifo    overrun
+               0        0       0       0       0       
+    TX: bytes  packets  errors  dropped carrier collsns 
+    3437460613 1327883  0       0       0       0       
+    TX errors: aborted  fifo   window heartbeat transns
+               0        0       0       0       0       
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 4c:d5:87:4d:5e:81 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped missed  mcast   
+    174916260  532363   0       0       0       0       
+    RX errors: length   crc     frame   fifo    overrun
+               0        0       0       0       0       
+    TX: bytes  packets  errors  dropped carrier collsns 
+    2700468381 2922593  0       0       0       0       
+    TX errors: aborted  fifo   window heartbeat transns
+               0        0       0       0       0       

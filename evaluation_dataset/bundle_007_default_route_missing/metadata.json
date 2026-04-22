@@ -1,0 +1,19 @@
+{
+  "bundle_version": "1.0",
+  "generated_at": "2026-04-20T23:03:49.579530",
+  "hostname": "PSCSCTLEAFB03",
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 0.0.0.0/0 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-04-20T23:18:53.181000",
+    "root_cause_entity": "0.0.0.0/0",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 0.0.0.0/0"
+  }
+}

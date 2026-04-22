@@ -1,0 +1,9 @@
+google-generativeai
+cohere
+python-dotenv
+pyyaml
+# Assuming your compression_pipeline relies on these as well based on imports
+polars
+drain3
+sentence-transformers
+networkx

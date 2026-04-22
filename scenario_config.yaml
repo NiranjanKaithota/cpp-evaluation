@@ -1,0 +1,159 @@
+# Scenario Configuration for Support Bundle Generator
+# Define custom failure scenarios and their parameters
+
+scenarios:
+  # Physical Layer Failures
+  port_flap_fiber:
+    class: PortFlapScenario
+    description: "Fiber optic transceiver degradation causing intermittent link flaps"
+    params:
+      interface: "1/1/3"
+    severity: high
+    
+  port_flap_copper:
+    class: PortFlapScenario
+    description: "Copper cable issue causing link instability"
+    params:
+      interface: "1/1/10"
+    severity: high
+  
+  # Routing Protocol Failures
+  bgp_holdtime_expired:
+    class: BGPNeighborDownScenario
+    description: "BGP neighbor down due to hold timer expiration"
+    params:
+      neighbor_ip: "10.233.255.1"
+    severity: critical
+  
+  bgp_peer_unreachable:
+    class: BGPNeighborDownScenario
+    description: "BGP peer unreachable due to network connectivity loss"
+    params:
+      neighbor_ip: "192.168.1.1"
+    severity: critical
+  
+  # Configuration Errors
+  vlan_trunk_mismatch:
+    class: VLANMismatchScenario
+    description: "VLAN mismatch between trunk ports"
+    params:
+      interface: "1/1/5"
+      expected_vlan: 100
+      received_vlan: 200
+    severity: medium
+  
+  vlan_access_misconfiguration:
+    class: VLANMismatchScenario
+    description: "Access port configured with wrong VLAN"
+    params:
+      interface: "1/1/12"
+      expected_vlan: 10
+      received_vlan: 20
+    severity: medium
+  
+  # Routing Table Issues
+  default_route_missing:
+    class: MissingRouteScenario
+    description: "Default gateway route missing from routing table"
+    params:
+      destination: "0.0.0.0/0"
+    severity: critical
+  
+  subnet_route_missing:
+    class: MissingRouteScenario
+    description: "Specific subnet route missing"
+    params:
+      destination: "192.168.100.0/24"
+    severity: high
+
+# Noise level presets
+noise_levels:
+  low:
+    description: "Minimal background activity - suitable for clear failure isolation"
+    burst_interval: 60  # seconds
+    burst_size: 5       # log lines per burst
+  
+  medium:
+    description: "Moderate background activity - realistic production environment"
+    burst_interval: 30
+    burst_size: 10
+  
+  high:
+    description: "Heavy background activity - stress test data reduction pipeline"
+    burst_interval: 15
+    burst_size: 20
+  
+  extreme:
+    description: "Overwhelming noise - worst case scenario"
+    burst_interval: 5
+    burst_size: 50
+
+# Topology presets
+topologies:
+  simple:
+    description: "Single switch, basic connectivity"
+    interfaces:
+      count: 14
+      types: ["25G-SR"]
+    uplinks: 2
+    vlans: [100, 200]
+  
+  medium:
+    description: "Leaf-spine topology with VLANs"
+    interfaces:
+      count: 28
+      types: ["25G-SR", "100G-SR4"]
+    uplinks: 4
+    vlans: [10, 20, 100, 200, 300]
+  
+  complex:
+    description: "Multi-tier with MLAG and VXLANs"
+    interfaces:
+      count: 52
+      types: ["25G-SR", "100G-SR4"]
+    uplinks: 6
+    vlans: [10, 20, 30, 100, 200, 300, 400, 500]
+    features: ["mlag", "vxlan", "evpn"]
+
+# Test suite definitions
+test_suites:
+  smoke_test:
+    description: "Quick validation of all failure types"
+    duration_minutes: 30
+    noise_level: low
+    scenarios:
+      - port_flap_fiber
+      - bgp_holdtime_expired
+      - vlan_trunk_mismatch
+      - default_route_missing
+  
+  regression_test:
+    description: "Comprehensive regression testing"
+    duration_minutes: 60
+    noise_level: medium
+    scenarios:
+      - port_flap_fiber
+      - port_flap_copper
+      - bgp_holdtime_expired
+      - bgp_peer_unreachable
+      - vlan_trunk_mismatch
+      - vlan_access_misconfiguration
+      - default_route_missing
+      - subnet_route_missing
+  
+  stress_test:
+    description: "High noise stress testing"
+    duration_minutes: 120
+    noise_level: high
+    scenarios:
+      - port_flap_fiber
+      - bgp_holdtime_expired
+      - vlan_trunk_mismatch
+
+# Evaluation thresholds
+evaluation:
+  root_cause_match_threshold: 0.95
+  diagnostic_equivalence_threshold: 0.90
+  compression_ratio_min: 0.90
+  compression_ratio_max: 0.98
+  acceptable_latency_ms: 5000
