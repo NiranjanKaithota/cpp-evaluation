@@ -2,6 +2,7 @@ import argparse
 import os
 import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 
 from evaluation.loader import TestCaseLoader
 from evaluation.compression_wrapper import CompressionWrapper
@@ -30,6 +31,8 @@ def main():
     compressor = CompressionWrapper()
     llm = LLMEngine(mock_mode=args.mock_llm, provider=args.provider, model_name=args.model)
     reporter = ReportGenerator(args.output)
+    
+    generated_compressed_files = []
     
     for bundle in bundles:
         print(f"\nProcessing {bundle['name']}...")
@@ -67,6 +70,7 @@ def main():
             comp_path = os.path.join("compressed_logs", f"compressed_{bundle['name']}.txt")
             with open(comp_path, "w", encoding="utf-8") as f:
                 f.write(compressed_text)
+            generated_compressed_files.append(comp_path)
                 
             print(f"  -> Running compressed inference ({comp_size} bytes - {comp_ratio:.2f}x reduction / {comp_percent:.2f}%)...")
             comp_pred = llm.run_inference(compressed_text)
@@ -105,7 +109,7 @@ def main():
     print("STARTING GENERIC QUESTIONS PIPELINE")
     print("="*80)
     import eval_generic_pipeline
-    eval_generic_pipeline.main()
+    eval_generic_pipeline.main(generated_compressed_files)
 
 if __name__ == "__main__":
     main()
