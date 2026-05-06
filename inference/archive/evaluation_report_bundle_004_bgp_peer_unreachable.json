@@ -1,0 +1,29 @@
+{
+  "bundle": "bundle_004_bgp_peer_unreachable",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 240559.0,
+  "compression_percentage": 100.0,
+  "raw_size": 240559,
+  "comp_size": 0,
+  "raw_details": {
+    "root_cause_entity": "mock_entity",
+    "root_cause_type": "mock_failure",
+    "recommended_action": "mock_action"
+  },
+  "comp_details": {},
+  "ground_truth": {
+    "scenario_name": "bgp_neighbor_down",
+    "description": "BGP session to 192.168.1.1 failed",
+    "severity": "critical",
+    "failure_timestamp": "2026-04-20T23:18:57.939000",
+    "root_cause_entity": "192.168.1.1",
+    "root_cause_type": "routing_protocol_failure",
+    "expected_symptoms": [
+      "bgp_session_down",
+      "route_withdrawal",
+      "connectivity_loss"
+    ],
+    "recommended_action": "Verify BGP configuration and network connectivity to 192.168.1.1"
+  }
+}

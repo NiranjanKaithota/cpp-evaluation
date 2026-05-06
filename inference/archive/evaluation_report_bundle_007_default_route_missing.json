@@ -1,0 +1,29 @@
+{
+  "bundle": "bundle_007_default_route_missing",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 245241.0,
+  "compression_percentage": 100.0,
+  "raw_size": 245241,
+  "comp_size": 0,
+  "raw_details": {
+    "root_cause_entity": "mock_entity",
+    "root_cause_type": "mock_failure",
+    "recommended_action": "mock_action"
+  },
+  "comp_details": {},
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 0.0.0.0/0 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-04-20T23:18:53.181000",
+    "root_cause_entity": "0.0.0.0/0",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 0.0.0.0/0"
+  }
+}

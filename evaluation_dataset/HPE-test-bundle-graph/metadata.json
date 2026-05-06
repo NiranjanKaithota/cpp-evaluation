@@ -1,0 +1,9 @@
+{
+  "ground_truth": {
+    "root_cause_entity": "vlan4000",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [],
+    "recommended_action": "Check physical cable",
+    "failure_timestamp": "unknown"
+  }
+}

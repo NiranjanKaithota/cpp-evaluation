@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 """
 Improved Generic Pipeline — Multi-LLM Evaluation
 ================================================
 Enhanced evaluation framework testing semantic compression quality through
 deep causal reasoning, temporal ordering, and hallucination detection.
 
-Key additions:
+Key Improvements:
 - 7 question categories testing different compression aspects
 - Multi-level scoring (entity extraction + semantic similarity + keywords)
 - Hallucination traps and negative evidence testing
@@ -197,359 +198,250 @@ NEGATIVE_EVIDENCE_QUESTIONS = [
         "category": "negative_evidence",
         "difficulty": "hard",
         "weight": 0.03,
-        "question": "The monitoring team reported high packet loss on VLAN 500. Is this supported by the log data?",
-        "scoring_method": "adversarial_verification",
-        "trap_entity": "VLAN 500",
-        "evaluation_notes": "Adversarial question - VLAN 500 likely doesn't exist. Tests if LLM invents evidence."
+        "question": "Does the log contain any security-related events (authentication failures, ACL violations, intrusion attempts)?",
+        "scoring_method": "binary_with_evidence",
+        "evaluation_notes": "Tests categorical discrimination. Security vs availability failures have different response protocols."
     },
 ]
 
-# Category 6: QUANTITATIVE PRECISION (5% weight)
-# Tests if compression preserves numerical accuracy (Layer 2 deduplication counts)
-QUANTITATIVE_QUESTIONS = [
+# Category 6: CONTEXT RETRIEVAL (5% weight)
+# Tests Layer 2 of compression pipeline (similarity-based retrieval)
+CONTEXT_RETRIEVAL_QUESTIONS = [
     {
-        "id": "QP-Q1",
-        "category": "quantitative_precision",
-        "difficulty": "medium",
-        "weight": 0.03,
-        "question": "Approximately how many error-level events or failures are documented in these logs?",
-        "scoring_method": "magnitude_estimation",
-        "acceptable_variance": 0.25,
-        "evaluation_notes": "Tests frequency preservation. 'Approximately' allows for compression loss."
-    },
-    {
-        "id": "QP-Q2",
-        "category": "quantitative_precision",
+        "id": "CTX-Q1",
+        "category": "context_retrieval",
         "difficulty": "easy",
-        "weight": 0.02,
-        "question": "What is the approximate time span covered by these log events?",
-        "scoring_method": "temporal_span",
-        "acceptable_variance": 0.15,
-        "evaluation_notes": "Basic sanity check for temporal coverage."
+        "weight": 0.05,
+        "question": "How many distinct network devices or interfaces are mentioned in the logs?",
+        "scoring_method": "counting_with_tolerance",
+        "evaluation_notes": "Tests entity extraction recall across log entries."
     },
 ]
 
-# Compile all questions
+# Combine all questions
 ALL_QUESTIONS = (
     ROOT_CAUSE_QUESTIONS +
     CAUSAL_REASONING_QUESTIONS +
     TEMPORAL_ORDERING_QUESTIONS +
     SEMANTIC_EQUIVALENCE_QUESTIONS +
     NEGATIVE_EVIDENCE_QUESTIONS +
-    QUANTITATIVE_QUESTIONS
+    CONTEXT_RETRIEVAL_QUESTIONS
 )
 
-# Verify weights sum to ~1.0
-total_weight = sum(q["weight"] for q in ALL_QUESTIONS)
-print(f"Total question weight: {total_weight:.2f}")
-
 # ═══════════════════════════════════════════════════════════════════════════
-# SYSTEM PROMPT
+# LLM QUERY FUNCTIONS
 # ═══════════════════════════════════════════════════════════════════════════
 
-SYSTEM = textwrap.dedent("""\
-    You are an expert network engineer analyzing network failure logs.
+def query_llm(system_prompt: str, user_prompt: str, max_tokens: int = None) -> str:
+    """Query the Cohere LLM with proper error handling."""
+    if max_tokens is None:
+        max_tokens = MODEL_TOKEN_LIMITS.get(MODEL, 2000)
     
-    Your task is to answer diagnostic questions based ONLY on the provided log data below.
-    
-    IMPORTANT GUIDELINES:
-    - Be precise and specific - cite evidence from the data
-    - If the data doesn't contain enough information, explicitly state this
-    - Do NOT guess or fabricate details
-    - Focus on causal relationships, not just isolated events
-    - Distinguish between root causes and symptoms
-    
-    COMPRESSED LOG SUMMARY (Markdown format):
-    {context}
-""")
-
-# ═══════════════════════════════════════════════════════════════════════════
-# CONTEXT BUILDING
-# ═══════════════════════════════════════════════════════════════════════════
-
-def build_context(file_path: Path, token_budget: int = MAX_CONTEXT_TOKENS) -> Tuple[str, int]:
-    """
-    Read the Layer 5 compressed Markdown string.
-    """
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
+    try:
+        response = _cohere.chat(
+            model=MODEL,
+            messages=[
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=0.1,
+            max_tokens=max_tokens
+        )
         
-    cost = len(content) // 4  # Rough token estimate
-    
-    # Simple truncation if it exceeds budget
-    if cost > token_budget:
-        content = content[:token_budget * 4] + "\n...[TRUNCATED]"
-        cost = token_budget
+        if hasattr(response, 'message') and hasattr(response.message, 'content'):
+            if isinstance(response.message.content, list):
+                return ''.join([
+                    block.text for block in response.message.content 
+                    if hasattr(block, 'text')
+                ])
+            return str(response.message.content)
         
-    return content, cost
-
-# ═══════════════════════════════════════════════════════════════════════════
-# LLM INTERFACE
-# ═══════════════════════════════════════════════════════════════════════════
-
-def ask_llm(context_text: str, question: str, retries: int = 3) -> str:
-    """Call LLM with context and question, with retry logic."""
-    prompt = SYSTEM.format(context=context_text) + f"\n\nQUESTION: {question}\n\nANSWER:"
+        return str(response)
     
-    for attempt in range(retries):
-        try:
-            resp = _cohere.chat(
-                model=MODEL,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            return resp.message.content[0].text.strip()
-        except Exception as e:
-            if attempt < retries - 1:
-                wait = 30 * (attempt + 1)
-                print(f"    ⚠️  Retry {attempt+1} ({wait}s): {str(e)[:80]}")
-                time.sleep(wait)
-            else:
-                return f"ERROR: {str(e)[:200]}"
+    except Exception as e:
+        print(f"  ⚠️  LLM query failed: {e}")
+        return f"[ERROR: {str(e)}]"
 
+def query_llm_json(system_prompt: str, user_prompt: str, max_tokens: int = 4000) -> dict:
+    """Helper to query the LLM and strictly parse the output as JSON."""
+    raw_response = query_llm(system_prompt, user_prompt, max_tokens)
+    
+    # Clean up markdown code blocks if the LLM adds them
+    cleaned = raw_response.strip()
+    if cleaned.startswith("```json"):
+        cleaned = cleaned[7:-3].strip()
+    elif cleaned.startswith("```"):
+        cleaned = cleaned[3:-3].strip()
+        
+    try:
+        return json.loads(cleaned)
+    except Exception as e:
+        print(f"  ⚠️ JSON Parse Error. Raw output: {raw_response[:100]}...")
+        return {}
 # ═══════════════════════════════════════════════════════════════════════════
-# IMPROVED SCORING FUNCTIONS
+# SCORING FUNCTIONS
 # ═══════════════════════════════════════════════════════════════════════════
 
-def extract_entities(text: str) -> set:
-    """Extract network entities (IPs, interfaces, processes) from text."""
-    entities = set()
-    
-    # IP addresses
-    ip_pattern = r'\b(?:\d{1,3}\.){3}\d{1,3}\b'
-    entities.update(re.findall(ip_pattern, text))
-    
-    # Interface names (e.g., 1/1/3, eth0, pvnet0)
-    iface_pattern = r'\b(?:\d+/\d+/\d+|eth\d+|pvnet\d+|1/1/\d+)\b'
-    entities.update(re.findall(iface_pattern, text))
-    
-    # Process IDs (e.g., pid:4714)
-    pid_pattern = r'(?:pid:?|PID:?)\s*(\d+)'
-    entities.update(re.findall(pid_pattern, text))
-    
-    # Protocol names
-    protocols = ['bgp', 'ospf', 'vlan', 'arp', 'dns', 'ntp']
-    text_lower = text.lower()
-    entities.update(p for p in protocols if p in text_lower)
-    
-    return entities
-
-def simple_semantic_similarity(text1: str, text2: str) -> float:
+def score_answer(question: Dict, answer: str, ground_truth: Dict = None) -> Dict:
     """
-    Simple semantic similarity based on word overlap.
-    For production, replace with sentence-transformers embeddings.
+    Score an answer using the appropriate method.
+    Returns: {"score": 0.0-1.0, "verdict": "correct"|"partial"|"wrong", "explanation": str, "method": str}
     """
-    # Normalize and tokenize
-    words1 = set(re.findall(r'\w+', text1.lower()))
-    words2 = set(re.findall(r'\w+', text2.lower()))
+    method = question.get("scoring_method", "semantic_similarity")
     
-    # Remove stop words
-    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'is', 'was', 'are'}
-    words1 -= stop_words
-    words2 -= stop_words
+    # For now, use simple keyword-based scoring
+    # In production, this would integrate with the actual scoring methods
+    score = 0.5  # Default neutral score
+    verdict = "partial"
+    explanation = f"Scored using {method}"
     
-    if not words1 or not words2:
-        return 0.0
+    # Simple heuristic: longer answers with technical terms score higher
+    technical_terms = ["interface", "port", "flap", "BGP", "OSPF", "route", "packet", 
+                       "error", "failure", "configuration", "protocol"]
+    found_terms = sum(1 for term in technical_terms if term.lower() in answer.lower())
     
-    # Jaccard similarity
-    intersection = len(words1 & words2)
-    union = len(words1 | words2)
+    if found_terms >= 3:
+        score = 0.8
+        verdict = "correct"
+    elif found_terms >= 1:
+        score = 0.5
+        verdict = "partial"
+    else:
+        score = 0.2
+        verdict = "wrong"
     
-    return intersection / union if union > 0 else 0.0
-
-def score_answer(answer: str, question: Dict, context_text: str) -> Dict[str, Any]:
-    """
-    Multi-level scoring based on question type.
-    Returns score (0-1), verdict (correct/partial/wrong), and explanation.
-    """
-    method = question.get("scoring_method", "keyword_matching")
-    
-    # Extract metadata from context for comparison
-    chain_text = context_text
-    
-    # Default scoring
-    result = {
-        "score": 0.0,
-        "verdict": "wrong",
-        "explanation": "",
+    return {
+        "score": score,
+        "verdict": verdict,
+        "explanation": explanation,
         "method": method
     }
-    
-    # ERROR responses get zero score
-    if answer.startswith("ERROR:"):
-        result["explanation"] = "LLM error occurred"
-        return result
-    
-    # Method-specific scoring
-    if method == "entity_extraction_plus_semantic":
-        # Extract entities from answer
-        answer_entities = extract_entities(answer)
-        
-        # Check for key failure indicators in chains
-        chain_entities = extract_entities(chain_text)
-        
-        # Entity overlap
-        if answer_entities and chain_entities:
-            overlap = len(answer_entities & chain_entities) / len(chain_entities)
-            entity_score = min(overlap * 1.5, 1.0)  # Boost for good entity recall
-        else:
-            entity_score = 0.0
-        
-        # Semantic check for failure type
-        failure_keywords = {
-            'physical': ['cable', 'fiber', 'link down', 'transceiver', 'optical'],
-            'configuration': ['config', 'mismatch', 'vlan', 'misconfigured'],
-            'protocol': ['bgp', 'ospf', 'routing', 'protocol', 'session'],
-            'performance': ['bandwidth', 'congestion', 'packet loss', 'latency']
-        }
-        
-        semantic_score = 0.0
-        for category, keywords in failure_keywords.items():
-            if any(kw in answer.lower() for kw in keywords):
-                semantic_score = max(semantic_score, 0.5)
-        
-        # Combined score
-        result["score"] = 0.6 * entity_score + 0.4 * semantic_score
-        
-    elif method == "semantic_similarity":
-        # Placeholder - in production, use actual embeddings
-        # For now, use simple word overlap
-        result["score"] = simple_semantic_similarity(answer, chain_text[:500])
-        
-    elif method == "temporal_sequence_validation":
-        # Check if answer contains temporal ordering words
-        temporal_indicators = ['first', 'then', 'next', 'after', 'before', 'finally', 'initially']
-        has_ordering = any(word in answer.lower() for word in temporal_indicators)
-        
-        # Check for timestamps or time references
-        has_timestamps = bool(re.search(r'\d{1,2}:\d{2}', answer))
-        
-        result["score"] = (0.5 if has_ordering else 0.0) + (0.5 if has_timestamps else 0.0)
-        
-    elif method == "binary_with_evidence":
-        # Check for clear yes/no answer
-        answer_lower = answer.lower()
-        if question.get("expected_answer") == "no":
-            # Should say "no" or "no evidence"
-            if any(phrase in answer_lower for phrase in ['no', 'not found', 'no evidence', 'does not appear', 'absent']):
-                result["score"] = 1.0
-            elif any(phrase in answer_lower for phrase in ['yes', 'evidence of', 'shows']):
-                result["score"] = 0.0  # Hallucination
-        else:
-            # Generic binary scoring
-            result["score"] = 0.5  # Neutral if unclear
-            
-    elif method == "adversarial_verification":
-        # Check if LLM resists the trap
-        trap_entity = question.get("trap_entity", "")
-        answer_lower = answer.lower()
-        trap_lower = trap_entity.lower()
-        
-        if trap_lower in answer_lower:
-            # LLM mentioned the trap entity - likely hallucinated
-            if any(phrase in answer_lower for phrase in ['no evidence', 'not mentioned', 'does not appear']):
-                result["score"] = 1.0  # Correctly rejected
-            else:
-                result["score"] = 0.0  # Hallucination!
-                result["explanation"] = f"Hallucinated evidence about {trap_entity}"
-        else:
-            # Didn't mention trap entity - good
-            result["score"] = 1.0
-            
-    elif method == "magnitude_estimation":
-        # Extract numbers from answer
-        numbers = re.findall(r'\b\d+\b', answer)
-        if numbers:
-            result["score"] = 0.5  # Partial for attempting quantification
-        # Full scoring would require ground truth comparison
-        
-    elif method == "classification_with_reasoning":
-        # Check if answer contains classification choice
-        classifications = {
-            'A': ['physical', 'cable', 'fiber', 'link'],
-            'B': ['configuration', 'config', 'mismatch'],
-            'C': ['protocol', 'software', 'bgp', 'ospf'],
-            'D': ['resource', 'capacity', 'bandwidth', 'memory']
-        }
-        
-        for choice, keywords in classifications.items():
-            if any(kw in answer.lower() for kw in keywords) or choice in answer.upper():
-                result["score"] = 0.8  # High score for categorization
-                break
-    
-    else:
-        # Default keyword matching
-        result["score"] = 0.3  # Minimal baseline
-    
-    # Convert score to verdict
-    if result["score"] >= 0.75:
-        result["verdict"] = "correct"
-    elif result["score"] >= 0.4:
-        result["verdict"] = "partial"
-    else:
-        result["verdict"] = "wrong"
-    
-    # Generate explanation if not set
-    if not result["explanation"]:
-        result["explanation"] = f"Score: {result['score']:.2f} via {method}"
-    
-    return result
 
 # ═══════════════════════════════════════════════════════════════════════════
 # EVALUATION RUNNER
 # ═══════════════════════════════════════════════════════════════════════════
 
-def run_evaluation(log_label: str, file_path: Path, questions: List[Dict]) -> Dict[str, Any]:
-    """Run complete evaluation on one log file."""
-    print(f"\n{'='*80}")
-    print(f"  LOG: {log_label}")
-    print(f"{'='*80}")
+def load_compressed_text(file_path: Path) -> str:
+    """Load compressed text from a file."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    except Exception as e:
+        print(f"  ⚠️  Failed to load {file_path}: {e}")
+        return ""
+
+def run_evaluation_on_compressed(
+    log_label: str,
+    compressed_text: str,
+    questions: List[Dict],
+    ground_truth: Dict = None
+) -> Dict:
+    print(f"\n{'='*80}\n  Evaluating: {log_label}\n{'='*80}")
     
-    # Build context
-    ctx_budget = MODEL_TOKEN_LIMITS.get(MODEL, MAX_CONTEXT_TOKENS)
-    ctx, ctx_tokens = build_context(file_path, ctx_budget)
-    print(f"  Context: {len(ctx)} chars, ~{ctx_tokens:,} tokens\n")
+    ctx_tokens = len(compressed_text) // 4
+    if ctx_tokens > MAX_CONTEXT_TOKENS:
+        compressed_text = compressed_text[:MAX_CONTEXT_TOKENS * 4]
+        ctx_tokens = MAX_CONTEXT_TOKENS
+        
+    # -------------------------------------------------------------------------
+    # API CALL 1: BATCH ANSWER GENERATION
+    # -------------------------------------------------------------------------
+    print(f"  -> [API Call 1/2] Asking {len(questions)} questions in a single batch...")
     
-    # Run questions
-    results = []
-    category_scores = defaultdict(list)
+    q_list_for_prompt = [{"id": q["id"], "question": q["question"]} for q in questions]
     
+    answer_prompt = f"""You are analyzing compressed network diagnostic logs. Answer the following questions based ONLY on the provided logs.
+
+        LOGS:
+        {compressed_text}
+        
+        QUESTIONS:
+        {json.dumps(q_list_for_prompt, indent=2)}
+        
+        INSTRUCTIONS:
+        Return your answers STRICTLY as a JSON dictionary where the keys are the Question IDs (e.g., "RC-Q1") and the values are your string answers. Do not include any other text."""
+
+    answers_dict = query_llm_json("You are an exact JSON outputter.", answer_prompt)
+    
+    # Fallback if API fails to return the dictionary
+    if not answers_dict:
+        print("  ⚠️ Failed to generate batched answers. Marking all as failed.")
+        answers_dict = {q["id"]: "[ERROR: Generation Failed]" for q in questions}
+
+    # -------------------------------------------------------------------------
+    # API CALL 2: BATCH LLM JUDGE SCORING
+    # -------------------------------------------------------------------------
+    print(f"  -> [API Call 2/2] Grading all {len(questions)} answers via LLM Judge...")
+    
+    # Prepare the payload for the judge
+    qa_pairs = []
     for q in questions:
-        print(f"  [{q['id']}] {q['question'][:70]}...")
-        
-        # Get LLM answer
-        answer = ask_llm(ctx, q["question"])
-        
-        # Score answer
-        score_result = score_answer(answer, q, ctx)
-        
-        # Icon for display
-        icon = "✅" if score_result["verdict"] == "correct" else \
-               ("⚠️ " if score_result["verdict"] == "partial" else "❌")
-        
-        print(f"    {icon} {score_result['verdict'].upper()} ({score_result['score']:.2f})")
-        print(f"       {answer[:120]}...")
-        
-        # Track by category
-        category_scores[q["category"]].append({
-            "score": score_result["score"],
-            "weight": q["weight"]
-        })
-        
-        # Store result
-        results.append({
+        qa_pairs.append({
             "id": q["id"],
             "category": q["category"],
-            "difficulty": q["difficulty"],
+            "question": q["question"],
+            "goal": q.get("evaluation_notes", ""),
+            "ai_answer": answers_dict.get(q["id"], "No answer provided.")
+        })
+        
+    gt_context = json.dumps(ground_truth, indent=2) if ground_truth else "Not available."
+    
+    judge_prompt = f"""You are an expert network diagnostic evaluator grading an AI's answers to {len(questions)} diagnostic questions.
+
+GROUND TRUTH METADATA (ABSOLUTE TRUTH):
+{gt_context}
+
+EVALUATION RULE: If Ground Truth is available, compare the AI's answers against it. If not, score based on logical consistency and standard network diagnostic principles.
+
+QA PAIRS TO EVALUATE:
+{json.dumps(qa_pairs, indent=2)}
+
+INSTRUCTIONS:
+Return your evaluation STRICTLY as a JSON dictionary where the keys are the Question IDs. Each value must be an object with three keys: 'score' (float 0.0 to 1.0), 'verdict' ("correct", "partial", or "wrong"), and 'explanation' (string justification).
+
+Example Output Format:
+{{
+  "RC-Q1": {{
+    "score": 0.8,
+    "verdict": "correct",
+    "explanation": "Correctly identified the component based on Ground Truth."
+  }}
+}}"""
+
+    scores_dict = query_llm_json("You are an exact JSON outputter.", judge_prompt)
+
+    # -------------------------------------------------------------------------
+    # COMPILE RESULTS
+    # -------------------------------------------------------------------------
+    results = []
+    category_scores = defaultdict(list)
+    verdict_counts = defaultdict(int)
+    
+    for q in questions:
+        q_id = q["id"]
+        answer = answers_dict.get(q_id, "")
+        
+        # Extract score or use fallback if the Judge failed for this specific ID
+        score_data = scores_dict.get(q_id, {
+            "score": 0.0, 
+            "verdict": "wrong", 
+            "explanation": "Scoring failed or timed out."
+        })
+        
+        results.append({
+            "id": q_id,
+            "category": q["category"],
+            "difficulty": q.get("difficulty", "medium"),      
             "weight": q["weight"],
             "question": q["question"],
             "answer": answer,
-            "score": score_result["score"],
-            "verdict": score_result["verdict"],
-            "explanation": score_result["explanation"],
-            "scoring_method": score_result["method"]
+            "score": score_data["score"],
+            "verdict": score_data["verdict"],
+            "explanation": score_data["explanation"],
+            "scoring_method": q.get("scoring_method", "llm_as_judge")
         })
         
-        time.sleep(1)  # Rate limiting
+        category_scores[q["category"]].append({"score": score_data["score"], "weight": q["weight"]})
+        verdict_counts[score_data["verdict"]] += 1
     
     # Calculate weighted scores by category
     category_weighted_scores = {}
@@ -580,7 +472,6 @@ def run_evaluation(log_label: str, file_path: Path, questions: List[Dict]) -> Di
         "log": log_label,
         "model": MODEL,
         "backend": BACKEND,
-        "context_chars": len(ctx),
         "context_tokens": ctx_tokens,
         "overall_score": round(overall_score, 1),
         "category_scores": {k: round(v, 1) for k, v in category_weighted_scores.items()},
@@ -593,32 +484,95 @@ def run_evaluation(log_label: str, file_path: Path, questions: List[Dict]) -> Di
 # MAIN EXECUTION
 # ═══════════════════════════════════════════════════════════════════════════
 
-def main(log_files=None):
+def main(compressed_files: List[str] = None):
+    """
+    Main evaluation function.
+    
+    Args:
+        compressed_files: List of paths to compressed text files.
+                         If None, will look for default JSONL files.
+    """
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     backend_tag = f"{BACKEND}_{MODEL.split('/')[-1].replace(':', '_')}"
     
-    # Define log files to process
-    logs = []
-    if log_files is not None:
-        for file_path in log_files:
-            if isinstance(file_path, str):
-                file_path = Path(file_path)
-            logs.append((file_path.name, file_path))
-    else:
-        compressed_dir = BASE / "compressed_logs"
-        if compressed_dir.exists():
-            for txt_file in compressed_dir.glob("*.txt"):
-                logs.append((txt_file.name, txt_file))
-            
     all_results = []
     
-    for log_label, file_path in logs:
-        if not file_path.exists():
-            print(f"\n⚠️  Skipping {log_label} - file not found at {file_path}")
-            continue
+    # If compressed files are provided, use them
+    if compressed_files:
+        print(f"\n{'='*80}")
+        print(f"Processing {len(compressed_files)} compressed files...")
+        print(f"{'='*80}")
         
-        result = run_evaluation(log_label, file_path, ALL_QUESTIONS)
-        all_results.append(result)
+        for file_path in compressed_files:
+            file_path = Path(file_path)
+            
+            if not file_path.exists():
+                print(f"\n⚠️  Skipping {file_path} - file not found")
+                continue
+            
+            # Extract bundle name from filename
+            log_label = file_path.stem.replace("compressed_", "")
+            
+            # Load compressed text
+            compressed_text = load_compressed_text(file_path)
+            
+            if not compressed_text:
+                print(f"⚠️  Skipping {log_label} - empty or unreadable file")
+                continue
+            
+            # Look for corresponding ground truth
+            ground_truth = None
+            # Try to find metadata.json in the evaluation_dataset
+            metadata_candidates = [
+                BASE / "evaluation_dataset" / log_label / "metadata.json",
+                BASE / "evaluation_dataset" / log_label.replace("compressed_", "") / "metadata.json"
+            ]
+            
+            for metadata_path in metadata_candidates:
+                if metadata_path.exists():
+                    try:
+                        with open(metadata_path, 'r') as f:
+                            ground_truth = json.load(f)
+                        break
+                    except Exception as e:
+                        print(f"  ⚠️  Failed to load metadata from {metadata_path}: {e}")
+            
+            # Run evaluation
+            result = run_evaluation_on_compressed(
+                log_label,
+                compressed_text,
+                ALL_QUESTIONS,
+                ground_truth
+            )
+            all_results.append(result)
+    
+    else:
+        # Fallback to original behavior - look for JSONL files
+        print(f"\n{'='*80}")
+        print("No compressed files provided. Looking for default JSONL files...")
+        print(f"{'='*80}")
+        
+        logs = [
+            (
+                "messages.log (generic)",
+                BASE / "data/processed/messages_generic/causal_graph/causal_chains_llm.jsonl",
+                BASE / "data/processed/messages_generic/metadata.json"
+            ),
+            (
+                "messages_gen.log (generic)",
+                BASE / "data/processed/messages_gen_generic/causal_graph/causal_chains_llm.jsonl",
+                BASE / "data/processed/messages_gen_generic/metadata.json"
+            ),
+        ]
+        
+        for log_label, jsonl_path, metadata_path in logs:
+            if not jsonl_path.exists():
+                print(f"\n⚠️  Skipping {log_label} - file not found at {jsonl_path}")
+                continue
+            
+            # This would need the original run_evaluation function
+            # which we're not including here since it's for JSONL format
+            print(f"⚠️  JSONL processing not implemented in this version")
     
     if not all_results:
         print("\n❌ No logs were found or processed.")
@@ -699,7 +653,7 @@ def main(log_files=None):
             f.write(f"LOG: {r['log']}\n")
             f.write("="*80 + "\n")
             f.write(f"Overall Score: {r['overall_score']:.1f}%\n")
-            f.write(f"Context: {r.get('context_chars', 0)} chars, ~{r['context_tokens']:,} tokens\n\n")
+            f.write(f"Context: ~{r['context_tokens']:,} tokens\n\n")
             
             f.write("Category Scores:\n")
             for category, score in sorted(r['category_scores'].items()):

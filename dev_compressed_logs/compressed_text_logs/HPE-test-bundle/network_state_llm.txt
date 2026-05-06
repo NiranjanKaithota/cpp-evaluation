@@ -1,0 +1,87 @@
+============================================================
+CAUSAL INCIDENT ANALYSIS — PRE-PROCESSED CONTEXT
+============================================================
+Source: network_state.log
+Records ingested: 70
+Processing time: 302.4ms
+
+────────────────────────────────────────────────────────────
+ROOT CAUSE ANALYSIS
+────────────────────────────────────────────────────────────
+Root cause: SYSTEM_UNKNOWN
+
+Causal chains:
+
+Impact breakdown:
+  • SYSTEM_UNKNOWN: 3 events (cluster #1)
+
+────────────────────────────────────────────────────────────
+SEMANTIC CLUSTERS
+────────────────────────────────────────────────────────────
+  [1] SYSTEM_UNKNOWN  count=3  span=0128-06-01T00:00:00+00:00 … 2026-04-16T00:00:00+00:00
+
+────────────────────────────────────────────────────────────
+TEMPORAL WINDOWS
+────────────────────────────────────────────────────────────
+  W1: 0128-06-01T00:00:00+00:00 → 0128-06-01T00:00:00+00:00  events=1  abstracted=1
+  W2: 2026-04-06T08:58:00+00:00 → 2026-04-06T08:58:00+00:00  events=1  abstracted=1
+  W3: 2026-04-16T00:00:00+00:00 → 2026-04-16T00:00:03+00:00  events=2  abstracted=1
+
+────────────────────────────────────────────────────────────
+LOG TEMPLATES (61 unique patterns)
+────────────────────────────────────────────────────────────
+  [  10x] <NUM> <NUM> <NUM> <NUM> <NUM> <NUM>
+  [   1x] inet6 ::<NUM>/<NUM> scope host
+  [   1x] link/ether a6:<NUM>:6d:6c:c8:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] link/loopback <NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM> brd <NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM>
+  [   1x] altname enp3s0
+  [   1x] <NUM>: lo: <LOOPBACK,UP,LOWER_UP> mtu <NUM> qdisc noqueue state UNKNOWN group default qlen <NUM>
+  [   1x] inet <IP>/<NUM> scope host lo
+  [   1x] valid_lft forever preferred_lft forever
+  [   1x] <NUM>: eno1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu <NUM> qdisc fq_codel state DOWN group default qlen <NUM>
+  [   1x] link/ether <NUM>:bf:b8:0a:<NUM>:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] <NUM>: wlp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu <NUM> qdisc noqueue state UP group default qlen <NUM>
+  [   1x] link/ether <NUM>:<NUM>:<NUM>:8e:<NUM>:df brd ff:ff:ff:ff:ff:ff
+  [   1x] inet <IP>/<NUM> brd <IP> scope global dynamic noprefixroute wlp4s0
+  [   1x] valid_lft 80586sec preferred_lft 80586sec
+  [   1x] inet6 <NUM>:201:<NUM>:<NUM>:13ed:9d6e:981a:e437/<NUM> scope global temporary dynamic
+  [   1x] valid_lft 3579sec preferred_lft 3579sec
+  [   1x] inet6 <NUM>:201:<NUM>:<NUM>:25da:bd93:3af:e5ea/<NUM> scope global dynamic mngtmpaddr noprefixroute
+  [   1x] inet6 fe80::<NUM>:9e9d:89ee:<NUM>/<NUM> scope link noprefixroute
+  [   1x] <NUM>: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu <NUM> qdisc noqueue state DOWN group default
+  [   1x] link/ether e6:2d:0a:d1:a8:1b brd ff:ff:ff:ff:ff:ff
+  [   1x] inet <IP>/<NUM> brd <IP> scope global docker0
+  [   1x] <NUM>: ovs-system: <BROADCAST,MULTICAST> mtu <NUM> qdisc noop state DOWN group default qlen <NUM>
+  [   1x] <NUM>: br0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu <NUM> qdisc noqueue state UNKNOWN group default qlen <NUM>
+  [   1x] link/ether de:<NUM>:7d:a2:ef:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] inet6 fe80::dc27:7dff:fea2:ef44/<NUM> scope link
+  [   1x] <NUM>: veth1-br@veth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu <NUM> qdisc noqueue master ovs-system state UP group default qlen <NUM>
+  [   1x] link/ether da:<NUM>:4c:<NUM>:3f:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] inet6 fe80::d877:4cff:fe67:3f05/<NUM> scope link
+  [   1x] <NUM>: veth1@veth1-br: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu <NUM> qdisc noqueue state UP group default qlen <NUM>
+  [   1x] link/ether c2:c9:e8:<NUM>:f4:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] inet <IP>/<NUM> scope global veth1
+  [   1x] inet6 fe80::c0c9:e8ff:fe49:f489/<NUM> scope link
+  [   1x] <NUM>: veth2-br@veth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu <NUM> qdisc noqueue master ovs-system state UP group default qlen <NUM>
+  [   1x] link/ether <NUM>:0a:b1:<NUM>:<NUM>:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] inet6 fe80::240a:b1ff:fe92:<NUM>/<NUM> scope link
+  [   1x] <NUM>: veth2@veth2-br: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu <NUM> qdisc noqueue state UP group default qlen <NUM>
+  [   1x] link/ether 4a:c8:<NUM>:<NUM>:<NUM>:5d brd ff:ff:ff:ff:ff:ff
+  [   1x] inet <IP>/<NUM> scope global veth2
+  [   1x] inet6 fe80::48c8:97ff:fe73:375d/<NUM> scope link
+  [   1x] default via <IP> dev wlp4s0 proto dhcp metric <NUM>
+  [   1x] <IP>/<NUM> dev veth1 proto kernel scope link src <IP>
+  [   1x] <IP>/<NUM> dev veth2 proto kernel scope link src <IP>
+  [   1x] <IP>/<NUM> dev docker0 scope link metric <NUM> linkdown
+  [   1x] <IP>/<NUM> dev docker0 proto kernel scope link src <IP> linkdown
+  [   1x] <IP>/<NUM> dev wlp4s0 proto kernel scope link src <IP> metric <NUM>
+  [   1x] <IP> dev docker0 FAILED
+  [   1x] <IP> dev wlp4s0 FAILED
+  [   1x] fe80::aada:cff:fe43:fc70 dev wlp4s0 lladdr a8:da:0c:<NUM>:fc:<NUM> router REACHABLE
+  [   1x] <NUM>:201:<NUM>:<NUM>::c0a8:1d01 dev wlp4s0 lladdr a8:da:0c:<NUM>:fc:<NUM> router STALE
+  [   1x] <NUM>: lo: <LOOPBACK,UP,LOWER_UP> mtu <NUM> qdisc noqueue state UNKNOWN mode DEFAULT group default qlen <NUM>
+  ... and 11 more templates
+
+============================================================
+END OF PRE-PROCESSED CONTEXT
+============================================================

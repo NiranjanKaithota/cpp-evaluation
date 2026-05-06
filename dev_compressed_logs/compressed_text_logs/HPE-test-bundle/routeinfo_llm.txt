@@ -1,0 +1,106 @@
+============================================================
+CAUSAL INCIDENT ANALYSIS — PRE-PROCESSED CONTEXT
+============================================================
+Source: routeinfo.txt
+Records ingested: 561
+Processing time: 796.4ms
+
+────────────────────────────────────────────────────────────
+ROOT CAUSE ANALYSIS
+────────────────────────────────────────────────────────────
+Root cause: SYSTEM_UNKNOWN
+
+Causal chains:
+
+Impact breakdown:
+  • SYSTEM_UNKNOWN: 6 events (cluster #1)
+  • OVS_UNKNOWN: 1 events (cluster #2)
+
+────────────────────────────────────────────────────────────
+SEMANTIC CLUSTERS
+────────────────────────────────────────────────────────────
+  [1] SYSTEM_UNKNOWN  count=6  span=0128-06-01T00:00:00+00:00 … 2026-04-17T06:30:00+00:00
+  [2] OVS_UNKNOWN  count=1  span=2000-03-07T00:00:00+00:00 … 2000-03-07T00:00:00+00:00
+
+────────────────────────────────────────────────────────────
+TEMPORAL WINDOWS
+────────────────────────────────────────────────────────────
+  W1: 0128-06-01T00:00:00+00:00 → 0128-06-01T00:00:00+00:00  events=1  abstracted=1
+  W2: 0256-04-17T00:00:00+00:00 → 0256-04-17T00:00:00+00:00  events=1  abstracted=0
+  W3: 2000-03-07T00:00:00+00:00 → 2000-03-07T00:00:00+00:00  events=1  abstracted=1
+  W4: 2004-01-09T07:02:09+00:00 → 2004-01-09T07:02:09+00:00  events=1  abstracted=1
+  W5: 2026-02-03T00:00:00+00:00 → 2026-02-03T00:00:00+00:00  events=1  abstracted=0
+  W6: 2026-02-07T00:00:00+00:00 → 2026-02-07T00:00:00+00:00  events=1  abstracted=0
+  W7: 2026-04-01T00:00:00+00:00 → 2026-04-01T00:00:00+00:00  events=9  abstracted=0
+  W8: 2026-04-02T00:00:00+00:00 → 2026-04-02T00:00:00+00:00  events=8  abstracted=0
+  W9: 2026-04-03T00:00:00+00:00 → 2026-04-03T00:00:00+00:00  events=4  abstracted=0
+  W10: 2026-04-03T04:35:00+00:00 → 2026-04-03T04:35:00+00:00  events=1  abstracted=1
+  W11: 2026-04-04T00:00:00+00:00 → 2026-04-04T00:00:00+00:00  events=8  abstracted=0
+  W12: 2026-04-05T00:00:00+00:00 → 2026-04-05T00:00:00+00:00  events=4  abstracted=0
+  W13: 2026-04-05T09:18:37+00:00 → 2026-04-05T09:18:37+00:00  events=1  abstracted=1
+  W14: 2026-04-06T00:00:00+00:00 → 2026-04-06T00:00:00+00:00  events=8  abstracted=0
+  W15: 2026-04-07T00:00:01+00:00 → 2026-04-07T00:00:01+00:00  events=2  abstracted=0
+  W16: 2026-04-17T00:00:00+00:00 → 2026-04-17T00:00:01+00:00  events=7  abstracted=1
+  W17: 2026-04-17T06:30:00+00:00 → 2026-04-17T06:30:00+00:00  events=1  abstracted=1
+  W18: 2026-07-01T00:00:00+00:00 → 2026-07-01T00:00:00+00:00  events=1  abstracted=0
+  W19: 2026-09-08T08:00:01+00:00 → 2026-09-08T08:00:06+00:00  events=4  abstracted=0
+  W20: 7608-04-17T06:00:01+00:00 → 7608-04-17T06:00:06+00:00  events=4  abstracted=0
+
+────────────────────────────────────────────────────────────
+LOG TEMPLATES (489 unique patterns)
+────────────────────────────────────────────────────────────
+  [  38x] <NUM> <NUM> <NUM> <NUM> <NUM> <NUM>
+  [  17x] tx pkts=<NUM>, bytes=<NUM>, drop=<NUM>, errs=<NUM>, coll=<NUM>
+  [  16x] port <NUM>: rx pkts=<NUM>, bytes=<NUM>, drop=<NUM>, errs=<NUM>, frame=<NUM>, over=<NUM>, crc=<NUM>
+  [   2x] OFPST_PORT reply (xid=<HEX>): <NUM> ports
+  [   2x] cookie=<HEX>, duration=<NUM>.816s, table=<NUM>, n_packets=<NUM>, n_bytes=<NUM>, idle_timeout=<NUM>, idle_age=<NUM>, priority=<NUM>,arp,in_port=<NUM>,vlan_tci=<HEX>/<HEX>,dl_src=<NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM>,dl_dst=<NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM>,arp_spa=<IP>,arp_tpa=<IP>,arp_op=<NUM> actions=output:<NUM>
+  [   2x] cookie=<HEX>, duration=<NUM>.313s, table=<NUM>, n_packets=<NUM>, n_bytes=<NUM>, idle_timeout=<NUM>, idle_age=<NUM>, priority=<NUM>,arp,in_port=<NUM>,vlan_tci=<HEX>/<HEX>,dl_src=<NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM>,dl_dst=<NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM>,arp_spa=<IP>,arp_tpa=<IP>,arp_op=<NUM> actions=output:<NUM>
+  [   1x] inet6 ::<NUM>/<NUM> scope host noprefixroute
+  [   1x] masks-cache: size:<NUM>
+  [   1x] ovs_version: "<NUM>.<NUM>"
+  [   1x] link/ether 1e:9c:a7:<NUM>:9d:4e brd ff:ff:ff:ff:ff:ff
+  [   1x] Port s2-eth1
+  [   1x] Interface s2-eth1
+  [   1x] Port s3-eth1
+  [   1x] Interface s3-eth1
+  [   1x] Port s4-eth1
+  [   1x] Interface s4-eth1
+  [   1x] Port s1-eth1
+  [   1x] Interface s1-eth1
+  [   1x] vethf9001aa <NUM> PVID Egress Untagged
+  [   1x] Port s2-eth2
+  [   1x] Interface s2-eth2
+  [   1x] Port s3-eth2
+  [   1x] Interface s3-eth2
+  [   1x] Port s4-eth2
+  [   1x] Interface s4-eth2
+  [   1x] Port s1-eth2
+  [   1x] Interface s1-eth2
+  [   1x] Port s3-eth3
+  [   1x] Interface s3-eth3
+  [   1x] Port s4-eth3
+  [   1x] Interface s4-eth3
+  [   1x] link/ether ae:3f:a4:5f:a4:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] ip -4 neighbor show
+  [   1x] ip -4 route show table all
+  [   1x] ip -4 address show
+  [   1x] Port s3-eth4
+  [   1x] Interface s3-eth4
+  [   1x] Port s4-eth4
+  [   1x] Interface s4-eth4
+  [   1x] NXST_FLOW reply (xid=<HEX>):
+  [   1x] Port s3-eth5
+  [   1x] Interface s3-eth5
+  [   1x] Port s4-eth5
+  [   1x] Interface s4-eth5
+  [   1x] link/ether <NUM>:0e:5d:a9:<NUM>:<NUM> brd ff:ff:ff:ff:ff:ff
+  [   1x] ip -6 neighbor show
+  [   1x] ip -6 route show table all
+  [   1x] ip -6 address show
+  [   1x] ip -6 rule show
+  [   1x] Port s3-eth6
+  ... and 439 more templates
+
+============================================================
+END OF PRE-PROCESSED CONTEXT
+============================================================

@@ -1,0 +1,168 @@
+TID,Category_Label,Raw_Logic_Template
+T1,SNMP_Configuration_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|REST URI executed by user 'afc admin' from address '<IP>' through REST session. The URI is <URI> and the method is GET and response code is 200 with payload \""\"" which resulted in success at timezone Asia Calcutta."
+T2,Rate_Limit_Callback_Suppression,<TS>+05 30 PSCSCTLEAFB03 kernel net ratelimit 131 callbacks suppressed
+T3,Kernel_Level_Interrupt_NAPI_Management,<TS>+05 30 PSCSCTLEAFB03 kernel provision 00<TIME>.0 pvnet1 Re-enabling RX interrupts and disabling NAPI polling
+T4,Routing_Policy_Management,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|12858|ms publisher|INFO|Wait table request received and not processed for table Prefix List
+T5,Routing_Policy_Management,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|12859|ms publisher|ERR|Unknown wait done table request received table Prefix List
+T6,RRDTool_Time_Series_Database_Maintenance,<TS>+05 30 PSCSCTLEAFB03 statsmond <PID> <*> process rrdtool|INFO|statsmond update rrd db 420 Daemon status is not running do not update RRDTool DB
+T7,RRDTool_Time_Series_Database_Maintenance,<TS>+05 30 PSCSCTLEAFB03 statsmond <*> process rrdtool|INFO|statsmond update rrd db 420 Daemon status is not running do not update RRDTool DB
+T8,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 systemd <PID> atop halon.service Deactivated successfully.
+T9,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 systemd <PID> atop halon.service Consumed 19.144s CPU time.
+T10,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 systemd <PID> atop halon.service Scheduled restart job restart counter is at 101.
+T11,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 systemd <PID> Stopped Atop advanced performance monitor.
+T12,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 <*> <*> <*> <*>
+T13,Nginx_HTTPS_Handshake_Failures,<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> info 4776#4776 *224294 client closed connection while SSL handshaking client ffff <IP> server 443
+T14,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""script csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 firmware HTTP 1.1"" upstream ""http unix run nginx.sock rest firmware"" host ""<IP>"""
+T15,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""general none csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 firmware HTTP 1.1"" upstream ""http unix run nginx.sock rest firmware"" host ""<IP>"""
+T16,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *224316 an upstream response is buffered to a temporary file tmp inbound nginx 0000000219 while reading upstream client ffff <IP> server request ""GET rest v10.16 system interfaces?depth 2&attributes admin%2Capplied vlan mode%2Cautonegotiation%2Cbond status%2Ccdp disable%2Ccapabilities%2Cdescription%2Cerror%2Cerror control%2Cforwarding state%2Chw intf info%2Cinterfaces%2Cl1 state%2Clacp%2Clacp status%2Clink speed%2Clink state%2Cname%2Cother config%2Cpm info%2Crouting%2Csplit admin status%2Csplit children%2Csplit oper status%2Cstp config%2Ctype%2Cuser config%2Cvlan mode%2Cvlan translations%2Cvlan translation hw status%2Cvlan translation rules in hw%2Cvlan tag%2Cvlan trunks HTTP 1.1"" upstream ""http unix run nginx.sock rest v10.16 system interfaces?depth 2&attributes admin%2Capplied vlan mode%2Cautonegotiation%2Cbond status%2Ccdp disable%2Ccapabilities%2Cdescription%2Cerror%2Cerror control%2Cforwarding state%2Chw intf info%2Cinterfaces%2Cl1 state%2Clacp%2Clacp status%2Clink speed%2Clink state%2Cname%2Cother config%2Cpm info%2Crouting%2Csplit admin status%2Csplit children%2Csplit oper status%2Cstp config%2Ctype%2Cuser config%2Cvlan mode%2Cvlan translations%2Cvlan translation hw status%2Cvlan translation rules in hw%2Cvlan tag%2Cvlan trunks"" host ""<IP>"""
+T17,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""script csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME fans status transition monitor.default&limit 100&since 31+seconds+ago HTTP 1.1"" upstream ""http unix run nginx.sock rest logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME fans status transition monitor.default&limit 100&since 31+seconds+ago"" host ""<IP>"""
+T18,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""general none csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME fans status transition monitor.default&limit 100&since 31+seconds+ago HTTP 1.1"" upstream ""http unix run nginx.sock rest logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME fans status transition monitor.default&limit 100&since 31+seconds+ago"" host ""<IP>"""
+T19,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""script csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME system resource monitor.default&limit 100&since 31+seconds+ago HTTP 1.1"" upstream ""http unix run nginx.sock rest logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME system resource monitor.default&limit 100&since 31+seconds+ago"" host ""<IP>"""
+T20,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""general none csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME system resource monitor.default&limit 100&since 31+seconds+ago HTTP 1.1"" upstream ""http unix run nginx.sock rest logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME system resource monitor.default&limit 100&since 31+seconds+ago"" host ""<IP>"""
+T21,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""script csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME temp sensor status transition monitor.default&limit 100&since 31+seconds+ago HTTP 1.1"" upstream ""http unix run nginx.sock rest logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME temp sensor status transition monitor.default&limit 100&since 31+seconds+ago"" host ""<IP>"""
+T22,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *223534 using uninitialized ""general none csp"" variable while reading response header from upstream client ffff <IP> server request ""GET rest v10.16 logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME temp sensor status transition monitor.default&limit 100&since 31+seconds+ago HTTP 1.1"" upstream ""http unix run nginx.sock rest logs event?EVENT CATEGORY NAE ALERT&NAE AGENT NAME temp sensor status transition monitor.default&limit 100&since 31+seconds+ago"" host ""<IP>"""
+T23,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hhmd <*> fpga ta|INFO|LCB Test test no 3 mm slot 1 mm family JL719C
+T24,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hhmd <*> fpga ta|INFO|PMC Test test no 4 pmc mm slot 1 mm family JL719C
+T25,BGP_Routing_Table_Update_Latency,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|12860|ms publisher|INFO|Wait table request received and not processed for table Neighbor
+T26,BGP_Routing_Table_Update_Latency,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|12861|ms publisher|ERR|Unknown wait done table request received table Neighbor
+T27,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|12864|coverage|INFO|Dropped 1 log messages in last 32 seconds (most recently 32 seconds ago) due to excessive rate
+T28,VRF_Topology_Discovery,<TS>+05 30 PSCSCTLEAFB03 hpe-restd <PID> debug|LOG ERR|Error Serving HTTP Request rest v10.16 system vrfs * ospf routers * &{ 404 <nil>}
+T29,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-restd <PID> debug|LOG ERR|Error Serving HTTP Request rest v10.16 system acls * ipv4?depth 2 &{ 404 <nil>}
+T30,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-restd <PID> 2026 02 25 <TIME> Go IDL is explicitly writing HPE ANW Central source ip overridden empty value
+T31,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-restd <PID> 2026 02 25 <TIME> Go IDL is explicitly writing HPE ANW Central source ip overridden alternative empty value
+T32,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> warn 4776#4776 *224567 an upstream response is buffered to a temporary file tmp inbound nginx 0000000220 while reading upstream client ffff <IP> server request ""GET rest v10.16 system interfaces?attributes admin%2Capplied vlan mode%2Cbond status%2Ccapabilities%2Cdescription%2Chw intf info%2Cinterfaces%2Cname%2Clink speed%2Clacp%2Clacp status%2Clink state%2Cother config%2Cpm info%2Crouting%2Cstp config%2Ctype%2Csplit children%2Cuser config%2Cvlan mode%2Cvlan translations%2Cvlan translation hw status%2Cvlan translation rules in hw%2Cvlan tag%2Cvlan trunks&depth 2 HTTP 1.1"" upstream ""http unix run nginx.sock rest v10.16 system interfaces?attributes admin%2Capplied vlan mode%2Cbond status%2Ccapabilities%2Cdescription%2Chw intf info%2Cinterfaces%2Cname%2Clink speed%2Clacp%2Clacp status%2Clink state%2Cother config%2Cpm info%2Crouting%2Cstp config%2Ctype%2Csplit children%2Cuser config%2Cvlan mode%2Cvlan translations%2Cvlan translation hw status%2Cvlan translation rules in hw%2Cvlan tag%2Cvlan trunks&depth 2"" host ""<IP>"""
+T33,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-vsxd ovs|00134|coverage|INFO|Dropped 1 log messages in last 30 seconds (most recently 30 seconds ago) due to excessive rate
+T34,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 systemd <PID> Created slice User Slice of UID 1001.
+T35,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 log-proxyd <PID> Event|5209|LOG INFO|AMM|1 1|User admin logged in from <IP> through SSH session.
+T36,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 systemd <PID> Queued start job for default target Main User Target.
+T37,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 systemd <PID> Reached target Paths.
+T41,vtysh_Audit_Log_Sequencing,<TS>+05 30 PSCSCTLEAFB03 -vtysh <*> <*> <*> <*> <*> <*>
+T44,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""enable"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T47,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 -vtysh ovs|00017|vtysh|INFO|default page height is set to 35
+T48,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""show arp"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T49,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""ping <IP> source loopback0"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T50,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""show running-config interface lag 1"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T51,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""show vsx status"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T55,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 CROND <PID> (root) CMDOUT (NAE alerts path fs nos var lib nae alerts)
+T56,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 CROND <PID> (root) CMDOUT (Setting all nae journal permissions to root systemd-journal)
+T57,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 CROND <PID> (root) CMDOUT (Current size 40988 Kb (of 460800 Kb))
+T58,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 tsdb-cleanup TSDB disk space - used 1121849344 bytes left 8541827072 bytes
+T59,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 <*> <*> <*> scheduler|WARN|Scheduling MACSEC AGENT in 0 milliseconds. Behind schedule!!!
+T60,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ovsdb-server ovs|00013|jsonrpc|WARN|tcp <IP> 55692 send error Connection reset by peer
+T61,vtysh_Audit_Log_Sequencing,<TS>+05 30 PSCSCTLEAFB03 vtysh <*> <*> <*> <*> <*> <*>
+T63,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13304|ms idl rib dump|INFO|RIB proto header encoded. Current size 28
+T64,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13306|routing alloc|INFO|Large memory allocation 2754719 bytes.
+T66,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 lacpd ovs|00966|lacpd ovsdb if|INFO|basic diag-dump data populated for feature lag
+T70,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 -vtysh ovs|00001|diag vtysh utils|ERR|Failed to open pidfile var run openvswitch hpe-pvstd.pid error No such file or directory
+T71,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 -vtysh ovs|00002|diag vtysh utils|ERR|cannot read pidfile var run openvswitch hpe-pvstd.pid
+T76,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 vland ovs|00032|vland ovsdb if|INFO|diag-dump ds.length 24776
+T77,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 switchd agent <PID> debug|LOG ERR|AMM|-|DPMGMT|DPMGMT MULTICAST|
+T78,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 <*> <*> diag|INFO|Diagdump executed for feature <*> <*> <*> <*> <*> execution time <*> seconds <*> nanoseconds
+T79,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 hpe-entityd ovs|00004|entityd|INFO|basic diag-dump data populated for feature entitymib PI info
+T81,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-config-ckptpostcfg <PID> 2026 02 25 <TIME> Request &{response <HEX> Type 0 Params map }
+T82,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 <*> <*> diag|ERR|platformhwd server returned error rc 0 error str ""dumpdiagbasic"" is not a valid command"
+T84,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 ptpd <PID> Error ""Invalid pointer pCguDeviceParams"" in usr src debug ptp-daemon 1.0-r0 halon-src ptpd ptp-daemon src adl ms adl ptp ms debugapr.c line 252"
+T85,General_System_Logs,"<TS>+05 30 PSCSCTLEAFB03 ptpd <PID> Error ""Invalid pointer zl303xx Aprf"" in .. src zl303xx AprObf.c line 16008"
+T87,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""show upgrade logs debug last 1000"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T88,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-config <PID> 2026 02 25 <TIME> ReadRunningConfig enter
+T89,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-config <PID> 2026 02 25 <TIME> Arranging data tree
+T90,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-config <PID> 2026 02 25 <TIME> Arranging output JSON tree based on number of rows per table
+T91,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-config <PID> 2026 02 25 <TIME> Registration with Credential Manager successful or deferred.
+T93,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> Event|2928|LOG INFO|AMM|1 1|Get request for BGP Update Group
+T97,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""show aaa authentication port-access dot1x supplicant policy"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T98,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""show aaa authentication port-access dot1x authenticator interface all client-status"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T99,CLI_Command_Execution_Auditing,"<TS>+05 30 PSCSCTLEAFB03 acctsyslogd <PID> AUDIT|CLI ""show aaa authentication port-access mac-auth interface all client-status"" executed by user 'admin' from address '<IP>' through SSH session which resulted in success at timezone Asia Calcutta."
+T100,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 -vtysh ovs|00841|ovsdb idl on demand|ERR|idl-flush invalid table class for table Port
+T104,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> Event|2927|LOG INFO|AMM|1 1|Get request for BGP Route
+T105,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-vsxd <PID> <*> INFO|AMM|1 1|VSX <*> state local <*> remote <*>
+T113,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd ovs|00212|mux fsm|INFO|LACP ATTACHED <HEX> is port ready for sync state is True vsx enabled 1 vsx tx rx status 1 vsx egress redirect enabled 0
+T117,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd <PID> Event|1321|LOG INFO|AMM|1 1|LAG 3 State change for interface 1 1 3 Actor state ALFO Partner state ASFNCD
+T121,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04053|portd common|INFO|portd update port mac address port lag3 - kern if ready l3 FALSE - kern if ready l2 TRUE - sys mac <MAC>
+T123,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04055|portd common|INFO|port lag3 kern mac <MAC> new mac <MAC>
+T125,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04056|portd common|INFO|Updating interface lag3 with MAC address <MAC>
+T127,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 cdpd <PID> <TS>Z|00036|cdp event|INFO|DBG clear socket Close interface 1 1 3 fd 22 free bufferevent <HEX>
+T128,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 cdpd ovs|00036|cdp event|INFO|DBG clear socket Close interface 1 1 3 fd 22 free bufferevent <HEX>
+T131,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd ovs|00214|lacpd support|INFO|STGRD LINKUP <HEX> Tx Rx enable update rcvd for mux fsm state 2 selected 1 partner sync 0 vsx tx rx status 0
+T133,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04057|portd kernel handler|INFO|Port lag3 - kernel netdev MAC changed from <MAC> to <MAC>
+T136,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|01486|portd netlink|INFO|Updated Mac address <MAC> in kernel for interface lag3 in vrf default
+T137,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 intfd <PID> Event|404|LOG INFO|AMM|1 1|Link status for interface 1 1 3 is down
+T148,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 intfd <PID> Event|403|LOG INFO|AMM|1 1|Link status for interface 1 1 3 is up at 25 Gbps with RS-FEC
+T150,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd <PID> Event|1310|LOG WARN|AMM|1 1|Partner is out of sync for interface 1 1 3 LAG sport 1. Actor state ALFOX partner state PSFO
+T153,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd ovs|00218|mlacp recv|INFO|LACP message on lport handle <HEX> sys id <MAC> port id <HEX> flags <HEX> state 1 port key <HEX> pri <HEX> activity 1 timeout 0 aggregation 1 link state <HEX> link speed <HEX> collecting ready 0 fallback 0 fallback-static 0 vsx state 7 name 1 1 3 cfg lag id 1 mac in use <MAC> is mac to use valid 1 nsName swns
+T154,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd <*> support|INFO|FALLBACK initialize per port variables vsx state 7
+T155,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd <PID> Event|1309|LOG INFO|AMM|1 1|Partner is detected for interface 1 1 3 LAG 3 65535 <MAC>. Actor state ALFOX partner state ASFO
+T156,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00135|ms mgmtstb static route|INFO|case ROUTE FAMILY 2
+T157,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00138|ms mgmtstb static route|INFO|Case bfd enable value of bfd 1
+T160,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 cdpd <PID> <TS>Z|00037|cdp event|INFO|DBG cdp intf socket init Registered Socket(22) Successfully for 1 1 3 (103) bev <HEX>
+T161,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 cdpd ovs|00037|cdp event|INFO|DBG cdp intf socket init Registered Socket(22) Successfully for 1 1 3 (103) bev <HEX>
+T168,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-vsxd ovs|00370|mclag state machine|INFO|STGRD LINKUP lag3 ISL redirect is enabled. Waiting for redirect disabled in hw
+T173,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 cdpd <PID> <TS>Z|00038|cdp ovsdb|INFO|Next cdp readd event eb timer scheduled after 5 secs.
+T177,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 rsyslogd action 'action-9-omprog' resumed (module 'omprog') v8.1908.0 try https www.rsyslog.com e 2359
+T179,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-restd <PID> Event|14606|LOG INFO|AMM|-|Switch time is synced with NTP Servers.
+T180,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 lacpd ovs|00241|receive fsm|INFO|FALLBACK defaulted state action Entering fallback enabled 0 fallback static 0 eligibility 0 static eligibility 0 timer 0 lport handle <HEX>
+T181,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 kernel lag256 (slave m1s1p51) the permanent HWaddr of slave - <MAC> - is still in use by bond - set the HWaddr of slave to a different address to avoid conflicts
+T187,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-vsxd <PID> Event|7001|LOG INFO|AMM|1 1|VSX ISL port lag256 is down
+T189,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-vsxd <PID> Event|7004|LOG ERR|AMM|1 1|VSX ISL port lag256 is Out-Of-Sync with the peer link is down
+T210,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-tsdbd <PID> 2026 02 25 <TIME> rpc2 client protocol error read tcp <IP> 35840-><IP> 6640 read software caused connection abort
+T211,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-mstpd ovs|00041|jsonrpc|WARN|tcp <IP> 6640 receive error session (null) error Software caused connection abort
+T212,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd <PID> <TS>Z|00005|jsonrpc|WARN|tcp <IP> 6640 receive error session (null) error Software caused connection abort
+T213,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd <PID> <TS>Z|00006|reconnect|WARN|tcp <IP> 6640 connection dropped (Software caused connection abort)
+T214,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-mstpd ovs|00042|reconnect|WARN|tcp <IP> 6640 connection dropped (Software caused connection abort)
+T215,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 bfdd <PID> Event|7312|LOG INFO|AMM|1 1|Port vlan4000 can not forward BFD traffic
+T216,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00078|nd nbr port mgr|INFO| nd-nbr-port-mgr forwarding down event called for port vlan4000
+T217,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 bfdd <PID> Event|7308|LOG INFO|AMM|1 1|BFD session is down. session id 3 vrf 0 vrf name default op mode async and echo src port vlan4000 dest ip <IP> local state down local diag path down remote state up remote diag no diagnostic
+T218,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-mgmdd ovs|00005|reconnect|INFO|tcp <IP> 6640 waiting 2 seconds before reconnect
+T219,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04090|portd interface handler|INFO|Interface vlan4000 Forwarding State event received with Down !!!
+T220,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04091|portd port handler|INFO|Port vlan4000 PSPO forwarding state changed to DOWN
+T221,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04092|portd common|INFO|Port vlan4000's PSPO forwarding is Down
+T222,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04093|portd common|INFO|Port vlan4000 Removing ip addresses
+T223,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd ovs|00078|nd nbr port mgr|INFO| nd-nbr-port-mgr forwarding down event called for port vlan4000
+T224,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 bfdd ovs|00002|PcapSniffer|INFO|Closing PCAP sniffer <HEX> | vrf 0 interface vlan4000 sniffer id 3 |
+T225,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 pimd ovs|00105|templateDaemonLog|INFO|PortStatus Down for port vlan4000 generated and sent to consumer
+T226,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 kernel vlan4000 left promiscuous mode
+T227,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 pimd ovs|00014|templateDaemonLog|INFO|portStatusEvent - PortRecord Name- vlan4000
+T235,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> Event|2902|LOG INFO|AMM|1 1|<IP> Peer down. error-code Unrecognized error code error-sub-code Unrecognized error subcode. vrf-name default
+T236,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13792|ms idl bfd util|INFO|BFD Session diagnostic is path down
+T237,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13793|ms idl bfd send|INFO|Sending peer address <IP> local address <IP> state 2 ifName diagnostic code 5 remote diagnostic code 0
+T238,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13794|ms idl bfd send|ERR|Dropped 28643 log messages in last 63782 seconds (most recently 63767 seconds ago) due to excessive rate
+T239,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13795|ms idl bfd send|ERR|BFD Stub Pipe is not ready for VRFID 0
+T242,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00151|ms stub bfd recv|INFO|ms bfd stub recv session state BFD Session State change Received Details
+T243,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> �N
+T244,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00154|ms stub bfd util|INFO|BFD-Stub BFD Session state is no diagnostic
+T245,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00155|ms stub bfd util|INFO|BFD-Stub BFD Session Diagnostic state is PATH DOWN
+T246,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00156|ms stub bfd util|INFO|BFD-Stub BFD Session State is down and Remote Diagnostic state is not Admin Down
+T247,Diagnostic_Dump_Generation_Failures,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00157|ms stub bfd util|INFO|BFD-Stub BFD Session Remote Diagnostic state is NO DIAG
+T248,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13796|ms idl rtm|INFO| Nexthop Row Deleted IP Address Nexthop ID 20
+T249,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13797|ms idl rtm|INFO| Nexthop Row Deleted IP Address <IP> Nexthop ID 21
+T252,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|00028|ms stub bfd recv|INFO|BFD-Stub Source Protocol is BGP
+T253,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04097|portd kernel handler|INFO|Interface vlan4000 Doing Admin DOWN for kernel if
+T258,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 portd ovs|01512|portd netlink|INFO|Kernel netdev link DOWN successful for interface vlan4000 in vrf default
+T262,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 vsx-swupdated <PID> <TS>Z|00010|vsxd swupdate ovsdb|INFO|Connection peer DB closed.
+T264,System_Writable_Capability_Query,<TS>+05 30 PSCSCTLEAFB03 portd ovs|04098|portd ovsdb port writable|INFO|portd port on write success Write success operation 7 Port vlan4000
+T265,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13803|ms idl bfd util|INFO|BFD Port Resolution is Success with Interface vlan4000
+T266,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13804|ms idl bfd oper|INFO|ms idl bfd sess ovsrec delete BFD Session Deleted Details
+T267,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13809|ms idl bfd oper|INFO|BGP-BFD Session row deleted with Peer <IP> due to Port IP BFD events
+T268,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00075|nd ovsdb consumer|INFO| nd vsx consumer nd db consumer process vsx islp state change event - Received vsx row islp device state split system primary eventfrom local vsx ovsdb.
+T269,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00076|nd ovsdb consumer|INFO|Configured ISL port is lag256
+T270,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00077|nd ovsdb consumer|INFO| nd vsx consumer nd vsx peer sync thread destroy - Waiting for remote IDL sync thread to destory.
+T271,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00019|nd vsx|INFO| nd vsx peer nd vsx peer sync hdf thread task finalize - Vsx peer idl deinitialize callback function.
+T272,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00020|nd vsx|INFO| nd vsx peer - nd vsx peer sync hdf thread task finalize vsx peer lib ocp deinitialize is done.
+T273,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00021|nd vsx|INFO| nd vsx peer - nd vsx peer sync hdf thread task finalize Remote IDL finalize callback function Post the signal to FSM
+T274,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> <TS>Z|00078|nd ovsdb consumer|INFO| nd vsx consumer nd vsx peer sync thread destroy - VSX Peer IDL thread sucussfully canceled by this islp split system primary state.
+T275,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> Event|6124|LOG INFO|AMM|1 1|Neighbor table VSX peer DB connection terminated
+T283,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 ndmd <PID> Event|6120|LOG INFO|AMM|1 1|VSX neighbor datapath init sync status is neighbor sync in progress
+T285,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 dhcp server adapter <PID> <TS>Z | 119 | dhcp server | INFO | VSX record updated
+T287,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 dhcp server adapter <PID> <TS>Z | 120 | dhcp server | INFO | There is a change in the operational role of VSX
+T288,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 dhcp server adapter <PID> <TS>Z | 121 | dhcp server | INFO | vsx operational role primary
+T291,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 dhcp server adapter <PID> <TS>Z | 123 | dhcp server | INFO | External storage for DHCP Server is not configured..
+T292,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd ovs|00007|reconnect|INFO|tcp <IP> 6640 connecting...
+T293,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 fibapp <PID> debug|LOG ERR|AMM|-|ROUTERESOLUTION|ROUTERESOLUTION IPV4 DESTINATION|Route row not found through skiplist for RR Request having prefix <IP> origin bfd vrf default
+T294,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd <PID> <TS>Z|00008|reconnect|INFO|tcp <IP> 6640 connection attempt timed out
+T295,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd <PID> <TS>Z|00009|reconnect|INFO|tcp <IP> 6640 waiting 2 seconds before reconnect
+T296,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd ovs|00008|reconnect|INFO|tcp <IP> 6640 connection attempt timed out
+T300,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd <PID> <TS>Z|00011|reconnect|INFO|tcp <IP> 6640 connection attempt failed (No route to host)
+T301,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 l2mac-mgrd ovs|00011|reconnect|INFO|tcp <IP> 6640 connection attempt failed (No route to host)
+T302,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 hpe-routing <PID> ovs|13820|ovsdb idl txn|ERR|IDL instance hpe-routing 0 is explicitly writing BGP Neighbor status empty value
+T309,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 vtysh ovs|00401|vtysh lacp cli|INFO|get forwarding state interface 1 1 51 status DOWN layerid 3
+T311,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 vtysh ovs|00660|vtysh vsx cli|ERR|cli show vsx cfg consistency 4427 Config-consistency Failed to get remote-idl connection
+T313,General_System_Logs,<TS>+05 30 PSCSCTLEAFB03 vtysh ovs|00768|vtysh command|ERR|VSX Peer not reachable

@@ -1,0 +1,25 @@
+{
+  "bundle": "HPE-test-bundle-text",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 2.335349906501348,
+  "raw_size": 4975491,
+  "comp_size": 2130512,
+  "raw_details": {
+    "root_cause_entity": "error",
+    "root_cause_type": "error",
+    "recommended_action": "headers: {'access-control-expose-headers': 'X-Debug-Trace-ID', 'cache-control': 'no-cache, no-store, no-transform, must-revalidate, private, max-age=0', 'content-encoding': 'gzip', 'content-type': 'application/json', 'expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'pragma': 'no-cache', 'vary': 'Origin,Accept-Encoding', 'x-accel-expires': '0', 'x-debug-trace-id': 'a2a136f1036952f720f4072575bd3c0e', 'x-endpoint-monthly-call-limit': '1000', 'x-trial-endpoint-call-limit': '20', 'x-trial-endpoint-call-remaining': '19', 'date': 'Wed, 06 May 2026 16:05:26 GMT', 'x-envoy-upstream-service-time': '247', 'server': 'envoy', 'via': '1.1 google', 'alt-svc': 'h3=\":443\"; ma=2592000', 'transfer-encoding': 'chunked'}, status_code: 400, body: {'id': '1f7acafc-5cc5-485e-835d-952cc396caea', 'message': 'too many tokens: size limit exceeded by 19172 tokens. Try using shorter or fewer inputs. The limit for this model is 128000 tokens.'}"
+  },
+  "comp_details": {
+    "root_cause_entity": "error",
+    "root_cause_type": "error",
+    "recommended_action": "headers: {'access-control-expose-headers': 'X-Debug-Trace-ID', 'cache-control': 'no-cache, no-store, no-transform, must-revalidate, private, max-age=0', 'content-encoding': 'gzip', 'content-type': 'application/json', 'expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'pragma': 'no-cache', 'vary': 'Origin,Accept-Encoding', 'x-accel-expires': '0', 'x-debug-trace-id': '508411e32f60db75100e6751e3eb6534', 'x-endpoint-monthly-call-limit': '1000', 'x-trial-endpoint-call-limit': '20', 'x-trial-endpoint-call-remaining': '18', 'date': 'Wed, 06 May 2026 16:05:27 GMT', 'x-envoy-upstream-service-time': '261', 'server': 'envoy', 'via': '1.1 google', 'alt-svc': 'h3=\":443\"; ma=2592000', 'transfer-encoding': 'chunked'}, status_code: 400, body: {'id': '24994b47-7d9e-4497-b318-b0ecfe951e85', 'message': 'too many tokens: size limit exceeded by 24325 tokens. Try using shorter or fewer inputs. The limit for this model is 128000 tokens.'}"
+  },
+  "ground_truth": {
+    "root_cause_entity": "vlan4000",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [],
+    "recommended_action": "Check physical cable",
+    "failure_timestamp": "unknown"
+  }
+}

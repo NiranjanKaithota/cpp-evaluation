@@ -1,0 +1,29 @@
+{
+  "bundle": "bundle_002_port_flap_copper",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 252065.0,
+  "compression_percentage": 100.0,
+  "raw_size": 252065,
+  "comp_size": 0,
+  "raw_details": {
+    "root_cause_entity": "mock_entity",
+    "root_cause_type": "mock_failure",
+    "recommended_action": "mock_action"
+  },
+  "comp_details": {},
+  "ground_truth": {
+    "scenario_name": "port_flap",
+    "description": "Interface 1/1/10 experiencing link flapping",
+    "severity": "high",
+    "failure_timestamp": "2026-04-20T23:17:50.100000",
+    "root_cause_entity": "1/1/10",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "link_state_change",
+      "packet_loss",
+      "connection_timeout"
+    ],
+    "recommended_action": "Check physical cable and transceiver on 1/1/10"
+  }
+}

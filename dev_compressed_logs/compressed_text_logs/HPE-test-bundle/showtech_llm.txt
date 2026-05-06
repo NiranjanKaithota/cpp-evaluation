@@ -1,0 +1,111 @@
+============================================================
+CAUSAL INCIDENT ANALYSIS — PRE-PROCESSED CONTEXT
+============================================================
+Source: showtech.txt
+Records ingested: 616
+Processing time: 614.4ms
+
+────────────────────────────────────────────────────────────
+ROOT CAUSE ANALYSIS
+────────────────────────────────────────────────────────────
+Root cause: SYSTEM_UNKNOWN
+
+Causal chains:
+
+Impact breakdown:
+  • OVS_UNKNOWN: 7 events (cluster #1)
+  • SYSTEM_UNKNOWN: 33 events (cluster #2)
+  • SYSTEM_TIMEOUT_/sec: 1 events (cluster #3)
+
+────────────────────────────────────────────────────────────
+SEMANTIC CLUSTERS
+────────────────────────────────────────────────────────────
+  [1] OVS_UNKNOWN  count=7  span=2000-03-07T00:00:00+00:00 … 2026-03-12T17:10:14.037000+00:00
+  [2] SYSTEM_UNKNOWN  count=33  span=2004-01-09T07:02:09+00:00 … 2026-04-12T06:30:00+00:00
+  [3] SYSTEM_TIMEOUT_/sec  count=1  span=2026-03-12T17:10:02.357000+00:00 … 2026-03-12T17:10:02.357000+00:00
+
+────────────────────────────────────────────────────────────
+TEMPORAL WINDOWS
+────────────────────────────────────────────────────────────
+  W1: 0200-04-12T00:00:00+00:00 → 0200-04-12T00:00:00+00:00  events=1  abstracted=0
+  W2: 0256-04-12T00:00:00+00:00 → 0256-04-12T00:00:00+00:00  events=1  abstracted=0
+  W3: 1900-03-12T22:40:22+00:00 → 1900-03-12T22:40:22+00:00  events=2  abstracted=0
+  W4: 2000-03-07T00:00:00+00:00 → 2000-03-07T00:00:00+00:00  events=2  abstracted=2
+  W5: 2000-08-08T00:00:00+00:00 → 2000-08-08T00:00:00+00:00  events=1  abstracted=0
+  W6: 2004-01-09T07:02:09+00:00 → 2004-01-09T07:02:09+00:00  events=1  abstracted=1
+  W7: 2026-01-31T00:00:00+00:00 → 2026-01-31T00:00:00+00:00  events=1  abstracted=0
+  W8: 2026-02-03T00:00:00+00:00 → 2026-02-03T00:00:00+00:00  events=1  abstracted=0
+  W9: 2026-03-12T17:10:02.357000+00:00 → 2026-03-12T17:10:04.284000+00:00  events=39  abstracted=30
+  W10: 2026-03-12T17:10:10.628000+00:00 → 2026-03-12T17:10:14.173000+00:00  events=11  abstracted=4
+  W11: 2026-04-01T00:00:00+00:00 → 2026-04-01T00:00:00+00:00  events=9  abstracted=0
+  W12: 2026-04-02T00:00:00+00:00 → 2026-04-02T00:00:00+00:00  events=8  abstracted=0
+  W13: 2026-04-03T00:00:00+00:00 → 2026-04-03T00:00:00+00:00  events=4  abstracted=0
+  W14: 2026-04-03T04:35:00+00:00 → 2026-04-03T04:35:00+00:00  events=1  abstracted=1
+  W15: 2026-04-04T00:00:00+00:00 → 2026-04-04T00:00:00+00:00  events=6  abstracted=0
+  W16: 2026-04-05T00:00:00+00:00 → 2026-04-05T00:00:00+00:00  events=4  abstracted=0
+  W17: 2026-04-05T09:18:37+00:00 → 2026-04-05T09:18:37+00:00  events=1  abstracted=1
+  W18: 2026-04-06T00:00:00+00:00 → 2026-04-06T00:00:00+00:00  events=5  abstracted=0
+  W19: 2026-04-12T00:00:00+00:00 → 2026-04-12T00:00:00+00:00  events=2  abstracted=1
+  W20: 2026-04-12T06:30:00+00:00 → 2026-04-12T06:30:00+00:00  events=1  abstracted=1
+  W21: 2026-04-20T00:00:00+00:00 → 2026-04-20T00:00:00+00:00  events=1  abstracted=0
+  W22: 2026-05-05T00:00:00+00:00 → 2026-05-05T00:00:00+00:00  events=1  abstracted=0
+  W23: 2026-07-01T00:00:00+00:00 → 2026-07-01T00:00:00+00:00  events=1  abstracted=0
+
+────────────────────────────────────────────────────────────
+LOG TEMPLATES (458 unique patterns)
+────────────────────────────────────────────────────────────
+  [  37x] <NUM> <NUM> <NUM> <NUM> <NUM> <NUM>
+  [  15x] ESTAB <NUM> <NUM> <IP>:<NUM> <IP>:<NUM> users:(("antigravity",pid=<NUM>,fd=<NUM>))
+  [  12x] root <NUM> <NUM> <NUM> <NUM> <NUM> ? R <NUM>:<NUM> <NUM>:<NUM> [ksoftirqd/<NUM>]
+  [  11x] ESTAB <NUM> <NUM> <IP>:<NUM> <IP>:<NUM> users:(("language_server",pid=<NUM>,fd=<NUM>))
+  [   8x] Core <NUM>: +<NUM>°C (high = +<NUM>°C, crit = +<NUM>°C)
+  [   6x] ESTAB <NUM> <NUM> <IP>:<NUM> <IP>:<NUM> users:(("python",pid=<NUM>,fd=<NUM>))
+  [   6x] LISTEN <NUM> <NUM> <IP>:<NUM> <IP>:* users:(("python",pid=<NUM>,fd=<NUM>))
+  [   4x] ESTAB <NUM> <NUM> <IP>:<NUM> <IP>:<NUM> users:(("ovs-testcontrol",pid=<NUM>,fd=<NUM>))
+  [   4x] ESTAB <NUM> <NUM> <IP>:<NUM> <IP>:<NUM> users:(("ovs-vswitchd",pid=<NUM>,fd=<NUM>))
+  [   4x] ESTAB <NUM> <NUM> [<NUM>:40f2:201b:907d:c5ea:7bb7:e62d:<NUM>]:<NUM> [<NUM>:<NUM>:<NUM>:<NUM>::<NUM>]:<NUM> users:(("language_server",pid=<NUM>,fd=<NUM>))
+  [   3x] tx pkts=<NUM>, bytes=<NUM>, drop=<NUM>, errs=<NUM>, coll=<NUM>
+  [   3x] LISTEN <NUM> <NUM> <IP>:<NUM> <IP>:* users:(("language_server",pid=<NUM>,fd=<NUM>))
+  [   3x] LISTEN <NUM> <NUM> <IP>:<NUM> <IP>:* users:(("antigravity",pid=<NUM>,fd=<NUM>))
+  [   2x] cookie=<HEX>, duration=<NUM>.951s, table=<NUM>, n_packets=<NUM>, n_bytes=<NUM>, idle_timeout=<NUM>, idle_age=<NUM>, priority=<NUM>,arp,in_port=<NUM>,vlan_tci=<HEX>/<HEX>,dl_src=<NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM>,dl_dst=<NUM>:<NUM>:<NUM>:<NUM>:<NUM>:<NUM>,arp_spa=<IP>,arp_tpa=<IP>,arp_op=<NUM> actions=output:<NUM>
+  [   2x] port <NUM>: rx pkts=<NUM>, bytes=<NUM>, drop=<NUM>, errs=<NUM>, frame=<NUM>, over=<NUM>, crc=<NUM>
+  [   2x] LISTEN <NUM> <NUM> <IP>:<NUM> <IP>:* users:(("docker-proxy",pid=<NUM>,fd=<NUM>))
+  [   2x] LISTEN <NUM> <NUM> *:<NUM> *:* users:(("caddy",pid=<NUM>,fd=<NUM>))
+  [   2x] charan <NUM> <NUM> <NUM> <NUM> <NUM> ? Sl <NUM>:<NUM> <NUM>:<NUM> /usr/share/antigravity/antigravity --type=zygote
+  [   1x] nvme-pci-0200
+  [   1x] masks-cache: size:<NUM>
+  [   1x] Show Tech executed on Thu Mar <NUM> <NUM>:<NUM>:<NUM> <NUM>
+  [   1x] Thu Mar <NUM> <NUM>:<NUM>:<NUM> IST <NUM>
+  [   1x] ovs_version: "<NUM>.<NUM>"
+  [   1x] ovs-vsctl (Open vSwitch) <NUM>.<NUM>
+  [   1x] DB Schema <NUM>.<NUM>
+  [   1x] link/ether 1e:9c:a7:<NUM>:9d:4e brd ff:ff:ff:ff:ff:ff
+  [   1x] ANSI_COLOR="<NUM>;<NUM>"
+  [   1x] OFPST_PORT reply (xid=<HEX>): <NUM> ports
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|flow_extract <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|miniflow_malloc <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|hmap_pathological <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|hmap_expand <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|netdev_get_stats <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|txn_unchanged <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|txn_incomplete <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|txn_success <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|poll_create_node <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|poll_zero_timeout <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|rconn_queued <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|rconn_sent <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|seq_change <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|pstream_open <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|stream_open <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|long_poll_interval <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|util_xalloc <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|vconn_open <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|vconn_received <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|vconn_sent <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|netdev_set_policing <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  [   1x] 2026-03-12T17:<NUM>:<NUM>.357Z|<NUM>|coverage(revalidator97)|INFO|netdev_set_hwaddr <NUM>/sec <NUM>/sec <NUM>/sec total: <NUM>
+  ... and 408 more templates
+
+============================================================
+END OF PRE-PROCESSED CONTEXT
+============================================================

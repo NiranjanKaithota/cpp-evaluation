@@ -1,0 +1,29 @@
+{
+  "bundle": "bundle_008_subnet_route_missing",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 245265.0,
+  "compression_percentage": 100.0,
+  "raw_size": 245265,
+  "comp_size": 0,
+  "raw_details": {
+    "root_cause_entity": "mock_entity",
+    "root_cause_type": "mock_failure",
+    "recommended_action": "mock_action"
+  },
+  "comp_details": {},
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 192.168.100.0/24 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-04-20T23:19:07.635000",
+    "root_cause_entity": "192.168.100.0/24",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 192.168.100.0/24"
+  }
+}

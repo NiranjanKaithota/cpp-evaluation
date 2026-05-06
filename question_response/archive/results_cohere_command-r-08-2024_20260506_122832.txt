@@ -1,0 +1,28 @@
+================================================================================
+IMPROVED GENERIC PIPELINE EVALUATION
+================================================================================
+
+Model    : command-r-08-2024
+Backend  : cohere
+Date     : 2026-05-06 12:29:08
+Questions: 14 across 6 categories
+
+================================================================================
+LOG: combined_HPE-test-bundle
+================================================================================
+Overall Score: 82.0%
+Context: ~6,000 tokens
+
+Category Scores:
+  causal_reasoning.............................   80.0%
+  context_retrieval............................   80.0%
+  negative_evidence............................   92.0%
+  root_cause_attribution.......................   78.6%
+  semantic_equivalence.........................   82.5%
+  temporal_ordering............................   85.0%
+
+Detailed Results:
+--------------------------------------------------------------------------------
+
+[RC-Q1] ⚠️ PARTIAL (Score: 0.80, Weight: 0.20)
+Category  : root_cause_attribution

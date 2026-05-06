@@ -10,7 +10,7 @@ env/
 
 # Application output logs / directories
 compressed_logs/
-inference/
+# inference/
 inference-copy/
 data/
 evaluation_results.json
