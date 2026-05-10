@@ -621,7 +621,7 @@ def main(compressed_files: List[str] = None):
     # ═══════════════════════════════════════════════════════════════════════
     
     # JSON results
-    out_path = EVAL_DIR / f"results_{backend_tag}_{timestamp}.json"
+    out_path = EVAL_DIR / f"results_{timestamp}.json"
     with open(out_path, "w") as f:
         json.dump({
             "model": MODEL,
@@ -638,7 +638,7 @@ def main(compressed_files: List[str] = None):
     print(f"\n✓ Results saved → {out_path}")
     
     # Human-readable text report
-    txt_path = EVAL_DIR / f"results_{backend_tag}_{timestamp}.txt"
+    txt_path = EVAL_DIR / f"results_{timestamp}.txt"
     with open(txt_path, "w", encoding='utf-8') as f:
         f.write("="*80 + "\n")
         f.write("IMPROVED GENERIC PIPELINE EVALUATION\n")

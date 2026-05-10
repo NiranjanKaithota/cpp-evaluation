@@ -3,6 +3,7 @@ import os
 from time import time
 import warnings
 from pathlib import Path
+import json
 
 warnings.filterwarnings('ignore', category=FutureWarning)
 os.environ["TRANSFORMERS_VERBOSITY"] = "error"
@@ -12,6 +13,35 @@ from evaluation.compression_wrapper import CompressionWrapper
 from evaluation.llm_wrapper import LLMEngine
 from evaluation.metrics import calculate_compression_ratio, evaluate_rcm, get_file_size
 from evaluation.report import ReportGenerator
+
+def load_json_context(bundle_name):
+    """Bulletproof loader for the single incident_context.json file."""
+    base_dir = Path("dev_compressed_logs")
+    json_file = None
+    
+    # Recursively search for the bundle folder, then check for the JSON file inside it
+    for path in base_dir.rglob(bundle_name):
+        if path.is_dir():
+            potential_file = path / "incident_context.json"
+            if potential_file.exists():
+                json_file = potential_file
+                break
+                
+    compressed_text = ""
+    
+    if json_file:
+        print(f"  -> [SUCCESS] Found JSON context at: {json_file}")
+        try:
+            with open(json_file, "r", encoding="utf-8") as f:
+                # Load and re-dump the JSON to ensure it is valid and formatted cleanly for the LLM
+                data = json.load(f)
+                compressed_text = f"--- Source: incident_context.json ---\n{json.dumps(data, indent=2)}\n"
+        except Exception as e:
+            print(f"  [ERROR] Failed to read or parse {json_file}: {e}")
+    else:
+        print(f"  [ERROR] Could not find 'incident_context.json' inside any folder named '{bundle_name}'")
+        
+    return compressed_text
 
 def load_graph_context(bundle_name):
     """Loads and concatenates the 3 graph pipeline files into a single context string."""
@@ -79,7 +109,8 @@ def main():
     parser.add_argument("--use-existing-compressed", action="store_true", help="Bypass CompressionWrapper, load existing compressed files directly")
     
     # Target Toggles
-    parser.add_argument("--pipeline-type", type=str, default="text", choices=["text", "graph"], help="Type of compression output")
+    # Update choices to include "json"
+    parser.add_argument("--pipeline-type", type=str, default="text", choices=["text", "graph", "json"], help="Type of compression output")
     parser.add_argument("--bundle", type=str, default=None, help="Name of a specific bundle to run")
     
     args = parser.parse_args()
@@ -140,6 +171,8 @@ def main():
                     )
             elif args.pipeline_type == "graph":
                 compressed_text = load_graph_context(bundle["name"])
+            elif args.pipeline_type == "json":                 
+                compressed_text = load_json_context(bundle["name"])
                 
             if not compressed_text:
                 print(f"  [WARNING] Compressed context is empty for {bundle['name']}. Files may be missing.")

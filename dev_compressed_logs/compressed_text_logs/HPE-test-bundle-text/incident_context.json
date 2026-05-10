@@ -1,0 +1,8706 @@
+{
+  "meta": {
+    "pipeline_version": "3.1",
+    "generated_at": "2026-05-06T15:49:55",
+    "source_summary_path": "/home/charan/Desktop/CPP/pipeline-output-real/window_summaries.jsonl",
+    "total_windows": 709,
+    "burst_windows": 2,
+    "normal_windows": 707,
+    "note": "This file is the complete compressed representation of the support bundle. Feed it directly to any LLM to ask questions about the incident."
+  },
+  "incident_summary": {
+    "time_range": "2026-02-25T00:24 \u2192 2026-02-25T12:13",
+    "total_events": 310865,
+    "total_errors": 11637,
+    "total_warnings": 46836,
+    "total_windows": 709,
+    "burst_windows": 2,
+    "dominant_anomaly": "GENERIC_ERROR surge (+967% in burst windows vs normal; burst_avg=128 vs baseline=12)"
+  },
+  "device_info": {
+    "firmware": "LL.10.16.1010",
+    "platform": "HPE Aruba AOS-CX",
+    "hostname": "QSFP28"
+  },
+  "global_event_dist": {
+    "AUDIT_API_ACCESS": {
+      "total": 153083,
+      "pct_of_all": 49.2,
+      "normal_avg_per_window": 212.6,
+      "burst_avg": 1382,
+      "deviation_pct": 550.0,
+      "severity": "critical",
+      "component": "auditd"
+    },
+    "KERNEL_INTERRUPT": {
+      "total": 83870,
+      "pct_of_all": 27.0,
+      "normal_avg_per_window": 118.3,
+      "burst_avg": 115,
+      "deviation_pct": -3.0,
+      "severity": "normal",
+      "component": "kernel"
+    },
+    "HTTP_REQUEST": {
+      "total": 39864,
+      "pct_of_all": 12.8,
+      "normal_avg_per_window": 56.2,
+      "burst_avg": 58,
+      "deviation_pct": 3.0,
+      "severity": "normal",
+      "component": "nginx"
+    },
+    "GENERIC_INFO": {
+      "total": 15646,
+      "pct_of_all": 5.0,
+      "normal_avg_per_window": 21.7,
+      "burst_avg": 146.5,
+      "deviation_pct": 575.0,
+      "severity": "critical",
+      "component": "system"
+    },
+    "GENERIC_ERROR": {
+      "total": 8706,
+      "pct_of_all": 2.8,
+      "normal_avg_per_window": 12.0,
+      "burst_avg": 127.5,
+      "deviation_pct": 967.0,
+      "severity": "critical",
+      "component": "system"
+    },
+    "KERNEL_RATE_LIMIT": {
+      "total": 8387,
+      "pct_of_all": 2.7,
+      "normal_avg_per_window": 11.8,
+      "burst_avg": 11.5,
+      "deviation_pct": -3.0,
+      "severity": "normal",
+      "component": "kernel"
+    },
+    "METRIC_WRITE": {
+      "total": 458,
+      "pct_of_all": 0.1,
+      "normal_avg_per_window": 52.5,
+      "burst_avg": 176.5,
+      "deviation_pct": 236.0,
+      "severity": "high",
+      "component": "metricsd"
+    },
+    "SERVICE_RESTART": {
+      "total": 235,
+      "pct_of_all": 0.1,
+      "normal_avg_per_window": 2.9,
+      "burst_avg": null,
+      "deviation_pct": 0.0,
+      "severity": "normal",
+      "component": "systemd"
+    },
+    "SERVICE_START": {
+      "total": 152,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 2.1,
+      "burst_avg": null,
+      "deviation_pct": 0.0,
+      "severity": "normal",
+      "component": "systemd"
+    },
+    "SERVICE_STOP": {
+      "total": 147,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 2.0,
+      "burst_avg": null,
+      "deviation_pct": 0.0,
+      "severity": "normal",
+      "component": "systemd"
+    },
+    "GENERIC_WARN": {
+      "total": 94,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 8.6,
+      "burst_avg": 4,
+      "deviation_pct": -53.0,
+      "severity": "normal",
+      "component": "system"
+    },
+    "KERNEL_INTERFACE_UP": {
+      "total": 74,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 1,
+      "burst_avg": null,
+      "deviation_pct": 0.0,
+      "severity": "normal",
+      "component": "kernel"
+    },
+    "PORT_LINK_DOWN": {
+      "total": 74,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 18,
+      "burst_avg": 2,
+      "deviation_pct": -89.0,
+      "severity": "normal",
+      "component": "portd"
+    },
+    "PORT_LINK_UP": {
+      "total": 19,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 6.3,
+      "burst_avg": null,
+      "deviation_pct": 0.0,
+      "severity": "normal",
+      "component": "portd"
+    },
+    "OVS_CONNECT": {
+      "total": 19,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 19,
+      "burst_avg": null,
+      "deviation_pct": 0.0,
+      "severity": "normal",
+      "component": "ovs"
+    },
+    "VLAN_PORT_ADD": {
+      "total": 12,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 1.5,
+      "burst_avg": 4.5,
+      "deviation_pct": 200.0,
+      "severity": "high",
+      "component": "vland"
+    },
+    "OVS_FLOW_ADD": {
+      "total": 10,
+      "pct_of_all": 0.0,
+      "normal_avg_per_window": 3.3,
+      "burst_avg": null,
+      "deviation_pct": 0.0,
+      "severity": "normal",
+      "component": "ovs"
+    }
+  },
+  "anomaly_signals": [
+    {
+      "event_type": "GENERIC_ERROR",
+      "total_count": 8706,
+      "burst_avg": 127.5,
+      "normal_baseline": 12.0,
+      "deviation_pct": 967.0,
+      "in_burst": true,
+      "severity": "critical",
+      "component": "system"
+    },
+    {
+      "event_type": "GENERIC_INFO",
+      "total_count": 15646,
+      "burst_avg": 146.5,
+      "normal_baseline": 21.7,
+      "deviation_pct": 575.0,
+      "in_burst": true,
+      "severity": "critical",
+      "component": "system"
+    },
+    {
+      "event_type": "AUDIT_API_ACCESS",
+      "total_count": 153083,
+      "burst_avg": 1382,
+      "normal_baseline": 212.6,
+      "deviation_pct": 550.0,
+      "in_burst": true,
+      "severity": "critical",
+      "component": "auditd"
+    },
+    {
+      "event_type": "METRIC_WRITE",
+      "total_count": 458,
+      "burst_avg": 176.5,
+      "normal_baseline": 52.5,
+      "deviation_pct": 236.0,
+      "in_burst": true,
+      "severity": "high",
+      "component": "metricsd"
+    },
+    {
+      "event_type": "VLAN_PORT_ADD",
+      "total_count": 12,
+      "burst_avg": 4.5,
+      "normal_baseline": 1.5,
+      "deviation_pct": 200.0,
+      "in_burst": true,
+      "severity": "high",
+      "component": "vland"
+    },
+    {
+      "event_type": "HTTP_REQUEST",
+      "total_count": 39864,
+      "burst_avg": 58,
+      "normal_baseline": 56.2,
+      "deviation_pct": 3.0,
+      "in_burst": true,
+      "severity": "normal",
+      "component": "nginx"
+    },
+    {
+      "event_type": "SERVICE_RESTART",
+      "total_count": 235,
+      "burst_avg": null,
+      "normal_baseline": 2.9,
+      "deviation_pct": 0.0,
+      "in_burst": false,
+      "severity": "normal",
+      "component": "systemd"
+    },
+    {
+      "event_type": "SERVICE_START",
+      "total_count": 152,
+      "burst_avg": null,
+      "normal_baseline": 2.1,
+      "deviation_pct": 0.0,
+      "in_burst": false,
+      "severity": "normal",
+      "component": "systemd"
+    },
+    {
+      "event_type": "SERVICE_STOP",
+      "total_count": 147,
+      "burst_avg": null,
+      "normal_baseline": 2.0,
+      "deviation_pct": 0.0,
+      "in_burst": false,
+      "severity": "normal",
+      "component": "systemd"
+    },
+    {
+      "event_type": "KERNEL_INTERFACE_UP",
+      "total_count": 74,
+      "burst_avg": null,
+      "normal_baseline": 1,
+      "deviation_pct": 0.0,
+      "in_burst": false,
+      "severity": "normal",
+      "component": "kernel"
+    },
+    {
+      "event_type": "PORT_LINK_UP",
+      "total_count": 19,
+      "burst_avg": null,
+      "normal_baseline": 6.3,
+      "deviation_pct": 0.0,
+      "in_burst": false,
+      "severity": "normal",
+      "component": "portd"
+    },
+    {
+      "event_type": "OVS_CONNECT",
+      "total_count": 19,
+      "burst_avg": null,
+      "normal_baseline": 19,
+      "deviation_pct": 0.0,
+      "in_burst": false,
+      "severity": "normal",
+      "component": "ovs"
+    },
+    {
+      "event_type": "KERNEL_INTERRUPT",
+      "total_count": 83870,
+      "burst_avg": 115,
+      "normal_baseline": 118.3,
+      "deviation_pct": -3.0,
+      "in_burst": true,
+      "severity": "normal",
+      "component": "kernel"
+    },
+    {
+      "event_type": "KERNEL_RATE_LIMIT",
+      "total_count": 8387,
+      "burst_avg": 11.5,
+      "normal_baseline": 11.8,
+      "deviation_pct": -3.0,
+      "in_burst": true,
+      "severity": "normal",
+      "component": "kernel"
+    },
+    {
+      "event_type": "GENERIC_WARN",
+      "total_count": 94,
+      "burst_avg": 4,
+      "normal_baseline": 8.6,
+      "deviation_pct": -53.0,
+      "in_burst": true,
+      "severity": "normal",
+      "component": "system"
+    },
+    {
+      "event_type": "PORT_LINK_DOWN",
+      "total_count": 74,
+      "burst_avg": 2,
+      "normal_baseline": 18,
+      "deviation_pct": -89.0,
+      "in_burst": true,
+      "severity": "normal",
+      "component": "portd"
+    }
+  ],
+  "error_context": [
+    {
+      "event_type": "GENERIC_ERROR",
+      "severity": "critical",
+      "services": {
+        "hpe-routing": 4216,
+        "hpe-restd": 4101,
+        "vtysh": 140,
+        "-vtysh": 125,
+        "l2mac-mgrd": 53
+      },
+      "sample_messages": [
+        "Unknown wait done table request received , table = Prefix_List",
+        "Unknown wait done table request received , table = Neighbor",
+        "Unknown wait done table request received , table = BGP_Router",
+        "debug|LOG_ERR|Error Serving HTTP Request [/rest/v10.16/system/vrfs/*/ospf_routers/*]: &{ 404 <nil>}",
+        "debug|LOG_ERR|Error Serving HTTP Request [/rest/v10.16/system/acls/*,ipv4?depth=2]: &{ 404 <nil>}"
+      ]
+    },
+    {
+      "event_type": "GENERIC_INFO",
+      "severity": "critical",
+      "services": {
+        "statsmond": 8506,
+        "hpe-routing": 5179,
+        "hpe-restd": 300,
+        "hhmd": 284,
+        "l2mac-mgrd": 266
+      }
+    },
+    {
+      "event_type": "AUDIT_API_ACCESS",
+      "severity": "critical",
+      "services": {
+        "acctsyslogd": 151788,
+        "vtysh": 648,
+        "-vtysh": 639,
+        "auditd": 8
+      },
+      "sample_messages": [
+        "AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/interfaces?depth=2&attr",
+        "AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/subsystems?attributes=a",
+        "AUDIT|CLI \"show events -s warn\" executed by user 'admin' from address '172.16.14.232' through SSH session which resulted in success at timezone Asia/C",
+        "AUDIT|CLI \"show qos threshold-profile\" executed by user 'admin' from address '172.16.14.232' through SSH session which resulted in success at timezone",
+        "AUDIT|CLI \"show interface transceiver threshold-violations\" executed by user 'admin' from address '172.16.14.232' through SSH session which resulted i"
+      ]
+    },
+    {
+      "event_type": "METRIC_WRITE",
+      "severity": "high",
+      "services": {
+        "-vtysh": 226,
+        "vtysh": 226,
+        "ntp-mgrd": 4,
+        "hpe-entityd": 2
+      },
+      "sample_messages": [
+        "daemon :hpe-pvstd failed to capture diag dump , rc:1",
+        "daemon :hpe-lpd failed to capture diag dump , rc:1",
+        "daemon :hpe-mvrpd failed to capture diag dump , rc:1",
+        "daemon :hpe-udldd failed to capture diag dump , rc:1",
+        "daemon :hpe-ipsecd failed to capture diag dump , rc:1"
+      ]
+    },
+    {
+      "event_type": "VLAN_PORT_ADD",
+      "severity": "high",
+      "services": {
+        "vland": 12,
+        "lldpd": 2
+      },
+      "sample_messages": [
+        "IDL instance [vland_0] is explicitly writing [VLAN:oper_state] empty value"
+      ]
+    },
+    {
+      "event_type": "HTTP_REQUEST",
+      "severity": "normal",
+      "services": {
+        "nginx": 39864
+      },
+      "sample_messages": [
+        "2026/02/25 05:30:47 [warn] 4776#4776: *223534 using uninitialized \"script_csp\" variable while reading response header from upstream, client: ::ffff:10",
+        "2026/02/25 05:30:47 [warn] 4776#4776: *223534 using uninitialized \"font_csp\" variable while reading response header from upstream, client: ::ffff:10.2",
+        "2026/02/25 05:30:47 [warn] 4776#4776: *223534 using uninitialized \"style_csp\" variable while reading response header from upstream, client: ::ffff:10.",
+        "2026/02/25 05:30:47 [warn] 4776#4776: *223534 using uninitialized \"image_csp\" variable while reading response header from upstream, client: ::ffff:10.",
+        "2026/02/25 05:30:47 [warn] 4776#4776: *223534 using uninitialized \"connect_csp\" variable while reading response header from upstream, client: ::ffff:1"
+      ]
+    },
+    {
+      "event_type": "SERVICE_RESTART",
+      "severity": "normal",
+      "services": {
+        "systemd": 227,
+        "rsyslogd": 8
+      }
+    },
+    {
+      "event_type": "SERVICE_START",
+      "severity": "normal",
+      "services": {
+        "systemd": 152
+      }
+    },
+    {
+      "event_type": "SERVICE_STOP",
+      "severity": "normal",
+      "services": {
+        "systemd": 150,
+        "hpe-vsxd": 2
+      }
+    },
+    {
+      "event_type": "KERNEL_INTERFACE_UP",
+      "severity": "normal",
+      "services": {
+        "kernel": 78
+      }
+    },
+    {
+      "event_type": "PORT_LINK_UP",
+      "severity": "normal",
+      "services": {
+        "portd": 18,
+        "intfd": 2
+      }
+    },
+    {
+      "event_type": "OVS_CONNECT",
+      "severity": "normal",
+      "services": {
+        "ovsdb-server": 19
+      },
+      "sample_messages": [
+        "tcp:169.254.0.2:34572: receive error, session: REMOTE, error: Software caused connection abort",
+        "tcp:169.254.0.2:34522: receive error, session: pimd, error: Software caused connection abort",
+        "tcp:169.254.0.2:34582: receive error, session: pim-bidid, error: Software caused connection abort",
+        "tcp:169.254.0.2:34596: receive error, session: vsx-swupdated, error: Software caused connection abort",
+        "tcp:169.254.0.2:34606: send error: Software caused connection abort"
+      ]
+    },
+    {
+      "event_type": "KERNEL_INTERRUPT",
+      "severity": "normal",
+      "services": {
+        "kernel": 83870
+      }
+    },
+    {
+      "event_type": "KERNEL_RATE_LIMIT",
+      "severity": "normal",
+      "services": {
+        "kernel": 8387
+      },
+      "sample_messages": [
+        "net_ratelimit: 131 callbacks suppressed",
+        "net_ratelimit: 123 callbacks suppressed",
+        "net_ratelimit: 156 callbacks suppressed",
+        "net_ratelimit: 119 callbacks suppressed",
+        "net_ratelimit: 136 callbacks suppressed"
+      ]
+    },
+    {
+      "event_type": "GENERIC_WARN",
+      "severity": "normal",
+      "services": {
+        "ip": 30,
+        "switchd_agent0": 15,
+        "switchd_agent1": 15,
+        "lacpd": 12,
+        "l2mac-mgrd": 3
+      },
+      "sample_messages": [
+        "2026-02-25T06:04:11Z|00020|idl_scheduler|WARN|Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "2026-02-25T06:04:16Z|00021|idl_scheduler|WARN|Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "2026-02-25T06:04:19Z|00022|idl_scheduler|WARN|Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "2026-02-25T06:04:20Z|00023|idl_scheduler|WARN|Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!"
+      ]
+    },
+    {
+      "event_type": "PORT_LINK_DOWN",
+      "severity": "normal",
+      "services": {
+        "portd": 62,
+        "hpe-vsxd": 6,
+        "intfd": 4,
+        "vtysh": 2
+      }
+    }
+  ],
+  "dominant_causal_path": [
+    "AUDIT_API_ACCESS",
+    "KERNEL_INTERRUPT",
+    "HTTP_REQUEST",
+    "GENERIC_INFO",
+    "GENERIC_ERROR",
+    "KERNEL_RATE_LIMIT",
+    "SERVICE_RESTART"
+  ],
+  "causal_edges": [
+    {
+      "from": "AUDIT_API_ACCESS",
+      "to": "KERNEL_INTERRUPT",
+      "confidence": 1.0,
+      "type": "dominant"
+    },
+    {
+      "from": "AUDIT_API_ACCESS",
+      "to": "HTTP_REQUEST",
+      "confidence": 0.48,
+      "type": "moderate"
+    },
+    {
+      "from": "KERNEL_INTERRUPT",
+      "to": "HTTP_REQUEST",
+      "confidence": 0.48,
+      "type": "moderate"
+    },
+    {
+      "from": "AUDIT_API_ACCESS",
+      "to": "GENERIC_INFO",
+      "confidence": 0.19,
+      "type": "weak"
+    },
+    {
+      "from": "KERNEL_INTERRUPT",
+      "to": "GENERIC_INFO",
+      "confidence": 0.18,
+      "type": "weak"
+    },
+    {
+      "from": "HTTP_REQUEST",
+      "to": "GENERIC_INFO",
+      "confidence": 0.16,
+      "type": "weak"
+    },
+    {
+      "from": "AUDIT_API_ACCESS",
+      "to": "GENERIC_ERROR",
+      "confidence": 0.11,
+      "type": "weak"
+    },
+    {
+      "from": "GENERIC_INFO",
+      "to": "GENERIC_ERROR",
+      "confidence": 0.11,
+      "type": "weak"
+    },
+    {
+      "from": "KERNEL_INTERRUPT",
+      "to": "GENERIC_ERROR",
+      "confidence": 0.1,
+      "type": "weak"
+    },
+    {
+      "from": "AUDIT_API_ACCESS",
+      "to": "KERNEL_RATE_LIMIT",
+      "confidence": 0.1,
+      "type": "weak"
+    },
+    {
+      "from": "KERNEL_INTERRUPT",
+      "to": "KERNEL_RATE_LIMIT",
+      "confidence": 0.1,
+      "type": "weak"
+    },
+    {
+      "from": "HTTP_REQUEST",
+      "to": "KERNEL_RATE_LIMIT",
+      "confidence": 0.1,
+      "type": "weak"
+    },
+    {
+      "from": "GENERIC_INFO",
+      "to": "KERNEL_RATE_LIMIT",
+      "confidence": 0.1,
+      "type": "weak"
+    },
+    {
+      "from": "HTTP_REQUEST",
+      "to": "GENERIC_ERROR",
+      "confidence": 0.1,
+      "type": "weak"
+    },
+    {
+      "from": "GENERIC_ERROR",
+      "to": "KERNEL_RATE_LIMIT",
+      "confidence": 0.02,
+      "type": "weak"
+    },
+    {
+      "from": "GENERIC_INFO",
+      "to": "HTTP_REQUEST",
+      "confidence": 0.01,
+      "type": "weak"
+    }
+  ],
+  "component_interactions": [
+    {
+      "source": "auditd",
+      "event_type": "AUDIT_API_ACCESS",
+      "effect": "REST API audit log entries"
+    },
+    {
+      "source": "kernel",
+      "event_type": "KERNEL_INTERRUPT",
+      "effect": "RX interrupt / NAPI polling pressure"
+    },
+    {
+      "source": "nginx",
+      "event_type": "HTTP_REQUEST",
+      "effect": "HTTP/REST API traffic"
+    },
+    {
+      "source": "system",
+      "event_type": "GENERIC_INFO",
+      "effect": "generic info"
+    },
+    {
+      "source": "systemd",
+      "event_type": "SERVICE_RESTART",
+      "effect": "daemon/service restarts"
+    }
+  ],
+  "system_state_summary": {
+    "overall_health": "operational",
+    "bgp": {
+      "status": "stable",
+      "local_as": "66504",
+      "peer_count": "5",
+      "neighbors": []
+    },
+    "interfaces": {
+      "status": "all up",
+      "total_up": 0,
+      "total_down": 0,
+      "up_list": [],
+      "down_list": []
+    },
+    "vlans": [
+      "1     DEFAULT_VLAN_1",
+      "Source",
+      "Protocols applicable for PVLAN CPURx rul",
+      "1      DEFAULT_VLAN_1    -",
+      "1      DEFAULT_VLAN_1    0"
+    ],
+    "routing_sections": [
+      "Route Refresh                        Yes             Yes",
+      "Route Refresh                        Yes             Yes",
+      "Route Refresh                        Yes             Yes",
+      "Route Refresh                        Yes             Yes",
+      "Route Refresh                        Yes             No"
+    ],
+    "arp_tables": [
+      "ip netns exec VRF_1 ip -4 neighbor show",
+      "ip netns exec VRF_1 ip -6 neighbor show",
+      "ip netns exec mirror_ns ip -4 neighbor show",
+      "ip netns exec mirror_ns ip -6 neighbor show",
+      "ip netns exec nonet ip -4 neighbor show"
+    ],
+    "ovs": "normal",
+    "hardware_faults": "none detected",
+    "showtech_sections": 3856,
+    "components_present": [
+      "device",
+      "vlan",
+      "log",
+      "bgpd",
+      "config",
+      "interface",
+      "routing",
+      "switching",
+      "arp",
+      "namespace"
+    ]
+  },
+  "entity_summary": {
+    "top_ips": [
+      {
+        "ip": "10.233.131.22",
+        "mentions": 190373
+      },
+      {
+        "ip": "10.233.255.91",
+        "mentions": 38447
+      },
+      {
+        "ip": "172.16.14.232",
+        "mentions": 640
+      },
+      {
+        "ip": "169.254.0.2",
+        "mentions": 523
+      },
+      {
+        "ip": "10.233.128.78",
+        "mentions": 11
+      },
+      {
+        "ip": "10.233.136.21",
+        "mentions": 7
+      },
+      {
+        "ip": "10.233.128.79",
+        "mentions": 6
+      },
+      {
+        "ip": "10.233.128.68",
+        "mentions": 5
+      },
+      {
+        "ip": "10.233.136.114",
+        "mentions": 1
+      },
+      {
+        "ip": "10.233.136.121",
+        "mentions": 1
+      }
+    ],
+    "top_services": [
+      {
+        "service": "acctsyslogd",
+        "events": 151788
+      },
+      {
+        "service": "nginx",
+        "events": 39864
+      },
+      {
+        "service": "statsmond",
+        "events": 8506
+      },
+      {
+        "service": "hpe-routing",
+        "events": 4216
+      },
+      {
+        "service": "hpe-restd",
+        "events": 4101
+      },
+      {
+        "service": "hhmd",
+        "events": 284
+      },
+      {
+        "service": "-vtysh",
+        "events": 226
+      },
+      {
+        "service": "systemd",
+        "events": 152
+      },
+      {
+        "service": "ip",
+        "events": 30
+      },
+      {
+        "service": "ovsdb-server",
+        "events": 19
+      }
+    ]
+  },
+  "all_windows": {
+    "schema": [
+      "window",
+      "time",
+      "burst",
+      "total",
+      "errors",
+      "warns",
+      "top_event"
+    ],
+    "description": "One row per time window. Schema: [window_id, time, is_burst, total_events, errors, warns, dominant_event_type]",
+    "total": 709,
+    "rows": [
+      [
+        "W0001",
+        "2026-02-25T00:24",
+        false,
+        436,
+        16,
+        71,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0002",
+        "2026-02-25T00:25",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0003",
+        "2026-02-25T00:26",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0004",
+        "2026-02-25T00:27",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0005",
+        "2026-02-25T00:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0006",
+        "2026-02-25T00:29",
+        false,
+        442,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0007",
+        "2026-02-25T00:30",
+        false,
+        447,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0008",
+        "2026-02-25T00:31",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0009",
+        "2026-02-25T00:32",
+        false,
+        396,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0010",
+        "2026-02-25T00:33",
+        false,
+        365,
+        14,
+        39,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0011",
+        "2026-02-25T00:34",
+        false,
+        442,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0012",
+        "2026-02-25T00:35",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0013",
+        "2026-02-25T00:36",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0014",
+        "2026-02-25T00:37",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0015",
+        "2026-02-25T00:38",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0016",
+        "2026-02-25T00:39",
+        false,
+        426,
+        15,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0017",
+        "2026-02-25T00:40",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0018",
+        "2026-02-25T00:41",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0019",
+        "2026-02-25T00:42",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0020",
+        "2026-02-25T00:43",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0021",
+        "2026-02-25T00:44",
+        false,
+        446,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0022",
+        "2026-02-25T00:45",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0023",
+        "2026-02-25T00:46",
+        false,
+        413,
+        13,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0024",
+        "2026-02-25T00:47",
+        false,
+        369,
+        13,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0025",
+        "2026-02-25T00:48",
+        false,
+        423,
+        16,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0026",
+        "2026-02-25T00:49",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0027",
+        "2026-02-25T00:50",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0028",
+        "2026-02-25T00:51",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0029",
+        "2026-02-25T00:52",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0030",
+        "2026-02-25T00:53",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0031",
+        "2026-02-25T00:54",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0032",
+        "2026-02-25T00:55",
+        false,
+        445,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0033",
+        "2026-02-25T00:56",
+        false,
+        430,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0034",
+        "2026-02-25T00:57",
+        false,
+        438,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0035",
+        "2026-02-25T00:58",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0036",
+        "2026-02-25T00:59",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0037",
+        "2026-02-25T01:00",
+        false,
+        399,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0038",
+        "2026-02-25T01:01",
+        false,
+        368,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0039",
+        "2026-02-25T01:02",
+        false,
+        429,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0040",
+        "2026-02-25T01:03",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0041",
+        "2026-02-25T01:04",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0042",
+        "2026-02-25T01:05",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0043",
+        "2026-02-25T01:06",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0044",
+        "2026-02-25T01:07",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0045",
+        "2026-02-25T01:08",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0046",
+        "2026-02-25T01:09",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0047",
+        "2026-02-25T01:10",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0048",
+        "2026-02-25T01:11",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0049",
+        "2026-02-25T01:12",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0050",
+        "2026-02-25T01:13",
+        false,
+        429,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0051",
+        "2026-02-25T01:14",
+        false,
+        422,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0052",
+        "2026-02-25T01:15",
+        false,
+        352,
+        13,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0053",
+        "2026-02-25T01:16",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0054",
+        "2026-02-25T01:17",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0055",
+        "2026-02-25T01:18",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0056",
+        "2026-02-25T01:19",
+        false,
+        431,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0057",
+        "2026-02-25T01:20",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0058",
+        "2026-02-25T01:21",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0059",
+        "2026-02-25T01:22",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0060",
+        "2026-02-25T01:23",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0061",
+        "2026-02-25T01:24",
+        false,
+        450,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0062",
+        "2026-02-25T01:25",
+        false,
+        428,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0063",
+        "2026-02-25T01:26",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0064",
+        "2026-02-25T01:27",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0065",
+        "2026-02-25T01:28",
+        false,
+        422,
+        14,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0066",
+        "2026-02-25T01:29",
+        false,
+        372,
+        13,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0067",
+        "2026-02-25T01:30",
+        false,
+        422,
+        15,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0068",
+        "2026-02-25T01:31",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0069",
+        "2026-02-25T01:32",
+        false,
+        444,
+        18,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0070",
+        "2026-02-25T01:33",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0071",
+        "2026-02-25T01:34",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0072",
+        "2026-02-25T01:35",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0073",
+        "2026-02-25T01:36",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0074",
+        "2026-02-25T01:37",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0075",
+        "2026-02-25T01:38",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0076",
+        "2026-02-25T01:39",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0077",
+        "2026-02-25T01:40",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0078",
+        "2026-02-25T01:41",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0079",
+        "2026-02-25T01:42",
+        false,
+        392,
+        12,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0080",
+        "2026-02-25T01:43",
+        false,
+        369,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0081",
+        "2026-02-25T01:44",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0082",
+        "2026-02-25T01:45",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0083",
+        "2026-02-25T01:46",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0084",
+        "2026-02-25T01:47",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0085",
+        "2026-02-25T01:48",
+        false,
+        432,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0086",
+        "2026-02-25T01:49",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0087",
+        "2026-02-25T01:50",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0088",
+        "2026-02-25T01:51",
+        false,
+        435,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0089",
+        "2026-02-25T01:52",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0090",
+        "2026-02-25T01:53",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0091",
+        "2026-02-25T01:54",
+        false,
+        438,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0092",
+        "2026-02-25T01:55",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0093",
+        "2026-02-25T01:56",
+        false,
+        404,
+        13,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0094",
+        "2026-02-25T01:57",
+        false,
+        367,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0095",
+        "2026-02-25T01:58",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0096",
+        "2026-02-25T01:59",
+        false,
+        436,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0097",
+        "2026-02-25T02:00",
+        false,
+        434,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0098",
+        "2026-02-25T02:01",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0099",
+        "2026-02-25T02:02",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0100",
+        "2026-02-25T02:03",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0101",
+        "2026-02-25T02:04",
+        false,
+        438,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0102",
+        "2026-02-25T02:05",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0103",
+        "2026-02-25T02:06",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0104",
+        "2026-02-25T02:07",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0105",
+        "2026-02-25T02:08",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0106",
+        "2026-02-25T02:09",
+        false,
+        433,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0107",
+        "2026-02-25T02:10",
+        false,
+        397,
+        12,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0108",
+        "2026-02-25T02:11",
+        false,
+        369,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0109",
+        "2026-02-25T02:12",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0110",
+        "2026-02-25T02:13",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0111",
+        "2026-02-25T02:14",
+        false,
+        438,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0112",
+        "2026-02-25T02:15",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0113",
+        "2026-02-25T02:16",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0114",
+        "2026-02-25T02:17",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0115",
+        "2026-02-25T02:18",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0116",
+        "2026-02-25T02:19",
+        false,
+        460,
+        16,
+        75,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0117",
+        "2026-02-25T02:20",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0118",
+        "2026-02-25T02:21",
+        false,
+        434,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0119",
+        "2026-02-25T02:22",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0120",
+        "2026-02-25T02:23",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0121",
+        "2026-02-25T02:24",
+        false,
+        419,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0122",
+        "2026-02-25T02:25",
+        false,
+        356,
+        15,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0123",
+        "2026-02-25T02:26",
+        false,
+        432,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0124",
+        "2026-02-25T02:27",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0125",
+        "2026-02-25T02:28",
+        false,
+        435,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0126",
+        "2026-02-25T02:29",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0127",
+        "2026-02-25T02:30",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0128",
+        "2026-02-25T02:31",
+        false,
+        435,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0129",
+        "2026-02-25T02:32",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0130",
+        "2026-02-25T02:33",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0131",
+        "2026-02-25T02:34",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0132",
+        "2026-02-25T02:35",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0133",
+        "2026-02-25T02:36",
+        false,
+        433,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0134",
+        "2026-02-25T02:37",
+        false,
+        436,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0135",
+        "2026-02-25T02:38",
+        false,
+        431,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0136",
+        "2026-02-25T02:39",
+        false,
+        381,
+        12,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0137",
+        "2026-02-25T02:40",
+        false,
+        396,
+        14,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0138",
+        "2026-02-25T02:41",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0139",
+        "2026-02-25T02:42",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0140",
+        "2026-02-25T02:43",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0141",
+        "2026-02-25T02:44",
+        false,
+        451,
+        17,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0142",
+        "2026-02-25T02:45",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0143",
+        "2026-02-25T02:46",
+        false,
+        429,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0144",
+        "2026-02-25T02:47",
+        false,
+        442,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0145",
+        "2026-02-25T02:48",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0146",
+        "2026-02-25T02:49",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0147",
+        "2026-02-25T02:50",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0148",
+        "2026-02-25T02:51",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0149",
+        "2026-02-25T02:52",
+        false,
+        420,
+        13,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0150",
+        "2026-02-25T02:53",
+        false,
+        351,
+        13,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0151",
+        "2026-02-25T02:54",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0152",
+        "2026-02-25T02:55",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0153",
+        "2026-02-25T02:56",
+        false,
+        426,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0154",
+        "2026-02-25T02:57",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0155",
+        "2026-02-25T02:58",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0156",
+        "2026-02-25T02:59",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0157",
+        "2026-02-25T03:00",
+        false,
+        437,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0158",
+        "2026-02-25T03:01",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0159",
+        "2026-02-25T03:02",
+        false,
+        431,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0160",
+        "2026-02-25T03:03",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0161",
+        "2026-02-25T03:04",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0162",
+        "2026-02-25T03:05",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0163",
+        "2026-02-25T03:06",
+        false,
+        426,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0164",
+        "2026-02-25T03:07",
+        false,
+        360,
+        11,
+        46,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0165",
+        "2026-02-25T03:08",
+        false,
+        408,
+        15,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0166",
+        "2026-02-25T03:09",
+        false,
+        443,
+        16,
+        70,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0167",
+        "2026-02-25T03:10",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0168",
+        "2026-02-25T03:11",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0169",
+        "2026-02-25T03:12",
+        false,
+        444,
+        18,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0170",
+        "2026-02-25T03:13",
+        false,
+        430,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0171",
+        "2026-02-25T03:14",
+        false,
+        448,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0172",
+        "2026-02-25T03:15",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0173",
+        "2026-02-25T03:16",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0174",
+        "2026-02-25T03:17",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0175",
+        "2026-02-25T03:18",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0176",
+        "2026-02-25T03:19",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0177",
+        "2026-02-25T03:20",
+        false,
+        401,
+        12,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0178",
+        "2026-02-25T03:21",
+        false,
+        356,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0179",
+        "2026-02-25T03:22",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0180",
+        "2026-02-25T03:23",
+        false,
+        444,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0181",
+        "2026-02-25T03:24",
+        false,
+        439,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0182",
+        "2026-02-25T03:25",
+        false,
+        432,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0183",
+        "2026-02-25T03:26",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0184",
+        "2026-02-25T03:27",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0185",
+        "2026-02-25T03:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0186",
+        "2026-02-25T03:29",
+        false,
+        436,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0187",
+        "2026-02-25T03:30",
+        false,
+        441,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0188",
+        "2026-02-25T03:31",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0189",
+        "2026-02-25T03:32",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0190",
+        "2026-02-25T03:33",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0191",
+        "2026-02-25T03:34",
+        false,
+        424,
+        14,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0192",
+        "2026-02-25T03:35",
+        false,
+        359,
+        12,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0193",
+        "2026-02-25T03:36",
+        false,
+        415,
+        16,
+        60,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0194",
+        "2026-02-25T03:37",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0195",
+        "2026-02-25T03:38",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0196",
+        "2026-02-25T03:39",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0197",
+        "2026-02-25T03:40",
+        false,
+        430,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0198",
+        "2026-02-25T03:41",
+        false,
+        437,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0199",
+        "2026-02-25T03:42",
+        false,
+        438,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0200",
+        "2026-02-25T03:43",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0201",
+        "2026-02-25T03:44",
+        false,
+        442,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0202",
+        "2026-02-25T03:45",
+        false,
+        427,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0203",
+        "2026-02-25T03:46",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0204",
+        "2026-02-25T03:47",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0205",
+        "2026-02-25T03:48",
+        false,
+        430,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0206",
+        "2026-02-25T03:49",
+        false,
+        369,
+        12,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0207",
+        "2026-02-25T03:50",
+        false,
+        407,
+        14,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0208",
+        "2026-02-25T03:51",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0209",
+        "2026-02-25T03:52",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0210",
+        "2026-02-25T03:53",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0211",
+        "2026-02-25T03:54",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0212",
+        "2026-02-25T03:55",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0213",
+        "2026-02-25T03:56",
+        false,
+        436,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0214",
+        "2026-02-25T03:57",
+        false,
+        441,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0215",
+        "2026-02-25T03:58",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0216",
+        "2026-02-25T03:59",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0217",
+        "2026-02-25T04:00",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0218",
+        "2026-02-25T04:01",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0219",
+        "2026-02-25T04:02",
+        false,
+        406,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0220",
+        "2026-02-25T04:03",
+        false,
+        373,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0221",
+        "2026-02-25T04:04",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0222",
+        "2026-02-25T04:05",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0223",
+        "2026-02-25T04:06",
+        false,
+        433,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0224",
+        "2026-02-25T04:07",
+        false,
+        437,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0225",
+        "2026-02-25T04:08",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0226",
+        "2026-02-25T04:09",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0227",
+        "2026-02-25T04:10",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0228",
+        "2026-02-25T04:11",
+        false,
+        437,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0229",
+        "2026-02-25T04:12",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0230",
+        "2026-02-25T04:13",
+        false,
+        435,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0231",
+        "2026-02-25T04:14",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0232",
+        "2026-02-25T04:15",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0233",
+        "2026-02-25T04:16",
+        false,
+        423,
+        14,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0234",
+        "2026-02-25T04:17",
+        false,
+        352,
+        12,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0235",
+        "2026-02-25T04:18",
+        false,
+        424,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0236",
+        "2026-02-25T04:19",
+        false,
+        438,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0237",
+        "2026-02-25T04:20",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0238",
+        "2026-02-25T04:21",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0239",
+        "2026-02-25T04:22",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0240",
+        "2026-02-25T04:23",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0241",
+        "2026-02-25T04:24",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0242",
+        "2026-02-25T04:25",
+        false,
+        430,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0243",
+        "2026-02-25T04:26",
+        false,
+        437,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0244",
+        "2026-02-25T04:27",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0245",
+        "2026-02-25T04:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0246",
+        "2026-02-25T04:29",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0247",
+        "2026-02-25T04:30",
+        false,
+        419,
+        13,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0248",
+        "2026-02-25T04:31",
+        false,
+        350,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0249",
+        "2026-02-25T04:32",
+        false,
+        441,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0250",
+        "2026-02-25T04:33",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0251",
+        "2026-02-25T04:34",
+        false,
+        436,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0252",
+        "2026-02-25T04:35",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0253",
+        "2026-02-25T04:36",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0254",
+        "2026-02-25T04:37",
+        false,
+        431,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0255",
+        "2026-02-25T04:38",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0256",
+        "2026-02-25T04:39",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0257",
+        "2026-02-25T04:40",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0258",
+        "2026-02-25T04:41",
+        false,
+        428,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0259",
+        "2026-02-25T04:42",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0260",
+        "2026-02-25T04:43",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0261",
+        "2026-02-25T04:44",
+        false,
+        412,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0262",
+        "2026-02-25T04:45",
+        false,
+        359,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0263",
+        "2026-02-25T04:46",
+        false,
+        439,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0264",
+        "2026-02-25T04:47",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0265",
+        "2026-02-25T04:48",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0266",
+        "2026-02-25T04:49",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0267",
+        "2026-02-25T04:50",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0268",
+        "2026-02-25T04:51",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0269",
+        "2026-02-25T04:52",
+        false,
+        434,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0270",
+        "2026-02-25T04:53",
+        false,
+        444,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0271",
+        "2026-02-25T04:54",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0272",
+        "2026-02-25T04:55",
+        false,
+        441,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0273",
+        "2026-02-25T04:56",
+        false,
+        434,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0274",
+        "2026-02-25T04:57",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0275",
+        "2026-02-25T04:58",
+        false,
+        423,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0276",
+        "2026-02-25T04:59",
+        false,
+        369,
+        12,
+        46,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0277",
+        "2026-02-25T05:00",
+        false,
+        404,
+        14,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0278",
+        "2026-02-25T05:01",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0279",
+        "2026-02-25T05:02",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0280",
+        "2026-02-25T05:03",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0281",
+        "2026-02-25T05:04",
+        false,
+        430,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0282",
+        "2026-02-25T05:05",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0283",
+        "2026-02-25T05:06",
+        false,
+        441,
+        16,
+        70,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0284",
+        "2026-02-25T05:07",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0285",
+        "2026-02-25T05:08",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0286",
+        "2026-02-25T05:09",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0287",
+        "2026-02-25T05:10",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0288",
+        "2026-02-25T05:11",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0289",
+        "2026-02-25T05:12",
+        false,
+        402,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0290",
+        "2026-02-25T05:13",
+        false,
+        377,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0291",
+        "2026-02-25T05:14",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0292",
+        "2026-02-25T05:15",
+        false,
+        431,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0293",
+        "2026-02-25T05:16",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0294",
+        "2026-02-25T05:17",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0295",
+        "2026-02-25T05:18",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0296",
+        "2026-02-25T05:19",
+        false,
+        441,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0297",
+        "2026-02-25T05:20",
+        false,
+        432,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0298",
+        "2026-02-25T05:21",
+        false,
+        435,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0299",
+        "2026-02-25T05:22",
+        false,
+        449,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0300",
+        "2026-02-25T05:23",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0301",
+        "2026-02-25T05:24",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0302",
+        "2026-02-25T05:25",
+        false,
+        438,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0303",
+        "2026-02-25T05:26",
+        false,
+        363,
+        12,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0304",
+        "2026-02-25T05:27",
+        false,
+        400,
+        14,
+        60,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0305",
+        "2026-02-25T05:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0306",
+        "2026-02-25T05:29",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0307",
+        "2026-02-25T05:30",
+        false,
+        448,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0308",
+        "2026-02-25T05:31",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0309",
+        "2026-02-25T05:32",
+        false,
+        453,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0310",
+        "2026-02-25T05:33",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0311",
+        "2026-02-25T05:34",
+        false,
+        432,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0312",
+        "2026-02-25T05:35",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0313",
+        "2026-02-25T05:36",
+        false,
+        440,
+        18,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0314",
+        "2026-02-25T05:37",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0315",
+        "2026-02-25T05:38",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0316",
+        "2026-02-25T05:39",
+        false,
+        389,
+        12,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0317",
+        "2026-02-25T05:40",
+        false,
+        371,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0318",
+        "2026-02-25T05:41",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0319",
+        "2026-02-25T05:42",
+        false,
+        450,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0320",
+        "2026-02-25T05:43",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0321",
+        "2026-02-25T05:44",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0322",
+        "2026-02-25T05:45",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0323",
+        "2026-02-25T05:46",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0324",
+        "2026-02-25T05:47",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0325",
+        "2026-02-25T05:48",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0326",
+        "2026-02-25T05:49",
+        false,
+        439,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0327",
+        "2026-02-25T05:50",
+        false,
+        439,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0328",
+        "2026-02-25T05:51",
+        false,
+        431,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0329",
+        "2026-02-25T05:52",
+        false,
+        444,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0330",
+        "2026-02-25T05:53",
+        false,
+        404,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0331",
+        "2026-02-25T05:54",
+        false,
+        369,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0332",
+        "2026-02-25T05:55",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0333",
+        "2026-02-25T05:56",
+        false,
+        427,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0334",
+        "2026-02-25T05:57",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0335",
+        "2026-02-25T05:58",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0336",
+        "2026-02-25T05:59",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0337",
+        "2026-02-25T06:00",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0338",
+        "2026-02-25T06:01",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0339",
+        "2026-02-25T06:02",
+        false,
+        439,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0340",
+        "2026-02-25T06:03",
+        false,
+        439,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0341",
+        "2026-02-25T06:04",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0342",
+        "2026-02-25T06:05",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0343",
+        "2026-02-25T06:06",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0344",
+        "2026-02-25T06:07",
+        false,
+        397,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0345",
+        "2026-02-25T06:08",
+        false,
+        355,
+        13,
+        39,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0346",
+        "2026-02-25T06:09",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0347",
+        "2026-02-25T06:10",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0348",
+        "2026-02-25T06:11",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0349",
+        "2026-02-25T06:12",
+        false,
+        450,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0350",
+        "2026-02-25T06:13",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0351",
+        "2026-02-25T06:14",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0352",
+        "2026-02-25T06:15",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0353",
+        "2026-02-25T06:16",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0354",
+        "2026-02-25T06:17",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0355",
+        "2026-02-25T06:18",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0356",
+        "2026-02-25T06:19",
+        false,
+        444,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0357",
+        "2026-02-25T06:20",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0358",
+        "2026-02-25T06:21",
+        false,
+        384,
+        12,
+        60,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0359",
+        "2026-02-25T06:22",
+        false,
+        388,
+        14,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0360",
+        "2026-02-25T06:23",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0361",
+        "2026-02-25T06:24",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0362",
+        "2026-02-25T06:25",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0363",
+        "2026-02-25T06:26",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0364",
+        "2026-02-25T06:27",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0365",
+        "2026-02-25T06:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0366",
+        "2026-02-25T06:29",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0367",
+        "2026-02-25T06:30",
+        false,
+        448,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0368",
+        "2026-02-25T06:31",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0369",
+        "2026-02-25T06:32",
+        false,
+        440,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0370",
+        "2026-02-25T06:33",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0371",
+        "2026-02-25T06:34",
+        false,
+        433,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0372",
+        "2026-02-25T06:35",
+        false,
+        407,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0373",
+        "2026-02-25T06:36",
+        false,
+        369,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0374",
+        "2026-02-25T06:37",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0375",
+        "2026-02-25T06:38",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0376",
+        "2026-02-25T06:39",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0377",
+        "2026-02-25T06:40",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0378",
+        "2026-02-25T06:41",
+        false,
+        434,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0379",
+        "2026-02-25T06:42",
+        false,
+        450,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0380",
+        "2026-02-25T06:43",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0381",
+        "2026-02-25T06:44",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0382",
+        "2026-02-25T06:45",
+        false,
+        436,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0383",
+        "2026-02-25T06:46",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0384",
+        "2026-02-25T06:47",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0385",
+        "2026-02-25T06:48",
+        false,
+        406,
+        13,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0386",
+        "2026-02-25T06:49",
+        false,
+        370,
+        13,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0387",
+        "2026-02-25T06:50",
+        false,
+        424,
+        17,
+        62,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0388",
+        "2026-02-25T06:51",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0389",
+        "2026-02-25T06:52",
+        false,
+        450,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0390",
+        "2026-02-25T06:53",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0391",
+        "2026-02-25T06:54",
+        false,
+        429,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0392",
+        "2026-02-25T06:55",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0393",
+        "2026-02-25T06:56",
+        false,
+        438,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0394",
+        "2026-02-25T06:57",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0395",
+        "2026-02-25T06:58",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0396",
+        "2026-02-25T06:59",
+        false,
+        429,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0397",
+        "2026-02-25T07:00",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0398",
+        "2026-02-25T07:01",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0399",
+        "2026-02-25T07:02",
+        false,
+        434,
+        14,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0400",
+        "2026-02-25T07:03",
+        false,
+        369,
+        13,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0401",
+        "2026-02-25T07:04",
+        false,
+        405,
+        15,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0402",
+        "2026-02-25T07:05",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0403",
+        "2026-02-25T07:06",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0404",
+        "2026-02-25T07:07",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0405",
+        "2026-02-25T07:08",
+        false,
+        444,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0406",
+        "2026-02-25T07:09",
+        false,
+        434,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0407",
+        "2026-02-25T07:10",
+        false,
+        435,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0408",
+        "2026-02-25T07:11",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0409",
+        "2026-02-25T07:12",
+        false,
+        450,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0410",
+        "2026-02-25T07:13",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0411",
+        "2026-02-25T07:14",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0412",
+        "2026-02-25T07:15",
+        false,
+        431,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0413",
+        "2026-02-25T07:16",
+        false,
+        405,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0414",
+        "2026-02-25T07:17",
+        false,
+        362,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0415",
+        "2026-02-25T07:18",
+        false,
+        434,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0416",
+        "2026-02-25T07:19",
+        false,
+        434,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0417",
+        "2026-02-25T07:20",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0418",
+        "2026-02-25T07:21",
+        false,
+        437,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0419",
+        "2026-02-25T07:22",
+        false,
+        450,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0420",
+        "2026-02-25T07:23",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0421",
+        "2026-02-25T07:24",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0422",
+        "2026-02-25T07:25",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0423",
+        "2026-02-25T07:26",
+        false,
+        427,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0424",
+        "2026-02-25T07:27",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0425",
+        "2026-02-25T07:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0426",
+        "2026-02-25T07:29",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0427",
+        "2026-02-25T07:30",
+        false,
+        408,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0428",
+        "2026-02-25T07:31",
+        false,
+        373,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0429",
+        "2026-02-25T07:32",
+        false,
+        435,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0430",
+        "2026-02-25T07:33",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0431",
+        "2026-02-25T07:34",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0432",
+        "2026-02-25T07:35",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0433",
+        "2026-02-25T07:36",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0434",
+        "2026-02-25T07:37",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0435",
+        "2026-02-25T07:38",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0436",
+        "2026-02-25T07:39",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0437",
+        "2026-02-25T07:40",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0438",
+        "2026-02-25T07:41",
+        false,
+        443,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0439",
+        "2026-02-25T07:42",
+        false,
+        432,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0440",
+        "2026-02-25T07:43",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0441",
+        "2026-02-25T07:44",
+        false,
+        412,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0442",
+        "2026-02-25T07:45",
+        false,
+        358,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0443",
+        "2026-02-25T07:46",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0444",
+        "2026-02-25T07:47",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0445",
+        "2026-02-25T07:48",
+        false,
+        431,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0446",
+        "2026-02-25T07:49",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0447",
+        "2026-02-25T07:50",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0448",
+        "2026-02-25T07:51",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0449",
+        "2026-02-25T07:52",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0450",
+        "2026-02-25T07:53",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0451",
+        "2026-02-25T07:54",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0452",
+        "2026-02-25T07:55",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0453",
+        "2026-02-25T07:56",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0454",
+        "2026-02-25T07:57",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0455",
+        "2026-02-25T07:58",
+        false,
+        398,
+        11,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0456",
+        "2026-02-25T07:59",
+        false,
+        365,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0457",
+        "2026-02-25T08:00",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0458",
+        "2026-02-25T08:01",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0459",
+        "2026-02-25T08:02",
+        false,
+        437,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0460",
+        "2026-02-25T08:03",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0461",
+        "2026-02-25T08:04",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0462",
+        "2026-02-25T08:05",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0463",
+        "2026-02-25T08:06",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0464",
+        "2026-02-25T08:07",
+        false,
+        432,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0465",
+        "2026-02-25T08:08",
+        false,
+        436,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0466",
+        "2026-02-25T08:09",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0467",
+        "2026-02-25T08:10",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0468",
+        "2026-02-25T08:11",
+        false,
+        448,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0469",
+        "2026-02-25T08:12",
+        false,
+        411,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0470",
+        "2026-02-25T08:13",
+        false,
+        349,
+        14,
+        39,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0471",
+        "2026-02-25T08:14",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0472",
+        "2026-02-25T08:15",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0473",
+        "2026-02-25T08:16",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0474",
+        "2026-02-25T08:17",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0475",
+        "2026-02-25T08:18",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0476",
+        "2026-02-25T08:19",
+        false,
+        432,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0477",
+        "2026-02-25T08:20",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0478",
+        "2026-02-25T08:21",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0479",
+        "2026-02-25T08:22",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0480",
+        "2026-02-25T08:23",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0481",
+        "2026-02-25T08:24",
+        false,
+        433,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0482",
+        "2026-02-25T08:25",
+        false,
+        432,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0483",
+        "2026-02-25T08:26",
+        false,
+        360,
+        11,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0484",
+        "2026-02-25T08:27",
+        false,
+        411,
+        15,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0485",
+        "2026-02-25T08:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0486",
+        "2026-02-25T08:29",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0487",
+        "2026-02-25T08:30",
+        false,
+        437,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0488",
+        "2026-02-25T08:31",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0489",
+        "2026-02-25T08:32",
+        false,
+        444,
+        17,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0490",
+        "2026-02-25T08:33",
+        false,
+        438,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0491",
+        "2026-02-25T08:34",
+        false,
+        437,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0492",
+        "2026-02-25T08:35",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0493",
+        "2026-02-25T08:36",
+        false,
+        427,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0494",
+        "2026-02-25T08:37",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0495",
+        "2026-02-25T08:38",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0496",
+        "2026-02-25T08:39",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0497",
+        "2026-02-25T08:40",
+        false,
+        401,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0498",
+        "2026-02-25T08:41",
+        false,
+        369,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0499",
+        "2026-02-25T08:42",
+        false,
+        440,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0500",
+        "2026-02-25T08:43",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0501",
+        "2026-02-25T08:44",
+        false,
+        444,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0502",
+        "2026-02-25T08:45",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0503",
+        "2026-02-25T08:46",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0504",
+        "2026-02-25T08:47",
+        false,
+        432,
+        18,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0505",
+        "2026-02-25T08:48",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0506",
+        "2026-02-25T08:49",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0507",
+        "2026-02-25T08:50",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0508",
+        "2026-02-25T08:51",
+        false,
+        447,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0509",
+        "2026-02-25T08:52",
+        false,
+        431,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0510",
+        "2026-02-25T08:53",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0511",
+        "2026-02-25T08:54",
+        false,
+        410,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0512",
+        "2026-02-25T08:55",
+        false,
+        360,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0513",
+        "2026-02-25T08:56",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0514",
+        "2026-02-25T08:57",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0515",
+        "2026-02-25T08:58",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0516",
+        "2026-02-25T08:59",
+        false,
+        429,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0517",
+        "2026-02-25T09:00",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0518",
+        "2026-02-25T09:01",
+        false,
+        448,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0519",
+        "2026-02-25T09:02",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0520",
+        "2026-02-25T09:03",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0521",
+        "2026-02-25T09:04",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0522",
+        "2026-02-25T09:05",
+        false,
+        433,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0523",
+        "2026-02-25T09:06",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0524",
+        "2026-02-25T09:07",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0525",
+        "2026-02-25T09:08",
+        false,
+        399,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0526",
+        "2026-02-25T09:09",
+        false,
+        369,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0527",
+        "2026-02-25T09:10",
+        false,
+        438,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0528",
+        "2026-02-25T09:11",
+        false,
+        436,
+        15,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0529",
+        "2026-02-25T09:12",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0530",
+        "2026-02-25T09:13",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0531",
+        "2026-02-25T09:14",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0532",
+        "2026-02-25T09:15",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0533",
+        "2026-02-25T09:16",
+        false,
+        434,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0534",
+        "2026-02-25T09:17",
+        false,
+        432,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0535",
+        "2026-02-25T09:18",
+        false,
+        439,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0536",
+        "2026-02-25T09:19",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0537",
+        "2026-02-25T09:20",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0538",
+        "2026-02-25T09:21",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0539",
+        "2026-02-25T09:22",
+        false,
+        403,
+        12,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0540",
+        "2026-02-25T09:23",
+        false,
+        365,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0541",
+        "2026-02-25T09:24",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0542",
+        "2026-02-25T09:25",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0543",
+        "2026-02-25T09:26",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0544",
+        "2026-02-25T09:27",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0545",
+        "2026-02-25T09:28",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0546",
+        "2026-02-25T09:29",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0547",
+        "2026-02-25T09:30",
+        false,
+        457,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0548",
+        "2026-02-25T09:31",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0549",
+        "2026-02-25T09:32",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0550",
+        "2026-02-25T09:33",
+        false,
+        428,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0551",
+        "2026-02-25T09:34",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0552",
+        "2026-02-25T09:35",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0553",
+        "2026-02-25T09:36",
+        false,
+        399,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0554",
+        "2026-02-25T09:37",
+        false,
+        371,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0555",
+        "2026-02-25T09:38",
+        false,
+        432,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0556",
+        "2026-02-25T09:39",
+        false,
+        433,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0557",
+        "2026-02-25T09:40",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0558",
+        "2026-02-25T09:41",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0559",
+        "2026-02-25T09:42",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0560",
+        "2026-02-25T09:43",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0561",
+        "2026-02-25T09:44",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0562",
+        "2026-02-25T09:45",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0563",
+        "2026-02-25T09:46",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0564",
+        "2026-02-25T09:47",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0565",
+        "2026-02-25T09:48",
+        false,
+        430,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0566",
+        "2026-02-25T09:49",
+        false,
+        437,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0567",
+        "2026-02-25T09:50",
+        false,
+        419,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0568",
+        "2026-02-25T09:51",
+        false,
+        359,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0569",
+        "2026-02-25T09:52",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0570",
+        "2026-02-25T09:53",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0571",
+        "2026-02-25T09:54",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0572",
+        "2026-02-25T09:55",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0573",
+        "2026-02-25T09:56",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0574",
+        "2026-02-25T09:57",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0575",
+        "2026-02-25T09:58",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0576",
+        "2026-02-25T09:59",
+        false,
+        437,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0577",
+        "2026-02-25T10:00",
+        false,
+        442,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0578",
+        "2026-02-25T10:01",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0579",
+        "2026-02-25T10:02",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0580",
+        "2026-02-25T10:03",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0581",
+        "2026-02-25T10:04",
+        false,
+        416,
+        13,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0582",
+        "2026-02-25T10:05",
+        false,
+        359,
+        13,
+        46,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0583",
+        "2026-02-25T10:06",
+        false,
+        421,
+        17,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0584",
+        "2026-02-25T10:07",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0585",
+        "2026-02-25T10:08",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0586",
+        "2026-02-25T10:09",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0587",
+        "2026-02-25T10:10",
+        false,
+        438,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0588",
+        "2026-02-25T10:11",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0589",
+        "2026-02-25T10:12",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0590",
+        "2026-02-25T10:13",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0591",
+        "2026-02-25T10:14",
+        false,
+        432,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0592",
+        "2026-02-25T10:15",
+        false,
+        437,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0593",
+        "2026-02-25T10:16",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0594",
+        "2026-02-25T10:17",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0595",
+        "2026-02-25T10:18",
+        false,
+        399,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0596",
+        "2026-02-25T10:19",
+        false,
+        388,
+        14,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0597",
+        "2026-02-25T10:20",
+        false,
+        443,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0598",
+        "2026-02-25T10:21",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0599",
+        "2026-02-25T10:22",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0600",
+        "2026-02-25T10:23",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0601",
+        "2026-02-25T10:24",
+        false,
+        435,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0602",
+        "2026-02-25T10:25",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0603",
+        "2026-02-25T10:26",
+        false,
+        433,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0604",
+        "2026-02-25T10:27",
+        false,
+        437,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0605",
+        "2026-02-25T10:28",
+        false,
+        436,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0606",
+        "2026-02-25T10:29",
+        false,
+        439,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0607",
+        "2026-02-25T10:30",
+        false,
+        457,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0608",
+        "2026-02-25T10:31",
+        false,
+        428,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0609",
+        "2026-02-25T10:32",
+        false,
+        425,
+        14,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0610",
+        "2026-02-25T10:33",
+        false,
+        365,
+        12,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0611",
+        "2026-02-25T10:34",
+        false,
+        420,
+        16,
+        61,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0612",
+        "2026-02-25T10:35",
+        false,
+        442,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0613",
+        "2026-02-25T10:36",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0614",
+        "2026-02-25T10:37",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0615",
+        "2026-02-25T10:38",
+        false,
+        429,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0616",
+        "2026-02-25T10:39",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0617",
+        "2026-02-25T10:40",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0618",
+        "2026-02-25T10:41",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0619",
+        "2026-02-25T10:42",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0620",
+        "2026-02-25T10:43",
+        false,
+        432,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0621",
+        "2026-02-25T10:44",
+        false,
+        423,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0622",
+        "2026-02-25T10:45",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0623",
+        "2026-02-25T10:46",
+        false,
+        402,
+        13,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0624",
+        "2026-02-25T10:47",
+        false,
+        368,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0625",
+        "2026-02-25T10:48",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0626",
+        "2026-02-25T10:49",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0627",
+        "2026-02-25T10:50",
+        false,
+        448,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0628",
+        "2026-02-25T10:51",
+        false,
+        426,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0629",
+        "2026-02-25T10:52",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0630",
+        "2026-02-25T10:53",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0631",
+        "2026-02-25T10:54",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0632",
+        "2026-02-25T10:55",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0633",
+        "2026-02-25T10:56",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0634",
+        "2026-02-25T10:57",
+        false,
+        433,
+        17,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0635",
+        "2026-02-25T10:58",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0636",
+        "2026-02-25T10:59",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0637",
+        "2026-02-25T11:00",
+        false,
+        428,
+        14,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0638",
+        "2026-02-25T11:01",
+        false,
+        363,
+        12,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0639",
+        "2026-02-25T11:02",
+        false,
+        415,
+        16,
+        60,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0640",
+        "2026-02-25T11:03",
+        false,
+        440,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0641",
+        "2026-02-25T11:04",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0642",
+        "2026-02-25T11:05",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0643",
+        "2026-02-25T11:06",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0644",
+        "2026-02-25T11:07",
+        false,
+        430,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0645",
+        "2026-02-25T11:08",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0646",
+        "2026-02-25T11:09",
+        false,
+        479,
+        22,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0647",
+        "2026-02-25T11:10",
+        false,
+        451,
+        18,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0648",
+        "2026-02-25T11:11",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0649",
+        "2026-02-25T11:12",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0650",
+        "2026-02-25T11:13",
+        false,
+        435,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0651",
+        "2026-02-25T11:14",
+        false,
+        400,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0652",
+        "2026-02-25T11:15",
+        false,
+        375,
+        15,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0653",
+        "2026-02-25T11:16",
+        false,
+        455,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0654",
+        "2026-02-25T11:17",
+        false,
+        440,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0655",
+        "2026-02-25T11:18",
+        false,
+        429,
+        16,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0656",
+        "2026-02-25T11:19",
+        false,
+        452,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0657",
+        "2026-02-25T11:20",
+        false,
+        449,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0658",
+        "2026-02-25T11:21",
+        false,
+        443,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0659",
+        "2026-02-25T11:22",
+        false,
+        458,
+        16,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0660",
+        "2026-02-25T11:23",
+        false,
+        448,
+        19,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0661",
+        "2026-02-25T11:24",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0662",
+        "2026-02-25T11:25",
+        false,
+        414,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0663",
+        "2026-02-25T11:26",
+        false,
+        356,
+        14,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0664",
+        "2026-02-25T11:27",
+        false,
+        445,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0665",
+        "2026-02-25T11:28",
+        false,
+        474,
+        22,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0666",
+        "2026-02-25T11:29",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0667",
+        "2026-02-25T11:30",
+        false,
+        453,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0668",
+        "2026-02-25T11:31",
+        false,
+        434,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0669",
+        "2026-02-25T11:32",
+        false,
+        432,
+        15,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0670",
+        "2026-02-25T11:33",
+        false,
+        452,
+        16,
+        80,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0671",
+        "2026-02-25T11:34",
+        false,
+        741,
+        58,
+        84,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0672",
+        "2026-02-25T11:35",
+        true,
+        1913,
+        143,
+        75,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0673",
+        "2026-02-25T11:36",
+        false,
+        446,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0674",
+        "2026-02-25T11:37",
+        false,
+        425,
+        15,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0675",
+        "2026-02-25T11:38",
+        false,
+        348,
+        12,
+        40,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0676",
+        "2026-02-25T11:39",
+        false,
+        448,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0677",
+        "2026-02-25T11:40",
+        false,
+        462,
+        22,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0678",
+        "2026-02-25T11:41",
+        false,
+        438,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0679",
+        "2026-02-25T11:42",
+        false,
+        438,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0680",
+        "2026-02-25T11:43",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0681",
+        "2026-02-25T11:44",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0682",
+        "2026-02-25T11:45",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0683",
+        "2026-02-25T11:46",
+        false,
+        462,
+        22,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0684",
+        "2026-02-25T11:47",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0685",
+        "2026-02-25T11:48",
+        false,
+        438,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0686",
+        "2026-02-25T11:49",
+        false,
+        448,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0687",
+        "2026-02-25T11:50",
+        false,
+        388,
+        12,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0688",
+        "2026-02-25T11:51",
+        false,
+        379,
+        14,
+        39,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0689",
+        "2026-02-25T11:52",
+        false,
+        557,
+        26,
+        73,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0690",
+        "2026-02-25T11:53",
+        false,
+        538,
+        21,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0691",
+        "2026-02-25T11:54",
+        false,
+        444,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0692",
+        "2026-02-25T11:55",
+        false,
+        440,
+        17,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0693",
+        "2026-02-25T11:56",
+        false,
+        441,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0694",
+        "2026-02-25T11:57",
+        false,
+        442,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0695",
+        "2026-02-25T11:58",
+        false,
+        513,
+        25,
+        71,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0696",
+        "2026-02-25T11:59",
+        false,
+        484,
+        17,
+        71,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0697",
+        "2026-02-25T12:00",
+        false,
+        439,
+        16,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0698",
+        "2026-02-25T12:01",
+        false,
+        468,
+        14,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0699",
+        "2026-02-25T12:02",
+        false,
+        367,
+        12,
+        47,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0700",
+        "2026-02-25T12:03",
+        false,
+        954,
+        70,
+        103,
+        "GENERIC_INFO"
+      ],
+      [
+        "W0701",
+        "2026-02-25T12:04",
+        false,
+        475,
+        21,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0702",
+        "2026-02-25T12:05",
+        false,
+        507,
+        21,
+        67,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0703",
+        "2026-02-25T12:06",
+        false,
+        563,
+        23,
+        69,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0704",
+        "2026-02-25T12:07",
+        false,
+        519,
+        21,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0705",
+        "2026-02-25T12:08",
+        false,
+        499,
+        25,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0706",
+        "2026-02-25T12:09",
+        false,
+        514,
+        21,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0707",
+        "2026-02-25T12:10",
+        false,
+        504,
+        22,
+        68,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0708",
+        "2026-02-25T12:11",
+        false,
+        593,
+        28,
+        88,
+        "AUDIT_API_ACCESS"
+      ],
+      [
+        "W0709",
+        "2026-02-25T12:12",
+        true,
+        2140,
+        186,
+        74,
+        "AUDIT_API_ACCESS"
+      ]
+    ]
+  },
+  "burst_windows_detail": [
+    {
+      "window": "W0646",
+      "time": "2026-02-25T11:09:21",
+      "is_burst": false,
+      "total_events": 479,
+      "errors": 22,
+      "warns": 68,
+      "event_types": {
+        "AUDIT_API_ACCESS": 221,
+        "KERNEL_INTERRUPT": 120,
+        "HTTP_REQUEST": 58,
+        "GENERIC_INFO": 34,
+        "GENERIC_ERROR": 18,
+        "KERNEL_RATE_LIMIT": 12,
+        "SERVICE_RESTART": 9,
+        "SERVICE_START": 7
+      },
+      "components": [
+        "-vtysh",
+        "audit",
+        "hpe-restd",
+        "hpe-routing",
+        "kernel",
+        "log-proxyd",
+        "nginx",
+        "statsmond",
+        "systemd"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 126 callbacks suppressed",
+        "Column vrf doesn't have default comparator, andno custom comparator was given.",
+        "Column port doesn't have default comparator, andno custom comparator was given.",
+        "Column port_type doesn't have default comparator, andno custom comparator was given.",
+        "net_ratelimit: 907 callbacks suppressed"
+      ],
+      "top_services": {
+        "acctsyslogd": 219,
+        "kernel": 132,
+        "nginx": 58,
+        "-vtysh": 22,
+        "systemd": 16
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0665",
+      "time": "2026-02-25T11:28:21",
+      "is_burst": false,
+      "total_events": 474,
+      "errors": 22,
+      "warns": 68,
+      "event_types": {
+        "AUDIT_API_ACCESS": 223,
+        "KERNEL_INTERRUPT": 120,
+        "HTTP_REQUEST": 58,
+        "GENERIC_INFO": 37,
+        "GENERIC_ERROR": 18,
+        "KERNEL_RATE_LIMIT": 12,
+        "SERVICE_STOP": 3,
+        "SERVICE_RESTART": 2,
+        "SERVICE_START": 1
+      },
+      "components": [
+        "-vtysh",
+        "audit",
+        "hpe-restd",
+        "hpe-routing",
+        "kernel",
+        "log-proxyd",
+        "nginx",
+        "statsmond",
+        "systemd"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "2026/02/25 05:58:23 [warn] 4776#4776: *230113 using uninitialized \"script_csp\" variable while reading response header fr",
+        "2026/02/25 05:58:23 [warn] 4776#4776: *230113 using uninitialized \"font_csp\" variable while reading response header from",
+        "2026/02/25 05:58:23 [warn] 4776#4776: *230113 using uninitialized \"style_csp\" variable while reading response header fro",
+        "2026/02/25 05:58:23 [warn] 4776#4776: *230113 using uninitialized \"image_csp\" variable while reading response header fro",
+        "2026/02/25 05:58:23 [warn] 4776#4776: *230113 using uninitialized \"connect_csp\" variable while reading response header f"
+      ],
+      "top_services": {
+        "acctsyslogd": 220,
+        "kernel": 132,
+        "nginx": 58,
+        "-vtysh": 25,
+        "hpe-routing": 13
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0671",
+      "time": "2026-02-25T11:34:21",
+      "is_burst": false,
+      "total_events": 741,
+      "errors": 58,
+      "warns": 84,
+      "event_types": {
+        "AUDIT_API_ACCESS": 326,
+        "KERNEL_INTERRUPT": 120,
+        "METRIC_WRITE": 87,
+        "GENERIC_INFO": 72,
+        "HTTP_REQUEST": 58,
+        "GENERIC_ERROR": 45,
+        "GENERIC_WARN": 16,
+        "KERNEL_RATE_LIMIT": 12,
+        "OVS_FLOW_ADD": 4,
+        "VLAN_PORT_ADD": 1
+      },
+      "components": [
+        "-vtysh",
+        "audit",
+        "diagnostics",
+        "hpe-config-ckptpostcfg",
+        "hpe-mstpd",
+        "hpe-restd",
+        "hpe-routing",
+        "ip",
+        "kernel",
+        "lacpd",
+        "nginx",
+        "ops-switchd",
+        "ovs",
+        "statsmond",
+        "switchd_agent",
+        "switchd_agent0",
+        "switchd_agent1",
+        "vland",
+        "vtysh"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "Diagdump executed for feature: <*> daemon: <*> execution time: <*> seconds, <NUM",
+          "count": 75
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 727 callbacks suppressed",
+        "Unknown wait done table request received , table = Neighbor",
+        "2026-02-25T06:04:24Z|00018|idl_scheduler|WARN|Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "net_ratelimit: 205 callbacks suppressed"
+      ],
+      "top_services": {
+        "acctsyslogd": 272,
+        "-vtysh": 162,
+        "kernel": 132,
+        "nginx": 58,
+        "hpe-routing": 37
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0672",
+      "time": "2026-02-25T11:35:21",
+      "is_burst": true,
+      "total_events": 1913,
+      "errors": 143,
+      "warns": 75,
+      "event_types": {
+        "AUDIT_API_ACCESS": 1346,
+        "METRIC_WRITE": 142,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_INFO": 117,
+        "GENERIC_ERROR": 110,
+        "HTTP_REQUEST": 58,
+        "KERNEL_RATE_LIMIT": 12,
+        "VLAN_PORT_ADD": 4,
+        "GENERIC_WARN": 4
+      },
+      "components": [
+        "-vtysh",
+        "audit",
+        "diagnostics",
+        "hpe-config",
+        "hpe-restd",
+        "hpe-routing",
+        "ip",
+        "ipsla-responderd",
+        "ipsla-sourced",
+        "kernel",
+        "nginx",
+        "ops-switchd",
+        "ptpd",
+        "statsmond",
+        "switchd_agent0",
+        "switchd_agent1",
+        "vland"
+      ],
+      "top_templates": [
+        {
+          "template": "Audit Log written with seqNo = <*>",
+          "count": 564
+        },
+        {
+          "template": "AUDIT|CLI <*> <*> <*> executed by user <*> from address '<IP>' through <*> sessi",
+          "count": 260
+        },
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        }
+      ],
+      "error_samples": [
+        "platformhwd: server returned error:rc=0,error str:\"dumpdiagbasic\" is not a valid command",
+        "daemon :platformhwd failed to capture diag dump , rc:1",
+        "net_ratelimit: 196 callbacks suppressed",
+        "Unknown wait done table request received , table = Neighbor",
+        "Failed to open pidfile:/var/run/openvswitch/mcast-msdpd.pid , error:No such file or directory"
+      ],
+      "top_services": {
+        "-vtysh": 846,
+        "acctsyslogd": 782,
+        "kernel": 132,
+        "nginx": 58,
+        "hpe-routing": 30
+      },
+      "event_log": [
+        {
+          "ts": "2026-02-25T11:35:21.278",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: platformhwd, daemon: platformhwd, execution time: 0 seconds, 555443 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.278",
+          "sev": "ERROR",
+          "type": "GENERIC_ERROR",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "platformhwd: server returned error:rc=0,error str:\"dumpdiagbasic\" is not a valid command"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.278",
+          "sev": "ERROR",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "daemon :platformhwd failed to capture diag dump , rc:1"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.278",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 54"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.279",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "acctsyslogd",
+          "ips": [
+            "172.16.14.232"
+          ],
+          "msg": "AUDIT|CLI \"diag-dump platformhwd basic\" executed by user 'admin' from address '172.16.14.232' through SSH session which"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.588",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: vrrp, daemon: hpe-vrrpd, execution time: 0 seconds, 653244 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.588",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 55"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.589",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "acctsyslogd",
+          "ips": [
+            "172.16.14.232"
+          ],
+          "msg": "AUDIT|CLI \"diag-dump vrrp basic\" executed by user 'admin' from address '172.16.14.232' through SSH session which resulte"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.634",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: vxlan, daemon: ops-switchd, execution time: 0 seconds, 4974949 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.682",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: vxlan, daemon: switchd_agent0, execution time: 0 seconds, 20165241 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.757",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: vxlan, daemon: switchd_agent1, execution time: -1 seconds, 943312182 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.817",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 56"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.818",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "acctsyslogd",
+          "ips": [
+            "172.16.14.232"
+          ],
+          "msg": "AUDIT|CLI \"diag-dump vxlan basic\" executed by user 'admin' from address '172.16.14.232' through SSH session which result"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.892",
+          "sev": "INFO",
+          "type": "VLAN_PORT_ADD",
+          "service": "vland",
+          "ips": [],
+          "msg": "diag-dump ds.length = 0"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.892",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: vlan-translation, daemon: vland, execution time: 0 seconds, 499843 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.893",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: vlan-translation, daemon: ops-switchd, execution time: 0 seconds, 743284 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.893",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 57"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.894",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "acctsyslogd",
+          "ips": [
+            "172.16.14.232"
+          ],
+          "msg": "AUDIT|CLI \"diag-dump vlan-translation basic\" executed by user 'admin' from address '172.16.14.232' through SSH session w"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.900",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: vlanmgmt, daemon: vlanmgmtd, execution time: 0 seconds, 482923 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T11:35:21.900",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "-vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 58"
+        }
+      ]
+    },
+    {
+      "window": "W0677",
+      "time": "2026-02-25T11:40:21",
+      "is_burst": false,
+      "total_events": 462,
+      "errors": 22,
+      "warns": 68,
+      "event_types": {
+        "AUDIT_API_ACCESS": 223,
+        "KERNEL_INTERRUPT": 120,
+        "HTTP_REQUEST": 58,
+        "GENERIC_INFO": 31,
+        "GENERIC_ERROR": 18,
+        "KERNEL_RATE_LIMIT": 12
+      },
+      "components": [
+        "audit",
+        "hpe-restd",
+        "hpe-routing",
+        "kernel",
+        "nginx",
+        "statsmond",
+        "vtysh"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "2026/02/25 06:10:23 [warn] 4776#4776: *232572 using uninitialized \"script_csp\" variable while reading response header fr",
+        "2026/02/25 06:10:23 [warn] 4776#4776: *232572 using uninitialized \"font_csp\" variable while reading response header from",
+        "2026/02/25 06:10:23 [warn] 4776#4776: *232572 using uninitialized \"style_csp\" variable while reading response header fro",
+        "2026/02/25 06:10:23 [warn] 4776#4776: *232572 using uninitialized \"image_csp\" variable while reading response header fro",
+        "2026/02/25 06:10:23 [warn] 4776#4776: *232572 using uninitialized \"connect_csp\" variable while reading response header f"
+      ],
+      "top_services": {
+        "acctsyslogd": 220,
+        "kernel": 132,
+        "nginx": 58,
+        "vtysh": 21,
+        "hpe-routing": 13
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0683",
+      "time": "2026-02-25T11:46:21",
+      "is_burst": false,
+      "total_events": 462,
+      "errors": 22,
+      "warns": 68,
+      "event_types": {
+        "AUDIT_API_ACCESS": 221,
+        "KERNEL_INTERRUPT": 120,
+        "HTTP_REQUEST": 58,
+        "GENERIC_INFO": 33,
+        "GENERIC_ERROR": 18,
+        "KERNEL_RATE_LIMIT": 12
+      },
+      "components": [
+        "audit",
+        "hhmd",
+        "hpe-restd",
+        "hpe-routing",
+        "kernel",
+        "nginx",
+        "statsmond",
+        "vtysh"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 141 callbacks suppressed",
+        "Unknown wait done table request received , table = Prefix_List",
+        "net_ratelimit: 801 callbacks suppressed",
+        "Column vrf doesn't have default comparator, andno custom comparator was given.",
+        "Column port doesn't have default comparator, andno custom comparator was given."
+      ],
+      "top_services": {
+        "acctsyslogd": 219,
+        "kernel": 132,
+        "nginx": 58,
+        "vtysh": 20,
+        "hpe-routing": 13
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0689",
+      "time": "2026-02-25T11:52:21",
+      "is_burst": false,
+      "total_events": 557,
+      "errors": 26,
+      "warns": 73,
+      "event_types": {
+        "AUDIT_API_ACCESS": 219,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_INFO": 103,
+        "HTTP_REQUEST": 58,
+        "GENERIC_ERROR": 22,
+        "KERNEL_RATE_LIMIT": 12,
+        "PORT_LINK_DOWN": 10,
+        "PORT_LINK_UP": 7,
+        "GENERIC_WARN": 5,
+        "KERNEL_INTERFACE_UP": 1
+      },
+      "components": [
+        "audit",
+        "cdpd",
+        "hpe-ledarbd",
+        "hpe-restd",
+        "hpe-routing",
+        "hpe-vsxd",
+        "interface",
+        "kernel",
+        "lacpd",
+        "lldpd",
+        "nginx",
+        "ops-switchd",
+        "portd",
+        "statsmond"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 219
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 162 callbacks suppressed",
+        "2026/02/25 06:22:21 [warn] 4776#4776: *235693 using uninitialized \"script_csp\" variable while reading response header fr",
+        "2026/02/25 06:22:21 [warn] 4776#4776: *235693 using uninitialized \"font_csp\" variable while reading response header from",
+        "2026/02/25 06:22:21 [warn] 4776#4776: *235693 using uninitialized \"style_csp\" variable while reading response header fro",
+        "2026/02/25 06:22:21 [warn] 4776#4776: *235693 using uninitialized \"image_csp\" variable while reading response header fro"
+      ],
+      "top_services": {
+        "acctsyslogd": 219,
+        "kernel": 133,
+        "nginx": 58,
+        "lacpd": 54,
+        "hpe-routing": 23
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0690",
+      "time": "2026-02-25T11:53:21",
+      "is_burst": false,
+      "total_events": 538,
+      "errors": 21,
+      "warns": 69,
+      "event_types": {
+        "AUDIT_API_ACCESS": 222,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_INFO": 96,
+        "HTTP_REQUEST": 59,
+        "GENERIC_ERROR": 17,
+        "KERNEL_RATE_LIMIT": 12,
+        "PORT_LINK_DOWN": 11,
+        "KERNEL_INTERFACE_UP": 1
+      },
+      "components": [
+        "audit",
+        "cdpd",
+        "hpe-restd",
+        "hpe-routing",
+        "hpe-vsxd",
+        "kernel",
+        "lacpd",
+        "ndmd",
+        "nginx",
+        "portd",
+        "statsmond"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 326 callbacks suppressed",
+        "IDL instance [hpe-vsxd_0] is explicitly writing [Port:vsx_pdu_tx_disable] empty value",
+        "Read failed, fd=16: errno=100",
+        "IDL instance [ndmd_0] is explicitly writing [Neighbor:from] empty value",
+        "2026/02/25 06:23:24 [warn] 4776#4776: *235882 using uninitialized \"script_csp\" variable while reading response header fr"
+      ],
+      "top_services": {
+        "acctsyslogd": 220,
+        "kernel": 133,
+        "nginx": 59,
+        "hpe-routing": 41,
+        "lacpd": 27
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0695",
+      "time": "2026-02-25T11:58:21",
+      "is_burst": false,
+      "total_events": 513,
+      "errors": 25,
+      "warns": 71,
+      "event_types": {
+        "AUDIT_API_ACCESS": 218,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_INFO": 64,
+        "HTTP_REQUEST": 58,
+        "GENERIC_ERROR": 21,
+        "KERNEL_RATE_LIMIT": 12,
+        "PORT_LINK_DOWN": 10,
+        "PORT_LINK_UP": 6,
+        "GENERIC_WARN": 3,
+        "KERNEL_INTERFACE_UP": 1
+      },
+      "components": [
+        "audit",
+        "cdpd",
+        "hpe-restd",
+        "hpe-routing",
+        "hpe-vsxd",
+        "interface",
+        "kernel",
+        "lacpd",
+        "lldpd",
+        "nginx",
+        "ops-switchd",
+        "portd",
+        "statsmond"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 227 callbacks suppressed",
+        "net_ratelimit: 202 callbacks suppressed",
+        "Unknown wait done table request received , table = Prefix_List",
+        "net_ratelimit: 151 callbacks suppressed",
+        "net_ratelimit: 157 callbacks suppressed"
+      ],
+      "top_services": {
+        "acctsyslogd": 218,
+        "kernel": 133,
+        "nginx": 58,
+        "lacpd": 30,
+        "hpe-vsxd": 21
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0700",
+      "time": "2026-02-25T12:03:21",
+      "is_burst": false,
+      "total_events": 954,
+      "errors": 70,
+      "warns": 103,
+      "event_types": {
+        "GENERIC_INFO": 394,
+        "AUDIT_API_ACCESS": 211,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_ERROR": 63,
+        "HTTP_REQUEST": 52,
+        "PORT_LINK_DOWN": 41,
+        "GENERIC_WARN": 23,
+        "OVS_CONNECT": 19,
+        "KERNEL_RATE_LIMIT": 12,
+        "PORT_LINK_UP": 6
+      },
+      "components": [
+        "audit",
+        "bfdd",
+        "cdpd",
+        "dhcp_server_adapter",
+        "fibapp",
+        "hpe-mgmdd",
+        "hpe-mstpd",
+        "hpe-restd",
+        "hpe-routing",
+        "hpe-tsdbd",
+        "hpe-vsxd",
+        "hpe-vsxkad",
+        "interface",
+        "kernel",
+        "l2mac-mgrd",
+        "lacpd",
+        "lldpd",
+        "ndmd",
+        "nginx",
+        "ovs",
+        "pim-bidid",
+        "pimd",
+        "portd",
+        "statsmond",
+        "stp",
+        "system",
+        "systemd",
+        "vland",
+        "vsx-swupdated",
+        "vsxmgmtd",
+        "vtysh"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 207
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 49
+        }
+      ],
+      "error_samples": [
+        "AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/",
+        "Unknown wait done table request received , table = Neighbor",
+        "2026/02/25 06:33:22 [warn] 4776#4776: *238238 using uninitialized \"script_csp\" variable while reading response header fr",
+        "2026/02/25 06:33:22 [warn] 4776#4776: *238238 using uninitialized \"font_csp\" variable while reading response header from",
+        "2026/02/25 06:33:22 [warn] 4776#4776: *238238 using uninitialized \"style_csp\" variable while reading response header fro"
+      ],
+      "top_services": {
+        "acctsyslogd": 209,
+        "kernel": 136,
+        "hpe-vsxd": 113,
+        "lacpd": 111,
+        "hpe-routing": 73
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0703",
+      "time": "2026-02-25T12:06:21",
+      "is_burst": false,
+      "total_events": 563,
+      "errors": 23,
+      "warns": 69,
+      "event_types": {
+        "AUDIT_API_ACCESS": 232,
+        "GENERIC_INFO": 121,
+        "KERNEL_INTERRUPT": 120,
+        "HTTP_REQUEST": 59,
+        "GENERIC_ERROR": 19,
+        "KERNEL_RATE_LIMIT": 12
+      },
+      "components": [
+        "audit",
+        "hhmd",
+        "hpe-restd",
+        "hpe-routing",
+        "kernel",
+        "l2mac-mgrd",
+        "nginx",
+        "pimd",
+        "statsmond"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 139 callbacks suppressed",
+        "2026-02-25T06:36:21Z|00053|reconnect|INFO|tcp:169.254.0.2:6640: connection attempt failed (No route to host)",
+        "Unknown wait done table request received , table = Neighbor",
+        "2026/02/25 06:36:28 [warn] 4776#4776: *238238 using uninitialized \"script_csp\" variable while reading response header fr",
+        "2026/02/25 06:36:28 [warn] 4776#4776: *238238 using uninitialized \"font_csp\" variable while reading response header from"
+      ],
+      "top_services": {
+        "acctsyslogd": 225,
+        "kernel": 132,
+        "hpe-routing": 69,
+        "nginx": 59,
+        "l2mac-mgrd": 34
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0705",
+      "time": "2026-02-25T12:08:21",
+      "is_burst": false,
+      "total_events": 499,
+      "errors": 25,
+      "warns": 68,
+      "event_types": {
+        "AUDIT_API_ACCESS": 222,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_INFO": 66,
+        "HTTP_REQUEST": 59,
+        "GENERIC_ERROR": 20,
+        "KERNEL_RATE_LIMIT": 12
+      },
+      "components": [
+        "audit",
+        "hpe-restd",
+        "hpe-routing",
+        "kernel",
+        "l2mac-mgrd",
+        "nginx",
+        "pimd",
+        "statsmond"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 234 callbacks suppressed",
+        "2026-02-25T06:38:23Z|00086|reconnect|INFO|tcp:169.254.0.2:6640: connection attempt failed (No route to host)",
+        "Unknown wait done table request received , table = Neighbor",
+        "net_ratelimit: 238 callbacks suppressed",
+        "Unknown wait done table request received , table = Prefix_List"
+      ],
+      "top_services": {
+        "acctsyslogd": 220,
+        "kernel": 132,
+        "nginx": 59,
+        "l2mac-mgrd": 34,
+        "pimd": 17
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0707",
+      "time": "2026-02-25T12:10:21",
+      "is_burst": false,
+      "total_events": 504,
+      "errors": 22,
+      "warns": 68,
+      "event_types": {
+        "AUDIT_API_ACCESS": 220,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_INFO": 76,
+        "HTTP_REQUEST": 58,
+        "GENERIC_ERROR": 18,
+        "KERNEL_RATE_LIMIT": 12
+      },
+      "components": [
+        "audit",
+        "hpe-restd",
+        "hpe-routing",
+        "kernel",
+        "l2mac-mgrd",
+        "nginx",
+        "pimd",
+        "statsmond"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 213 callbacks suppressed",
+        "2026-02-25T06:40:25Z|00119|reconnect|INFO|tcp:169.254.0.2:6640: connection attempt failed (No route to host)",
+        "Unknown wait done table request received , table = Neighbor",
+        "Unknown wait done table request received , table = Prefix_List",
+        "net_ratelimit: 278 callbacks suppressed"
+      ],
+      "top_services": {
+        "acctsyslogd": 219,
+        "kernel": 132,
+        "nginx": 58,
+        "l2mac-mgrd": 36,
+        "hpe-routing": 22
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0708",
+      "time": "2026-02-25T12:11:21",
+      "is_burst": false,
+      "total_events": 593,
+      "errors": 28,
+      "warns": 88,
+      "event_types": {
+        "AUDIT_API_ACCESS": 248,
+        "KERNEL_INTERRUPT": 120,
+        "GENERIC_INFO": 90,
+        "HTTP_REQUEST": 58,
+        "GENERIC_ERROR": 23,
+        "GENERIC_WARN": 20,
+        "METRIC_WRITE": 18,
+        "KERNEL_RATE_LIMIT": 12,
+        "OVS_FLOW_ADD": 4
+      },
+      "components": [
+        "audit",
+        "diagnostics",
+        "hhmd",
+        "hpe-mstpd",
+        "hpe-restd",
+        "hpe-routing",
+        "ip",
+        "kernel",
+        "l2mac-mgrd",
+        "lacpd",
+        "nginx",
+        "ovs",
+        "pimd",
+        "statsmond",
+        "switchd_agent0",
+        "switchd_agent1",
+        "vtysh"
+      ],
+      "top_templates": [
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        },
+        {
+          "template": "provision <*> <*> Re-enabling RX interrupts and disabling NAPI polling",
+          "count": 120
+        },
+        {
+          "template": "<*> <*> [warn] <NUM>#<NUM>: *<NUM> using uninitialized <*> variable while readin",
+          "count": 56
+        }
+      ],
+      "error_samples": [
+        "net_ratelimit: 148 callbacks suppressed",
+        "2026-02-25T06:41:26Z|00028|idl_scheduler|WARN|Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "Scheduling MACSEC_AGENT in 0 milliseconds. Behind schedule!!!",
+        "Unknown wait done table request received , table = Prefix_List",
+        "Unknown wait done table request received , table = Neighbor"
+      ],
+      "top_services": {
+        "acctsyslogd": 233,
+        "kernel": 132,
+        "nginx": 58,
+        "vtysh": 44,
+        "hpe-routing": 33
+      },
+      "event_log": []
+    },
+    {
+      "window": "W0709",
+      "time": "2026-02-25T12:12:21",
+      "is_burst": true,
+      "total_events": 2140,
+      "errors": 186,
+      "warns": 74,
+      "event_types": {
+        "AUDIT_API_ACCESS": 1418,
+        "METRIC_WRITE": 211,
+        "GENERIC_INFO": 176,
+        "GENERIC_ERROR": 145,
+        "KERNEL_INTERRUPT": 110,
+        "HTTP_REQUEST": 58,
+        "KERNEL_RATE_LIMIT": 11,
+        "VLAN_PORT_ADD": 5,
+        "GENERIC_WARN": 4,
+        "PORT_LINK_DOWN": 2
+      },
+      "components": [
+        "audit",
+        "diagnostics",
+        "hpe-config",
+        "hpe-config-ckptpostcfg",
+        "hpe-restd",
+        "hpe-routing",
+        "interface",
+        "ip",
+        "ipsla-responderd",
+        "ipsla-sourced",
+        "kernel",
+        "l2mac-mgrd",
+        "nginx",
+        "ops-switchd",
+        "pimd",
+        "ptpd",
+        "statsmond",
+        "switchd_agent",
+        "switchd_agent1",
+        "vland",
+        "vtysh"
+      ],
+      "top_templates": [
+        {
+          "template": "Audit Log written with seqNo = <*>",
+          "count": 600
+        },
+        {
+          "template": "AUDIT|CLI <*> <*> <*> executed by user <*> from address '<IP>' through <*> sessi",
+          "count": 298
+        },
+        {
+          "template": "AUDIT|REST URI executed by user <*> from address '<IP>' through REST session. Th",
+          "count": 218
+        }
+      ],
+      "error_samples": [
+        "Failed to open pidfile:/var/run/openvswitch/hpe-lpd.pid , error:No such file or directory",
+        "cannot read pidfile :/var/run/openvswitch/hpe-lpd.pid",
+        "hpe-lpd transaction error. Client is null",
+        "daemon :hpe-lpd failed to capture diag dump , rc:1",
+        "Failed to open pidfile:/var/run/openvswitch/hpe-mvrpd.pid , error:No such file or directory"
+      ],
+      "top_services": {
+        "vtysh": 986,
+        "acctsyslogd": 818,
+        "kernel": 121,
+        "nginx": 58,
+        "l2mac-mgrd": 30
+      },
+      "event_log": [
+        {
+          "ts": "2026-02-25T12:12:22.461",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: qos, daemon: ops-switchd, execution time: 1 seconds, 946357568 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.514",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 39"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.516",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "acctsyslogd",
+          "ips": [],
+          "msg": "AUDIT|CLI \"diag-dump qos basic\" executed by user 'root' from address '0.0.0.0' through CLI session which resulted in suc"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.559",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: mirror-mm, daemon: ops-switchd, execution time: 0 seconds, 778365 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.560",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 40"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.560",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "acctsyslogd",
+          "ips": [],
+          "msg": "AUDIT|CLI \"diag-dump mirror-mm basic\" executed by user 'root' from address '0.0.0.0' through CLI session which resulted"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.567",
+          "sev": "INFO",
+          "type": "METRIC_WRITE",
+          "service": "vtysh",
+          "ips": [],
+          "msg": "Diagdump executed for feature: mirror-asic, daemon: ops-switchd, execution time: 0 seconds, 797326 nanoseconds"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.568",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "vtysh",
+          "ips": [],
+          "msg": "Audit Log written with seqNo = 41"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.568",
+          "sev": "INFO",
+          "type": "AUDIT_API_ACCESS",
+          "service": "acctsyslogd",
+          "ips": [],
+          "msg": "AUDIT|CLI \"diag-dump mirror-asic basic\" executed by user 'root' from address '0.0.0.0' through CLI session which resulte"
+        },
+        {
+          "ts": "2026-02-25T12:12:22.591",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "iptables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.598",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "iptables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.606",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "iptables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.613",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "iptables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.619",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "iptables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.626",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "iptables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.637",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "ip6tables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.644",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "ip6tables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.650",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "ip6tables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.656",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "ip6tables: No chain/target/match by that name."
+        },
+        {
+          "ts": "2026-02-25T12:12:22.662",
+          "sev": "INFO",
+          "type": "GENERIC_INFO",
+          "service": "ops-switchd",
+          "ips": [],
+          "msg": "ip6tables: No chain/target/match by that name."
+        }
+      ]
+    }
+  ],
+  "burst_timeline": [
+    {
+      "window": "W0669",
+      "time": "2026-02-25T11:32",
+      "burst": false,
+      "events": 432,
+      "errors": 15,
+      "rate_vs_avg": 0.99
+    },
+    {
+      "window": "W0670",
+      "time": "2026-02-25T11:33",
+      "burst": false,
+      "events": 452,
+      "errors": 16,
+      "rate_vs_avg": 1.03
+    },
+    {
+      "window": "W0671",
+      "time": "2026-02-25T11:34",
+      "burst": false,
+      "events": 741,
+      "errors": 58,
+      "rate_vs_avg": 1.69
+    },
+    {
+      "window": "W0672",
+      "time": "2026-02-25T11:35",
+      "burst": true,
+      "events": 1913,
+      "errors": 143,
+      "rate_vs_avg": 4.36
+    },
+    {
+      "window": "W0673",
+      "time": "2026-02-25T11:36",
+      "burst": false,
+      "events": 446,
+      "errors": 16,
+      "rate_vs_avg": 1.02
+    },
+    {
+      "window": "W0674",
+      "time": "2026-02-25T11:37",
+      "burst": false,
+      "events": 425,
+      "errors": 15,
+      "rate_vs_avg": 0.97
+    },
+    {
+      "window": "W0675",
+      "time": "2026-02-25T11:38",
+      "burst": false,
+      "events": 348,
+      "errors": 12,
+      "rate_vs_avg": 0.79
+    },
+    {
+      "window": "W0706",
+      "time": "2026-02-25T12:09",
+      "burst": false,
+      "events": 514,
+      "errors": 21,
+      "rate_vs_avg": 1.17
+    },
+    {
+      "window": "W0707",
+      "time": "2026-02-25T12:10",
+      "burst": false,
+      "events": 504,
+      "errors": 22,
+      "rate_vs_avg": 1.15
+    },
+    {
+      "window": "W0708",
+      "time": "2026-02-25T12:11",
+      "burst": false,
+      "events": 593,
+      "errors": 28,
+      "rate_vs_avg": 1.35
+    },
+    {
+      "window": "W0709",
+      "time": "2026-02-25T12:12",
+      "burst": true,
+      "events": 2140,
+      "errors": 186,
+      "rate_vs_avg": 4.88
+    }
+  ],
+  "causal_event_pairs": [
+    {
+      "from_type": "METRIC_WRITE",
+      "from_service": "-vtysh",
+      "from_ts": "2026-02-25T11:35:21.278",
+      "to_type": "GENERIC_ERROR",
+      "to_service": "-vtysh",
+      "to_ts": "2026-02-25T11:35:21.278"
+    },
+    {
+      "from_type": "GENERIC_ERROR",
+      "from_service": "-vtysh",
+      "from_ts": "2026-02-25T11:35:21.278",
+      "to_type": "METRIC_WRITE",
+      "to_service": "-vtysh",
+      "to_ts": "2026-02-25T11:35:21.278"
+    },
+    {
+      "from_type": "METRIC_WRITE",
+      "from_service": "-vtysh",
+      "from_ts": "2026-02-25T11:35:21.278",
+      "to_type": "AUDIT_API_ACCESS",
+      "to_service": "-vtysh",
+      "to_ts": "2026-02-25T11:35:21.278"
+    },
+    {
+      "from_type": "AUDIT_API_ACCESS",
+      "from_service": "acctsyslogd",
+      "from_ts": "2026-02-25T11:35:21.279",
+      "to_type": "METRIC_WRITE",
+      "to_service": "-vtysh",
+      "to_ts": "2026-02-25T11:35:21.588",
+      "from_ip": "172.16.14.232"
+    },
+    {
+      "from_type": "AUDIT_API_ACCESS",
+      "from_service": "acctsyslogd",
+      "from_ts": "2026-02-25T11:35:21.818",
+      "to_type": "VLAN_PORT_ADD",
+      "to_service": "vland",
+      "to_ts": "2026-02-25T11:35:21.892",
+      "from_ip": "172.16.14.232"
+    },
+    {
+      "from_type": "VLAN_PORT_ADD",
+      "from_service": "vland",
+      "from_ts": "2026-02-25T11:35:21.892",
+      "to_type": "METRIC_WRITE",
+      "to_service": "-vtysh",
+      "to_ts": "2026-02-25T11:35:21.892"
+    },
+    {
+      "from_type": "METRIC_WRITE",
+      "from_service": "vtysh",
+      "from_ts": "2026-02-25T12:12:22.461",
+      "to_type": "AUDIT_API_ACCESS",
+      "to_service": "vtysh",
+      "to_ts": "2026-02-25T12:12:22.514"
+    },
+    {
+      "from_type": "AUDIT_API_ACCESS",
+      "from_service": "acctsyslogd",
+      "from_ts": "2026-02-25T12:12:22.516",
+      "to_type": "METRIC_WRITE",
+      "to_service": "vtysh",
+      "to_ts": "2026-02-25T12:12:22.559"
+    },
+    {
+      "from_type": "AUDIT_API_ACCESS",
+      "from_service": "acctsyslogd",
+      "from_ts": "2026-02-25T12:12:22.568",
+      "to_type": "GENERIC_INFO",
+      "to_service": "ops-switchd",
+      "to_ts": "2026-02-25T12:12:22.591"
+    }
+  ],
+  "confidence": {
+    "score": 1.0,
+    "label": "very high",
+    "basis": [
+      "2 burst windows detected (\u22653\u00d7 normal event rate)",
+      "causal path spans 7 event types",
+      "GENERIC_ERROR is +967% vs normal baseline",
+      "burst spikes co-occur in same time windows (temporal alignment)"
+    ]
+  },
+  "top_clusters": [
+    {
+      "cluster_id": "C0000",
+      "event_count": 150505,
+      "dominant_event": "AUDIT_API_ACCESS",
+      "dominant_pct": 100.0,
+      "sample_message": "AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through"
+    },
+    {
+      "cluster_id": "C0002",
+      "event_count": 83870,
+      "dominant_event": "KERNEL_INTERRUPT",
+      "dominant_pct": 100.0,
+      "sample_message": "provision 0000:04:00.0 pvnet1: Re-enabling RX interrupts and disabling NAPI poll"
+    },
+    {
+      "cluster_id": "C0012",
+      "event_count": 38447,
+      "dominant_event": "HTTP_REQUEST",
+      "dominant_pct": 100.0,
+      "sample_message": "2026/02/25 05:30:47 [warn] 4776#4776: *223534 using uninitialized \"script_csp\" v"
+    },
+    {
+      "cluster_id": "C0005",
+      "event_count": 8506,
+      "dominant_event": "GENERIC_INFO",
+      "dominant_pct": 100.0,
+      "sample_message": "2026-02-25T05:30:30Z|06017|statsmond_process_rrdtool|INFO|statsmond_update_rrd_d"
+    },
+    {
+      "cluster_id": "C0001",
+      "event_count": 8387,
+      "dominant_event": "KERNEL_RATE_LIMIT",
+      "dominant_pct": 100.0,
+      "sample_message": "net_ratelimit: 131 callbacks suppressed"
+    },
+    {
+      "cluster_id": "C0003",
+      "event_count": 4208,
+      "dominant_event": "GENERIC_INFO",
+      "dominant_pct": 100.0,
+      "sample_message": "Wait table request received and not processed for table = Prefix_List"
+    },
+    {
+      "cluster_id": "C0004",
+      "event_count": 4208,
+      "dominant_event": "GENERIC_ERROR",
+      "dominant_pct": 100.0,
+      "sample_message": "Unknown wait done table request received , table = Prefix_List"
+    },
+    {
+      "cluster_id": "C0015",
+      "event_count": 4101,
+      "dominant_event": "GENERIC_ERROR",
+      "dominant_pct": 100.0,
+      "sample_message": "debug|LOG_ERR|Error Serving HTTP Request [/rest/v10.16/system/vrfs/*/ospf_router"
+    }
+  ]
+}
