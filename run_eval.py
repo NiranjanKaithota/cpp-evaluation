@@ -95,6 +95,34 @@ def load_existing_text_context(bundle_name):
         
     return compressed_text
 
+def load_toon_context(bundle_name):
+    """Bulletproof loader for the .toon format files."""
+    base_dir = Path("dev_compressed_logs")
+    toon_files = []
+    
+    # Recursively search for the bundle folder, then grab any .toon files inside
+    for path in base_dir.rglob(bundle_name):
+        if path.is_dir():
+            toon_files = list(path.glob("*.toon"))
+            if toon_files:
+                break
+                
+    compressed_text = ""
+    
+    if toon_files:
+        print(f"  -> [SUCCESS] Found TOON context at: {toon_files[0].parent}")
+        for tf in toon_files:
+            try:
+                with open(tf, "r", encoding="utf-8") as f:
+                    compressed_text += f"\n--- Source: {tf.name} ---\n"
+                    compressed_text += f.read() + "\n"
+            except Exception as e:
+                print(f"  [ERROR] Failed to read {tf}: {e}")
+    else:
+        print(f"  [ERROR] Could not find any '.toon' files inside any folder named '{bundle_name}'")
+        
+    return compressed_text
+
 def main():
     parser = argparse.ArgumentParser(description="HPE Support Bundle Evaluation Pipeline")
     parser.add_argument("--dataset", type=str, required=True, help="Path to evaluation dataset")
@@ -110,7 +138,7 @@ def main():
     
     # Target Toggles
     # Update choices to include "json"
-    parser.add_argument("--pipeline-type", type=str, default="text", choices=["text", "graph", "json"], help="Type of compression output")
+    parser.add_argument("--pipeline-type", type=str, default="text", choices=["text", "graph", "json", "toon"], help="Type of compression output")
     parser.add_argument("--bundle", type=str, default=None, help="Name of a specific bundle to run")
     
     args = parser.parse_args()
@@ -173,6 +201,8 @@ def main():
                 compressed_text = load_graph_context(bundle["name"])
             elif args.pipeline_type == "json":                 
                 compressed_text = load_json_context(bundle["name"])
+            elif args.pipeline_type == "toon":
+                compressed_text = load_toon_context(bundle["name"])
                 
             if not compressed_text:
                 print(f"  [WARNING] Compressed context is empty for {bundle['name']}. Files may be missing.")

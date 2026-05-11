@@ -1,0 +1,49 @@
+{
+  "bundle": "HPE-test-bundle-graph-2",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 2.2707192380994106,
+  "raw_size": 4975491,
+  "comp_size": 2191152,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "Interface 1/1/3 is up (Blocked)",
+      "Partner is out of sync for interface 1/1/3 LAG sport: 1. Actor state: ALFOX, partner state PSFO",
+      "Partner is lost (timed out) for interface 1/1/3 LAG sport: 1. State: Expired State -> Defaulted State"
+    ],
+    "recommended_action": "Check the configuration of interface 1/1/3 and ensure it is properly configured for the LAG. Verify that the partner switch is configured correctly and that there are no issues with the underlying network infrastructure."
+  },
+  "comp_details": {
+    "root_cause_entity": "10.233.131.22",
+    "root_cause_type": "Nginx_HTTPS_Handshake_Failures",
+    "observed_symptoms": [
+      {
+        "node_id": "node_12",
+        "template": "<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> info 4776#4776 <*> client closed connection while SSL handshaking client ffff <IP> server 443",
+        "count": 2
+      },
+      {
+        "node_id": "node_34",
+        "template": "<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> info 4776#4776 <*> client closed connection while SSL handshaking client ffff <IP> server 443",
+        "count": 2
+      },
+      {
+        "node_id": "node_55",
+        "template": "<TS>+05 30 PSCSCTLEAFB03 nginx 2026 02 25 <TIME> info 4776#4776 <*> client closed connection while SSL handshaking client ffff <IP> server 443",
+        "count": 2
+      }
+    ],
+    "recommended_action": "Investigate and resolve any issues with the Nginx HTTPS handshake process. Ensure that the SSL/TLS configuration is correct and that the server's certificate is valid and trusted. Verify that the client's certificate, if required, is also valid and properly configured."
+  },
+  "ground_truth": {
+    "root_cause_entity": "vlan4000",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "BFD session down"
+    ],
+    "recommended_action": "Restart the BFD session and verify the interface state.",
+    "failure_timestamp": "unknown"
+  }
+}

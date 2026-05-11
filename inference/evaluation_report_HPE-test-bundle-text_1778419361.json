@@ -1,0 +1,55 @@
+{
+  "bundle": "HPE-test-bundle-text",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 2.335349906501348,
+  "raw_size": 4975491,
+  "comp_size": 2130512,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      {
+        "timestamp": "2026-02-25T11:59:23.495569+05:30",
+        "event": "Partner is out of sync for interface 1/1/3 LAG sport: 1. Actor state: ALFOX, partner state PSFO"
+      },
+      {
+        "timestamp": "2026-02-25T11:59:26.273459+05:30",
+        "event": "Partner is lost (timed out) for interface 1/1/3 LAG sport: 1. State: Expired State -> Defaulted State"
+      },
+      {
+        "timestamp": "2026-02-25T12:03:46.673450+05:30",
+        "event": "VSX ISL port lag256 is Out-Of-Sync with the peer: link is down"
+      }
+    ],
+    "recommended_action": "Check the configuration of interface 1/1/3 and ensure that it is properly configured and synchronized with the partner interface. Verify that the LAG (Link Aggregation Group) is functioning correctly and that the partner interface is responding as expected."
+  },
+  "comp_details": {
+    "root_cause_entity": "10.0.0.20",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      {
+        "event": "[122] t=18.0s [FAIL] AUDIT|REST URI executed by user 'monitor' from address '10.0.0.20' through REST session. The URI is '/api/v1/system/vrfs/routes?depth=2' and the method is GET and response code is 400 with payload '' which resulted in failure at timezone UTC. [ipv4=10.0.0.20, path=/api/v1/system/vrfs/routes, service=auditd]",
+        "timestamp": "18.0s"
+      },
+      {
+        "event": "[123] t=18.1s [UNKNOWN] AUDIT|REST URI executed by user 'netops' from address '10.0.0.20' through REST session. The URI is '/api/v1/system/ports?depth=1' and the method is POST and response code is 200 with payload '' which resulted in success at timezone UTC. [ipv4=10.0.0.20, path=/api/v1/system/ports, service=auditd]",
+        "timestamp": "18.1s"
+      },
+      {
+        "event": "[124] t=18.2s [UNKNOWN] AUDIT|REST URI executed by user 'admin' from address '10.0.0.20' through REST session. The URI is '/api/v1/system/interfaces?depth=1&selector=status' and the method is GET and response code is 200 with payload '' which resulted in success at timezone UTC. [ipv4=10.0.0.20, path=/api/v1/system/interfaces, service=auditd]",
+        "timestamp": "18.2s"
+      }
+    ],
+    "recommended_action": "Review and rectify the configuration settings for the component at 10.0.0.20 to ensure it aligns with the expected parameters and functionality."
+  },
+  "ground_truth": {
+    "root_cause_entity": "vlan4000",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "BFD session down"
+    ],
+    "recommended_action": "Restart the BFD session and verify the interface state.",
+    "failure_timestamp": "unknown"
+  }
+}

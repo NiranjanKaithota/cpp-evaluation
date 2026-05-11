@@ -2,8 +2,8 @@
   "ground_truth": {
     "root_cause_entity": "vlan4000",
     "root_cause_type": "physical_layer_failure",
-    "expected_symptoms": [],
-    "recommended_action": "Check physical cable",
+    "expected_symptoms": ["BFD session down"],
+    "recommended_action": "Restart the BFD session and verify the interface state.",
     "failure_timestamp": "unknown"
   }
 }

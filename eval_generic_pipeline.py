@@ -54,6 +54,17 @@ MODEL   = os.environ.get("COHERE_MODEL", "command-r-08-2024")
 _cohere = cohere.ClientV2(os.environ.get("COHERE_API_KEY", ""), timeout=360.0)
 print(f"Backend : Cohere  |  Model : {MODEL}")
 
+import google.generativeai as genai
+
+# Gemini Setup for Adversarial Question Generation
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+    gemini_model = genai.GenerativeModel('gemini-2.5-flash')
+else:
+    print("  [WARNING] GEMINI_API_KEY not found. Dynamic adversarial questions will be skipped.")
+    gemini_model = None
+
 # ═══════════════════════════════════════════════════════════════════════════
 # IMPROVED QUESTION BANK
 # ═══════════════════════════════════════════════════════════════════════════
@@ -62,164 +73,184 @@ print(f"Backend : Cohere  |  Model : {MODEL}")
 # Maps to RCM (Root Cause Match) metric from evaluation plan
 ROOT_CAUSE_QUESTIONS = [
     {
-        "id": "RC-Q1",
-        "category": "root_cause_attribution",
-        "difficulty": "hard",
-        "weight": 0.20,
+        "id": "RC-Q1", "category": "root_cause_attribution", "difficulty": "hard", "weight": 0.20,
         "question": "What is the root cause of the primary network issue? Identify the specific component that failed and explain the failure mechanism.",
-        "scoring_method": "entity_extraction_plus_semantic",
-        "requires_entities": True,
-        "evaluation_notes": "Must identify correct entity (interface/IP/process) AND failure type. Partial credit for one but not both."
+        "scoring_method": "entity_extraction_plus_semantic"
     },
     {
-        "id": "RC-Q2",
-        "category": "root_cause_attribution",
-        "difficulty": "hard",
-        "weight": 0.10,
+        "id": "RC-Q2", "category": "root_cause_attribution", "difficulty": "hard", "weight": 0.10,
         "question": "What remediation steps would you recommend to resolve this issue? Be specific about which components to check or reconfigure.",
-        "scoring_method": "semantic_similarity",
-        "evaluation_notes": "Compare against ground truth recommended_action. Actionability metric from evaluation plan."
+        "scoring_method": "semantic_similarity"
     },
     {
-        "id": "RC-Q3",
-        "category": "root_cause_attribution",
-        "difficulty": "medium",
-        "weight": 0.05,
+        "id": "RC-Q3", "category": "root_cause_attribution", "difficulty": "medium", "weight": 0.05,
         "question": "Classify this failure: (A) Physical layer issue, (B) Configuration error, (C) Protocol/software failure, or (D) Resource exhaustion. Explain your choice.",
-        "scoring_method": "classification_with_reasoning",
-        "evaluation_notes": "Must match root_cause_type from metadata. Tests if compression preserves failure category."
+        "scoring_method": "classification_with_reasoning"
     },
+    {
+        "id": "RC-Q4", "category": "root_cause_attribution", "difficulty": "hard", "weight": 0.10,
+        "question": "Was this a single point of failure, or a cascading failure where one component's crash caused others to fail? Provide evidence.",
+        "scoring_method": "causal_chain_validation"
+    },
+    {
+        "id": "RC-Q5", "category": "root_cause_attribution", "difficulty": "easy", "weight": 0.05,
+        "question": "Based on standard networking practices, what is the severity level of this issue (e.g., Critical outage, Degraded performance, Informational warning)? Justify the severity.",
+        "scoring_method": "semantic_similarity"
+    }
 ]
 
 # Category 2: CAUSAL REASONING (High Priority - 20% weight)
 # Tests Layer 4 of compression pipeline (causality graph preservation)
 CAUSAL_REASONING_QUESTIONS = [
     {
-        "id": "CR-Q1",
-        "category": "causal_reasoning",
-        "difficulty": "hard",
-        "weight": 0.10,
+        "id": "CR-Q1", "category": "causal_reasoning", "difficulty": "hard", "weight": 0.10,
         "question": "Trace the causal chain: what event triggered the failure, what symptoms appeared as a result, and what was the final observable impact?",
-        "scoring_method": "causal_chain_validation",
-        "requires_ordering": True,
-        "evaluation_notes": "Tests multi-hop causality. Must show logical progression from root cause → symptoms → impact."
+        "scoring_method": "causal_chain_validation"
     },
     {
-        "id": "CR-Q2",
-        "category": "causal_reasoning",
-        "difficulty": "hard",
-        "weight": 0.10,
+        "id": "CR-Q2", "category": "causal_reasoning", "difficulty": "hard", "weight": 0.10,
         "question": "Could the observed symptoms have been caused by something OTHER than the identified root cause? If yes, what evidence rules out those alternatives?",
-        "scoring_method": "semantic_similarity",
-        "evaluation_notes": "Tests diagnostic depth. Good compression should preserve discriminative evidence."
+        "scoring_method": "semantic_similarity"
     },
+    {
+        "id": "CR-Q3", "category": "causal_reasoning", "difficulty": "medium", "weight": 0.10,
+        "question": "Did any automated network recovery mechanisms (e.g., STP reconvergence, BGP route recalculation, Link Aggregation failover) attempt to mitigate this failure? Detail their actions.",
+        "scoring_method": "entity_extraction_plus_semantic"
+    },
+    {
+        "id": "CR-Q4", "category": "causal_reasoning", "difficulty": "medium", "weight": 0.05,
+        "question": "How did this specific failure impact the overall network topology (e.g., routing tables, forwarding paths, neighbor adjacencies)?",
+        "scoring_method": "semantic_similarity"
+    }
 ]
 
 # Category 3: TEMPORAL ORDERING (Critical - 20% weight)
 # Maps to COPS (Causal Order Preservation Score) metric
 TEMPORAL_ORDERING_QUESTIONS = [
     {
-        "id": "TO-Q1",
-        "category": "temporal_ordering",
-        "difficulty": "medium",
-        "weight": 0.10,
+        "id": "TO-Q1", "category": "temporal_ordering", "difficulty": "medium", "weight": 0.10,
         "question": "List the 3-5 most critical events in chronological order. Include approximate timestamps if available.",
-        "scoring_method": "temporal_sequence_validation",
-        "requires_ordering": True,
-        "evaluation_notes": "Direct test of COPS metric. Order matters more than exact timestamps."
+        "scoring_method": "temporal_sequence_validation"
     },
     {
-        "id": "TO-Q2",
-        "category": "temporal_ordering",
-        "difficulty": "medium",
-        "weight": 0.05,
+        "id": "TO-Q2", "category": "temporal_ordering", "difficulty": "medium", "weight": 0.05,
         "question": "How long did it take from initial failure detection to complete service disruption? Describe the progression.",
-        "scoring_method": "temporal_reasoning",
-        "evaluation_notes": "Tests if compression preserves temporal density, not just start/end points."
+        "scoring_method": "temporal_reasoning"
     },
     {
-        "id": "TO-Q3",
-        "category": "temporal_ordering",
-        "difficulty": "easy",
-        "weight": 0.05,
+        "id": "TO-Q3", "category": "temporal_ordering", "difficulty": "easy", "weight": 0.05,
         "question": "Were there any WARNING-level events BEFORE the first ERROR? If so, list them.",
-        "scoring_method": "temporal_precedence",
-        "evaluation_notes": "Tests preservation of weak signals that precede major failures."
+        "scoring_method": "temporal_precedence"
     },
+    {
+        "id": "TO-Q4", "category": "temporal_ordering", "difficulty": "medium", "weight": 0.05,
+        "question": "Are there any cyclic or repeating error patterns indicating a continuous retry/fail loop (e.g., continuous interface flapping or repeated protocol handshakes)?",
+        "scoring_method": "binary_with_evidence"
+    },
+    {
+        "id": "TO-Q5", "category": "temporal_ordering", "difficulty": "easy", "weight": 0.05,
+        "question": "Identify the timestamp or approximate time when the system first returned to a stable or fully disconnected state after the chaos.",
+        "scoring_method": "entity_extraction"
+    }
 ]
 
 # Category 4: SEMANTIC EQUIVALENCE (10% weight)
 # Tests Layer 3 of compression pipeline (semantic fingerprinting)
 SEMANTIC_EQUIVALENCE_QUESTIONS = [
     {
-        "id": "SE-Q1",
-        "category": "semantic_equivalence",
-        "difficulty": "hard",
-        "weight": 0.05,
+        "id": "SE-Q1", "category": "semantic_equivalence", "difficulty": "hard", "weight": 0.05,
         "question": "Summarize the core network problem in 2-3 sentences using plain language (avoid technical jargon where possible).",
-        "scoring_method": "semantic_similarity",
-        "evaluation_notes": "Tests if compression preserves MEANING not just WORDS. Ultimate abstraction test."
+        "scoring_method": "semantic_similarity"
     },
     {
-        "id": "SE-Q2",
-        "category": "semantic_equivalence",
-        "difficulty": "medium",
-        "weight": 0.05,
+        "id": "SE-Q2", "category": "semantic_equivalence", "difficulty": "medium", "weight": 0.05,
         "question": "What network components or topology elements were affected by this failure?",
-        "scoring_method": "entity_extraction",
-        "evaluation_notes": "Tests abstraction capability without relying on exact identifier matching."
+        "scoring_method": "entity_extraction"
     },
+    {
+        "id": "SE-Q3", "category": "semantic_equivalence", "difficulty": "hard", "weight": 0.10,
+        "question": "If you were escalating this ticket to a Tier 3 Network Engineer, write the 1-sentence technical TL;DR they need to read first.",
+        "scoring_method": "semantic_similarity"
+    },
+    {
+        "id": "SE-Q4", "category": "semantic_equivalence", "difficulty": "easy", "weight": 0.05,
+        "question": "Translate this technical failure into its likely business or user-facing impact (e.g., loss of redundancy vs. complete user outage).",
+        "scoring_method": "semantic_similarity"
+    }
 ]
 
 # Category 5: NEGATIVE EVIDENCE & HALLUCINATION TRAPS (10% weight)
 # Maps to ER (Entity Recall) metric - tests for invented facts
 NEGATIVE_EVIDENCE_QUESTIONS = [
     {
-        "id": "NE-Q1",
-        "category": "negative_evidence",
-        "difficulty": "medium",
-        "weight": 0.03,
+        "id": "NE-Q1", "category": "negative_evidence", "difficulty": "medium", "weight": 0.05,
         "question": "Is there any evidence of DNS resolution failures in these logs?",
-        "scoring_method": "binary_with_evidence",
-        "expected_answer": "no",
-        "evaluation_notes": "Hallucination trap - DNS should not appear in most scenarios."
+        "scoring_method": "binary_with_evidence"
     },
     {
-        "id": "NE-Q2",
-        "category": "negative_evidence",
-        "difficulty": "medium",
-        "weight": 0.04,
-        "question": "Is there any mention of hardware failures (memory errors, CPU spikes, disk issues)?",
-        "scoring_method": "binary_with_evidence",
-        "evaluation_notes": "Tests hardware vs software discrimination - critical for root cause."
+        "id": "NE-Q2", "category": "negative_evidence", "difficulty": "medium", "weight": 0.05,
+        "question": "Is there any mention of hardware failures (memory errors, CPU spikes, ASIC faults, disk issues)?",
+        "scoring_method": "binary_with_evidence"
     },
     {
-        "id": "NE-Q3",
-        "category": "negative_evidence",
-        "difficulty": "hard",
-        "weight": 0.03,
-        "question": "Does the log contain any security-related events (authentication failures, ACL violations, intrusion attempts)?",
-        "scoring_method": "binary_with_evidence",
-        "evaluation_notes": "Tests categorical discrimination. Security vs availability failures have different response protocols."
+        "id": "NE-Q3", "category": "negative_evidence", "difficulty": "hard", "weight": 0.05,
+        "question": "Does the log contain any security-related events (authentication failures, ACL drops, MAC spoofing, intrusion attempts)?",
+        "scoring_method": "binary_with_evidence"
     },
+    {
+        "id": "NE-Q4", "category": "negative_evidence", "difficulty": "medium", "weight": 0.05,
+        "question": "Is there any evidence of a power failure, brownout, or unscheduled system reboot?",
+        "scoring_method": "binary_with_evidence"
+    },
+    {
+        "id": "NE-Q5", "category": "negative_evidence", "difficulty": "hard", "weight": 0.05,
+        "question": "Are there any Spanning Tree Protocol (STP) loop detections, topology changes (TCs), or broadcast storms mentioned?",
+        "scoring_method": "binary_with_evidence"
+    },
+    {
+        "id": "NE-Q6", "category": "negative_evidence", "difficulty": "medium", "weight": 0.05,
+        "question": "Does the context explicitly mention MTU mismatches or packet fragmentation issues?",
+        "scoring_method": "binary_with_evidence"
+    },
+    {
+        "id": "NE-Q7", "category": "negative_evidence", "difficulty": "medium", "weight": 0.05,
+        "question": "Is there evidence of an OSPF or BGP routing loop (e.g., TTL expired in transit)?",
+        "scoring_method": "binary_with_evidence"
+    }
 ]
 
 # Category 6: CONTEXT RETRIEVAL (5% weight)
 # Tests Layer 2 of compression pipeline (similarity-based retrieval)
 CONTEXT_RETRIEVAL_QUESTIONS = [
     {
-        "id": "CTX-Q1",
-        "category": "context_retrieval",
-        "difficulty": "easy",
-        "weight": 0.05,
-        "question": "How many distinct network devices or interfaces are mentioned in the logs?",
-        "scoring_method": "counting_with_tolerance",
-        "evaluation_notes": "Tests entity extraction recall across log entries."
+        "id": "CTX-Q1", "category": "context_retrieval", "difficulty": "easy", "weight": 0.05,
+        "question": "How many distinct network devices or physical interfaces are explicitly mentioned in the logs?",
+        "scoring_method": "counting_with_tolerance"
     },
+    {
+        "id": "CTX-Q2", "category": "context_retrieval", "difficulty": "medium", "weight": 0.05,
+        "question": "What specific OS versions, firmware versions, or software builds are explicitly mentioned in the context?",
+        "scoring_method": "entity_extraction"
+    },
+    {
+        "id": "CTX-Q3", "category": "context_retrieval", "difficulty": "hard", "weight": 0.05,
+        "question": "List all exact IP addresses and MAC addresses that can be extracted directly from the logs.",
+        "scoring_method": "entity_extraction"
+    },
+    {
+        "id": "CTX-Q4", "category": "context_retrieval", "difficulty": "medium", "weight": 0.05,
+        "question": "Identify any specific VLAN IDs or Virtual Routing and Forwarding (VRF) instances referenced.",
+        "scoring_method": "entity_extraction"
+    },
+    {
+        "id": "CTX-Q5", "category": "context_retrieval", "difficulty": "easy", "weight": 0.05,
+        "question": "What diagnostic commands (e.g., 'show tech', 'ping', 'traceroute') were executed to generate these logs, if visible?",
+        "scoring_method": "entity_extraction"
+    }
 ]
 
-# Combine all questions
-ALL_QUESTIONS = (
+# Define the base static questions that run on every bundle
+STATIC_QUESTIONS = (
     ROOT_CAUSE_QUESTIONS +
     CAUSAL_REASONING_QUESTIONS +
     TEMPORAL_ORDERING_QUESTIONS +
@@ -227,6 +258,114 @@ ALL_QUESTIONS = (
     NEGATIVE_EVIDENCE_QUESTIONS +
     CONTEXT_RETRIEVAL_QUESTIONS
 )
+
+def generate_adversarial_questions(ground_truth: Dict) -> List[Dict]:
+    """Uses Gemini to generate dynamic, adversarial questions based on the ground truth."""
+    if not gemini_model or not ground_truth:
+        return []
+        
+    entity = ground_truth.get('root_cause_entity', 'unknown')
+    fault_type = ground_truth.get('root_cause_type', 'unknown')
+    action = ground_truth.get('recommended_action', 'unknown')
+    
+    if entity == "unknown":
+        return []
+        
+    prompt = f"""You are a Master Network Architect writing an exam to test an AI diagnostic tool. 
+    The AI has just read a compressed network log.
+    
+    The ACTUAL Ground Truth of the failure is:
+    - Failing Entity: {entity}
+    - Failure Type: {fault_type}
+    - Remediation: {action}
+    
+    Generate EXACTLY TWO highly specific, difficult questions to test if the AI truly understood the nuances of this failure.
+    - Question 1 should test a "Negative Distractor" (e.g., asking if a related but incorrect component also failed).
+    - Question 2 should test "Deep Causality" specific to the {fault_type} of {entity}.
+    
+    Output STRICTLY as a JSON array of two objects with this schema, and no other text or markdown blocks:
+    [
+      {{
+        "id": "ADV-Q1",
+        "category": "adversarial_testing",
+        "difficulty": "hard",
+        "weight": 0.10,
+        "question": "<your question here>",
+        "scoring_method": "llm_as_judge"
+      }}
+    ]
+    """
+    
+    try:
+        response = gemini_model.generate_content(
+            prompt,
+            generation_config=genai.GenerationConfig(temperature=0.7)
+        )
+        
+        # Clean up markdown if present
+        cleaned = response.text.strip()
+        if cleaned.startswith("```json"):
+            cleaned = cleaned[7:-3].strip()
+        elif cleaned.startswith("```"):
+            cleaned = cleaned[3:-3].strip()
+            
+        generated_questions = json.loads(cleaned)
+        return generated_questions
+    except Exception as e:
+        print(f"  [WARNING] Gemini failed to generate adversarial questions: {e}")
+        return []
+
+def get_dynamic_questions(ground_truth: Dict = None) -> List[Dict]:
+    """
+    Generates a tailored list of questions. 
+    Injects dynamic Entity and CLI questions if ground truth is available.
+    """
+    # Start with the baseline static questions
+    questions = list(STATIC_QUESTIONS)
+    
+    if ground_truth and isinstance(ground_truth, dict):
+        entity = ground_truth.get("root_cause_entity", "unknown")
+        action = ground_truth.get("recommended_action", "unknown")
+        
+        # 1. Add your standard dynamic template questions
+        if entity and entity.lower() != "unknown":
+            
+            # ---------------------------------------------------------
+            # IDEA 3: Dynamic Contextual Questioning
+            # ---------------------------------------------------------
+            questions.append({
+                "id": "DYN-Q1",
+                "category": "dynamic_entity_tracing",
+                "difficulty": "hard",
+                "weight": 0.15,
+                "question": f"Analyze the logs specifically for the entity '{entity}'. Detail the exact sequence of events, errors, or state changes that occurred on this component before the failure.",
+                "scoring_method": "dynamic_trace_validation",
+                "evaluation_notes": "Tests if compression preserved the granular causal chain for the exact failing component."
+            })
+            
+        if action and action.lower() != "unknown":
+            
+            # ---------------------------------------------------------
+            # IDEA 4: Actionability and Remediation Testing (CLI)
+            # ---------------------------------------------------------
+            questions.append({
+                "id": "REM-Q1",
+                "category": "remediation_actionability",
+                "difficulty": "hard",
+                "weight": 0.15,
+                "question": f"The recommended action is roughly: '{action}'. Provide the exact network OS CLI commands (e.g., HPE/Aruba OS syntax or standard Linux network utilities) a network engineer would type to execute this remediation and verify the fix.",
+                "scoring_method": "cli_syntax_validation",
+                "evaluation_notes": "Tests if the compressed logs preserved enough configuration state to allow the LLM to generate valid, specific CLI commands."
+            })
+            
+        # 2. Ask Gemini to generate custom adversarial questions
+        print("  -> Generating adversarial questions via Gemini...")
+        adversarial_qs = generate_adversarial_questions(ground_truth)
+        if adversarial_qs:
+            questions.extend(adversarial_qs)
+            print(f"  -> Added {len(adversarial_qs)} Gemini-authored questions.")
+    
+    return questions
 
 # ═══════════════════════════════════════════════════════════════════════════
 # LLM QUERY FUNCTIONS
@@ -387,25 +526,25 @@ def run_evaluation_on_compressed(
     
     judge_prompt = f"""You are an expert network diagnostic evaluator grading an AI's answers to {len(questions)} diagnostic questions.
 
-GROUND TRUTH METADATA (ABSOLUTE TRUTH):
-{gt_context}
-
-EVALUATION RULE: If Ground Truth is available, compare the AI's answers against it. If not, score based on logical consistency and standard network diagnostic principles.
-
-QA PAIRS TO EVALUATE:
-{json.dumps(qa_pairs, indent=2)}
-
-INSTRUCTIONS:
-Return your evaluation STRICTLY as a JSON dictionary where the keys are the Question IDs. Each value must be an object with three keys: 'score' (float 0.0 to 1.0), 'verdict' ("correct", "partial", or "wrong"), and 'explanation' (string justification).
-
-Example Output Format:
-{{
-  "RC-Q1": {{
-    "score": 0.8,
-    "verdict": "correct",
-    "explanation": "Correctly identified the component based on Ground Truth."
-  }}
-}}"""
+        GROUND TRUTH METADATA (ABSOLUTE TRUTH):
+        {gt_context}
+        
+        EVALUATION RULE: If Ground Truth is available, compare the AI's answers against it. If not, score based on logical consistency and standard network diagnostic principles.
+        
+        QA PAIRS TO EVALUATE:
+        {json.dumps(qa_pairs, indent=2)}
+        
+        INSTRUCTIONS:
+        Return your evaluation STRICTLY as a JSON dictionary where the keys are the Question IDs. Each value must be an object with three keys: 'score' (float 0.0 to 1.0), 'verdict' ("correct", "partial", or "wrong"), and 'explanation' (string justification).
+        
+        Example Output Format:
+        {{
+          "RC-Q1": {{
+            "score": 0.8,
+            "verdict": "correct",
+            "explanation": "Correctly identified the component based on Ground Truth."
+          }}
+        }}"""
 
     scores_dict = query_llm_json("You are an exact JSON outputter.", judge_prompt)
 
@@ -510,8 +649,8 @@ def main(compressed_files: List[str] = None):
                 print(f"\n⚠️  Skipping {file_path} - file not found")
                 continue
             
-            # Extract bundle name from filename
-            log_label = file_path.stem.replace("compressed_", "")
+            # Extract bundle name from filename - FIX: strip 'combined_' as well
+            log_label = file_path.stem.replace("compressed_", "").replace("combined_", "")
             
             # Load compressed text
             compressed_text = load_compressed_text(file_path)
@@ -524,24 +663,33 @@ def main(compressed_files: List[str] = None):
             ground_truth = None
             # Try to find metadata.json in the evaluation_dataset
             metadata_candidates = [
-                BASE / "evaluation_dataset" / log_label / "metadata.json",
-                BASE / "evaluation_dataset" / log_label.replace("compressed_", "") / "metadata.json"
+                BASE / "evaluation_dataset" / log_label / "metadata.json"
             ]
             
             for metadata_path in metadata_candidates:
                 if metadata_path.exists():
                     try:
-                        with open(metadata_path, 'r') as f:
-                            ground_truth = json.load(f)
+                        with open(metadata_path, 'r', encoding='utf-8') as f:
+                            raw_meta = json.load(f)
+                            # FIX: Unwrap the 'ground_truth' key if it exists
+                            ground_truth = raw_meta.get("ground_truth", raw_meta)
+                            print(f"  -> Successfully loaded ground truth for {log_label}")
                         break
                     except Exception as e:
                         print(f"  ⚠️  Failed to load metadata from {metadata_path}: {e}")
             
+            if not ground_truth:
+                print(f"  ⚠️  No valid ground truth found. Proceeding with static questions only.")
+            
             # Run evaluation
+            # 1. Generate the tailored questions for this specific bundle
+            dynamic_question_list = get_dynamic_questions(ground_truth)
+            
+            # 2. Run evaluation using the dynamically generated list
             result = run_evaluation_on_compressed(
                 log_label,
                 compressed_text,
-                ALL_QUESTIONS,
+                dynamic_question_list,
                 ground_truth
             )
             all_results.append(result)
@@ -628,17 +776,16 @@ def main(compressed_files: List[str] = None):
             "backend": BACKEND,
             "timestamp": datetime.now().isoformat(),
             "overall_avg": round(overall_avg, 1),
-            "total_questions": len(ALL_QUESTIONS),
-            "question_categories": {
-                cat: len([q for q in ALL_QUESTIONS if q["category"] == cat])
-                for cat in set(q["category"] for q in ALL_QUESTIONS)
-            },
+            # Count the maximum questions used in any bundle during this run
+            "max_questions_used": max((len(r["results"]) for r in all_results), default=0),
             "logs": all_results,
         }, f, indent=2)
     print(f"\n✓ Results saved → {out_path}")
     
     # Human-readable text report
     txt_path = EVAL_DIR / f"results_{timestamp}.txt"
+    max_q = max((len(r["results"]) for r in all_results), default=0)
+    
     with open(txt_path, "w", encoding='utf-8') as f:
         f.write("="*80 + "\n")
         f.write("IMPROVED GENERIC PIPELINE EVALUATION\n")
@@ -646,13 +793,14 @@ def main(compressed_files: List[str] = None):
         f.write(f"Model    : {MODEL}\n")
         f.write(f"Backend  : {BACKEND}\n")
         f.write(f"Date     : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"Questions: {len(ALL_QUESTIONS)} across 6 categories\n\n")
+        f.write(f"Questions: Up to {max_q} per bundle (Dynamic/Adversarial mode)\n\n") # <--- FIXED
         
         for r in all_results:
             f.write("="*80 + "\n")
             f.write(f"LOG: {r['log']}\n")
             f.write("="*80 + "\n")
             f.write(f"Overall Score: {r['overall_score']:.1f}%\n")
+            f.write(f"Total Questions Evaluated: {len(r['results'])}\n") # <--- ADDED
             f.write(f"Context: ~{r['context_tokens']:,} tokens\n\n")
             
             f.write("Category Scores:\n")
