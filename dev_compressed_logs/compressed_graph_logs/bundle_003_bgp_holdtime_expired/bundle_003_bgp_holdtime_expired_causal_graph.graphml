@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d7" for="edge" attr.name="lag_ms" attr.type="double"/>
+<key id="d6" for="edge" attr.name="edge_type" attr.type="string"/>
+<key id="d5" for="node" attr.name="count" attr.type="long"/>
+<key id="d4" for="node" attr.name="is_signal" attr.type="string"/>
+<key id="d3" for="node" attr.name="start_time" attr.type="string"/>
+<key id="d2" for="node" attr.name="high_level" attr.type="string"/>
+<key id="d1" for="node" attr.name="template_id" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="node_4993">
+  <data key="d0">Noise / Unclustered</data>
+  <data key="d1">5</data>
+  <data key="d2">Uncategorized_Noise</data>
+  <data key="d3">2026-05-27T03:32:32</data>
+  <data key="d4">False</data>
+  <data key="d5">2</data>
+</node>
+<node id="node_4994">
+  <data key="d0">Cluster 0 [] Keywords: [time, napi, enabling]</data>
+  <data key="d1">1</data>
+  <data key="d2">Noise_Domain</data>
+  <data key="d3">2026-05-27T03:32:34</data>
+  <data key="d4">False</data>
+  <data key="d5">3</data>
+</node>
+<node id="node_4995">
+  <data key="d0">Cluster 1 [] Keywords: [ovsdb, server, transact]</data>
+  <data key="d1">6</data>
+  <data key="d2">Ovsdb_Domain</data>
+  <data key="d3">2026-05-27T03:32:38</data>
+  <data key="d4">False</data>
+  <data key="d5">4</data>
+</node>
+<node id="node_4996">
+  <data key="d0">Noise / Unclustered</data>
+  <data key="d1">3</data>
+  <data key="d2">Uncategorized_Noise</data>
+  <data key="d3">2026-05-27T03:32:52</data>
+  <data key="d4">False</data>
+  <data key="d5">4</data>
+</node>
+<node id="node_4997">
+  <data key="d0">Cluster 2 [Error-Prone] Keywords: [bgp, hpe, routing]</data>
+  <data key="d1">7</data>
+  <data key="d2">Bgp_Domain</data>
+  <data key="d3">2026-05-27T03:32:53</data>
+  <data key="d4">True</data>
+  <data key="d5">2</data>
+</node>
+<node id="node_4998">
+  <data key="d0">Cluster 2 [Error-Prone] Keywords: [bgp, hpe, routing]</data>
+  <data key="d1">8</data>
+  <data key="d2">Bgp_Domain</data>
+  <data key="d3">2026-05-27T03:32:57</data>
+  <data key="d4">True</data>
+  <data key="d5">1</data>
+</node>
+<node id="node_4999">
+  <data key="d0">Cluster 1 [] Keywords: [ovsdb, server, transact]</data>
+  <data key="d1">9</data>
+  <data key="d2">Ovsdb_Domain</data>
+  <data key="d3">2026-05-27T03:32:59</data>
+  <data key="d4">False</data>
+  <data key="d5">1</data>
+</node>
+<node id="node_5000">
+  <data key="d0">Noise / Unclustered</data>
+  <data key="d1">4</data>
+  <data key="d2">Uncategorized_Noise</data>
+  <data key="d3">2026-05-27T03:33:07</data>
+  <data key="d4">False</data>
+  <data key="d5">1</data>
+</node>
+<edge source="node_4993" target="node_4994">
+  <data key="d6">strong</data>
+  <data key="d7">-7000.0</data>
+</edge>
+<edge source="node_4994" target="node_4995">
+  <data key="d6">strong</data>
+  <data key="d7">-13000.0</data>
+</edge>
+<edge source="node_4994" target="node_4996">
+  <data key="d6">strong</data>
+  <data key="d7">1000.0</data>
+</edge>
+<edge source="node_4995" target="node_4996">
+  <data key="d6">strong</data>
+  <data key="d7">-18000.0</data>
+</edge>
+<edge source="node_4995" target="node_4999">
+  <data key="d6">strong</data>
+  <data key="d7">-11000.0</data>
+</edge>
+<edge source="node_4995" target="node_5000">
+  <data key="d6">strong</data>
+  <data key="d7">-3000.0</data>
+</edge>
+<edge source="node_4996" target="node_4997">
+  <data key="d6">strong</data>
+  <data key="d7">-20000.0</data>
+</edge>
+<edge source="node_4996" target="node_5000">
+  <data key="d6">strong</data>
+  <data key="d7">-6000.0</data>
+</edge>
+<edge source="node_4997" target="node_4998">
+  <data key="d6">strong</data>
+  <data key="d7">-1000.0</data>
+</edge>
+<edge source="node_4998" target="node_4999">
+  <data key="d6">strong</data>
+  <data key="d7">2000.0</data>
+</edge>
+<edge source="node_4999" target="node_5000">
+  <data key="d6">strong</data>
+  <data key="d7">8000.0</data>
+</edge>
+</graph></graphml>

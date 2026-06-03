@@ -1,0 +1,43 @@
+{
+  "raw_bundle": "bundle_002_port_flap_copper",
+  "compressed_name": "modified_test_toon_002",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 396.0022172949002,
+  "raw_size": 11608805,
+  "comp_size": 29315,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "2026-05-26T20:03:36.021000+05:30 PSCSCTLEAFB03 kernel: provision 0000:05:00.0 pvnet0: Re-enabling RX interrupts and disabling NAPI polling",
+      "2026-05-26T20:03:39.324000+05:30 PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|00920|bridge|INFO|bridge br0: interface 1/1/43 statistics queried, status OK",
+      "2026-05-26T20:03:40.518000+05:30 PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|07975|bridge|INFO|bridge br0: interface 1/1/35 statistics queried, status OK"
+    ],
+    "recommended_action": "Check the physical layer connectivity and ensure that the interface 1/1/3 is properly connected and functioning."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "ROUTING_CHANGE",
+      "KERNEL_EVENT"
+    ],
+    "recommended_action": "Review and validate the configuration settings for PSCSCTLEAFB03. Ensure that authentication credentials are correct and that routing and kernel parameters are properly configured. Verify that the device is receiving the correct updates and patches."
+  },
+  "ground_truth": {
+    "scenario_name": "port_flap",
+    "description": "Interface 1/1/10 experiencing link flapping",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:30:26.723000",
+    "root_cause_entity": "1/1/10",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "link_state_change",
+      "packet_loss",
+      "connection_timeout"
+    ],
+    "recommended_action": "Check physical cable and transceiver on 1/1/10"
+  }
+}

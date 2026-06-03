@@ -1,0 +1,360 @@
+TOON-X:3.0 FORMAT:syslog FILE:messages.log BASE_TS:1779805937
+E:36017 C:90 SEV:E100/W1 SPAN:90753s SOURCES:5
+[S]
+S0=kern S1=ovsv S2=ovsd S3=hper
+[T]
+T0=KERNEL_EVENT
+T1=KERNEL_EVENT_1
+T2=KERNEL_EVENT_2
+T3=AUTH_FAILURE
+T4=AUTH_FAILURE_1
+T5=GENERIC_ERROR
+T6=GENERIC_WARNING
+T7=NETWORK_FAILURE
+[L0_EXEC_SUMMARY]
+Window:2026-05-26T20:02:17.831000Z span=90753s events=36017 sources=[kernel:14335 ovs-vswitchd:7339 ovsdb-server:7195 acctsyslogd:7146 hpe-routing:2]
+CRITICAL:1 incidents: NEW_ERROR_TYPE
+TOP_EVENTS:AUTH_FAILURE:84 KERNEL_EVENT:3 GENERIC_ERROR:1 GENERIC_WARNING:1 NETWORK_FAILURE:1
+COMPRESSION_EST:100%
+[L1_INCIDENTS]
+NAME:NEW_ERROR_TYPE SEV:E COUNT:75 SPAN:0->end
+  CLUSTERS:@12,@14,@15,@16,@20,@24,@25,@26,@28,@29,@30,@34,@36,@37,@38,@39,@41,@42,@43,@47,@48,@49,@50,@55,@56,@58,@64,@65,@66,@68,@69,@73,@76,@80,@82,@83,@87,@88,@93,@97,@100,@104,@105,@106,@110,@112,@114,@116,@121,@122,@125,@126,@127,@131,@136,@137,@140,@141,@142,@143,@145,@148,@152,@156,@157,@159,@160,@161,@165,@167,@168,@169,@174,@175,@177
+  DETAIL:types=['AUTH_FAILURE', 'AUTH_FAILURE', 'AUTH_FAILURE', 'AUTH_FAILURE', 'AUTH_FAILURE']
+  DESC:75 unique high-severity event types observed
+[L2_CAUSAL_GRAPH]
+@1->@2 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:4.1s
+@1->@3 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:4.4s
+@1->@5 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:7.4s
+@1->@4 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:7.8s
+@1->@6 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:11.1s
+@1->@7 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:13.5s
+@1->@8 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:20.3s
+@1->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:22.1s
+@2->@3 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:0.3s
+@2->@5 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:3.3s
+@2->@4 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:3.7s
+@2->@6 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:7.0s
+@2->@7 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:9.4s
+@2->@8 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:16.2s
+@2->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:18.1s
+@3->@5 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:3.0s
+@3->@4 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:3.4s
+@3->@6 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:6.6s
+@3->@7 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:9.0s
+@3->@8 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:15.9s
+@3->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:17.7s
+@5->@4 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:0.4s
+@5->@6 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:3.7s
+@5->@7 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:6.1s
+@5->@8 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:12.9s
+@5->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:14.8s
+@4->@6 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:3.3s
+@4->@7 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:5.7s
+@4->@8 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:12.5s
+@4->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:14.4s
+@6->@7 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:2.4s
+@6->@8 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:9.2s
+@6->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:11.1s
+@7->@8 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:6.8s
+@7->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:8.7s
+@8->@9 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:1.9s
+@17->@18 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:20.3s
+@35->@36 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:19.9s
+@35->@37 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:30.9s
+@36->@37 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:11.0s
+@56->@57 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:4.0s
+@57->@58 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:3.5s
+@89->@90 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:15.5s
+@113->@114 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:24.1s
+@166->@167 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:0.9s
+@175->@176 LABEL:ASSET_LINKED(PSCSCTLEAFB03) CONF:1.0 DELTA:14.0s
+[L3_WORKFLOWS]
+FLOW_1 x70 len=8: AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE
+FLOW_2 x72 len=7: AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE
+FLOW_3 x74 len=6: AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE
+FLOW_4 x76 len=5: AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE
+FLOW_5 x78 len=4: AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE
+FLOW_6 x80 len=3: AUTH_FAILURE->AUTH_FAILURE->AUTH_FAILURE
+FLOW_7 x82 len=2: AUTH_FAILURE->AUTH_FAILURE
+[L4_EVENT_CLUSTERS]
+@3 7107x I S0 T0 ^4->90751 periodic(~13s) IMP:0.27
+@6 1x I S0 T1 ^11 IMP:0.29
+@7 7227x I S0 T2 ^13->90745 periodic(~13s) IMP:0.31
+@12 1x E S1 T3 ^1270 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@14 1x E S1 T3 ^2096 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@15 1x E S1 T3 ^2497 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@16 1x E S2 T4 ^3992 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@20 1x E S2 T4 ^5479 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@24 1x E S1 T3 ^7313 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@25 1x E S2 T4 ^8643 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@26 1x E S1 T3 ^9240 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@28 1x E S1 T3 ^10744 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@29 1x E S2 T4 ^11023 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@30 1x E S2 T4 ^11980 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@31 3x E S2 T4 ^13045->13185 FLOW:FLOW_1 IMP:0.43
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@32 2x E S1 T3 ^13327->13589 FLOW:FLOW_1 IMP:0.44
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@34 1x E S2 T4 ^15728 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@36 1x E S2 T4 ^16152 FLOW:FLOW_1 IMP:0.65
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@37 1x E S1 T3 ^16163 FLOW:FLOW_1 IMP:0.70
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@38 1x E S1 T3 ^16572 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@39 1x E S1 T3 ^17213 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@41 1x E S2 T4 ^17786 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@42 1x E S2 T4 ^20252 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@43 1x E S1 T3 ^20402 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@47 1x E S1 T3 ^22417 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@48 1x E S2 T4 ^23926 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@49 1x E S1 T3 ^24280 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@50 1x E S1 T3 ^24654 FLOW:FLOW_7 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@55 1x E S2 T4 ^27288 FLOW:FLOW_7 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@56 1x E S3 T5 ^27352 IMP:0.69
+  TMPL:ovs|<NUM>|route_mgr|ERR|Route to <IP>/<NUM> not found in routing table
+@57 1x W S3 T6 ^27356 IMP:0.40
+@58 1x E S2 T7 ^27360 IMP:0.74
+  TMPL:ovs|<NUM>|ovsdb_server|WARN|lookup failure: route destination <IP>/<NUM> matches
+@64 1x E S2 T4 ^30038 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@65 1x E S1 T3 ^30306 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@66 1x E S2 T4 ^30558 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@68 1x E S1 T3 ^33311 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@69 1x E S2 T4 ^33684 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@73 1x E S2 T4 ^35990 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@76 1x E S2 T4 ^37108 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@79 2x E S2 T4 ^40114->40313 FLOW:FLOW_1 IMP:0.43
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@80 1x E S2 T4 ^40703 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@82 1x E S2 T4 ^42137 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@83 1x E S2 T4 ^42798 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@87 1x E S1 T3 ^44712 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@88 1x E S1 T3 ^45075 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@93 1x E S2 T4 ^47301 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@97 1x E S2 T4 ^48755 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@98 2x E S1 T3 ^48872->49070 FLOW:FLOW_1 IMP:0.44
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@100 1x E S1 T3 ^50278 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@104 1x E S1 T3 ^51329 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@105 1x E S2 T4 ^51818 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@106 1x E S1 T3 ^52578 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@110 1x E S1 T3 ^54129 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@112 1x E S2 T4 ^55032 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@114 1x E S2 T4 ^55655 FLOW:FLOW_1 IMP:0.66
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@115 2x E S1 T3 ^57934->58117 FLOW:FLOW_1 IMP:0.44
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@116 1x E S2 T4 ^58079 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@120 2x E S2 T4 ^60261->60436 FLOW:FLOW_1 IMP:0.43
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@121 1x E S2 T4 ^60850 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@122 1x E S1 T3 ^60925 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@125 1x E S2 T4 ^62663 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@126 1x E S2 T4 ^63003 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@127 1x E S1 T3 ^63111 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@131 1x E S1 T3 ^65164 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@136 1x E S2 T4 ^66191 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@137 1x E S1 T3 ^66403 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@140 1x E S2 T4 ^68343 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@141 1x E S1 T3 ^68635 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@142 1x E S2 T4 ^68875 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@143 1x E S2 T4 ^69291 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@145 1x E S2 T4 ^70649 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@148 1x E S2 T4 ^72632 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@150 2x E S2 T4 ^73123->73314 FLOW:FLOW_1 IMP:0.43
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@152 1x E S1 T3 ^74298 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@156 1x E S2 T4 ^75693 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@157 1x E S2 T4 ^76077 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@159 1x E S1 T3 ^78967 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@160 1x E S2 T4 ^80030 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@161 1x E S1 T3 ^80117 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@164 3x E S1 T3 ^83191->83354 FLOW:FLOW_1 IMP:0.44
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@165 1x E S2 T4 ^83657 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@167 1x E S1 T3 ^83764 FLOW:FLOW_1 IMP:0.67
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@168 1x E S1 T3 ^84417 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@169 1x E S2 T4 ^84473 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@171 3x E S2 T4 ^85668->86136 FLOW:FLOW_1 IMP:0.43
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@173 2x E S1 T3 ^86663->86756 FLOW:FLOW_1 IMP:0.44
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@174 1x E S2 T4 ^87020 FLOW:FLOW_1 IMP:0.63
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+@175 1x E S1 T3 ^87270 FLOW:FLOW_1 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@177 1x E S1 T3 ^87873 FLOW:FLOW_7 IMP:0.64
+  TMPL:ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, stat
+@178 2x E S2 T4 ^88038->88116 FLOW:FLOW_7 IMP:0.43
+  TMPL:ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM
+[L5_RAW_REFS]
+@3 LINES:3-36015 COUNT:7107
+@6 LINES:6-6 COUNT:1
+@7 LINES:7-36013 COUNT:7227
+@12 LINES:480-480 COUNT:1
+@14 LINES:822-822 COUNT:1
+@15 LINES:980-980 COUNT:1
+@16 LINES:1555-1555 COUNT:1
+@20 LINES:2131-2131 COUNT:1
+@24 LINES:2837-2837 COUNT:1
+@25 LINES:3365-3365 COUNT:1
+@26 LINES:3599-3599 COUNT:1
+@28 LINES:4197-4197 COUNT:1
+@29 LINES:4304-4304 COUNT:1
+@30 LINES:4678-4678 COUNT:1
+@31 LINES:5121-5177 COUNT:3
+@32 LINES:5228-5330 COUNT:2
+@34 LINES:6172-6172 COUNT:1
+@36 LINES:6348-6348 COUNT:1
+@37 LINES:6355-6355 COUNT:1
+@38 LINES:6521-6521 COUNT:1
+@39 LINES:6763-6763 COUNT:1
+@41 LINES:7004-7004 COUNT:1
+@42 LINES:7987-7987 COUNT:1
+@43 LINES:8050-8050 COUNT:1
+@47 LINES:8855-8855 COUNT:1
+@48 LINES:9455-9455 COUNT:1
+@49 LINES:9591-9591 COUNT:1
+@50 LINES:9743-9743 COUNT:1
+@55 LINES:10781-10781 COUNT:1
+@56 LINES:10807-10807 COUNT:1
+@57 LINES:10808-10808 COUNT:1
+@58 LINES:10809-10809 COUNT:1
+@64 LINES:11883-11883 COUNT:1
+@65 LINES:11996-11996 COUNT:1
+@66 LINES:12091-12091 COUNT:1
+@68 LINES:13224-13224 COUNT:1
+@69 LINES:13366-13366 COUNT:1
+@73 LINES:14306-14306 COUNT:1
+@76 LINES:14742-14742 COUNT:1
+@79 LINES:15889-15968 COUNT:2
+@80 LINES:16120-16120 COUNT:1
+@82 LINES:16694-16694 COUNT:1
+@83 LINES:16956-16956 COUNT:1
+@87 LINES:17704-17704 COUNT:1
+@88 LINES:17851-17851 COUNT:1
+@93 LINES:18752-18752 COUNT:1
+@97 LINES:19321-19321 COUNT:1
+@98 LINES:19375-19444 COUNT:2
+@100 LINES:19926-19926 COUNT:1
+@104 LINES:20361-20361 COUNT:1
+@105 LINES:20563-20563 COUNT:1
+@106 LINES:20865-20865 COUNT:1
+@110 LINES:21480-21480 COUNT:1
+@112 LINES:21836-21836 COUNT:1
+@114 LINES:22100-22100 COUNT:1
+@115 LINES:23011-23085 COUNT:2
+@116 LINES:23069-23069 COUNT:1
+@120 LINES:23938-24007 COUNT:2
+@121 LINES:24176-24176 COUNT:1
+@122 LINES:24209-24209 COUNT:1
+@125 LINES:24885-24885 COUNT:1
+@126 LINES:25018-25018 COUNT:1
+@127 LINES:25058-25058 COUNT:1
+@131 LINES:25866-25866 COUNT:1
+@136 LINES:26287-26287 COUNT:1
+@137 LINES:26367-26367 COUNT:1
+@140 LINES:27148-27148 COUNT:1
+@141 LINES:27262-27262 COUNT:1
+@142 LINES:27349-27349 COUNT:1
+@143 LINES:27518-27518 COUNT:1
+@145 LINES:28049-28049 COUNT:1
+@148 LINES:28825-28825 COUNT:1
+@150 LINES:29021-29096 COUNT:2
+@152 LINES:29482-29482 COUNT:1
+@156 LINES:30027-30027 COUNT:1
+@157 LINES:30177-30177 COUNT:1
+@159 LINES:31350-31350 COUNT:1
+@160 LINES:31785-31785 COUNT:1
+@161 LINES:31823-31823 COUNT:1
+@164 LINES:33035-33108 COUNT:3
+@165 LINES:33227-33227 COUNT:1
+@167 LINES:33267-33267 COUNT:1
+@168 LINES:33518-33518 COUNT:1
+@169 LINES:33539-33539 COUNT:1
+@171 LINES:33989-34183 COUNT:3
+@173 LINES:34401-34433 COUNT:2
+@174 LINES:34537-34537 COUNT:1
+@175 LINES:34632-34632 COUNT:1
+@177 LINES:34871-34871 COUNT:1
+@178 LINES:34936-34963 COUNT:2
+[ENTITY_DICT]
+H0=PSCSCTLEAFB03
+[TEMPLATES]
+TM0 n=3498: AUDIT|REST URI executed by user 'afc_admin' from address '<IP>' through REST session. The URI is '<P
+TM1 n=7194: ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM> rows inserted
+TM2 n=7107: net_ratelimit: <NUM> callbacks suppressed
+TM3 n=1199: AUDIT|REST URI executed by user 'afc_admin' from address '<IP>' through REST session. The URI is '<P
+TM4 n=1217: AUDIT|REST URI executed by user 'afc_admin' from address '<IP>' through REST session. The URI is '<P
+TM5 n=7228: provision <NUM>:<NUM>:<NUM> <*> Re-enabling RX interrupts and disabling NAPI polling
+TM6 n=7339: ovs|<NUM>|bridge|INFO|bridge br0: interface <NUM><PATH> statistics queried, status OK
+TM7 n=1232: AUDIT|REST URI executed by user 'afc_admin' from address '<IP>' through REST session. The URI is '<P
+TM8 n=1: ovs|<NUM>|route_mgr|ERR|Route to <IP>/<NUM> not found in routing table
+TM9 n=1: ovs|<NUM>|route_mgr|WARN|Packet destined to <IP>/<NUM> dropped - no route to host
+TM10 n=1: ovs|<NUM>|ovsdb_server|WARN|lookup failure: route destination <IP>/<NUM> matches no active OVSDB ent

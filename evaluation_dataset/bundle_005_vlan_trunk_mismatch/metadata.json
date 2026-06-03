@@ -1,12 +1,12 @@
 {
   "bundle_version": "1.0",
-  "generated_at": "2026-04-20T23:03:49.550822",
+  "generated_at": "2026-05-26T20:02:15.318112",
   "hostname": "PSCSCTLEAFB03",
   "ground_truth": {
     "scenario_name": "vlan_mismatch",
     "description": "VLAN mismatch on 1/1/5: expected 100, got 200",
     "severity": "medium",
-    "failure_timestamp": "2026-04-20T23:18:54.529000",
+    "failure_timestamp": "2026-05-27T03:32:41.394000",
     "root_cause_entity": "1/1/5",
     "root_cause_type": "configuration_error",
     "expected_symptoms": [

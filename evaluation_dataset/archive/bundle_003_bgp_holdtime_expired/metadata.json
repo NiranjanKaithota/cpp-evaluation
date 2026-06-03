@@ -1,0 +1,19 @@
+{
+  "bundle_version": "1.0",
+  "generated_at": "2026-04-20T23:03:49.518390",
+  "hostname": "PSCSCTLEAFB03",
+  "ground_truth": {
+    "scenario_name": "bgp_neighbor_down",
+    "description": "BGP session to 10.233.255.1 failed",
+    "severity": "critical",
+    "failure_timestamp": "2026-04-20T23:19:19.683000",
+    "root_cause_entity": "10.233.255.1",
+    "root_cause_type": "routing_protocol_failure",
+    "expected_symptoms": [
+      "bgp_session_down",
+      "route_withdrawal",
+      "connectivity_loss"
+    ],
+    "recommended_action": "Verify BGP configuration and network connectivity to 10.233.255.1"
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "nodes": [
+    {
+      "id": "node_4993",
+      "category": "Noise / Unclustered",
+      "high_level": "Uncategorized_Noise",
+      "primary_entity": {
+        "type": "IP",
+        "value": "10.233.131.22"
+      },
+      "start_time": "2026-05-27T03:32:32",
+      "end_time": "2026-05-27T03:32:41",
+      "event_count": 2,
+      "template_id": 5,
+      "is_signal_node": false
+    },
+    {
+      "id": "node_4994",
+      "category": "Cluster 0 [] Keywords: [time, napi, enabling]",
+      "high_level": "Noise_Domain",
+      "primary_entity": {
+        "type": "None",
+        "value": "None"
+      },
+      "start_time": "2026-05-27T03:32:34",
+      "end_time": "2026-05-27T03:32:51",
+      "event_count": 3,
+      "template_id": 1,
+      "is_signal_node": false
+    },
+    {
+      "id": "node_4995",
+      "category": "Cluster 1 [] Keywords: [ovsdb, server, transact]",
+      "high_level": "Ovsdb_Domain",
+      "primary_entity": {
+        "type": "PID",
+        "value": "501"
+      },
+      "start_time": "2026-05-27T03:32:38",
+      "end_time": "2026-05-27T03:33:10",
+      "event_count": 4,
+      "template_id": 6,
+      "is_signal_node": false
+    },
+    {
+      "id": "node_4996",
+      "category": "Noise / Unclustered",
+      "high_level": "Uncategorized_Noise",
+      "primary_entity": {
+        "type": "PID",
+        "value": "505"
+      },
+      "start_time": "2026-05-27T03:32:52",
+      "end_time": "2026-05-27T03:33:13",
+      "event_count": 4,
+      "template_id": 3,
+      "is_signal_node": false
+    },
+    {
+      "id": "node_4997",
+      "category": "Cluster 2 [Error-Prone] Keywords: [bgp, hpe, routing]",
+      "high_level": "Bgp_Domain",
+      "primary_entity": {
+        "type": "IP",
+        "value": "10.233.255.1"
+      },
+      "start_time": "2026-05-27T03:32:53",
+      "end_time": "2026-05-27T03:32:58",
+      "event_count": 2,
+      "template_id": 7,
+      "is_signal_node": true
+    },
+    {
+      "id": "node_4998",
+      "category": "Cluster 2 [Error-Prone] Keywords: [bgp, hpe, routing]",
+      "high_level": "Bgp_Domain",
+      "primary_entity": {
+        "type": "IP",
+        "value": "10.233.255.1"
+      },
+      "start_time": "2026-05-27T03:32:57",
+      "end_time": "2026-05-27T03:32:57",
+      "event_count": 1,
+      "template_id": 8,
+      "is_signal_node": true
+    },
+    {
+      "id": "node_4999",
+      "category": "Cluster 1 [] Keywords: [ovsdb, server, transact]",
+      "high_level": "Ovsdb_Domain",
+      "primary_entity": {
+        "type": "IP",
+        "value": "10.233.255.1"
+      },
+      "start_time": "2026-05-27T03:32:59",
+      "end_time": "2026-05-27T03:32:59",
+      "event_count": 1,
+      "template_id": 9,
+      "is_signal_node": false
+    },
+    {
+      "id": "node_5000",
+      "category": "Noise / Unclustered",
+      "high_level": "Uncategorized_Noise",
+      "primary_entity": {
+        "type": "None",
+        "value": "None"
+      },
+      "start_time": "2026-05-27T03:33:07",
+      "end_time": "2026-05-27T03:33:07",
+      "event_count": 1,
+      "template_id": 4,
+      "is_signal_node": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "node_4993",
+      "target": "node_4994",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -7000.0
+    },
+    {
+      "source": "node_4994",
+      "target": "node_4995",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -13000.0
+    },
+    {
+      "source": "node_4994",
+      "target": "node_4996",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": 1000.0
+    },
+    {
+      "source": "node_4995",
+      "target": "node_4996",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -18000.0
+    },
+    {
+      "source": "node_4995",
+      "target": "node_4999",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -11000.0
+    },
+    {
+      "source": "node_4995",
+      "target": "node_5000",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -3000.0
+    },
+    {
+      "source": "node_4996",
+      "target": "node_4997",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -20000.0
+    },
+    {
+      "source": "node_4996",
+      "target": "node_5000",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -6000.0
+    },
+    {
+      "source": "node_4997",
+      "target": "node_4998",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": -1000.0
+    },
+    {
+      "source": "node_4998",
+      "target": "node_4999",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": 2000.0
+    },
+    {
+      "source": "node_4999",
+      "target": "node_5000",
+      "type": "strong",
+      "confidence": 1.0,
+      "lag_ms": 8000.0
+    }
+  ],
+  "causal_chains": [
+    [
+      "node_4993",
+      "node_4994",
+      "node_4996",
+      "node_4997"
+    ],
+    [
+      "node_4993",
+      "node_4994",
+      "node_4996",
+      "node_4997",
+      "node_4998"
+    ]
+  ]
+}

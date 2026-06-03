@@ -1,0 +1,119 @@
+{
+  "model": "command-r-08-2024",
+  "backend": "cohere",
+  "timestamp": "2026-06-03T01:05:29.219089",
+  "overall_avg": 65.0,
+  "max_questions_used": 6,
+  "logs": [
+    {
+      "log": "k8s_test_bundle",
+      "model": "command-r-08-2024",
+      "backend": "cohere",
+      "context_tokens": 509,
+      "is_truncated": false,
+      "overall_score": 65.0,
+      "category_scores": {
+        "root_cause_attribution": 100.0,
+        "causal_reasoning": 50.0,
+        "temporal_ordering": 0.0,
+        "semantic_equivalence": 100.0,
+        "negative_evidence": 100.0,
+        "context_retrieval": 0.0
+      },
+      "category_weights": {
+        "root_cause_attribution": 25.0,
+        "causal_reasoning": 20.0,
+        "temporal_ordering": 15.0,
+        "semantic_equivalence": 15.0,
+        "negative_evidence": 15.0,
+        "context_retrieval": 10.0
+      },
+      "verdict_counts": {
+        "correct": 3,
+        "partial": 1,
+        "wrong": 2
+      },
+      "total_questions": 6,
+      "results": [
+        {
+          "id": "K8S-RC-Q1",
+          "category": "root_cause_attribution",
+          "difficulty": "hard",
+          "weight": 0.25,
+          "question": "Identify any persistent error patterns (e.g., HTTP 403 Forbidden, 500 Internal Server Error) and the Kubernetes components or users involved.",
+          "answer": "No persistent error patterns identified. The logs indicate a variety of unknown events and an authentication failure.",
+          "score": 1.0,
+          "verdict": "correct",
+          "explanation": "[Consensus: 3/3 passes] The AI correctly identified the absence of persistent error patterns and provided a logical explanation for the authentication failure.",
+          "extracted_solution": "None provided.",
+          "scoring_method": "entity_extraction_plus_semantic"
+        },
+        {
+          "id": "K8S-CR-Q1",
+          "category": "causal_reasoning",
+          "difficulty": "hard",
+          "weight": 0.2,
+          "question": "Analyze the API requests made by the nodes (e.g., system:node). Were their requests for configurations like 'kube-flannel-cfg' and 'kube-root-ca.crt' successful, or were they denied? What HTTP status code proves this?",
+          "answer": "API requests and their outcomes are not explicitly mentioned in the logs. However, an authentication failure is noted, which could be related to access control or configuration issues.",
+          "score": 0.5,
+          "verdict": "partial",
+          "explanation": "[Consensus: 3/3 passes] While the AI acknowledged the absence of explicit API request details, it provided a reasonable inference about potential configuration issues.",
+          "extracted_solution": "None provided.",
+          "scoring_method": "causal_chain_validation"
+        },
+        {
+          "id": "K8S-TO-Q1",
+          "category": "temporal_ordering",
+          "difficulty": "medium",
+          "weight": 0.15,
+          "question": "List the first 3 API requests logged in chronological order, including the verbs (e.g., watch, list) and the target resources.",
+          "answer": "The logs do not provide explicit information on the first 3 API requests. The log entries are related to unknown events and an authentication failure, but the specific API requests are not detailed.",
+          "score": 0.0,
+          "verdict": "wrong",
+          "explanation": "[Consensus: 3/3 passes] The AI failed to provide any chronological order or details about the first 3 API requests, which were explicitly asked for.",
+          "extracted_solution": "None provided.",
+          "scoring_method": "temporal_sequence_validation"
+        },
+        {
+          "id": "K8S-SE-Q1",
+          "category": "semantic_equivalence",
+          "difficulty": "medium",
+          "weight": 0.15,
+          "question": "Summarize the core behavior seen in these logs. Are these standard routine checks, or is there an indication of permission/RBAC misconfigurations?",
+          "answer": "The core behavior in these logs suggests potential issues with authentication and access control. The presence of unknown events and an authentication failure indicates a need for further investigation into the system's security configuration.",
+          "score": 1.0,
+          "verdict": "correct",
+          "explanation": "[Consensus: 3/3 passes] The AI's summary of potential authentication and access control issues is logical and consistent with the provided information.",
+          "extracted_solution": "None provided.",
+          "scoring_method": "semantic_similarity"
+        },
+        {
+          "id": "K8S-NE-Q1",
+          "category": "negative_evidence",
+          "difficulty": "hard",
+          "weight": 0.15,
+          "question": "Is there any evidence of Pod evictions, Node NotReady states, or CrashLoopBackOff errors in these logs?",
+          "answer": "No evidence of Pod evictions, Node NotReady states, or CrashLoopBackOff errors is found in the provided logs.",
+          "score": 1.0,
+          "verdict": "correct",
+          "explanation": "[Consensus: 3/3 passes] The AI accurately stated the absence of specific error indicators in the logs.",
+          "extracted_solution": "None provided.",
+          "scoring_method": "binary_with_evidence"
+        },
+        {
+          "id": "K8S-CTX-Q1",
+          "category": "context_retrieval",
+          "difficulty": "easy",
+          "weight": 0.1,
+          "question": "Extract up to 5 distinct Kubernetes namespaces or system users (e.g., system:kube-scheduler) mentioned in the context.",
+          "answer": null,
+          "score": 0.0,
+          "verdict": "wrong",
+          "explanation": "[Consensus: 3/3 passes] The AI did not provide any response for this question, which is a critical omission.",
+          "extracted_solution": "None provided.",
+          "scoring_method": "entity_extraction"
+        }
+      ]
+    }
+  ]
+}

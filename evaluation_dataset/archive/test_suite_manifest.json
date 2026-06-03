@@ -1,0 +1,73 @@
+{
+  "suite_name": "regression_test",
+  "suite_description": "Comprehensive regression testing",
+  "duration_minutes": 60,
+  "noise_level": "medium",
+  "bundles": [
+    {
+      "bundle_id": "bundle_001",
+      "scenario_name": "port_flap_fiber",
+      "scenario_type": "port_flap",
+      "path": "evaluation_dataset\\bundle_001_port_flap_fiber",
+      "description": "Fiber optic transceiver degradation causing intermittent link flaps",
+      "severity": "high"
+    },
+    {
+      "bundle_id": "bundle_002",
+      "scenario_name": "port_flap_copper",
+      "scenario_type": "port_flap",
+      "path": "evaluation_dataset\\bundle_002_port_flap_copper",
+      "description": "Copper cable issue causing link instability",
+      "severity": "high"
+    },
+    {
+      "bundle_id": "bundle_003",
+      "scenario_name": "bgp_holdtime_expired",
+      "scenario_type": "bgp_neighbor_down",
+      "path": "evaluation_dataset\\bundle_003_bgp_holdtime_expired",
+      "description": "BGP neighbor down due to hold timer expiration",
+      "severity": "critical"
+    },
+    {
+      "bundle_id": "bundle_004",
+      "scenario_name": "bgp_peer_unreachable",
+      "scenario_type": "bgp_neighbor_down",
+      "path": "evaluation_dataset\\bundle_004_bgp_peer_unreachable",
+      "description": "BGP peer unreachable due to network connectivity loss",
+      "severity": "critical"
+    },
+    {
+      "bundle_id": "bundle_005",
+      "scenario_name": "vlan_trunk_mismatch",
+      "scenario_type": "vlan_mismatch",
+      "path": "evaluation_dataset\\bundle_005_vlan_trunk_mismatch",
+      "description": "VLAN mismatch between trunk ports",
+      "severity": "medium"
+    },
+    {
+      "bundle_id": "bundle_006",
+      "scenario_name": "vlan_access_misconfiguration",
+      "scenario_type": "vlan_mismatch",
+      "path": "evaluation_dataset\\bundle_006_vlan_access_misconfiguration",
+      "description": "Access port configured with wrong VLAN",
+      "severity": "medium"
+    },
+    {
+      "bundle_id": "bundle_007",
+      "scenario_name": "default_route_missing",
+      "scenario_type": "missing_route",
+      "path": "evaluation_dataset\\bundle_007_default_route_missing",
+      "description": "Default gateway route missing from routing table",
+      "severity": "critical"
+    },
+    {
+      "bundle_id": "bundle_008",
+      "scenario_name": "subnet_route_missing",
+      "scenario_type": "missing_route",
+      "path": "evaluation_dataset\\bundle_008_subnet_route_missing",
+      "description": "Specific subnet route missing",
+      "severity": "high"
+    }
+  ],
+  "total_bundles": 8
+}

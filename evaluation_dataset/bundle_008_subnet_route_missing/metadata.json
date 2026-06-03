@@ -1,12 +1,12 @@
 {
   "bundle_version": "1.0",
-  "generated_at": "2026-04-20T23:03:49.593702",
+  "generated_at": "2026-05-26T20:02:16.564471",
   "hostname": "PSCSCTLEAFB03",
   "ground_truth": {
     "scenario_name": "missing_route",
     "description": "Route to 192.168.100.0/24 missing from routing table",
     "severity": "high",
-    "failure_timestamp": "2026-04-20T23:19:07.635000",
+    "failure_timestamp": "2026-05-27T03:32:22.093000",
     "root_cause_entity": "192.168.100.0/24",
     "root_cause_type": "routing_table_error",
     "expected_symptoms": [

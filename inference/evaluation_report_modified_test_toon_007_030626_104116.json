@@ -1,0 +1,43 @@
+{
+  "raw_bundle": "bundle_007_default_route_missing",
+  "compressed_name": "modified_test_toon_007",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 575.5439568668563,
+  "raw_size": 11528721,
+  "comp_size": 20031,
+  "raw_details": {
+    "root_cause_entity": "1/1/33",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "2026-05-26T20:10:36.986000+05:30 PSCSCTLEAFB03 acctsyslogd[387]: AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/vrfs/mgmt?selector=configuration&depth=1' and the method is GET and response code is 200 with payload \"\" which resulted in success at timezone Asia/Calcutta.",
+      "2026-05-26T20:10:40.084000+05:30 PSCSCTLEAFB03 ovsdb-server[501]: ovs|00247|ovsdb_server|INFO|transact: success, transaction 2335 completed, 1 rows inserted",
+      "2026-05-26T20:10:42.394000+05:30 PSCSCTLEAFB03 kernel: provision 0000:05:00.0 pvnet0: Re-enabling RX interrupts and disabling NAPI polling"
+    ],
+    "recommended_action": "Check the physical layer connectivity of interface 1/1/33 and ensure it is properly connected and functioning."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "AUTH_FAILURE_1",
+      "GENERIC_ERROR"
+    ],
+    "recommended_action": "Investigate and resolve the authentication issues with PSCSCTLEAFB03. Ensure proper authentication credentials are configured and valid. Check for any firewall or access control rules that might be blocking legitimate traffic."
+  },
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 0.0.0.0/0 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:37:52.526000",
+    "root_cause_entity": "0.0.0.0/0",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 0.0.0.0/0"
+  }
+}

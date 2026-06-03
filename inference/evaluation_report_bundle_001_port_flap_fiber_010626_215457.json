@@ -1,0 +1,38 @@
+{
+  "raw_bundle": "bundle_001_port_flap_fiber",
+  "compressed_name": "bundle_001_port_flap_fiber",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 458.0593314763231,
+  "raw_size": 11511031,
+  "comp_size": 25130,
+  "raw_details": {
+    "root_cause_entity": "error",
+    "root_cause_type": "error",
+    "recommended_action": "The read operation timed out"
+  },
+  "comp_details": {
+    "root_cause_entity": "10.233.131.22",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "T5 [C2]: <ts>+05 pscsctleafb03 acctsyslogd <pid> uri executed user afc admin address <ip> rest session uri uri > method response code payload resulted success timezone asia calcutta",
+      "T6 [C2]: <ts>+05 pscsctleafb03 ovsdb server <pid> ovs|00100|ovsdb server|info|transact success transaction completed rows inserted",
+      "T1 [C0]: <ts>+05 pscsctleafb03 ovs vswitchd <pid> ovs|08177|bridge|info|bridge br0 interface statistics queried status ok"
+    ],
+    "recommended_action": "Review and validate the configuration settings for the affected components, especially those related to network interfaces and database transactions. Ensure that the configurations are accurate and consistent across all relevant systems."
+  },
+  "ground_truth": {
+    "scenario_name": "port_flap",
+    "description": "Interface 1/1/3 experiencing link flapping",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:31:16.777000",
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "link_state_change",
+      "packet_loss",
+      "connection_timeout"
+    ],
+    "recommended_action": "Check physical cable and transceiver on 1/1/3"
+  }
+}

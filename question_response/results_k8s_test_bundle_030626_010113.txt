@@ -1,0 +1,79 @@
+================================================================================
+IMPROVED GENERIC PIPELINE EVALUATION
+================================================================================
+
+Model    : command-r-08-2024
+Backend  : cohere
+Date     : 2026-06-03 01:05:29
+Questions: Up to 6 per bundle (Dynamic/Adversarial mode)
+
+================================================================================
+LOG: k8s_test_bundle
+================================================================================
+Overall Score: 65.0%
+Total Questions Evaluated: 6
+Context: ~509 tokens
+
+Weighted Category Scores (0-100%):
+  causal_reasoning.............................   50.0%  (20.0% weight)
+  context_retrieval............................    0.0%  (10.0% weight)
+  negative_evidence............................  100.0%  (15.0% weight)
+  root_cause_attribution.......................  100.0%  (25.0% weight)
+  semantic_equivalence.........................  100.0%  (15.0% weight)
+  temporal_ordering............................    0.0%  (15.0% weight)
+
+Detailed Results:
+--------------------------------------------------------------------------------
+
+[K8S-RC-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.25)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : Identify any persistent error patterns (e.g., HTTP 403 Forbidden, 500 Internal Server Error) and the Kubernetes components or users involved.
+Answer    : No persistent error patterns identified. The logs indicate a variety of unknown events and an authentication failure....
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the absence of persistent error patterns and provided a logical explanation for the authentication failure.
+
+[K8S-CR-Q1] ⚠️ PARTIAL (Score: 0.50, Weight: 0.20)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Analyze the API requests made by the nodes (e.g., system:node). Were their requests for configurations like 'kube-flannel-cfg' and 'kube-root-ca.crt' successful, or were they denied? What HTTP status code proves this?
+Answer    : API requests and their outcomes are not explicitly mentioned in the logs. However, an authentication failure is noted, which could be related to access control or configuration issues....
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] While the AI acknowledged the absence of explicit API request details, it provided a reasonable inference about potential configuration issues.
+
+[K8S-TO-Q1] ❌ WRONG (Score: 0.00, Weight: 0.15)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : List the first 3 API requests logged in chronological order, including the verbs (e.g., watch, list) and the target resources.
+Answer    : The logs do not provide explicit information on the first 3 API requests. The log entries are related to unknown events and an authentication failure, but the specific API requests are not detailed....
+Scoring   : temporal_sequence_validation
+Judge Note: [Consensus: 3/3 passes] The AI failed to provide any chronological order or details about the first 3 API requests, which were explicitly asked for.
+
+[K8S-SE-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.15)
+Category  : semantic_equivalence
+Difficulty: medium
+Question  : Summarize the core behavior seen in these logs. Are these standard routine checks, or is there an indication of permission/RBAC misconfigurations?
+Answer    : The core behavior in these logs suggests potential issues with authentication and access control. The presence of unknown events and an authentication failure indicates a need for further investigation into the system's security configuration....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's summary of potential authentication and access control issues is logical and consistent with the provided information.
+
+[K8S-NE-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.15)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Is there any evidence of Pod evictions, Node NotReady states, or CrashLoopBackOff errors in these logs?
+Answer    : No evidence of Pod evictions, Node NotReady states, or CrashLoopBackOff errors is found in the provided logs....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI accurately stated the absence of specific error indicators in the logs.
+
+[K8S-CTX-Q1] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : context_retrieval
+Difficulty: easy
+Question  : Extract up to 5 distinct Kubernetes namespaces or system users (e.g., system:kube-scheduler) mentioned in the context.
+Answer    : None...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI did not provide any response for this question, which is a critical omission.
+
+
+================================================================================
+OVERALL AVERAGE: 65.0%
+================================================================================

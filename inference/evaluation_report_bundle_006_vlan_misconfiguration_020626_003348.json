@@ -1,0 +1,29 @@
+{
+  "raw_bundle": "bundle_006_vlan_access_misconfiguration",
+  "compressed_name": "bundle_006_vlan_misconfiguration",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 11500433.0,
+  "raw_size": 11500433,
+  "comp_size": 0,
+  "raw_details": {
+    "root_cause_entity": "error",
+    "root_cause_type": "error",
+    "recommended_action": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1018)"
+  },
+  "comp_details": {},
+  "ground_truth": {
+    "scenario_name": "vlan_mismatch",
+    "description": "VLAN mismatch on 1/1/12: expected 10, got 20",
+    "severity": "medium",
+    "failure_timestamp": "2026-05-27T03:32:56.189000",
+    "root_cause_entity": "1/1/12",
+    "root_cause_type": "configuration_error",
+    "expected_symptoms": [
+      "frame_drops",
+      "vlan_violation",
+      "connectivity_partial"
+    ],
+    "recommended_action": "Verify VLAN configuration on 1/1/12 and connected device"
+  }
+}

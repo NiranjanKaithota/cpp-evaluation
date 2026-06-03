@@ -1,0 +1,52 @@
+{
+  "raw_bundle": "bundle_004_bgp_peer_unreachable",
+  "compressed_name": "modified_test_toon_004",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 666.0266435986159,
+  "raw_size": 11548902,
+  "comp_size": 17340,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      {
+        "timestamp": "2026-05-26T20:03:49.787000+05:30",
+        "message": "PSCSCTLEAFB03 kernel: net_ratelimit: 104 callbacks suppressed"
+      },
+      {
+        "timestamp": "2026-05-26T20:03:53.007000+05:30",
+        "message": "PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|09598|bridge|INFO|bridge br0: interface 1/1/3 statistics queried, status OK"
+      },
+      {
+        "timestamp": "2026-05-26T20:03:54.664000+05:30",
+        "message": "PSCSCTLEAFB03 kernel: net_ratelimit: 65 callbacks suppressed"
+      }
+    ],
+    "recommended_action": "Investigate and resolve the physical layer failure on interface 1/1/3. Check for any hardware issues, cable connectivity, or network configuration problems."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "NET_CONN_FAIL",
+      "ROUTING_CHANGE"
+    ],
+    "recommended_action": "Re-authenticate all connections to PSCSCTLEAFB03 and ensure proper authentication credentials are in place. Verify that the authentication server is functioning correctly and that the necessary routes and network configurations are up-to-date."
+  },
+  "ground_truth": {
+    "scenario_name": "bgp_neighbor_down",
+    "description": "BGP session to 192.168.1.1 failed",
+    "severity": "critical",
+    "failure_timestamp": "2026-05-27T03:35:13.798000",
+    "root_cause_entity": "192.168.1.1",
+    "root_cause_type": "routing_protocol_failure",
+    "expected_symptoms": [
+      "bgp_session_down",
+      "route_withdrawal",
+      "connectivity_loss"
+    ],
+    "recommended_action": "Verify BGP configuration and network connectivity to 192.168.1.1"
+  }
+}

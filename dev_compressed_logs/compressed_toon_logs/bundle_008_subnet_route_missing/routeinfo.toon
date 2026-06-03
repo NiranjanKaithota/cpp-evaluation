@@ -1,0 +1,172 @@
+TOON-X:3.0 FORMAT:plain FILE:routeinfo.txt BASE_TS:0
+E:6427 C:30 SEV:E25/W72 SPAN:0s SOURCES:1
+[S]
+S0=plai
+[T]
+T0=PRIVILEGE_ESCALATION
+T1=PRIVILEGE_ESCALATION_1
+T2=PRIVILEGE_ESCALATION_2
+T3=PRIVILEGE_ESCALATION_3
+T4=PRIVILEGE_ESCALATION_4
+T5=ACCESS_DENIED
+T6=ACCESS_DENIED_1
+T7=HTTP_5XX
+T8=ROUTING_CHANGE
+T9=ROUTING_CHANGE_1
+T10=PRIVILEGE_ESCALATION_5
+T11=GENERIC_ERROR
+T12=NET_CONN_FAIL
+T13=GENERIC_ERROR_1
+T14=GENERIC_ERROR_2
+T15=PRIVILEGE_ESCALATION_6
+T16=PRIVILEGE_ESCALATION_7
+T17=PRIVILEGE_ESCALATION_8
+T18=ACCESS_DENIED_2
+T19=ACCESS_DENIED_3
+T20=ACCESS_DENIED_4
+T21=PRIVILEGE_ESCALATION_9
+T22=PRIVILEGE_ESCALATION_10
+T23=HTTP_4XX
+T24=PRIVILEGE_ESCALATION_11
+T25=AUTH_FAILURE
+[L0_EXEC_SUMMARY]
+Window:unknown span=0s events=6427 sources=[plain:6427]
+CRITICAL:2 incidents: HTTP_ERROR_SURGE, NEW_ERROR_TYPE
+TOP_EVENTS:PRIVILEGE_ESCALATION:14 ACCESS_DENIED:6 GENERIC_ERROR:3 ROUTING_CHANGE:2 HTTP_4XX:2
+COMPRESSION_EST:99%
+[L1_INCIDENTS]
+NAME:HTTP_ERROR_SURGE SEV:E COUNT:12 SPAN:0->0s
+  CLUSTERS:@39,@1546,@1551
+  DETAIL:error_rate=100.0% (12/12)
+  DESC:12 HTTP 4xx/5xx errors — 100.0% error rate
+NAME:NEW_ERROR_TYPE SEV:E COUNT:4 SPAN:0->end
+  CLUSTERS:@28,@1541,@1542,@1554
+  DETAIL:types=['ACCESS_DENIED', 'ACCESS_DENIED', 'ACCESS_DENIED', 'AUTH_FAILURE']
+  DESC:4 unique high-severity event types observed
+[L3_WORKFLOWS]
+FLOW_1 x4 len=3: PRIVILEGE_ESCALATION->PRIVILEGE_ESCALATION->PRIVILEGE_ESCALATION
+FLOW_2 x7 len=2: PRIVILEGE_ESCALATION->PRIVILEGE_ESCALATION
+FLOW_3 x3 len=2: ACCESS_DENIED->ACCESS_DENIED
+FLOW_4 x3 len=2: ACCESS_DENIED->PRIVILEGE_ESCALATION
+[L4_EVENT_CLUSTERS]
+@2 1x W S0 T0 ^0 FLOW:FLOW_1 IMP:0.36
+@12 1x W S0 T1 ^0 FLOW:FLOW_1 IMP:0.36
+@15 5x W S0 T2 ^0->0 burst(rate=5.0/s) FLOW:FLOW_1 IMP:0.36
+@19 2x W S0 T3 ^0->0 burst(rate=2.0/s) FLOW:FLOW_2 IMP:0.36
+@24 1x W S0 T4 ^0 FLOW:FLOW_2 IMP:0.36
+@28 1x E S0 T5 ^0 FLOW:FLOW_3 IMP:0.68
+  TMPL:<PATH> ip netns exec default iptables -S
+@35 2x E S0 T6 ^0->0 burst(rate=2.0/s) FLOW:FLOW_3 IMP:0.48
+  TMPL:<PATH> ip netns exec default <*> <*> <*> <*>
+@36 1x W S0 T6 ^0 IMP:0.36
+@39 8x E S0 T7 ^0->0 burst(rate=8.0/s) IMP:0.48
+  TMPL:nl UNCONN <NUM> <NUM> <NUM>:<NUM> *
+@41 1x W S0 T8 ^0 IMP:0.52
+@42 7x W S0 T9 ^0->0 burst(rate=7.0/s) IMP:0.52
+@43 4x W S0 T10 ^0->0 burst(rate=4.0/s) IMP:0.36
+@60 7x I S0 T11 ^0->0 burst(rate=7.0/s) IMP:0.25
+@61 4x E S0 T12 ^0->0 burst(rate=4.0/s) IMP:0.48
+  TMPL:<NUM> <*> <*> <*>
+@70 4x I S0 T13 ^0->0 burst(rate=4.0/s) IMP:0.25
+@72 11x I S0 T14 ^0->0 burst(rate=11.0/s) IMP:0.25
+@1536 18x W S0 T15 ^0->0 burst(rate=18.0/s) FLOW:FLOW_1 IMP:0.36
+@1537 9x W S0 T16 ^0->0 burst(rate=9.0/s) FLOW:FLOW_1 IMP:0.36
+@1539 3x W S0 T17 ^0->0 burst(rate=3.0/s) FLOW:FLOW_1 IMP:0.36
+@1540 3x E S0 T18 ^0->0 burst(rate=3.0/s) FLOW:FLOW_3 IMP:0.48
+  TMPL:<PATH> ip netns exec <*> <*> <*>
+@1541 1x E S0 T19 ^0 FLOW:FLOW_3 IMP:0.68
+  TMPL:<PATH> ip netns exec mgmt iptables -t nat -S
+@1542 1x E S0 T20 ^0 FLOW:FLOW_4 IMP:0.68
+  TMPL:<PATH> ip netns exec mgmt iptables -t <*> -S
+@1543 1x W S0 T21 ^0 FLOW:FLOW_4 IMP:0.36
+@1545 12x W S0 T18 ^0->0 burst(rate=12.0/s) FLOW:FLOW_2 IMP:0.36
+@1546 3x W S0 T11 ^0->0 burst(rate=3.0/s) IMP:0.37
+@1549 4x E S0 T16 ^0->0 burst(rate=4.0/s) FLOW:FLOW_4 IMP:0.48
+  TMPL:<PATH> ip netns exec <*> <*> <*> <*> <*>
+@1550 1x W S0 T22 ^0 FLOW:FLOW_4 IMP:0.36
+@1551 1x W S0 T23 ^0 IMP:0.37
+@1553 1x W S0 T24 ^0 IMP:0.36
+@1554 1x E S0 T25 ^0 IMP:0.68
+  TMPL:OutType0: <NUM>
+[L5_RAW_REFS]
+@2 LINES:2-2 COUNT:1
+@12 LINES:17-17 COUNT:1
+@15 LINES:26-63 COUNT:5
+@19 LINES:37-46 COUNT:2
+@24 LINES:57-57 COUNT:1
+@28 LINES:67-67 COUNT:1
+@35 LINES:77-84 COUNT:2
+@36 LINES:92-92 COUNT:1
+@39 LINES:96-4924 COUNT:8
+@41 LINES:99-99 COUNT:1
+@42 LINES:100-4927 COUNT:7
+@43 LINES:102-151 COUNT:4
+@60 LINES:121-4948 COUNT:7
+@61 LINES:122-4949 COUNT:4
+@70 LINES:132-4959 COUNT:4
+@72 LINES:134-4962 COUNT:11
+@1536 LINES:1610-4890 COUNT:18
+@1537 LINES:1625-4873 COUNT:9
+@1539 LINES:1665-4884 COUNT:3
+@1540 LINES:1675-4894 COUNT:3
+@1541 LINES:1685-1685 COUNT:1
+@1542 LINES:1692-1692 COUNT:1
+@1543 LINES:1700-1700 COUNT:1
+@1545 LINES:1710-4978 COUNT:12
+@1546 LINES:1727-4946 COUNT:3
+@1549 LINES:3295-4911 COUNT:4
+@1550 LINES:3310-3310 COUNT:1
+@1551 LINES:3332-3332 COUNT:1
+@1553 LINES:4919-4919 COUNT:1
+@1554 LINES:4944-4944 COUNT:1
+[TEMPLATES]
+TM0 n=144: -------------------------------------------------------------
+TM1 n=24: <PATH> ip netns exec <*> ip <*> show
+TM2 n=8: <NUM>: <*> <*> mtu <NUM> qdisc <*> state <*> group default qlen <NUM>
+TM3 n=8: link/loopback <MAC> brd <MAC>
+TM4 n=4: inet <IP>/<NUM> scope host lo
+TM5 n=24: valid_lft forever preferred_lft forever
+TM6 n=16: inet6 <*> scope <*>
+TM7 n=8: link/ether <MAC> brd <MAC>
+TM8 n=4: inet <IP>/<NUM> brd <IP> scope global eth0
+TM9 n=15: <PATH> ip netns exec <*> <*> <*> <*> <*>
+TM10 n=8: <NUM>: <*> <*> mtu <NUM> state <*>
+TM11 n=8: <NUM>: <*> <*> mtu <NUM> qdisc <*> state <*> mode DEFAULT group default qlen <NUM>
+TM12 n=8: <IP>/<NUM> dev eth0 proto kernel scope link src <IP>
+TM13 n=4: fe80::/<NUM> dev eth0 proto kernel metric <NUM> pref medium
+TM14 n=4: local fe80::4ed5:87ff:fe4d:5e03 dev eth0 proto local metric <NUM> pref medium
+TM15 n=16: <NUM>: from all lookup <*>
+TM16 n=4: <PATH> ip netns exec <*> ip route show table all
+TM17 n=8: local <IP> dev <*> table local proto kernel scope host src <IP>
+TM18 n=4: (<IP>, <IP>) Iif: eth0 Oifs: lo
+TM19 n=20: <PATH> ip netns exec <*> <*> <*>
+TM20 n=48: -P <*> ACCEPT
+TM21 n=4: -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+TM22 n=8: -A INPUT <*> <*> -j ACCEPT
+TM23 n=4: -A INPUT -p tcp -m state --state NEW -m tcp --dport <NUM> -j ACCEPT
+TM24 n=4: Netid State Recv-Q Send-Q Local Address:Port Peer Address:Port
+TM25 n=12: nl UNCONN <NUM> <NUM> <NUM>:<NUM> *
+TM26 n=12: tcp <*> <NUM> <NUM> <IP>:<NUM> <*> users:((<STR>,pid=<NUM>,fd=<NUM>))
+TM27 n=4: Ip:
+TM28 n=24: <NUM> <*> <*> <*>
+TM29 n=4: <NUM> forwarded
+TM30 n=8: <NUM> <*> sent out
+TM31 n=4: <NUM> dropped because of missing route
+TM32 n=4: Icmp:
+TM33 n=12: <NUM> <*> buffer <*>
+TM34 n=4: ICMP messages sent: <NUM>
+TM35 n=4: IcmpMsg:
+TM36 n=4: InType8: <NUM>
+TM37 n=4: OutType0: <NUM>
+TM38 n=4: Tcp:
+TM39 n=12: <NUM> <*> connection <*>
+TM40 n=4: <NUM> connections established
+TM41 n=12: <NUM> <*> <*>
+TM42 n=8: <NUM> <*> sent
+TM43 n=4: Udp:
+TM44 n=4: <NUM> packets to unknown port received
+TM45 n=4: <NUM> packet receive errors
+TM46 n=4: TcpExt:
+TM47 n=4: <NUM> TCP sockets finished time wait in fast timer
+TM48 n=4: <NUM> delayed acks sent
+TM49 n=4: Quick ack mode was enabled <NUM> times

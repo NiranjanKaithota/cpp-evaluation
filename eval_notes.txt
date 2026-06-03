@@ -1,0 +1,394 @@
+------------------TOON------------------
+
+================================================================================
+Evaluating: bundle_001_port_flap_fiber
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   22.2%
+    context_retrieval.......................   20.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................   88.9%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................    0.0%
+    semantic_equivalence....................   75.7%
+    temporal_ordering.......................   58.7%
+
+  Overall Score: 49.2%
+  Verdicts: 14 correct, 5 partial, 16 wrong
+
+================================================================================
+  Evaluating: bundle_002_port_flap_copper
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   44.4%
+    context_retrieval.......................   20.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................   88.9%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................    0.0%
+    semantic_equivalence....................   76.7%
+    temporal_ordering.......................   70.4%
+
+  Overall Score: 55.0%
+  Verdicts: 15 correct, 6 partial, 14 wrong
+
+================================================================================
+  Evaluating: bundle_003_bgp_holdtime_expired
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................  100.0%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................  100.0%
+    semantic_equivalence....................   76.0%
+    temporal_ordering.......................   88.9%
+
+  Overall Score: 95.8%
+  Verdicts: 28 correct, 7 partial, 0 wrong
+
+================================================================================
+  Evaluating: bundle_004_bgp_peer_unreachable
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   76.5%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   80.0%
+    semantic_equivalence....................   81.3%
+    temporal_ordering.......................   83.7%
+
+  Overall Score: 87.7%
+  Verdicts: 22 correct, 13 partial, 0 wrong
+
+================================================================================
+  Evaluating: bundle_005_vlan_trunk_mismatch
+================================================================================
+  Category Breakdown:
+    causal_reasoning.............................   79.1% 
+    context_retrieval............................  100.0% 
+    dynamic_entity_tracing.......................   80.0% 
+    negative_evidence............................  100.0% 
+    remediation_actionability....................  100.0% 
+    root_cause_attribution.......................   77.5% 
+    semantic_equivalence.........................  100.0% 
+    temporal_ordering............................   78.9% 
+
+  Overall Score: 87.5%
+  Verdicts: 25 correct, 10 partial, 0 wrong
+
+================================================================================
+  Evaluating: bundle_006_vlan_access_misconfiguration
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   61.1%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   66.7%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   77.8%
+
+  Overall Score: 83.3%
+  Verdicts: 27 correct, 6 partial, 2 wrong
+
+================================================================================
+  Evaluating: bundle_007_default_route_missing
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   76.7%
+    context_retrieval.......................   90.0%
+    dynamic_entity_tracing..................    0.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   82.0%
+    semantic_equivalence....................   94.0%
+    temporal_ordering.......................   75.9%
+
+  Overall Score: 81.4%
+  Verdicts: 22 correct, 12 partial, 1 wrong
+
+================================================================================
+  Evaluating: bundle_008_subnet_route_missing
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   44.4%
+    context_retrieval.......................   90.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   20.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   64.4%
+
+  Overall Score: 68.5%
+  Verdicts: 25 correct, 2 partial, 8 wrong
+
+------------------TOON------------------
+
+------------------GRAPH------------------
+
+================================================================================
+  Evaluating: bundle_001_port_flap_fiber
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   44.4%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............    0.0%
+    root_cause_attribution..................   20.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   77.8%
+
+  Overall Score: 66.0%
+  Verdicts: 26 correct, 0 partial, 9 wrong
+
+================================================================================
+  Evaluating: bundle_002_port_flap_copper
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   44.4%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................    0.0%
+    semantic_equivalence....................   73.3%
+    temporal_ordering.......................   75.6%
+
+  Overall Score: 65.0%
+  Verdicts: 21 correct, 5 partial, 9 wrong
+
+================================================================================
+  Evaluating: bundle_003_bgp_holdtime_expired
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   90.0%
+    context_retrieval.......................   90.0%
+    dynamic_entity_tracing..................   80.0%
+    negative_evidence.......................   85.7%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   84.0%
+    semantic_equivalence....................   76.0%
+    temporal_ordering.......................   78.3%
+
+  Overall Score: 85.0%
+  Verdicts: 19 correct, 12 partial, 1 
+  
+================================================================================
+  Evaluating: bundle_004_bgp_peer_unreachable
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   54.3%
+    context_retrieval.......................   90.0%
+    dynamic_entity_tracing..................   50.0%
+    negative_evidence.......................   85.7%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   52.0%
+    semantic_equivalence....................   77.0%
+    temporal_ordering.......................   65.0%
+
+  Overall Score: 69.0%
+  Verdicts: 16 correct, 13 partial, 3 wrong
+
+================================================================================
+  Evaluating: bundle_005_vlan_trunk_mismatch
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   44.4%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................    0.0%
+    semantic_equivalence....................   84.0%
+    temporal_ordering.......................   71.1%
+
+  Overall Score: 65.3%
+  Verdicts: 21 correct, 5 partial, 9 wrong
+
+================================================================================
+  Evaluating: bundle_006_vlan_access_misconfiguration
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   73.1%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   35.8%
+    semantic_equivalence....................   82.0%
+    temporal_ordering.......................   62.1%
+
+  Overall Score: 75.2%
+  Verdicts: 24 correct, 7 partial, 4 wrong
+
+================================================================================
+  Evaluating: bundle_007_default_route_missing
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   84.1%
+    context_retrieval.......................   91.3%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   77.7%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   94.8%
+
+  Overall Score: 91.4%
+  Verdicts: 28 correct, 7 partial, 0 wrong
+
+================================================================================
+  Evaluating: bundle_008_subnet_route_missing
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   83.7%
+    context_retrieval.......................   89.3%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   75.3%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   95.6%
+
+  Overall Score: 90.8%
+  Verdicts: 27 correct, 8 partial, 0 wrong
+
+------------------GRAPH------------------
+
+------------------MODIFIED_TOON------------------
+================================================================================
+  Evaluating: modified_test_toon_001
+================================================================================
+Category Breakdown:
+    causal_reasoning........................   73.6%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................    0.0%
+    negative_evidence.......................   88.9%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   72.5%
+    semantic_equivalence....................   73.0%
+    temporal_ordering.......................   72.2%
+
+  Overall Score: 75.5%
+  Verdicts: 22 correct, 9 partial, 4 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_002
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   44.4%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   20.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   77.8%
+
+  Overall Score: 71.7%
+  Verdicts: 27 correct, 0 partial, 8 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_003
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   86.1%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   86.7%
+    semantic_equivalence....................   61.3%
+    temporal_ordering.......................   91.1%
+
+  Overall Score: 90.0%
+  Verdicts: 26 correct, 8 partial, 1 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_004
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   71.1%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................   77.8%
+    remediation_actionability...............    0.0%
+    root_cause_attribution..................  100.0%
+    semantic_equivalence....................   76.7%
+    temporal_ordering.......................   42.2%
+
+  Overall Score: 73.6%
+  Verdicts: 21 correct, 9 partial, 5 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_005
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   78.7%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................   88.9%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   77.5%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   88.9%
+
+  Overall Score: 88.4%
+  Verdicts: 26 correct, 8 partial, 1 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_006
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   77.2%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................   80.0%
+    negative_evidence.......................   88.9%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   71.2%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   74.4%
+
+  Overall Score: 83.3%
+  Verdicts: 25 correct, 9 partial, 1 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_007
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   74.3%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   76.3%
+    semantic_equivalence....................   84.0%
+    temporal_ordering.......................   81.1%
+
+  Overall Score: 86.4%
+  Verdicts: 24 correct, 11 partial, 0 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_008
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................   91.9%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................  100.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   91.1%
+
+  Overall Score: 97.1%
+  Verdicts: 33 correct, 2 partial, 0 wrong
+
+------------------MODIFIED_TOON------------------

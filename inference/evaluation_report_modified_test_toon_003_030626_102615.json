@@ -1,0 +1,52 @@
+{
+  "raw_bundle": "bundle_003_bgp_holdtime_expired",
+  "compressed_name": "modified_test_toon_003",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 608.0328084680605,
+  "raw_size": 11545935,
+  "comp_size": 18989,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      {
+        "timestamp": "2026-05-26T20:04:28.470000+05:30",
+        "message": "kernel: provision 0000:05:00.0 pvnet0: Re-enabling RX interrupts and disabling NAPI polling"
+      },
+      {
+        "timestamp": "2026-05-26T20:04:30.620000+05:30",
+        "message": "kernel: provision 0000:05:00.0 pvnet0: Re-enabling RX interrupts and disabling NAPI polling"
+      },
+      {
+        "timestamp": "2026-05-26T20:04:31.627000+05:30",
+        "message": "kernel: provision 0000:05:00.0 pvnet0: Re-enabling RX interrupts and disabling NAPI polling"
+      }
+    ],
+    "recommended_action": "Investigate and rectify the physical layer failure on interface 1/1/3. This may involve checking for hardware faults, cable connectivity, or network configuration issues."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "NET_CONN_FAIL",
+      "ROUTING_CHANGE"
+    ],
+    "recommended_action": "Re-authenticate the affected devices and ensure proper authentication credentials are in place."
+  },
+  "ground_truth": {
+    "scenario_name": "bgp_neighbor_down",
+    "description": "BGP session to 10.233.255.1 failed",
+    "severity": "critical",
+    "failure_timestamp": "2026-05-27T03:32:22.445000",
+    "root_cause_entity": "10.233.255.1",
+    "root_cause_type": "routing_protocol_failure",
+    "expected_symptoms": [
+      "bgp_session_down",
+      "route_withdrawal",
+      "connectivity_loss"
+    ],
+    "recommended_action": "Verify BGP configuration and network connectivity to 10.233.255.1"
+  }
+}

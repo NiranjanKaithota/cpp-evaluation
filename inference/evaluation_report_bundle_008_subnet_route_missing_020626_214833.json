@@ -1,0 +1,52 @@
+{
+  "raw_bundle": "bundle_008_subnet_route_missing",
+  "compressed_name": "bundle_008_subnet_route_missing",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 305.20321463504905,
+  "raw_size": 11544922,
+  "comp_size": 37827,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      {
+        "timestamp": "2026-05-26T20:03:26.935000+05:30",
+        "message": "bridge br0: interface 1/1/38 statistics queried, status OK"
+      },
+      {
+        "timestamp": "2026-05-26T20:03:44.924000+05:30",
+        "message": "bridge br0: interface 1/1/33 statistics queried, status OK"
+      },
+      {
+        "timestamp": "2026-05-26T20:03:47.504000+05:30",
+        "message": "bridge br0: interface 1/1/35 statistics queried, status OK"
+      }
+    ],
+    "recommended_action": "Check the physical layer connectivity and configuration for interface 1/1/3 and its associated components."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "GENERIC_ERROR",
+      "NETWORK_FAILURE"
+    ],
+    "recommended_action": "Review and rectify the configuration settings on PSCSCTLEAFB03, focusing on authentication and network-related configurations. Ensure that the device is properly configured for authentication and that network routes are correctly defined."
+  },
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 192.168.100.0/24 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:32:22.093000",
+    "root_cause_entity": "192.168.100.0/24",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 192.168.100.0/24"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "raw_bundle": "bundle_006_vlan_access_misconfiguration",
+  "compressed_name": "modified_test_toon_006",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 328.2368068042355,
+  "raw_size": 11500433,
+  "comp_size": 35037,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      {
+        "2026-05-26T20:02:23.309000+05:30": "PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|00435|bridge|INFO|bridge br0: interface 1/1/30 statistics queried, status OK"
+      },
+      {
+        "2026-05-26T20:02:25.365000+05:30": "PSCSCTLEAFB03 ovsdb-server[501]: ovs|00703|ovsdb_server|INFO|transact: success, transaction 6796 completed, 1 rows inserted"
+      },
+      {
+        "2026-05-26T20:02:27.113000+05:30": "PSCSCTLEAFB03 kernel: provision 0000:05:00.0 1/1/44: Re-enabling RX interrupts and disabling NAPI polling"
+      }
+    ],
+    "recommended_action": "Check the physical layer connectivity and ensure the interface 1/1/3 is properly connected and functioning."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "ROUTING_CHANGE",
+      "KERNEL_EVENT"
+    ],
+    "recommended_action": "Investigate and resolve the authentication issues on PSCSCTLEAFB03. Ensure proper authentication mechanisms are in place and that the system is configured correctly. Monitor the system for further incidents and take appropriate action to prevent future failures."
+  },
+  "ground_truth": {
+    "scenario_name": "vlan_mismatch",
+    "description": "VLAN mismatch on 1/1/12: expected 10, got 20",
+    "severity": "medium",
+    "failure_timestamp": "2026-05-27T03:32:56.189000",
+    "root_cause_entity": "1/1/12",
+    "root_cause_type": "configuration_error",
+    "expected_symptoms": [
+      "frame_drops",
+      "vlan_violation",
+      "connectivity_partial"
+    ],
+    "recommended_action": "Verify VLAN configuration on 1/1/12 and connected device"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "raw_bundle": "bundle_001_port_flap_fiber",
+  "compressed_name": "modified_test_toon",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 602.0728594591767,
+  "raw_size": 11511031,
+  "comp_size": 19119,
+  "raw_details": {
+    "root_cause_entity": "error",
+    "root_cause_type": "error",
+    "recommended_action": "[WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond"
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "Interface <NUM><PATH> state changed to down",
+      "bridge br0: interface <NUM><PATH> statistics queried, status OK",
+      "bridge br0: interface <NUM><PATH> link status changed to DOWN"
+    ],
+    "recommended_action": "Check the physical connectivity of the network interface and ensure that the cables are properly connected. Verify the network interface card (NIC) and its configuration. If the issue persists, consider replacing the NIC or seeking further diagnostics."
+  },
+  "ground_truth": {
+    "scenario_name": "port_flap",
+    "description": "Interface 1/1/3 experiencing link flapping",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:31:16.777000",
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "link_state_change",
+      "packet_loss",
+      "connection_timeout"
+    ],
+    "recommended_action": "Check physical cable and transceiver on 1/1/3"
+  }
+}

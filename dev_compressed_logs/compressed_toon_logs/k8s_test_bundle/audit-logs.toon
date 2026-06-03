@@ -1,0 +1,48 @@
+TOON-X:3.0 FORMAT:csv FILE:audit-logs.csv BASE_TS:0
+E:886 C:5 SEV:E886/W0 SPAN:0s SOURCES:1
+[S]
+S0=csvt
+[T]
+T0=AUTH_FAILURE
+T1=UNKNOWN_EVENT
+T2=UNKNOWN_EVENT_1
+T3=UNKNOWN_EVENT_2
+T4=UNKNOWN_EVENT_3
+[L0_EXEC_SUMMARY]
+Window:unknown span=0s events=886 sources=[csv_table:886]
+CRITICAL:1 incidents: NEW_ERROR_TYPE
+WARNINGS:1: METRIC_ANOMALY_CLUSTER
+TOP_EVENTS:UNKNOWN_EVENT:4 AUTH_FAILURE:1
+COMPRESSION_EST:99%
+[L1_INCIDENTS]
+NAME:NEW_ERROR_TYPE SEV:E COUNT:1 SPAN:0->end
+  CLUSTERS:@1
+  DETAIL:types=['AUTH_FAILURE']
+  DESC:1 unique high-severity event types observed
+NAME:METRIC_ANOMALY_CLUSTER SEV:W COUNT:4 SPAN:0->end
+  CLUSTERS:@2,@3,@4,@5
+  DETAIL:anomaly_clusters=4
+  DESC:4 metric anomaly rows detected by z-score analysis
+[L3_WORKFLOWS]
+FLOW_1 x3 len=2: UNKNOWN_EVENT->UNKNOWN_EVENT
+[L4_EVENT_CLUSTERS]
+@1 1x E S0 T0 ^0 IMP:0.68
+  TMPL:TABLE rows=<NUM> cols=<NUM> {<STR>:<STR>}<BRACKET>: unique=<NUM> top=<BRACKET> <
+@2 3x E S0 T1 ^0->0 burst(rate=3.0/s) FLOW:FLOW_1 IMP:0.23
+  TMPL:{<STR>name\<STR>k8s-master-perfspec\<STR>: <STR>name\<STR>k8s-master-perfspec\<S
+@3 14x E S0 T2 ^0->0 burst(rate=14.0/s) FLOW:FLOW_1 IMP:0.23
+  TMPL:{<STR>name\<STR>k8s-master-perfspec\<STR>: <STR>name\<STR>k8s-master-perfspec\<S
+@4 490x E S0 T3 ^0->0 burst(rate=490.0/s) FLOW:FLOW_1 IMP:0.23
+  TMPL:{<STR>name\<STR>k8s-master-perfspec\<STR>: <STR>name\<STR>k8s-master-perfspec\<S
+@5 378x E S0 T4 ^0->0 burst(rate=378.0/s) FLOW:FLOW_1 IMP:0.23
+  TMPL:{<STR>name\<STR>k8s-master-perfspec\<STR>: <STR>name\<STR>k8s-master-perfspec\<S
+[L5_RAW_REFS]
+@1 LINES:1-1 COUNT:1
+@2 LINES:1-7 COUNT:3
+@3 LINES:3-384 COUNT:14
+@4 LINES:15-16563 COUNT:490
+@5 LINES:1327-16283 COUNT:378
+[TEMPLATES]
+TM0 n=1: TABLE rows=<NUM> cols=<NUM> {<STR>:<STR>}<BRACKET>: unique=<NUM> top=<BRACKET> <NUM>-<NUM>-27T18:<NU
+TM1 n=493: {<STR>name\<STR>k8s-master-perfspec\<STR>: <STR>name\<STR>k8s-master-perfspec\<STR>, <STR>: <STR>, <
+TM2 n=392: {<STR>name\<STR>k8s-master-perfspec\<STR>: <STR>name\<STR>k8s-master-perfspec\<STR>, <STR>: <STR>, <

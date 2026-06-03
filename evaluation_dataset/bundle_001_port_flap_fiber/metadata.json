@@ -1,12 +1,12 @@
 {
   "bundle_version": "1.0",
-  "generated_at": "2026-04-20T23:03:49.490913",
+  "generated_at": "2026-05-26T20:02:13.537329",
   "hostname": "PSCSCTLEAFB03",
   "ground_truth": {
     "scenario_name": "port_flap",
     "description": "Interface 1/1/3 experiencing link flapping",
     "severity": "high",
-    "failure_timestamp": "2026-04-20T23:18:56.982000",
+    "failure_timestamp": "2026-05-27T03:31:16.777000",
     "root_cause_entity": "1/1/3",
     "root_cause_type": "physical_layer_failure",
     "expected_symptoms": [

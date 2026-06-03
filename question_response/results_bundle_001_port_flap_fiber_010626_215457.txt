@@ -1,0 +1,331 @@
+================================================================================
+IMPROVED GENERIC PIPELINE EVALUATION
+================================================================================
+
+Model    : command-r-08-2024
+Backend  : cohere
+Date     : 2026-06-01 22:08:54
+Questions: Up to 35 per bundle (Dynamic/Adversarial mode)
+
+================================================================================
+LOG: bundle_001_port_flap_fiber
+================================================================================
+Overall Score: 59.7%
+Total Questions Evaluated: 35
+Context: ~5,852 tokens
+
+Weighted Category Scores (0-100%):
+  causal_reasoning.............................   22.2%  (17.0% weight)
+  context_retrieval............................   90.0%  ( 9.4% weight)
+  dynamic_entity_tracing.......................  100.0%  ( 5.7% weight)
+  negative_evidence............................  100.0%  (17.0% weight)
+  remediation_actionability....................  100.0%  ( 5.7% weight)
+  root_cause_attribution.......................    0.0%  (18.9% weight)
+  semantic_equivalence.........................   80.0%  ( 9.4% weight)
+  temporal_ordering............................   68.5%  (17.0% weight)
+
+Detailed Results:
+--------------------------------------------------------------------------------
+
+[RC-Q1] ❌ WRONG (Score: 0.00, Weight: 0.20)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What is the root cause of the primary network issue? Identify the specific component that failed and explain the failure mechanism.
+Answer    : The primary network issue is likely caused by a failure in the **Cluster 1** component, specifically related to the **Interrupts_Domain**. The failure mechanism involves the enabling and disabling of interrupts, potentially leading to disruptions in the network's ability to process and manage data p
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI's answer does not align with the Ground Truth. The root cause entity is '1/1/3', a physical layer failure, not 'Cluster 1' or 'Interrupts_Domain'.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ The primary network issue is likely caused by a failure in the **Cluster 1** component, specifically related to the **Interrupts_Domain**.
+  └─────────────────────────────────────────────────
+
+[RC-Q2] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What remediation steps would you recommend to resolve this issue? Be specific about which components to check or reconfigure.
+Answer    : Remediation steps should focus on the **Cluster 1** component and its associated interrupts. First, check the interrupt configuration settings and ensure they are optimized for the network's workload. Second, verify that the interrupts are properly enabled and disabled at the right times, as unexpec
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's recommended actions are not aligned with the Ground Truth. The recommended action should focus on physical cable and transceiver checks, not interrupt configurations.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Remediation steps should focus on the **Cluster 1** component and its associated interrupts.
+  └─────────────────────────────────────────────────
+
+[RC-Q3] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: medium
+Question  : Classify this failure: (A) Physical layer issue, (B) Configuration error, (C) Protocol/software failure, or (D) Resource exhaustion. Explain your choice.
+Answer    : This failure can be classified as a **Configuration error (B)**. The evidence suggests that the issue is not related to physical hardware or resource exhaustion, but rather a misconfiguration or improper handling of interrupts, which is a software-level configuration issue.
+Scoring   : classification_with_reasoning
+Judge Note: [Consensus: 3/3 passes] The classification as a configuration error is incorrect based on the Ground Truth. The issue is a physical layer failure, not a software-level configuration problem.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ This failure can be classified as a **Configuration error (B)**.
+  └─────────────────────────────────────────────────
+
+[RC-Q4] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : Was this a single point of failure, or a cascading failure where one component's crash caused others to fail? Provide evidence.
+Answer    : The logs indicate a cascading failure, where the initial issue with **Cluster 1** (Interrupts_Domain) triggers a series of subsequent events and failures in other clusters. This is evident from the causal sequences, where a single event in **Cluster 1** often leads to a chain of events in other clus
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI's answer suggests a cascading failure, but the Ground Truth indicates a single point of failure at '1/1/3'.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ The logs indicate a cascading failure, where the initial issue with **Cluster 1** (Interrupts_Domain) triggers a series of subsequent events.
+  └─────────────────────────────────────────────────
+
+[RC-Q5] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: easy
+Question  : Based on standard networking practices, what is the severity level of this issue (e.g., Critical outage, Degraded performance, Informational warning)? Justify the severity.
+Answer    : The severity level of this issue is classified as a **Degraded performance** issue. While it is not a critical outage, the impact on network performance and the potential for further cascading failures make it a significant concern. The issue affects the network's ability to process data efficiently
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The severity classification as 'Degraded performance' is not aligned with the Ground Truth, which indicates a 'high' severity level.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ The severity level of this issue is classified as a **Degraded performance** issue.
+  └─────────────────────────────────────────────────
+
+[CR-Q1] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Trace the causal chain: what event triggered the failure, what symptoms appeared as a result, and what was the final observable impact?
+Answer    : The causal chain indicates that the root cause of the failure was an issue with the URI domain, specifically with the URI executed by the user 'afc admin' with the address '10.233.131.22'. This triggered a series of events, including enabling interrupts and disabling NAPI polling, as well as bridge 
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI's answer does not match the Ground Truth. The root cause entity is '1/1/3', not the URI domain or user-related issues.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ The causal chain indicates that the root cause of the failure was an issue with the URI domain, specifically with the URI executed by the user 'afc admin' with the address '10.233.131.22'.
+  └─────────────────────────────────────────────────
+
+[CR-Q2] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Could the observed symptoms have been caused by something OTHER than the identified root cause? If yes, what evidence rules out those alternatives?
+Answer    : Yes, other potential root causes could have triggered similar symptoms. However, the evidence that rules out these alternatives is the consistent presence of the URI domain events (T5) in the causal chains, which are directly linked to the user 'afc admin' and the IP address '10.233.131.22'. This su
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's answer suggests other potential root causes, but the Ground Truth provides a clear indication of the physical layer failure at '1/1/3'.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Yes, other potential root causes could have triggered similar symptoms.
+  └─────────────────────────────────────────────────
+
+[CR-Q3] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : Did any automated network recovery mechanisms (e.g., STP reconvergence, BGP route recalculation, Link Aggregation failover) attempt to mitigate this failure? Detail their actions.
+Answer    : No automated network recovery mechanisms are explicitly mentioned in the logs. The logs primarily focus on the diagnostic and error messages related to the URI domain and bridge/interface issues. There is no indication of any active mitigation or recovery attempts by the network infrastructure.
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 2/3 passes] The AI's answer indicates no automated recovery mechanisms, which is not aligned with the Ground Truth, as the issue is a physical layer failure that may trigger automated responses.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ No automated network recovery mechanisms are explicitly mentioned in the logs.
+  └─────────────────────────────────────────────────
+
+[CR-Q4] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : How did this specific failure impact the overall network topology (e.g., routing tables, forwarding paths, neighbor adjacencies)?
+Answer    : The failure impacted the network topology by disrupting the normal functioning of the bridge and interface components. This could lead to issues with routing tables, as the bridge interface statistics queries and link status changes may affect the accuracy of the routing information. Additionally, t
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's answer focuses on bridge and interface issues, which are not the primary concern based on the Ground Truth. The impact should be related to the physical layer failure at '1/1/3'.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ The failure impacted the network topology by disrupting the normal functioning of the bridge and interface components.
+  └─────────────────────────────────────────────────
+
+[TO-Q1] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : List the 3-5 most critical events in chronological order. Include approximate timestamps if available.
+Answer    : The 3-5 most critical events, in chronological order, are:
+
+1. T5 [C2]: URI executed by user 'afc admin' with address '10.233.131.22' (timestamp: 05-26 20:02:31)
+2. T3 [C1]: Enabling interrupts and disabling NAPI polling (timestamp: 05-26 20:03:02)
+3. T4 [C1]: Enabling interrupts and disabling NAPI 
+Scoring   : temporal_sequence_validation
+Judge Note: [Consensus: 3/3 passes] The AI's temporal ordering does not align with the Ground Truth. The critical events should be related to the physical layer failure at '1/1/3', not URI or bridge/interface issues.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ The 3-5 most critical events, in chronological order, are:
+  │ 
+  │ 1. T5 [C2]: URI executed by user 'afc admin' with address '10.233.131.22' (timestamp: 05-26 20:02:31)
+  │ 2. T3 [C1]: Enabling interrupts and disabling NAPI polling (timestamp: 05-26 20:03:02)
+  │ 3. T4 [C1]: Enabling interrupts and disabling NAPI polling for pvnet1 (timestamp: 05-26 20:11:14)
+  │ 4. T6 [C2]: OVSDB server transaction success (timestamp: 05-26 20:11:50)
+  │ 5. T1 [C0]: Bridge br0 interface statistics queried (timestamp: 05-26 20:17:53)
+  └─────────────────────────────────────────────────
+
+[TO-Q2] ⚠️ PARTIAL (Score: 0.80, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : How long did it take from initial failure detection to complete service disruption? Describe the progression.
+Answer    : The initial failure detection and complete service disruption occurred within a time span of 05-26 20:02:31 to 05-27 21:02:51, indicating a duration of approximately 25 hours and 0 minutes. The progression involved various causal sequences, with Cluster 2 (Uri_Domain) events consistently leading to 
+Scoring   : temporal_reasoning
+Judge Note: [Consensus: 3/3 passes] The AI provided a temporal ordering with a clear time span, but the description of causal sequences is not entirely accurate. The progression should focus on the root cause and its impact, not just the correlation between clusters.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ 05-26 20:02:31 to 05-27 21:02:51
+  └─────────────────────────────────────────────────
+
+[TO-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Were there any WARNING-level events BEFORE the first ERROR? If so, summarize them or list up to 3 examples.
+Answer    : Yes, there were WARNING-level events before the first ERROR. For instance, Cluster 0 (Noise_Domain) events, such as "T8 [C0]: < ts>+05 pscsctleafb03 ovs vswitchd < pid > ovs|13619|bridge|warn|bridge interface link status changed" and "T9 [C0]: < ts>+05 pscsctleafb03 hpe routing < pid > ovs|13620|int
+Scoring   : temporal_precedence
+Judge Note: [Consensus: 3/3 passes] The AI accurately identified WARNING-level events before the first ERROR and provided relevant examples.
+
+[TO-Q4] ⚠️ PARTIAL (Score: 0.63, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : Are there any cyclic or repeating error patterns indicating a continuous retry/fail loop (e.g., continuous interface flapping or repeated protocol handshakes)?
+Answer    : Yes, there are cyclic or repeating error patterns. Cluster 2 (Uri_Domain) events consistently lead to Cluster 0 (Noise_Domain) events, forming a repeating pattern. Additionally, Cluster 1 (Interrupts_Domain) events often follow Cluster 2 events, suggesting a potential continuous retry or fail loop r
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] While the AI correctly identified repeating error patterns, the explanation could be more detailed. It should elaborate on the specific events and their potential impact on the network.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Cluster 2 (Uri_Domain) events consistently lead to Cluster 0 (Noise_Domain) events
+  └─────────────────────────────────────────────────
+
+[TO-Q5] ⚠️ PARTIAL (Score: 0.73, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Identify the timestamp or approximate time when the system first returned to a stable or fully disconnected state after the chaos.
+Answer    : The system appears to have returned to a stable or fully disconnected state around 05-27 21:02:51, which is the end timestamp of the provided logs. This suggests that the chaos or disruption lasted until the end of the log data, and further analysis beyond this point is required to determine the exa
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI identified the approximate time of stability, but it should clarify that the logs end at that point, leaving the actual recovery time uncertain.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ 05-27 21:02:51
+  └─────────────────────────────────────────────────
+
+[SE-Q1] ✅ CORRECT (Score: 0.90, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : Summarize the core network problem in 2-3 sentences using plain language (avoid technical jargon where possible).
+Answer    : The core network problem involves a series of URI processing issues, potentially causing a cascade of events leading to network noise and interface problems. The consistent pattern of Cluster 2 (Uri_Domain) events triggering Cluster 0 (Noise_Domain) events suggests a critical issue with URI handling
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The summary is accurate and concise, highlighting the core network problem.
+
+[SE-Q2] ⚠️ PARTIAL (Score: 0.80, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: medium
+Question  : What primary network components or topology elements were affected by this failure? (List the most critical or up to 5 components).
+Answer    : Bridge, Interface, Network Interface Card (NIC), Interrupts, Open vSwitch Database (OVSDB) Server
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI listed relevant components, but it missed the root cause entity mentioned in the Ground Truth (1/1/3).
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Bridge, Interface, Network Interface Card (NIC), Interrupts, Open vSwitch Database (OVSDB) Server
+  └─────────────────────────────────────────────────
+
+[SE-Q3] ⚠️ PARTIAL (Score: 0.70, Weight: 0.10)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : If you were escalating this ticket to a Tier 3 Network Engineer, write the 1-sentence technical TL;DR they need to read first.
+Answer    : Persistent network connectivity issues with frequent URI requests, bridge and NIC link status changes, and interrupt management, potentially impacting user experience.
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The TL;DR is technically accurate, but it could be more concise and focus on the critical issue.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Persistent network connectivity issues with frequent URI requests, bridge and NIC link status changes, and interrupt management, potentially impacting user experience.
+  └─────────────────────────────────────────────────
+
+[SE-Q4] ✅ CORRECT (Score: 0.90, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: easy
+Question  : Translate this technical failure into its likely business or user-facing impact (e.g., loss of redundancy vs. complete user outage).
+Answer    : Users may experience intermittent connectivity issues, affecting their ability to access network resources and potentially causing delays or disruptions in their workflow.
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI accurately translated the technical failure into its user-facing impact.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Users may experience intermittent connectivity issues, affecting their ability to access network resources and potentially causing delays or disruptions in their workflow.
+  └─────────────────────────────────────────────────
+
+[NE-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of DNS resolution failures in these logs?
+Answer    : false
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the absence of DNS resolution failures based on the logs.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ false
+  └─────────────────────────────────────────────────
+
+[NE-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any mention of hardware failures (memory errors, CPU spikes, ASIC faults, disk issues)?
+Answer    : false
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI accurately determined that there is no mention of hardware failures in the provided logs.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ false
+  └─────────────────────────────────────────────────
+
+[NE-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Does the log contain any security-related events (authentication failures, ACL drops, MAC spoofing, intrusion attempts)?
+Answer    : No
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the absence of security-related events in the log.
+
+[NE-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of a power failure, brownout, or unscheduled system reboot?
+Answer    : No
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI accurately determined that there is no evidence of power failure or system reboot.
+
+[NE-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Are there any Spanning Tree Protocol (STP) loop detections, topology changes (TCs), or broadcast storms mentioned?
+Answer    : No
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] No mention of STP loop detections, TCs, or broadcast storms was found, as stated by the AI.
+
+[NE-Q6] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Does the context explicitly mention MTU mismatches or packet fragmentation issues?
+Answer    : No
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's answer aligns with the absence of explicit mentions of MTU mismatches or packet fragmentation issues.
+
+[NE-Q7] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there evidence of an OSPF or BGP routing loop (e.g., TTL expired in transit)?
+Answer    : No
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the absence of OSPF or BGP routing loop evidence.
+
+[CTX-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: easy
+Question  : How many distinct network devices or physical interfaces are explicitly mentioned in the logs?
+Answer    : 1
+Scoring   : counting_with_tolerance
+Judge Note: [Consensus: 3/3 passes] The AI accurately counted the number of distinct network devices or interfaces mentioned in the logs.
+
+[CTX-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: medium
+Question  : What specific OS versions, firmware versions, or software builds are explicitly mentioned in the context?
+Answer    : None
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI's answer aligns with the absence of specific OS versions, firmware, or software builds in the context.
+
+[CTX-Q3] ⚠️ PARTIAL (Score: 0.50, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: hard
+Question  : Extract a sample of 5 to 10 exact IP addresses and 5 to 10 MAC addresses from the logs.

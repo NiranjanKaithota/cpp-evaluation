@@ -1,0 +1,387 @@
+================================================================================
+IMPROVED GENERIC PIPELINE EVALUATION
+================================================================================
+
+Model    : command-r-08-2024
+Backend  : cohere
+Date     : 2026-06-03 10:45:31
+Questions: Up to 35 per bundle (Dynamic/Adversarial mode)
+
+================================================================================
+LOG: modified_test_toon_005
+================================================================================
+Overall Score: 88.4%
+Total Questions Evaluated: 35
+Context: ~4,592 tokens
+
+Weighted Category Scores (0-100%):
+  causal_reasoning.............................   78.7%  (17.0% weight)
+  context_retrieval............................  100.0%  ( 9.4% weight)
+  dynamic_entity_tracing.......................  100.0%  ( 5.7% weight)
+  negative_evidence............................   88.9%  (17.0% weight)
+  remediation_actionability....................  100.0%  ( 5.7% weight)
+  root_cause_attribution.......................   77.5%  (18.9% weight)
+  semantic_equivalence.........................  100.0%  ( 9.4% weight)
+  temporal_ordering............................   88.9%  (17.0% weight)
+
+Detailed Results:
+--------------------------------------------------------------------------------
+
+[RC-Q1] ⚠️ PARTIAL (Score: 0.75, Weight: 0.20)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What is the root cause of the primary network issue? Identify the specific component that failed and explain the failure mechanism.
+Answer    : The primary network issue is caused by a failure in the VLAN configuration. The specific component that failed is the VLAN manager (TM8). The failure mechanism is a VLAN mismatch, where the expected VLAN tag does not match the received VLAN tag, leading to frames being dropped....
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the root cause as a VLAN configuration issue, but the specific component mentioned (VLAN manager TM8) is not present in the ground truth. The AI should have focused on the port or interface mentioned in the ground truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ VLAN manager (TM8)
+  └─────────────────────────────────────────────────
+
+[RC-Q2] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What remediation steps would you recommend to resolve this issue? Be specific about which components to check or reconfigure.
+Answer    : To resolve this issue, I recommend checking and reconfiguring the VLAN settings on the affected devices. Ensure that the VLAN configuration is consistent across all devices in the network. Verify that the VLAN tags are correctly assigned and that the VLAN manager is properly configured to handle the...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's recommendation to check and reconfigure VLAN settings is correct, but the specific mention of 'VLAN manager' is not supported by the ground truth. The recommendation should be more general, focusing on the affected devices and their configurations.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Check and reconfigure the VLAN settings on the affected devices.
+  └─────────────────────────────────────────────────
+
+[RC-Q3] ⚠️ PARTIAL (Score: 0.50, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: medium
+Question  : Classify this failure: (A) Physical layer issue, (B) Configuration error, (C) Protocol/software failure, or (D) Resource exhaustion. Explain your choice.
+Answer    : This failure can be classified as a (C) Protocol/software failure. The issue is related to the VLAN configuration and management, which is a software-level function. The failure is not due to physical layer issues, configuration errors, or resource exhaustion....
+Scoring   : classification_with_reasoning
+Judge Note: [Consensus: 3/3 passes] The classification as a Protocol/software failure is partially correct, but the ground truth indicates a configuration error, which is a different category. The AI should have considered the configuration aspect more closely.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Protocol/software failure
+  └─────────────────────────────────────────────────
+
+[RC-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : Was this a single point of failure, or a cascading failure where one component's crash caused others to fail? Provide evidence.
+Answer    : This appears to be a single point of failure. The logs indicate that the VLAN mismatch and subsequent frame dropping are the primary causes of the issue. There is no evidence of a cascading failure where one component's crash caused others to fail....
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI's assessment of a single point of failure is correct based on the ground truth, as there is no indication of a cascading failure.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ single point of failure
+  └─────────────────────────────────────────────────
+
+[RC-Q5] ⚠️ PARTIAL (Score: 0.75, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: easy
+Question  : Based on standard networking practices, what is the severity level of this issue (e.g., Critical outage, Degraded performance, Informational warning)? Justify the severity.
+Answer    : The severity level of this issue is Critical outage. The VLAN mismatch is causing frames to be dropped, which can lead to significant disruptions in network communication and service availability. This issue should be addressed immediately to restore normal network operations....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The severity classification as a Critical outage is partially correct, as the ground truth mentions a medium severity. However, the AI's justification is sound, considering the potential impact on network communication.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Critical outage
+  └─────────────────────────────────────────────────
+
+[CR-Q1] ⚠️ PARTIAL (Score: 0.50, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Trace the causal chain: what event triggered the failure, what symptoms appeared as a result, and what was the final observable impact?
+Answer    : The causal chain begins with the event 'AUTH_FAILURE', which triggered a series of symptoms. These symptoms include multiple 'AUTH_FAILURE' events, 'KERNEL_EVENT', and 'HTTP_2XX' events. The final observable impact is the NEW_ERROR_TYPE incident, which is a high-severity event with 70 unique types....
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI correctly identifies 'AUTH_FAILURE' as a triggering event, but the causal chain and symptoms described do not align with the ground truth. The AI should have focused on the VLAN mismatch and its impact.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ AUTH_FAILURE
+  └─────────────────────────────────────────────────
+
+[CR-Q2] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Could the observed symptoms have been caused by something OTHER than the identified root cause? If yes, what evidence rules out those alternatives?
+Answer    : Yes, other root causes could have led to the observed symptoms. However, the evidence that rules out these alternatives is the consistent presence of 'AUTH_FAILURE' events across the causal graph and event clusters. This suggests a direct correlation between the 'AUTH_FAILURE' event and the subseque...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI acknowledges the possibility of other root causes, but the evidence provided is not strong enough to rule them out. A more detailed analysis of the logs is required to support the claim.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ consistent presence of 'AUTH_FAILURE' events
+  └─────────────────────────────────────────────────
+
+[CR-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : Did any automated network recovery mechanisms (e.g., STP reconvergence, BGP route recalculation, Link Aggregation failover) attempt to mitigate this failure? Detail their actions.
+Answer    : No automated network recovery mechanisms are mentioned in the logs. The absence of such mechanisms suggests that the network did not attempt any self-healing actions to mitigate the failure....
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI correctly states that no automated recovery mechanisms are mentioned in the logs, which is a valid observation.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ No automated network recovery mechanisms are mentioned in the logs.
+  └─────────────────────────────────────────────────
+
+[CR-Q4] ⚠️ PARTIAL (Score: 0.58, Weight: 0.05)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : How did this specific failure impact the overall network topology (e.g., routing tables, forwarding paths, neighbor adjacencies)?
+Answer    : The specific failure impacted the network topology by potentially disrupting authentication processes, leading to a cascade of events affecting kernel-level operations and HTTP responses. This could result in altered routing tables, forwarding paths, and neighbor adjacencies, as the network may need...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's description of potential impacts on the network topology is partially correct, but the ground truth does not specifically mention authentication issues. The focus should be on the VLAN mismatch and its potential effects on routing and forwarding.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ disrupting authentication processes
+  └─────────────────────────────────────────────────
+
+[TO-Q1] ⚠️ PARTIAL (Score: 0.50, Weight: 0.10)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : List the 3-5 most critical events in chronological order. Include approximate timestamps if available.
+Answer    : The 3-5 most critical events in chronological order are: 'AUTH_FAILURE' (timestamp: 2026-05-26T20:02:17.992000Z), 'KERNEL_EVENT' (timestamp: 2026-05-26T20:02:17.992000Z), 'HTTP_2XX' (timestamp: 2026-05-26T20:02:17.992000Z), 'AUTH_FAILURE_1' (timestamp: 2026-05-26T20:02:17.992000Z), and 'AUTH_FAILURE...
+Scoring   : temporal_sequence_validation
+Judge Note: [Consensus: 3/3 passes] The AI lists critical events, but the timestamps provided do not align with the ground truth. Additionally, the events described are not directly related to the VLAN mismatch issue.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ AUTH_FAILURE, KERNEL_EVENT, HTTP_2XX
+  └─────────────────────────────────────────────────
+
+[TO-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : How long did it take from initial failure detection to complete service disruption? Describe the progression.
+Answer    : The initial failure detection occurred at @11, and the service disruption was complete by @146. The progression was as follows: @11 marked the start of the incident with an AUTH_FAILURE event, followed by a series of AUTH_FAILURE events and related informational messages. The system attempted to rec...
+Scoring   : temporal_reasoning
+Judge Note: [Consensus: 3/3 passes] The AI accurately describes the temporal progression from initial failure detection to service disruption, providing a clear timeline and relevant event details.
+
+[TO-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Were there any WARNING-level events BEFORE the first ERROR? If so, summarize them or list up to 3 examples.
+Answer    : No WARNING-level events were observed before the first ERROR....
+Scoring   : temporal_precedence
+Judge Note: [Consensus: 3/3 passes] The AI correctly states that there were no WARNING-level events before the first ERROR, which aligns with the absence of such events in the logs.
+
+[TO-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : Are there any cyclic or repeating error patterns indicating a continuous retry/fail loop (e.g., continuous interface flapping or repeated protocol handshakes)?
+Answer    : Yes, there are cyclic error patterns. The causal graph shows a repeating pattern of ASSET_LINKED events with consistent delta times, indicating a continuous retry or fail loop. This is further supported by the presence of periodic events in the L4_EVENT_CLUSTERS section, such as @2 with a periodic p...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI identifies cyclic error patterns and provides evidence from the causal graph and L4_EVENT_CLUSTERS, indicating a continuous retry or fail loop.
+
+[TO-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Identify the timestamp or approximate time when the system first returned to a stable or fully disconnected state after the chaos.
+Answer    : The system returned to a stable or fully disconnected state at approximately 90274s, as indicated by the absence of further events and the completion of the incident at @146....
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI accurately pinpoints the timestamp when the system returned to a stable state, which is consistent with the absence of further events and the completion of the incident.
+
+[SE-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : Summarize the core network problem in 2-3 sentences using plain language (avoid technical jargon where possible).
+Answer    : The network experienced a critical incident characterized by a high volume of authentication failures. These failures triggered a series of related events, including informational messages and attempts at recovery. Despite these efforts, the system eventually disconnected, indicating a significant d...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's summary is concise, accurate, and effectively communicates the core network problem in plain language.
+
+[SE-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: medium
+Question  : What primary network components or topology elements were affected by this failure? (List the most critical or up to 5 components).
+Answer    : PSCSCTLEAFB03...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI identifies the primary network component affected, PSCSCTLEAFB03, which is consistent with the Ground Truth.
+
+[SE-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : If you were escalating this ticket to a Tier 3 Network Engineer, write the 1-sentence technical TL;DR they need to read first.
+Answer    : A new error type, NEW_ERROR_TYPE, was observed with 70 unique high-severity event types, primarily AUTH_FAILURE, impacting PSCSCTLEAFB03....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's technical TL;DR is concise and informative, highlighting the new error type and its impact on PSCSCTLEAFB03.
+
+[SE-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: easy
+Question  : Translate this technical failure into its likely business or user-facing impact (e.g., loss of redundancy vs. complete user outage).
+Answer    : The failure resulted in a high volume of authentication failures, potentially leading to user lockout or access issues....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI accurately translates the technical failure into its potential user-facing impact, which is a high volume of authentication failures leading to user lockout or access issues.
+
+[NE-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of DNS resolution failures in these logs?
+Answer    : false...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly states that there is no evidence of DNS resolution failures in the logs, which aligns with the absence of such events.
+
+[NE-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any mention of hardware failures (memory errors, CPU spikes, ASIC faults, disk issues)?
+Answer    : false...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI accurately confirms the absence of any mention of hardware failures in the logs, which is consistent with the Ground Truth.
+
+[NE-Q3] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Does the log contain any security-related events (authentication failures, ACL drops, MAC spoofing, intrusion attempts)?
+Answer    : Yes...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's answer indicates the presence of security-related events, but the ground truth metadata does not support this. No security-related events are mentioned.
+
+[NE-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of a power failure, brownout, or unscheduled system reboot?
+Answer    : No...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the absence of power-related issues, which aligns with the ground truth.
+
+[NE-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Are there any Spanning Tree Protocol (STP) loop detections, topology changes (TCs), or broadcast storms mentioned?
+Answer    : No...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's answer is consistent with the ground truth, as there is no mention of STP loop detections or related issues.
+
+[NE-Q6] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Does the context explicitly mention MTU mismatches or packet fragmentation issues?
+Answer    : No...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI accurately stated that the context does not explicitly mention MTU mismatches or packet fragmentation issues.
+
+[NE-Q7] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there evidence of an OSPF or BGP routing loop (e.g., TTL expired in transit)?
+Answer    : No...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's answer aligns with the ground truth, as there is no evidence of OSPF or BGP routing loops.
+
+[CTX-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: easy
+Question  : How many distinct network devices or physical interfaces are explicitly mentioned in the logs?
+Answer    : 1...
+Scoring   : counting_with_tolerance
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the presence of one distinct network device or physical interface.
+
+[CTX-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: medium
+Question  : What specific OS versions, firmware versions, or software builds are explicitly mentioned in the context?
+Answer    : None...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI's answer is accurate, as no specific OS versions or software builds are mentioned in the context.
+
+[CTX-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: hard
+Question  : Extract a sample of 5 to 10 exact IP addresses and 5 to 10 MAC addresses from the logs.
+Answer    : {'IP addresses': ['<IP>', '<IP>', '<IP>', '<IP>', '<IP>'], 'MAC addresses': ['<NUM><PATH>', '<NUM><PATH>', '<NUM><PATH>', '<NUM><PATH>', '<NUM><PATH>']}...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 2/3 passes] The AI provided a list of IP and MAC addresses, which is a valid response to the question.
+
+[CTX-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: medium
+Question  : Identify up to 5 specific VLAN IDs or Virtual Routing and Forwarding (VRF) instances referenced in the logs.
+Answer    : ['<NUM>', '<NUM>', '<NUM>', '<NUM>', '<NUM>']...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 2/3 passes] The AI listed VLAN IDs, which is a correct interpretation of the context.
+
+[CTX-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: easy
+Question  : What diagnostic commands (e.g., 'show tech', 'ping', 'traceroute') were executed to generate these logs, if visible?
+Answer    : None...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI's answer is consistent with the absence of diagnostic command information in the logs.
+
+[DYN-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.15)
+Category  : dynamic_entity_tracing
+Difficulty: hard
+Question  : Analyze the logs specifically for the entity '1/1/5'. Detail the exact sequence of events, errors, or state changes that occurred on this component before the failure.
+Answer    : The logs indicate that entity '1/1/5' experienced a 'VLAN configuration_error', specifically a 'VLAN mismatch'. This was followed by a 'frame dropping' event, where frames with unexpected VLAN tags were dropped. These events occurred before the failure and are likely contributing factors....
+Scoring   : dynamic_trace_validation
+Judge Note: [Consensus: 3/3 passes] The AI accurately described the sequence of events for entity '1/1/5', including the VLAN configuration error and frame dropping, which aligns with the ground truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ VLAN configuration_error, frame dropping
+  └─────────────────────────────────────────────────
+
+[REM-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.15)
+Category  : remediation_actionability
+Difficulty: hard
+Question  : The recommended action is roughly: 'Verify VLAN configuration on 1/1/5 and connected device'. Provide the exact network OS CLI commands (e.g., HPE/Aruba OS syntax or standard Linux network utilities) a network engineer would type to execute this remediation and verify the fix.
+Answer    : To verify the VLAN configuration on 1/1/5 and the connected device, a network engineer can use the following commands:
+
+```
+show vlan
+show interfaces <interface_name> description
+show interfaces <interface_name> counters
+```
+
+These commands will display the VLAN configuration, interface description,...
+Scoring   : cli_syntax_validation
+Judge Note: [Consensus: 3/3 passes] The provided CLI commands are specific and valid for verifying VLAN configuration, as per the recommended action in the ground truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ show vlan, show interfaces <interface_name> description, show interfaces <interface_name> counters
+  └─────────────────────────────────────────────────
+
+[ADV-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Based on the diagnostic logs, did the AI identify any signs of a hardware fault on a redundant power supply unit or a memory exhaustion event on the control plane of the device hosting interface 1/1/5, leading it to consider these as primary contributors to the observed service disruption, rather than solely a localized configuration issue on the interface itself?
+Answer    : No, the logs do not indicate any signs of a hardware fault on a redundant power supply unit or a memory exhaustion event on the control plane. The AI's analysis focuses primarily on the localized configuration issue on interface 1/1/5, specifically the VLAN mismatch and frame dropping behavior....
+Scoring   : llm_as_judge
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the absence of hardware faults or memory exhaustion events based on the logs, adhering to the Absent Entity Rule.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ No signs of hardware faults or memory exhaustion
+  └─────────────────────────────────────────────────
+
+[ADV-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Assuming the `configuration_error` on interface 1/1/5 is specifically a native VLAN mismatch on a trunk link between two switches, detail the precise Layer 2 forwarding anomalies (e.g., specific frame dropping behavior for untagged control protocols like CDP/LLDP, or asymmetric traffic flow for specific VLANs) that would occur, and how these symptoms would distinctly differ from those caused by an 'allowed VLAN list' pruning issue on the same interface.
+Answer    : In the case of a native VLAN mismatch on a trunk link, the following Layer 2 forwarding anomalies would occur:
+
+- Untagged control protocols like CDP/LLDP would be dropped, as they rely on the native VLAN for communication.
+- Asymmetric traffic flow for specific VLANs could occur, where traffic in o...
+Scoring   : llm_as_judge
+Judge Note: [Consensus: 3/3 passes] The AI detailed precise Layer 2 forwarding anomalies for a native VLAN mismatch, distinguishing it from an 'allowed VLAN list' pruning issue, demonstrating causal reasoning.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Untagged control protocols dropped, asymmetric traffic flow for specific VLANs
+  └─────────────────────────────────────────────────
+
+[ADV-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.15)
+Category  : temporal_ordering
+Difficulty: hard
+Question  : A server on VLAN 20, connected to Switch_X, loses connectivity to a database on VLAN 30, connected to Switch_Y. The initial trigger is a `VLAN configuration_error` on interface 1/1/5 of Switch_Z (which directly connects Switch_X and Switch_Y). Trace the chronological sequence of at least three distinct network events or state changes (e.g., spanning-tree port role transitions, MAC address table updates/flaps on intermediate devices, and subsequent ARP resolution failures or TCP session resets) that would propagate from Switch_Z's 1/1/5, through Switch_X, ultimately causing the server's connectivity loss.
+Answer    : The chronological sequence of network events that would propagate from Switch_Z's 1/1/5, through Switch_X, causing the server's connectivity loss:
+
+1. VLAN configuration_error on Switch_Z's 1/1/5, leading to frame dropping for VLAN 20 and 30 traffic.
+2. Spanning-tree port role transition on Switch_X...
+Scoring   : llm_as_judge
+Judge Note: [Consensus: 3/3 passes] The chronological sequence provided by the AI aligns with the expected network events and state changes, including spanning-tree adjustments and MAC address table updates, leading to connectivity loss.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ VLAN configuration_error, spanning-tree port role transition, MAC address table updates, ARP resolution failures
+  └─────────────────────────────────────────────────
+
+
+================================================================================
+OVERALL AVERAGE: 88.4%
+================================================================================

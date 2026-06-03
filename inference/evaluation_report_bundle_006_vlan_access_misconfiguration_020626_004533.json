@@ -1,0 +1,43 @@
+{
+  "raw_bundle": "bundle_006_vlan_access_misconfiguration",
+  "compressed_name": "bundle_006_vlan_access_misconfiguration",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 7042.5186772810775,
+  "raw_size": 11500433,
+  "comp_size": 1633,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "2026-05-26T20:02:23.309000+05:30 PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|05013|bridge|INFO|bridge br0: interface 1/1/7 statistics queried, status OK",
+      "2026-05-26T20:02:24.347000+05:30 PSCSCTLEAFB03 ovsdb-server[501]: ovs|08433|ovsdb_server|INFO|transact: success, transaction 7940 completed, 1 rows inserted",
+      "2026-05-26T20:02:28.269000+05:30 PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|01751|bridge|INFO|bridge br0: interface 1/1/47 statistics queried, status OK"
+    ],
+    "recommended_action": "Check the physical layer connectivity and ensure that the interface 1/1/3 is properly connected and functioning."
+  },
+  "comp_details": {
+    "root_cause_entity": "pscsctleafb03",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "T7 [C0]: <ts>+05 pscsctleafb03 hpe routing <pid> ovs|17515|vlan mgr|err|vlan mismatch expected received",
+      "T8 [C0]: <ts>+05 pscsctleafb03 ovs vswitchd <pid> ovs|17516|bridge|err|bridge dropping frame unexpected tag received interface",
+      "T9 [C-1]: <ts>+05 pscsctleafb03 kernel dropping frame unexpected tag"
+    ],
+    "recommended_action": "Investigate and rectify the VLAN configuration on pscsctleafb03. Ensure that the VLAN settings are consistent and match the expected values. This may involve reviewing and updating the VLAN configuration to resolve the mismatch and unexpected tag issues."
+  },
+  "ground_truth": {
+    "scenario_name": "vlan_mismatch",
+    "description": "VLAN mismatch on 1/1/12: expected 10, got 20",
+    "severity": "medium",
+    "failure_timestamp": "2026-05-27T03:32:56.189000",
+    "root_cause_entity": "1/1/12",
+    "root_cause_type": "configuration_error",
+    "expected_symptoms": [
+      "frame_drops",
+      "vlan_violation",
+      "connectivity_partial"
+    ],
+    "recommended_action": "Verify VLAN configuration on 1/1/12 and connected device"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "raw_bundle": "bundle_004_bgp_peer_unreachable",
+  "compressed_name": "bundle_004_bgp_peer_unreachable",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 1066.9717294900222,
+  "raw_size": 11548902,
+  "comp_size": 10824,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "2026-05-26T20:03:49.925000+05:30 PSCSCTLEAFB03 kernel: net_ratelimit: 104 callbacks suppressed",
+      "2026-05-26T20:03:54.664000+05:30 PSCSCTLEAFB03 acctsyslogd[387]: AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/bgp_aspath_filters?depth=2&selector=configuration' and the method is GET and response code is 200 with payload \"\" which resulted in success at timezone Asia/Calcutta.",
+      "2026-05-26T20:03:59.814000+05:30 PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|07322|bridge|INFO|bridge br0: interface 1/1/22 statistics queried, status OK"
+    ],
+    "recommended_action": "Check the physical layer connectivity and ensure that the interface 1/1/3 is properly connected and functioning."
+  },
+  "comp_details": {
+    "root_cause_entity": "10.233.131.22",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "T5 [C2]: <ts>+05 pscsctleafb03 acctsyslogd <pid> uri executed user afc admin address <ip> rest session uri uri > method response code payload resulted success timezone asia calcutta",
+      "T7 [C2]: <ts>+05 pscsctleafb03 hpe routing <pid> peer <ip> connection lost",
+      "T8 [C2]: <ts>+05 pscsctleafb03 hpe routing <pid> ovs|11061|bgp|err|bgp session <ip> went hold timer expired"
+    ],
+    "recommended_action": "Review and validate the configuration settings for the affected component (10.233.131.22). Ensure that the BGP session parameters, including timers, are correctly configured and aligned with the network's requirements. Adjust or optimize the configuration as necessary to prevent further connection losses and timer expirations."
+  },
+  "ground_truth": {
+    "scenario_name": "bgp_neighbor_down",
+    "description": "BGP session to 192.168.1.1 failed",
+    "severity": "critical",
+    "failure_timestamp": "2026-05-27T03:35:13.798000",
+    "root_cause_entity": "192.168.1.1",
+    "root_cause_type": "routing_protocol_failure",
+    "expected_symptoms": [
+      "bgp_session_down",
+      "route_withdrawal",
+      "connectivity_loss"
+    ],
+    "recommended_action": "Verify BGP configuration and network connectivity to 192.168.1.1"
+  }
+}

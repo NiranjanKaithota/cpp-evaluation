@@ -1,0 +1,52 @@
+{
+  "raw_bundle": "bundle_002_port_flap_copper",
+  "compressed_name": "bundle_002_port_flap_copper",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 233.5869652702322,
+  "raw_size": 11608805,
+  "comp_size": 49698,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      {
+        "timestamp": "2026-05-26T20:03:36.021000+05:30",
+        "message": "ovs-vswitchd[505]: ovs|09798|bridge|INFO|bridge br0: interface 1/1/1 statistics queried, status OK"
+      },
+      {
+        "timestamp": "2026-05-26T20:03:39.324000+05:30",
+        "message": "acctsyslogd[387]: AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/interfaces?depth=2&selector=status' and the method is GET and response code is 200 with payload \"\" which resulted in success at timezone Asia/Calcutta."
+      },
+      {
+        "timestamp": "2026-05-26T20:03:40.518000+05:30",
+        "message": "ovs-vswitchd[505]: ovs|07975|bridge|INFO|bridge br0: interface 1/1/35 statistics queried, status OK"
+      }
+    ],
+    "recommended_action": "Investigate and resolve the physical layer failure on interface 1/1/3. This may involve checking for hardware issues, cable connectivity, or network configuration problems."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "ROUTING_CHANGE",
+      "GENERIC_ERROR"
+    ],
+    "recommended_action": "Review and validate the configuration settings on PSCSCTLEAFB03, focusing on authentication and routing protocols. Ensure that the device is properly configured and that any recent changes have been applied correctly. Verify that authentication mechanisms are functioning as expected and that routing tables are up-to-date and accurate."
+  },
+  "ground_truth": {
+    "scenario_name": "port_flap",
+    "description": "Interface 1/1/10 experiencing link flapping",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:30:26.723000",
+    "root_cause_entity": "1/1/10",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "link_state_change",
+      "packet_loss",
+      "connection_timeout"
+    ],
+    "recommended_action": "Check physical cable and transceiver on 1/1/10"
+  }
+}

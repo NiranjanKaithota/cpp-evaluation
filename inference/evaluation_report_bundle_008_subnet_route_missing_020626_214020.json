@@ -1,0 +1,38 @@
+{
+  "raw_bundle": "bundle_008_subnet_route_missing",
+  "compressed_name": "bundle_008_subnet_route_missing",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 305.20321463504905,
+  "raw_size": 11544922,
+  "comp_size": 37827,
+  "raw_details": {
+    "root_cause_entity": "error",
+    "root_cause_type": "error",
+    "recommended_action": "The read operation timed out"
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "AUTH_FAILURE_1",
+      "GENERIC_ERROR"
+    ],
+    "recommended_action": "Investigate and resolve the authentication issues on PSCSCTLEAFB03. Ensure proper authentication mechanisms are in place and that credentials are valid and up-to-date."
+  },
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 192.168.100.0/24 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:32:22.093000",
+    "root_cause_entity": "192.168.100.0/24",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 192.168.100.0/24"
+  }
+}

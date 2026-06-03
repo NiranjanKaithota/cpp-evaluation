@@ -1,0 +1,43 @@
+{
+  "raw_bundle": "bundle_005_vlan_trunk_mismatch",
+  "compressed_name": "bundle_005_vlan_trunk_mismatch",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 286.9522970827545,
+  "raw_size": 11567621,
+  "comp_size": 40312,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "2026-05-26T20:02:48.761000+05:30 PSCSCTLEAFB03 acctsyslogd[387]: AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/bgp_aspath_filters?depth=2&selector=configuration' and the method is GET and response code is 200 with payload \"\" which resulted in success at timezone Asia/Calcutta.",
+      "2026-05-26T20:02:50.838000+05:30 PSCSCTLEAFB03 acctsyslogd[387]: AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/snmpv3_users?selector=configuration&depth=1' and the method is GET and response code is 200 with payload \"\" which resulted in success at timezone Asia/Calcutta.",
+      "2026-05-26T20:02:54.163000+05:30 PSCSCTLEAFB03 acctsyslogd[387]: AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/vrfs/mgmt?selector=configuration&depth=1' and the method is GET and response code is 200 with payload \"\" which resulted in success at timezone Asia/Calcutta."
+    ],
+    "recommended_action": "Investigate and resolve the physical layer failure on interface 1/1/3."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "ACCESS_DENIED",
+      "HTTP_5XX"
+    ],
+    "recommended_action": "Investigate and resolve the authentication issues on PSCSCTLEAFB03. Ensure proper authentication mechanisms are in place and that credentials are valid and up-to-date. Monitor the system for further incidents and take necessary steps to prevent future failures."
+  },
+  "ground_truth": {
+    "scenario_name": "vlan_mismatch",
+    "description": "VLAN mismatch on 1/1/5: expected 100, got 200",
+    "severity": "medium",
+    "failure_timestamp": "2026-05-27T03:32:41.394000",
+    "root_cause_entity": "1/1/5",
+    "root_cause_type": "configuration_error",
+    "expected_symptoms": [
+      "frame_drops",
+      "vlan_violation",
+      "connectivity_partial"
+    ],
+    "recommended_action": "Verify VLAN configuration on 1/1/5 and connected device"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "raw_bundle": "bundle_006_vlan_access_misconfiguration",
+  "compressed_name": "bundle_006_vlan_access_misconfiguration",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 201.4544992730394,
+  "raw_size": 11500433,
+  "comp_size": 57087,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "2026-05-26T20:02:20.623000+05:30 PSCSCTLEAFB03 ovs-vswitchd[505]: ovs|00435|bridge|INFO|bridge br0: interface 1/1/28 statistics queried, status OK",
+      "2026-05-26T20:02:23.309000+05:30 PSCSCTLEAFB03 kernel: provision 0000:05:00.0 pvnet0: Re-enabling RX interrupts and disabling NAPI polling",
+      "2026-05-26T20:02:29.083000+05:30 PSCSCTLEAFB03 acctsyslogd[387]: AUDIT|REST URI executed by user 'afc_admin' from address '10.233.131.22' through REST session. The URI is '/rest/v10.16/system/snmpv3_users?selector=configuration&depth=1' and the method is GET and response code is 200 with payload \"\" which resulted in success at timezone Asia/Calcutta."
+    ],
+    "recommended_action": "Check the physical layer connectivity of interface 1/1/3 and ensure proper configuration."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "ROUTING_CHANGE",
+      "HTTP_5XX"
+    ],
+    "recommended_action": "Review and rectify the configuration settings on PSCSCTLEAFB03 to address the observed symptoms and prevent further failures."
+  },
+  "ground_truth": {
+    "scenario_name": "vlan_mismatch",
+    "description": "VLAN mismatch on 1/1/12: expected 10, got 20",
+    "severity": "medium",
+    "failure_timestamp": "2026-05-27T03:32:56.189000",
+    "root_cause_entity": "1/1/12",
+    "root_cause_type": "configuration_error",
+    "expected_symptoms": [
+      "frame_drops",
+      "vlan_violation",
+      "connectivity_partial"
+    ],
+    "recommended_action": "Verify VLAN configuration on 1/1/12 and connected device"
+  }
+}

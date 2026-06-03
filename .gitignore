@@ -12,11 +12,13 @@ env/
 compressed_logs/
 # inference/
 inference-copy/
+question-response-copy/
 data/
 evaluation_results.json
 *.log
 *.jsonl
 *.tar.gz
+evaluation_dataset\archive
 
 # IDE / Editor
 .vscode/

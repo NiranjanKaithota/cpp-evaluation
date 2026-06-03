@@ -1,12 +1,12 @@
 {
   "bundle_version": "1.0",
-  "generated_at": "2026-04-20T23:03:49.579530",
+  "generated_at": "2026-05-26T20:02:16.144248",
   "hostname": "PSCSCTLEAFB03",
   "ground_truth": {
     "scenario_name": "missing_route",
     "description": "Route to 0.0.0.0/0 missing from routing table",
     "severity": "high",
-    "failure_timestamp": "2026-04-20T23:18:53.181000",
+    "failure_timestamp": "2026-05-27T03:37:52.526000",
     "root_cause_entity": "0.0.0.0/0",
     "root_cause_type": "routing_table_error",
     "expected_symptoms": [

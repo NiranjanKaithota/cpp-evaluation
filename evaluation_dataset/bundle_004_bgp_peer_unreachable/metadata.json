@@ -1,12 +1,12 @@
 {
   "bundle_version": "1.0",
-  "generated_at": "2026-04-20T23:03:49.532488",
+  "generated_at": "2026-05-26T20:02:14.848531",
   "hostname": "PSCSCTLEAFB03",
   "ground_truth": {
     "scenario_name": "bgp_neighbor_down",
     "description": "BGP session to 192.168.1.1 failed",
     "severity": "critical",
-    "failure_timestamp": "2026-04-20T23:18:57.939000",
+    "failure_timestamp": "2026-05-27T03:35:13.798000",
     "root_cause_entity": "192.168.1.1",
     "root_cause_type": "routing_protocol_failure",
     "expected_symptoms": [

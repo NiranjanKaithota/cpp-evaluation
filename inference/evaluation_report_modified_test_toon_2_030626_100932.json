@@ -1,0 +1,43 @@
+{
+  "raw_bundle": "bundle_002_port_flap_copper",
+  "compressed_name": "modified_test_toon_2",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 11608805.0,
+  "raw_size": 11608805,
+  "comp_size": 0,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      {
+        "timestamp": "2026-05-26T20:03:36.021000+05:30",
+        "message": "ovs-vswitchd[505]: ovs|03436|bridge|INFO|bridge br0: interface 1/1/7 statistics queried, status OK"
+      },
+      {
+        "timestamp": "2026-05-26T20:03:39.202000+05:30",
+        "message": "kernel: net_ratelimit: 107 callbacks suppressed"
+      },
+      {
+        "timestamp": "2026-05-26T20:03:40.518000+05:30",
+        "message": "ovs-vswitchd[505]: ovs|07975|bridge|INFO|bridge br0: interface 1/1/35 statistics queried, status OK"
+      }
+    ],
+    "recommended_action": "Investigate and resolve the physical layer failure on interface 1/1/3. This may involve checking for hardware issues, cable connectivity, or network configuration errors."
+  },
+  "comp_details": {},
+  "ground_truth": {
+    "scenario_name": "port_flap",
+    "description": "Interface 1/1/10 experiencing link flapping",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:30:26.723000",
+    "root_cause_entity": "1/1/10",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "link_state_change",
+      "packet_loss",
+      "connection_timeout"
+    ],
+    "recommended_action": "Check physical cable and transceiver on 1/1/10"
+  }
+}

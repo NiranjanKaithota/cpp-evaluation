@@ -35,8 +35,8 @@ class LLMEngine:
             
     def run_inference(self, context: str) -> dict:
 
-        # We set the limit to 100,000 to leave an 8k token buffer for your prompt instructions and the LLM's output
-        MAX_TOKENS = 100000
+        # We set the limit to 85,000 to leave  token buffer for your prompt instructions and the LLM's output
+        MAX_TOKENS = 85000
 
         if self.tokenizer:
             # 1. Encode the massive text string into an exact array of token integers
