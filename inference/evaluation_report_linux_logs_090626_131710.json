@@ -1,0 +1,22 @@
+{
+  "raw_bundle": "linux_logs",
+  "compressed_name": "linux_logs",
+  "timestamp": "090626_131710",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 40223,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "IP_03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "T20: Authentication failed from IP_03 (IP_03): Permission denied in replay cache code",
+      "T21: Kerberos authentication failed",
+      "T22: Authentication failed from IP_03 (IP_03): Software caused connection abort"
+    ],
+    "recommended_action": "Investigate and resolve the authentication issues with IP_03. Ensure proper authentication mechanisms are in place and that the IP address is not being used maliciously."
+  },
+  "ground_truth": {}
+}

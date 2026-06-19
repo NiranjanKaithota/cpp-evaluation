@@ -1,0 +1,645 @@
+# Route Info Bundle
+# Generated: 2026-06-08 01:10:50
+# Routers: spine1, spine2, leaf1, leaf2
+# ======================================================================
+
+
+############################################################################
+# Device: spine1
+############################################################################
+
+
+Command : ip route show table all
+────────────────────────────────────────────────────────────
+default via 192.168.100.1 dev eth0 
+2.2.2.2 nhid 15 via 192.168.100.12 dev eth0 proto ospf metric 20 
+3.3.3.3 nhid 16 via 192.168.100.13 dev eth0 proto ospf metric 20 
+4.4.4.4 nhid 12 via 192.168.100.14 dev eth0 proto ospf metric 20 
+192.168.100.0/24 dev eth0 proto kernel scope link src 192.168.100.11 
+local 1.1.1.1 dev lo table local proto kernel scope host src 1.1.1.1 
+broadcast 1.1.1.1 dev lo table local proto kernel scope link src 1.1.1.1 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+local 192.168.100.11 dev eth0 table local proto kernel scope host src 192.168.100.11 
+broadcast 192.168.100.255 dev eth0 table local proto kernel scope link src 192.168.100.11 
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 route show table all
+────────────────────────────────────────────────────────────
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip neighbor show
+────────────────────────────────────────────────────────────
+192.168.100.12 dev eth0 lladdr 2a:64:23:cc:81:da REACHABLE proto zebra 
+192.168.100.13 dev eth0 lladdr 4e:9e:74:de:27:8d STALE proto zebra 
+192.168.100.14 dev eth0 lladdr d6:b5:54:73:44:32 STALE proto zebra 
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 neighbor show
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip link show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0@if742: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether ce:91:14:07:a6:7f brd ff:ff:ff:ff:ff:ff link-netnsid 0
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip addr show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 1.1.1.1/32 brd 1.1.1.1 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0@if742: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether ce:91:14:07:a6:7f brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.100.11/24 brd 192.168.100.255 scope global eth0
+       valid_lft forever preferred_lft forever
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip rule show
+────────────────────────────────────────────────────────────
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/arp
+────────────────────────────────────────────────────────────
+IP address       HW type     Flags       HW address            Mask     Device
+192.168.100.12   0x1         0x2         2a:64:23:cc:81:da     *        eth0
+192.168.100.13   0x1         0x2         4e:9e:74:de:27:8d     *        eth0
+192.168.100.14   0x1         0x2         d6:b5:54:73:44:32     *        eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/route
+────────────────────────────────────────────────────────────
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth0	00000000	0164A8C0	0003	0	0	0	00000000	0	0	0                                                                               
+eth0	02020202	0C64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	03030303	0D64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	04040404	0E64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	0064A8C0	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/if_inet6
+────────────────────────────────────────────────────────────
+00000000000000000000000000000001 01 80 10 80       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/ipv6_route
+────────────────────────────────────────────────────────────
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+00000000000000000000000000000001 80 00000000000000000000000000000000 00 00000000000000000000000000000000 00000000 00000007 00000000 80200001       lo
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -rn
+────────────────────────────────────────────────────────────
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.100.1   0.0.0.0         UG        0 0          0 eth0
+2.2.2.2         192.168.100.12  255.255.255.255 UGH       0 0          0 eth0
+3.3.3.3         192.168.100.13  255.255.255.255 UGH       0 0          0 eth0
+4.4.4.4         192.168.100.14  255.255.255.255 UGH       0 0          0 eth0
+192.168.100.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -i
+────────────────────────────────────────────────────────────
+netstat: unrecognized option: i
+BusyBox v1.35.0 (2022-08-01 15:14:44 UTC) multi-call binary.
+
+Usage: netstat [-ral] [-tuwx] [-enWp]
+
+Display networking information
+
+	-r	Routing table
+	-a	All sockets
+	-l	Listening sockets
+		Else: connected sockets
+	-t	TCP sockets
+	-u	UDP sockets
+	-w	Raw sockets
+	-x	Unix sockets
+		Else: all socket types
+	-e	Other/more information
+	-n	Don't resolve names
+	-W	Wide display
+	-p	Show PID/program name for sockets
+
+────────────────────────────────────────────────────────────
+
+
+############################################################################
+# Device: spine2
+############################################################################
+
+
+Command : ip route show table all
+────────────────────────────────────────────────────────────
+default via 192.168.100.1 dev eth0 
+1.1.1.1 nhid 15 via 192.168.100.11 dev eth0 proto ospf metric 20 
+3.3.3.3 nhid 18 via 192.168.100.13 dev eth0 proto ospf metric 20 
+4.4.4.4 nhid 16 via 192.168.100.14 dev eth0 proto ospf metric 20 
+192.168.100.0/24 dev eth0 proto kernel scope link src 192.168.100.12 
+local 2.2.2.2 dev lo table local proto kernel scope host src 2.2.2.2 
+broadcast 2.2.2.2 dev lo table local proto kernel scope link src 2.2.2.2 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+local 192.168.100.12 dev eth0 table local proto kernel scope host src 192.168.100.12 
+broadcast 192.168.100.255 dev eth0 table local proto kernel scope link src 192.168.100.12 
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 route show table all
+────────────────────────────────────────────────────────────
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip neighbor show
+────────────────────────────────────────────────────────────
+192.168.100.14 dev eth0 lladdr d6:b5:54:73:44:32 REACHABLE proto zebra 
+192.168.100.11 dev eth0 lladdr ce:91:14:07:a6:7f DELAY proto zebra 
+192.168.100.13 dev eth0 lladdr 4e:9e:74:de:27:8d REACHABLE proto zebra 
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 neighbor show
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip link show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0@if744: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 2a:64:23:cc:81:da brd ff:ff:ff:ff:ff:ff link-netnsid 0
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip addr show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 2.2.2.2/32 brd 2.2.2.2 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0@if744: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 2a:64:23:cc:81:da brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.100.12/24 brd 192.168.100.255 scope global eth0
+       valid_lft forever preferred_lft forever
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip rule show
+────────────────────────────────────────────────────────────
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/arp
+────────────────────────────────────────────────────────────
+IP address       HW type     Flags       HW address            Mask     Device
+192.168.100.14   0x1         0x2         d6:b5:54:73:44:32     *        eth0
+192.168.100.11   0x1         0x2         ce:91:14:07:a6:7f     *        eth0
+192.168.100.13   0x1         0x2         4e:9e:74:de:27:8d     *        eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/route
+────────────────────────────────────────────────────────────
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth0	00000000	0164A8C0	0003	0	0	0	00000000	0	0	0                                                                               
+eth0	01010101	0B64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	03030303	0D64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	04040404	0E64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	0064A8C0	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/if_inet6
+────────────────────────────────────────────────────────────
+00000000000000000000000000000001 01 80 10 80       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/ipv6_route
+────────────────────────────────────────────────────────────
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+00000000000000000000000000000001 80 00000000000000000000000000000000 00 00000000000000000000000000000000 00000000 00000006 00000000 80200001       lo
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -rn
+────────────────────────────────────────────────────────────
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.100.1   0.0.0.0         UG        0 0          0 eth0
+1.1.1.1         192.168.100.11  255.255.255.255 UGH       0 0          0 eth0
+3.3.3.3         192.168.100.13  255.255.255.255 UGH       0 0          0 eth0
+4.4.4.4         192.168.100.14  255.255.255.255 UGH       0 0          0 eth0
+192.168.100.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -i
+────────────────────────────────────────────────────────────
+netstat: unrecognized option: i
+BusyBox v1.35.0 (2022-08-01 15:14:44 UTC) multi-call binary.
+
+Usage: netstat [-ral] [-tuwx] [-enWp]
+
+Display networking information
+
+	-r	Routing table
+	-a	All sockets
+	-l	Listening sockets
+		Else: connected sockets
+	-t	TCP sockets
+	-u	UDP sockets
+	-w	Raw sockets
+	-x	Unix sockets
+		Else: all socket types
+	-e	Other/more information
+	-n	Don't resolve names
+	-W	Wide display
+	-p	Show PID/program name for sockets
+
+────────────────────────────────────────────────────────────
+
+
+############################################################################
+# Device: leaf1
+############################################################################
+
+
+Command : ip route show table all
+────────────────────────────────────────────────────────────
+default via 192.168.100.1 dev eth0 
+1.1.1.1 nhid 16 via 192.168.100.11 dev eth0 proto ospf metric 20 
+2.2.2.2 nhid 17 via 192.168.100.12 dev eth0 proto ospf metric 20 
+4.4.4.4 nhid 18 via 192.168.100.14 dev eth0 proto ospf metric 20 
+192.168.100.0/24 dev eth0 proto kernel scope link src 192.168.100.13 
+local 3.3.3.3 dev lo table local proto kernel scope host src 3.3.3.3 
+broadcast 3.3.3.3 dev lo table local proto kernel scope link src 3.3.3.3 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+local 192.168.100.13 dev eth0 table local proto kernel scope host src 192.168.100.13 
+broadcast 192.168.100.255 dev eth0 table local proto kernel scope link src 192.168.100.13 
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 route show table all
+────────────────────────────────────────────────────────────
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip neighbor show
+────────────────────────────────────────────────────────────
+192.168.100.14 dev eth0 lladdr d6:b5:54:73:44:32 STALE proto zebra 
+192.168.100.12 dev eth0 lladdr 2a:64:23:cc:81:da STALE proto zebra 
+192.168.100.11 dev eth0 lladdr ce:91:14:07:a6:7f STALE proto zebra 
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 neighbor show
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip link show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0@if745: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 4e:9e:74:de:27:8d brd ff:ff:ff:ff:ff:ff link-netnsid 0
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip addr show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 3.3.3.3/32 brd 3.3.3.3 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0@if745: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 4e:9e:74:de:27:8d brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.100.13/24 brd 192.168.100.255 scope global eth0
+       valid_lft forever preferred_lft forever
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip rule show
+────────────────────────────────────────────────────────────
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/arp
+────────────────────────────────────────────────────────────
+IP address       HW type     Flags       HW address            Mask     Device
+192.168.100.14   0x1         0x2         d6:b5:54:73:44:32     *        eth0
+192.168.100.12   0x1         0x2         2a:64:23:cc:81:da     *        eth0
+192.168.100.11   0x1         0x2         ce:91:14:07:a6:7f     *        eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/route
+────────────────────────────────────────────────────────────
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth0	00000000	0164A8C0	0003	0	0	0	00000000	0	0	0                                                                               
+eth0	01010101	0B64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	02020202	0C64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	04040404	0E64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	0064A8C0	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/if_inet6
+────────────────────────────────────────────────────────────
+00000000000000000000000000000001 01 80 10 80       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/ipv6_route
+────────────────────────────────────────────────────────────
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+00000000000000000000000000000001 80 00000000000000000000000000000000 00 00000000000000000000000000000000 00000000 00000008 00000000 80200001       lo
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -rn
+────────────────────────────────────────────────────────────
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.100.1   0.0.0.0         UG        0 0          0 eth0
+1.1.1.1         192.168.100.11  255.255.255.255 UGH       0 0          0 eth0
+2.2.2.2         192.168.100.12  255.255.255.255 UGH       0 0          0 eth0
+4.4.4.4         192.168.100.14  255.255.255.255 UGH       0 0          0 eth0
+192.168.100.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -i
+────────────────────────────────────────────────────────────
+netstat: unrecognized option: i
+BusyBox v1.35.0 (2022-08-01 15:14:44 UTC) multi-call binary.
+
+Usage: netstat [-ral] [-tuwx] [-enWp]
+
+Display networking information
+
+	-r	Routing table
+	-a	All sockets
+	-l	Listening sockets
+		Else: connected sockets
+	-t	TCP sockets
+	-u	UDP sockets
+	-w	Raw sockets
+	-x	Unix sockets
+		Else: all socket types
+	-e	Other/more information
+	-n	Don't resolve names
+	-W	Wide display
+	-p	Show PID/program name for sockets
+
+────────────────────────────────────────────────────────────
+
+
+############################################################################
+# Device: leaf2
+############################################################################
+
+
+Command : ip route show table all
+────────────────────────────────────────────────────────────
+default via 192.168.100.1 dev eth0 
+1.1.1.1 nhid 12 via 192.168.100.11 dev eth0 proto ospf metric 20 
+2.2.2.2 nhid 15 via 192.168.100.12 dev eth0 proto ospf metric 20 
+3.3.3.3 nhid 16 via 192.168.100.13 dev eth0 proto ospf metric 20 
+192.168.100.0/24 dev eth0 proto kernel scope link src 192.168.100.14 
+local 4.4.4.4 dev lo table local proto kernel scope host src 4.4.4.4 
+broadcast 4.4.4.4 dev lo table local proto kernel scope link src 4.4.4.4 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+local 192.168.100.14 dev eth0 table local proto kernel scope host src 192.168.100.14 
+broadcast 192.168.100.255 dev eth0 table local proto kernel scope link src 192.168.100.14 
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 route show table all
+────────────────────────────────────────────────────────────
+local ::1 dev lo table local proto kernel metric 0 pref medium
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip neighbor show
+────────────────────────────────────────────────────────────
+192.168.100.11 dev eth0 lladdr ce:91:14:07:a6:7f REACHABLE proto zebra 
+192.168.100.13 dev eth0 lladdr 4e:9e:74:de:27:8d REACHABLE proto zebra 
+192.168.100.12 dev eth0 lladdr 2a:64:23:cc:81:da REACHABLE proto zebra 
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip -6 neighbor show
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip link show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0@if743: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether d6:b5:54:73:44:32 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip addr show
+────────────────────────────────────────────────────────────
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 4.4.4.4/32 brd 4.4.4.4 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0@if743: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether d6:b5:54:73:44:32 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.100.14/24 brd 192.168.100.255 scope global eth0
+       valid_lft forever preferred_lft forever
+
+────────────────────────────────────────────────────────────
+
+
+Command : ip rule show
+────────────────────────────────────────────────────────────
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/arp
+────────────────────────────────────────────────────────────
+IP address       HW type     Flags       HW address            Mask     Device
+192.168.100.11   0x1         0x2         ce:91:14:07:a6:7f     *        eth0
+192.168.100.13   0x1         0x2         4e:9e:74:de:27:8d     *        eth0
+192.168.100.12   0x1         0x2         2a:64:23:cc:81:da     *        eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/route
+────────────────────────────────────────────────────────────
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth0	00000000	0164A8C0	0003	0	0	0	00000000	0	0	0                                                                               
+eth0	01010101	0B64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	02020202	0C64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	03030303	0D64A8C0	0007	0	0	20	FFFFFFFF	0	0	0                                                                              
+eth0	0064A8C0	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/if_inet6
+────────────────────────────────────────────────────────────
+00000000000000000000000000000001 01 80 10 80       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : cat /proc/net/ipv6_route
+────────────────────────────────────────────────────────────
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+00000000000000000000000000000001 80 00000000000000000000000000000000 00 00000000000000000000000000000000 00000000 00000006 00000000 80200001       lo
+00000000000000000000000000000000 00 00000000000000000000000000000000 00 00000000000000000000000000000000 ffffffff 00000001 00000000 00200200       lo
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -rn
+────────────────────────────────────────────────────────────
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.100.1   0.0.0.0         UG        0 0          0 eth0
+1.1.1.1         192.168.100.11  255.255.255.255 UGH       0 0          0 eth0
+2.2.2.2         192.168.100.12  255.255.255.255 UGH       0 0          0 eth0
+3.3.3.3         192.168.100.13  255.255.255.255 UGH       0 0          0 eth0
+192.168.100.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0
+
+────────────────────────────────────────────────────────────
+
+
+Command : netstat -i
+────────────────────────────────────────────────────────────
+netstat: unrecognized option: i
+BusyBox v1.35.0 (2022-08-01 15:14:44 UTC) multi-call binary.
+
+Usage: netstat [-ral] [-tuwx] [-enWp]
+
+Display networking information
+
+	-r	Routing table
+	-a	All sockets
+	-l	Listening sockets
+		Else: connected sockets
+	-t	TCP sockets
+	-u	UDP sockets
+	-w	Raw sockets
+	-x	Unix sockets
+		Else: all socket types
+	-e	Other/more information
+	-n	Don't resolve names
+	-W	Wide display
+	-p	Show PID/program name for sockets
+
+────────────────────────────────────────────────────────────
+

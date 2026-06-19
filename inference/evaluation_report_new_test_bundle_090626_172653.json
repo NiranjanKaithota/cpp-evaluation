@@ -1,0 +1,31 @@
+{
+  "raw_bundle": "new_test_bundle",
+  "compressed_name": "new_test_bundle",
+  "timestamp": "090626_172653",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 151091,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "HST_0000",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      {
+        "timestamp": "2026-03-12T22:39:52.018680Z",
+        "event": "NETWORK_ERROR"
+      },
+      {
+        "timestamp": "2026-03-12T22:39:52.018680Z",
+        "event": "APPLICATION_ERROR"
+      },
+      {
+        "timestamp": "2026-03-12T22:39:52.018680Z",
+        "event": "APPLICATION_ERROR"
+      }
+    ],
+    "recommended_action": "Review and validate the configuration of HST_0000, focusing on potential misconfigurations or errors that could lead to network and application errors."
+  },
+  "ground_truth": {}
+}

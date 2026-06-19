@@ -1,0 +1,22 @@
+{
+  "raw_bundle": "linux_logs",
+  "compressed_name": "linux_logs",
+  "timestamp": "090626_133910",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 40223,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "IP_03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "Authentication failure; logname= uid=<NUM> euid=<NUM> tty=NODEVssh ruser= <*> (T3)",
+      "Authentication failure; logname= uid=<NUM> euid=<NUM> tty=NODEVssh ruser= rho (T8)",
+      "Authentication failure; logname= uid=<NUM> euid=<NUM> tty=NODEVssh ruser= <*> (T9)"
+    ],
+    "recommended_action": "Investigate and address the authentication issues with IP_03. Ensure proper authentication mechanisms are in place and consider implementing additional security measures to prevent unauthorized access."
+  },
+  "ground_truth": {}
+}

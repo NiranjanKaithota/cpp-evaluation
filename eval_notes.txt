@@ -128,6 +128,34 @@ Evaluating: bundle_001_port_flap_fiber
   Overall Score: 68.5%
   Verdicts: 25 correct, 2 partial, 8 wrong
 
+================================================================================
+  Evaluating: new_test_bundle
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................  100.0%
+    context_retrieval.......................  100.0%
+    negative_evidence.......................  100.0%
+    root_cause_attribution..................  100.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................  100.0%
+
+  Overall Score: 100.0%
+  Verdicts: 30 correct, 0 partial, 0 wrong
+
+================================================================================
+  Evaluating: linux_logs
+================================================================================
+  Category Breakdown:
+    causal_reasoning........................  100.0%
+    context_retrieval.......................  100.0%
+    negative_evidence.......................  100.0%
+    root_cause_attribution..................  100.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................  100.0%
+
+  Overall Score: 100.0%
+  Verdicts: 30 correct, 0 partial, 0 wrong
+
 ------------------TOON------------------
 
 ------------------GRAPH------------------

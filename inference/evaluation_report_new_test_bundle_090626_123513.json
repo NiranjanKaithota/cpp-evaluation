@@ -1,0 +1,21 @@
+{
+  "raw_bundle": "new_test_bundle",
+  "compressed_name": "new_test_bundle",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 1129805,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "kube-system",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "URI_0109=/apis/discovery.k8s.io/v1/endpointslices?allowWatchBookmarks=true&labelSelector=%21service.kubernetes.io%2Fheadless%2C%21service.kubernetes.io%2Fservice-proxy-name&resourceVersion=6577334&timeout=5m17s&timeoutSeconds=317&watch=true",
+      "URI_0110=/apis/discovery.k8s.io/v1/endpointslices?allowWatchBookmarks=true&labelSelector=%21service.kubernetes.io%2Fheadless%2C%21service.kubernetes.io%2Fservice-proxy-name&resourceVersion=6577334&timeout=9m16s&timeoutSeconds=556&watch=true",
+      "URI_0111=/apis/discovery.k8s.io/v1/endpointslices?allowWatchBookmarks=true&labelSelector=%21service.kubernetes.io%2Fheadless%2C%21service.kubernetes.io%2Fservice-proxy-name&resourceVersion=6577334&timeout=9m50s&timeoutSeconds=590&watch=true"
+    ],
+    "recommended_action": "Review and correct the configuration for kube-system, ensuring that the appropriate resources and permissions are defined."
+  },
+  "ground_truth": {}
+}

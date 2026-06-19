@@ -1,0 +1,35 @@
+{
+  "raw_bundle": "bundle_ch",
+  "compressed_name": "bundle_ch",
+  "timestamp": "130626_204542",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 183.11138444228507,
+  "raw_size": 35803769,
+  "comp_size": 195530,
+  "raw_details": {
+    "root_cause_entity": "SHWNK-NWT5S",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "ZEBRA: [NNACN-54BDA][EC 4043309110] Disabling MPLS support (no kernel support)",
+      "ZEBRA: [SHWNK-NWT5S][EC 100663304] No such command on config line 10: ip address 192.168.100.11/24",
+      "ZEBRA: [SHWNK-NWT5S][EC 100663304] No such command on config line 16: ip address 1.1.1.1/32"
+    ],
+    "recommended_action": "Review and correct the configuration for SHWNK-NWT5S, ensuring that all necessary commands and parameters are present and valid."
+  },
+  "comp_details": {
+    "root_cause_entity": "ovs",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "OVS_CONNECT surge (+1800% in burst windows vs normal; burst_avg=19 vs baseline=0)",
+      "CLI_EXEC_ERROR",
+      "ROUTING_UPDATE"
+    ],
+    "recommended_action": "Investigate and resolve the configuration issues with the OVS component."
+  },
+  "ground_truth": {
+    "root_cause_entity": "unknown",
+    "root_cause_type": "unknown",
+    "recommended_action": "unknown"
+  }
+}

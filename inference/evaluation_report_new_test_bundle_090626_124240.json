@@ -1,0 +1,22 @@
+{
+  "raw_bundle": "new_test_bundle",
+  "compressed_name": "new_test_bundle",
+  "timestamp": "090626_124240",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 1129805,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "system::extension-apiserver-authentication-reader",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "URI_0070=/apis/discovery.k8s.io/v1/endpointslices?labelSelector=%21service.kubernetes.io%2Fheadless%2C%21service.kubernetes.io%2Fservice-proxy-name&resourceVersion=6577334&timeout=5m17s&timeoutSeconds=317&watch=true",
+      "URI_0071=/apis/discovery.k8s.io/v1/endpointslices?labelSelector=%21service.kubernetes.io%2Fheadless%2C%21service.kubernetes.io%2Fservice-proxy-name&resourceVersion=6577334&timeout=9m16s&timeoutSeconds=556&watch=true",
+      "URI_0072=/apis/discovery.k8s.io/v1/endpointslices?allowWatchBookmarks=true&resourceVersion=6577334&timeout=5m17s&timeoutSeconds=317&watch=true"
+    ],
+    "recommended_action": "Review and correct the configuration for system::extension-apiserver-authentication-reader."
+  },
+  "ground_truth": {}
+}

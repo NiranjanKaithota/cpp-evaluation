@@ -1,0 +1,796 @@
+-------------------------------------------------------------
+ip -4 neighbor show
+-------------------------------------------------------------
+10.81.83.135 dev wlan0 lladdr 2e:18:c9:90:17:16 STALE
+-------------------------------------------------------------
+ip -6 neighbor show
+-------------------------------------------------------------
+2409:40f2:201b:907d::fe dev wlan0 lladdr 2e:18:c9:90:17:16 router STALE 
+fe80::2c18:c9ff:fe90:1716 dev wlan0 lladdr 2e:18:c9:90:17:16 router REACHABLE
+-------------------------------------------------------------
+ip -4 route show table all
+-------------------------------------------------------------
+default via 10.81.83.135 dev wlan0 proto dhcp src 10.81.83.249 metric 600 
+10.81.83.0/24 dev wlan0 proto kernel scope link src 10.81.83.249 metric 600 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 
+172.18.0.0/16 dev br-6b42053f7608 proto kernel scope link src 172.18.0.1 linkdown 
+172.19.0.0/16 dev br-8b9f0f4724c8 proto kernel scope link src 172.19.0.1 linkdown 
+local 10.81.83.249 dev wlan0 table local proto kernel scope host src 10.81.83.249 
+broadcast 10.81.83.255 dev wlan0 table local proto kernel scope link src 10.81.83.249 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+local 172.17.0.1 dev docker0 table local proto kernel scope host src 172.17.0.1 
+broadcast 172.17.255.255 dev docker0 table local proto kernel scope link src 172.17.0.1 
+local 172.18.0.1 dev br-6b42053f7608 table local proto kernel scope host src 172.18.0.1 
+broadcast 172.18.255.255 dev br-6b42053f7608 table local proto kernel scope link src 172.18.0.1 linkdown 
+local 172.19.0.1 dev br-8b9f0f4724c8 table local proto kernel scope host src 172.19.0.1 
+broadcast 172.19.255.255 dev br-8b9f0f4724c8 table local proto kernel scope link src 172.19.0.1 linkdown
+-------------------------------------------------------------
+ip -6 route show table all
+-------------------------------------------------------------
+2409:40f2:201b:907d::/64 dev wlan0 proto ra metric 600 pref medium
+fe80::/64 dev vethf7ca0ca proto kernel metric 256 pref medium
+fe80::/64 dev docker0 proto kernel metric 256 pref medium
+fe80::/64 dev vethf9001aa proto kernel metric 256 pref medium
+fe80::/64 dev s3-eth3 proto kernel metric 256 pref medium
+fe80::/64 dev s3-eth4 proto kernel metric 256 pref medium
+fe80::/64 dev s3-eth5 proto kernel metric 256 pref medium
+fe80::/64 dev s3-eth6 proto kernel metric 256 pref medium
+fe80::/64 dev s4-eth3 proto kernel metric 256 pref medium
+fe80::/64 dev s4-eth4 proto kernel metric 256 pref medium
+fe80::/64 dev s4-eth5 proto kernel metric 256 pref medium
+fe80::/64 dev s4-eth6 proto kernel metric 256 pref medium
+fe80::/64 dev s3-eth1 proto kernel metric 256 pref medium
+fe80::/64 dev s1-eth1 proto kernel metric 256 pref medium
+fe80::/64 dev s3-eth2 proto kernel metric 256 pref medium
+fe80::/64 dev s2-eth1 proto kernel metric 256 pref medium
+fe80::/64 dev s4-eth1 proto kernel metric 256 pref medium
+fe80::/64 dev s1-eth2 proto kernel metric 256 pref medium
+fe80::/64 dev s4-eth2 proto kernel metric 256 pref medium
+fe80::/64 dev s2-eth2 proto kernel metric 256 pref medium
+fe80::/64 dev wlan0 proto kernel metric 1024 pref medium
+default via fe80::2c18:c9ff:fe90:1716 dev wlan0 proto ra metric 600 pref high
+local ::1 dev lo table local proto kernel metric 0 pref medium
+local 2409:40f2:201b:907d:c5ea:7bb7:e62d:2628 dev wlan0 table local proto kernel metric 0 pref medium
+local fe80::fb:aaff:fe96:d7bd dev s3-eth6 table local proto kernel metric 0 pref medium
+local fe80::1a3d:fa36:77cd:a808 dev wlan0 table local proto kernel metric 0 pref medium
+local fe80::34a3:1dff:fe7b:b4d9 dev s4-eth5 table local proto kernel metric 0 pref medium
+local fe80::3875:71ff:fe80:630 dev s2-eth2 table local proto kernel metric 0 pref medium
+local fe80::44a1:cff:fecd:875f dev s3-eth2 table local proto kernel metric 0 pref medium
+local fe80::540e:5dff:fea9:1837 dev docker0 table local proto kernel metric 0 pref medium
+local fe80::64e5:30ff:fe5b:cd70 dev s3-eth4 table local proto kernel metric 0 pref medium
+local fe80::9810:a8ff:fe32:e667 dev s4-eth4 table local proto kernel metric 0 pref medium
+local fe80::98c3:61ff:fea0:8337 dev vethf7ca0ca table local proto kernel metric 0 pref medium
+local fe80::9c64:51ff:fe18:4cdd dev s3-eth1 table local proto kernel metric 0 pref medium
+local fe80::a4cb:a0ff:fe9e:912 dev s1-eth1 table local proto kernel metric 0 pref medium
+local fe80::a4ec:84ff:fe01:c39 dev s4-eth1 table local proto kernel metric 0 pref medium
+local fe80::ac3f:a4ff:fe5f:a435 dev s4-eth2 table local proto kernel metric 0 pref medium
+local fe80::bce2:b0ff:fe1e:4591 dev s2-eth1 table local proto kernel metric 0 pref medium
+local fe80::c800:16ff:fe42:95b dev s3-eth5 table local proto kernel metric 0 pref medium
+local fe80::c8ba:1dff:fe80:18ae dev vethf9001aa table local proto kernel metric 0 pref medium
+local fe80::d8e4:15ff:fe73:1b6f dev s4-eth3 table local proto kernel metric 0 pref medium
+local fe80::e45d:6fff:fe14:36d dev s4-eth6 table local proto kernel metric 0 pref medium
+local fe80::ec1f:42ff:fe68:5388 dev s3-eth3 table local proto kernel metric 0 pref medium
+local fe80::fc6f:c6ff:fece:d2df dev s1-eth2 table local proto kernel metric 0 pref medium
+multicast ff00::/8 dev wlan0 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev vethf7ca0ca table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev docker0 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev vethf9001aa table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s3-eth3 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s3-eth4 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s3-eth5 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s3-eth6 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s4-eth3 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s4-eth4 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s4-eth5 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s4-eth6 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s3-eth1 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s1-eth1 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s3-eth2 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s2-eth1 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s4-eth1 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s1-eth2 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s4-eth2 table local proto kernel metric 256 pref medium
+multicast ff00::/8 dev s2-eth2 table local proto kernel metric 256 pref medium
+-------------------------------------------------------------
+ip -4 address show
+-------------------------------------------------------------
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    inet 10.81.83.249/24 brd 10.81.83.255 scope global dynamic noprefixroute wlan0
+       valid_lft 3141sec preferred_lft 3141sec
+8: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+9: br-6b42053f7608: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-6b42053f7608
+       valid_lft forever preferred_lft forever
+10: br-8b9f0f4724c8: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-8b9f0f4724c8
+       valid_lft forever preferred_lft forever
+-------------------------------------------------------------
+ip -6 address show
+-------------------------------------------------------------
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 2409:40f2:201b:907d:c5ea:7bb7:e62d:2628/64 scope global dynamic noprefixroute 
+       valid_lft 6337sec preferred_lft 6337sec
+    inet6 fe80::1a3d:fa36:77cd:a808/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+8: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP 
+    inet6 fe80::540e:5dff:fea9:1837/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+11: vethf7ca0ca@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP 
+    inet6 fe80::98c3:61ff:fea0:8337/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+12: vethf9001aa@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP 
+    inet6 fe80::c8ba:1dff:fe80:18ae/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+13: s3-eth3@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::ec1f:42ff:fe68:5388/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+14: s3-eth4@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::64e5:30ff:fe5b:cd70/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+15: s3-eth5@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::c800:16ff:fe42:95b/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+16: s3-eth6@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::fb:aaff:fe96:d7bd/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+17: s4-eth3@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::d8e4:15ff:fe73:1b6f/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+18: s4-eth4@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::9810:a8ff:fe32:e667/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+19: s4-eth5@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::34a3:1dff:fe7b:b4d9/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+20: s4-eth6@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::e45d:6fff:fe14:36d/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+21: s1-eth1@s3-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::a4cb:a0ff:fe9e:912/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+22: s3-eth1@s1-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::9c64:51ff:fe18:4cdd/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+23: s2-eth1@s3-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::bce2:b0ff:fe1e:4591/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+24: s3-eth2@s2-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::44a1:cff:fecd:875f/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+25: s1-eth2@s4-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::fc6f:c6ff:fece:d2df/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+26: s4-eth1@s1-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::a4ec:84ff:fe01:c39/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+27: s2-eth2@s4-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::3875:71ff:fe80:630/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+28: s4-eth2@s2-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::ac3f:a4ff:fe5f:a435/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+-------------------------------------------------------------
+ip link show
+-------------------------------------------------------------
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether 50:5a:65:54:ca:cc brd ff:ff:ff:ff:ff:ff
+8: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 56:0e:5d:a9:18:37 brd ff:ff:ff:ff:ff:ff
+9: br-6b42053f7608: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether ca:73:e7:8d:49:51 brd ff:ff:ff:ff:ff:ff
+10: br-8b9f0f4724c8: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether ce:59:f1:2e:b7:08 brd ff:ff:ff:ff:ff:ff
+11: vethf7ca0ca@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether 9a:c3:61:a0:83:37 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+12: vethf9001aa@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether ca:ba:1d:80:18:ae brd ff:ff:ff:ff:ff:ff link-netnsid 1
+13: s3-eth3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether ee:1f:42:68:53:88 brd ff:ff:ff:ff:ff:ff link-netnsid 2
+14: s3-eth4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 66:e5:30:5b:cd:70 brd ff:ff:ff:ff:ff:ff link-netnsid 3
+15: s3-eth5@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether ca:00:16:42:09:5b brd ff:ff:ff:ff:ff:ff link-netnsid 4
+16: s3-eth6@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 02:fb:aa:96:d7:bd brd ff:ff:ff:ff:ff:ff link-netnsid 5
+17: s4-eth3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether da:e4:15:73:1b:6f brd ff:ff:ff:ff:ff:ff link-netnsid 6
+18: s4-eth4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 9a:10:a8:32:e6:67 brd ff:ff:ff:ff:ff:ff link-netnsid 7
+19: s4-eth5@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 36:a3:1d:7b:b4:d9 brd ff:ff:ff:ff:ff:ff link-netnsid 8
+20: s4-eth6@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether e6:5d:6f:14:03:6d brd ff:ff:ff:ff:ff:ff link-netnsid 9
+21: s1-eth1@s3-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether a6:cb:a0:9e:09:12 brd ff:ff:ff:ff:ff:ff
+22: s3-eth1@s1-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 9e:64:51:18:4c:dd brd ff:ff:ff:ff:ff:ff
+23: s2-eth1@s3-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether be:e2:b0:1e:45:91 brd ff:ff:ff:ff:ff:ff
+24: s3-eth2@s2-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 46:a1:0c:cd:87:5f brd ff:ff:ff:ff:ff:ff
+25: s1-eth2@s4-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether fe:6f:c6:ce:d2:df brd ff:ff:ff:ff:ff:ff
+26: s4-eth1@s1-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether a6:ec:84:01:0c:39 brd ff:ff:ff:ff:ff:ff
+27: s2-eth2@s4-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 3a:75:71:80:06:30 brd ff:ff:ff:ff:ff:ff
+28: s4-eth2@s2-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether ae:3f:a4:5f:a4:35 brd ff:ff:ff:ff:ff:ff
+29: ovs-system: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 6a:cf:e5:c5:c5:fb brd ff:ff:ff:ff:ff:ff
+30: s4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether f6:e1:a4:36:f2:4d brd ff:ff:ff:ff:ff:ff
+31: s1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 76:af:48:7f:a7:4f brd ff:ff:ff:ff:ff:ff
+32: s3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 5a:a8:ae:03:71:45 brd ff:ff:ff:ff:ff:ff
+33: s2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 1e:9c:a7:02:9d:4e brd ff:ff:ff:ff:ff:ff
+-------------------------------------------------------------
+ip rule show
+-------------------------------------------------------------
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+-------------------------------------------------------------
+ip -6 rule show
+-------------------------------------------------------------
+0:	from all lookup local
+32766:	from all lookup main
+-------------------------------------------------------------
+ovs-vsctl show
+-------------------------------------------------------------
+d8eccb6c-1992-463a-a87a-49c0eacf82de
+    Bridge s2
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        fail_mode: secure
+        Port s2
+            Interface s2
+                type: internal
+        Port s2-eth2
+            Interface s2-eth2
+        Port s2-eth1
+            Interface s2-eth1
+    Bridge s3
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        fail_mode: secure
+        Port s3-eth6
+            Interface s3-eth6
+        Port s3-eth2
+            Interface s3-eth2
+        Port s3-eth4
+            Interface s3-eth4
+        Port s3-eth3
+            Interface s3-eth3
+        Port s3
+            Interface s3
+                type: internal
+        Port s3-eth5
+            Interface s3-eth5
+        Port s3-eth1
+            Interface s3-eth1
+    Bridge s4
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        fail_mode: secure
+        Port s4-eth5
+            Interface s4-eth5
+        Port s4
+            Interface s4
+                type: internal
+        Port s4-eth2
+            Interface s4-eth2
+        Port s4-eth6
+            Interface s4-eth6
+        Port s4-eth1
+            Interface s4-eth1
+        Port s4-eth4
+            Interface s4-eth4
+        Port s4-eth3
+            Interface s4-eth3
+    Bridge s1
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        fail_mode: secure
+        Port s1-eth1
+            Interface s1-eth1
+        Port s1
+            Interface s1
+                type: internal
+        Port s1-eth2
+            Interface s1-eth2
+    ovs_version: "3.7.0"
+-------------------------------------------------------------
+ovs-dpctl show
+-------------------------------------------------------------
+system@ovs-system:
+  lookups: hit:701334898 missed:622 lost:0
+  flows: 121
+  masks: hit:701350178 total:5 hit/pkt:1.00
+  cache: hit:701326462 hit-rate:100.00%
+  caches:
+    masks-cache: size:256
+  port 0: ovs-system (internal)
+  port 1: s4-eth3
+  port 2: s4-eth6
+  port 3: s4-eth4
+  port 4: s4-eth1
+  port 5: s4-eth5
+  port 6: s4-eth2
+  port 7: s4 (internal)
+  port 8: s1-eth2
+  port 9: s1-eth1
+  port 10: s1 (internal)
+  port 11: s3-eth5
+  port 12: s3-eth1
+  port 13: s3-eth3
+  port 14: s3-eth2
+  port 15: s3-eth6
+  port 16: s3-eth4
+  port 17: s3 (internal)
+  port 18: s2-eth2
+  port 19: s2-eth1
+  port 20: s2 (internal)
+-------------------------------------------------------------
+ovs-ofctl dump-flows s1
+-------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=43.816s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=43, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=43.816s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=43, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=output:2
+ cookie=0x0, duration=43.804s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=43, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.3,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=42.799s, table=0, n_packets=311, n_bytes=13062, idle_timeout=60, idle_age=1, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:04,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.4,arp_tpa=10.0.1.1,arp_op=2 actions=drop
+ cookie=0x0, duration=40.727s, table=0, n_packets=185529143, n_bytes=7792224006, idle_timeout=60, idle_age=0, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:02,arp_spa=10.0.1.3,arp_tpa=10.0.1.2,arp_op=2 actions=output:2
+ cookie=0x0, duration=41.771s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=41, priority=1,icmp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,nw_src=10.0.1.2,nw_dst=10.0.1.1,nw_tos=0,icmp_type=8,icmp_code=0 actions=drop
+ cookie=0x0, duration=43.825s, table=0, n_packets=44896, n_bytes=3843876, idle_age=0, priority=0 actions=CONTROLLER:128
+-------------------------------------------------------------
+ovs-ofctl dump-ports s1
+-------------------------------------------------------------
+OFPST_PORT reply (xid=0x2): 3 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=187405078, bytes=7871891492, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=24561, bytes=2107858, drop=0, errs=0, coll=0
+  port  2: rx pkts=24673, bytes=2116522, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=187406856, bytes=7871962768, drop=0, errs=0, coll=0
+-------------------------------------------------------------
+ovs-ofctl dump-flows s2
+-------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=44.005s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=44.004s, table=0, n_packets=1451, n_bytes=60942, idle_timeout=60, idle_age=18, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=drop
+ cookie=0x0, duration=43.994s, table=0, n_packets=1738, n_bytes=72996, idle_timeout=60, idle_age=7, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.3,arp_tpa=10.0.1.1,arp_op=2 actions=drop
+ cookie=0x0, duration=42.986s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=42, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:04,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.4,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=40.826s, table=0, n_packets=185613534, n_bytes=7795768428, idle_timeout=60, idle_age=0, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:02,arp_spa=10.0.1.3,arp_tpa=10.0.1.2,arp_op=2 actions=output:1
+ cookie=0x0, duration=44.013s, table=0, n_packets=44943, n_bytes=3847642, idle_age=0, priority=0 actions=CONTROLLER:128
+-------------------------------------------------------------
+ovs-ofctl dump-ports s2
+-------------------------------------------------------------
+OFPST_PORT reply (xid=0x2): 3 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=27967, bytes=2259802, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=188244924, bytes=7907156080, drop=0, errs=0, coll=0
+  port  2: rx pkts=188247224, bytes=7907258752, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=24608, bytes=2111876, drop=0, errs=0, coll=0
+-------------------------------------------------------------
+ovs-ofctl dump-flows s3
+-------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=44.214s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=drop
+ cookie=0x0, duration=44.214s, table=0, n_packets=1455, n_bytes=61110, idle_timeout=60, idle_age=18, priority=1,arp,in_port=4,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=output:2
+ cookie=0x0, duration=44.213s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=drop
+ cookie=0x0, duration=44.209s, table=0, n_packets=1737, n_bytes=72954, idle_timeout=60, idle_age=7, priority=1,arp,in_port=5,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.3,arp_tpa=10.0.1.1,arp_op=2 actions=output:2
+ cookie=0x0, duration=44.201s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.3,arp_tpa=10.0.1.1,arp_op=2 actions=output:2
+ cookie=0x0, duration=43.202s, table=0, n_packets=310, n_bytes=13020, idle_timeout=60, idle_age=0, priority=1,arp,in_port=6,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:04,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.4,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=43.191s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=43, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:04,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.4,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=41.151s, table=0, n_packets=13, n_bytes=546, idle_timeout=60, idle_age=2, priority=1,arp,in_port=5,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:02,arp_spa=10.0.1.3,arp_tpa=10.0.1.2,arp_op=2 actions=output:1
+ cookie=0x0, duration=40.999s, table=0, n_packets=188254473, n_bytes=7906687866, idle_timeout=60, idle_age=0, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:02,arp_spa=10.0.1.3,arp_tpa=10.0.1.2,arp_op=2 actions=output:1
+ cookie=0x0, duration=14.313s, table=0, n_packets=2, n_bytes=84, idle_timeout=60, idle_age=3, priority=1,arp,in_port=6,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:04,dl_dst=00:00:00:00:01:02,arp_spa=10.0.1.4,arp_tpa=10.0.1.2,arp_op=2 actions=output:1
+ cookie=0x0, duration=2.513s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=7, priority=1,arp,in_port=4,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=1 actions=output:2
+ cookie=0x0, duration=44.218s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,icmp,in_port=3,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:01,dl_dst=00:00:00:00:01:02,nw_src=10.0.1.1,nw_dst=10.0.1.2,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:4
+ cookie=0x0, duration=44.217s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,icmp,in_port=4,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,nw_src=10.0.1.2,nw_dst=10.0.1.1,nw_tos=0,icmp_type=0,icmp_code=0 actions=output:3
+ cookie=0x0, duration=42.185s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=42, priority=1,icmp,in_port=4,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,nw_src=10.0.1.2,nw_dst=10.0.1.1,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:1
+ cookie=0x0, duration=7.780s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=7, priority=1,icmp,in_port=5,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:01,nw_src=10.0.1.3,nw_dst=10.0.1.1,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:3
+ cookie=0x0, duration=2.727s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=2, priority=1,icmp,in_port=5,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:02,nw_src=10.0.1.3,nw_dst=10.0.1.2,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:4
+ cookie=0x0, duration=44.224s, table=0, n_packets=45002, n_bytes=3852528, idle_age=0, priority=0 actions=CONTROLLER:128
+-------------------------------------------------------------
+ovs-ofctl dump-ports s3
+-------------------------------------------------------------
+OFPST_PORT reply (xid=0x2): 7 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  4: rx pkts=1553, bytes=69086, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44536, bytes=3814740, drop=0, errs=0, coll=0
+  port  6: rx pkts=412, bytes=21152, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44540, bytes=3814796, drop=0, errs=0, coll=0
+  port  1: rx pkts=24561, bytes=2107858, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=189272169, bytes=7950310158, drop=0, errs=0, coll=0
+  port  2: rx pkts=189282664, bytes=7950741160, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=27967, bytes=2259802, drop=0, errs=0, coll=0
+  port  5: rx pkts=1826, bytes=79572, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44561, bytes=3816714, drop=0, errs=0, coll=0
+  port  3: rx pkts=168, bytes=14016, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44463, bytes=3808462, drop=0, errs=0, coll=0
+-------------------------------------------------------------
+ovs-ofctl dump-flows s4
+-------------------------------------------------------------
+NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=44.427s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=44.426s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:02,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.2,arp_tpa=10.0.1.1,arp_op=2 actions=output:2
+ cookie=0x0, duration=44.415s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=44, priority=1,arp,in_port=2,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.3,arp_tpa=10.0.1.1,arp_op=2 actions=output:1
+ cookie=0x0, duration=43.409s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, idle_age=43, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:04,dl_dst=00:00:00:00:01:01,arp_spa=10.0.1.4,arp_tpa=10.0.1.1,arp_op=2 actions=output:2
+ cookie=0x0, duration=41.313s, table=0, n_packets=188445047, n_bytes=7914691974, idle_timeout=60, idle_age=0, priority=1,arp,in_port=1,vlan_tci=0x0000/0x1fff,dl_src=00:00:00:00:01:03,dl_dst=00:00:00:00:01:02,arp_spa=10.0.1.3,arp_tpa=10.0.1.2,arp_op=2 actions=output:2
+ cookie=0x0, duration=44.435s, table=0, n_packets=44975, n_bytes=3849186, idle_age=0, priority=0 actions=CONTROLLER:128
+-------------------------------------------------------------
+ovs-ofctl dump-ports s4
+-------------------------------------------------------------
+OFPST_PORT reply (xid=0x2): 7 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  1: rx pkts=190144458, bytes=7986942052, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=24673, bytes=2116522, drop=0, errs=0, coll=0
+  port  4: rx pkts=27, bytes=1618, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44637, bytes=3822698, drop=0, errs=0, coll=0
+  port  6: rx pkts=110, bytes=8796, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44561, bytes=3815770, drop=0, errs=0, coll=0
+  port  2: rx pkts=24608, bytes=2111876, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=190153885, bytes=7987338514, drop=0, errs=0, coll=0
+  port  5: rx pkts=25, bytes=1486, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44643, bytes=3822950, drop=0, errs=0, coll=0
+  port  3: rx pkts=76, bytes=5916, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=44585, bytes=3818230, drop=0, errs=0, coll=0
+-------------------------------------------------------------
+# No Mininet network namespaces found.
+# Run generate_logs.py first to create Mininet topology,
+# then re-run this script while the topology is still running.
+-------------------------------------------------------------
+-------------------------------------------------------------
+arp -n
+-------------------------------------------------------------
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.81.83.135             ether   2e:18:c9:90:17:16   C                     wlan0
+-------------------------------------------------------------
+bridge fdb show
+-------------------------------------------------------------
+01:00:5e:00:00:01 dev wlan0 self permanent
+33:33:00:00:00:01 dev wlan0 self permanent
+33:33:ff:cd:a8:08 dev wlan0 self permanent
+33:33:ff:2d:26:28 dev wlan0 self permanent
+33:33:00:00:00:01 dev docker0 self permanent
+01:00:5e:00:00:6a dev docker0 self permanent
+33:33:00:00:00:6a dev docker0 self permanent
+01:00:5e:00:00:01 dev docker0 self permanent
+33:33:ff:a9:18:37 dev docker0 self permanent
+56:0e:5d:a9:18:37 dev docker0 vlan 1 master docker0 permanent
+56:0e:5d:a9:18:37 dev docker0 master docker0 permanent
+33:33:00:00:00:01 dev br-6b42053f7608 self permanent
+01:00:5e:00:00:6a dev br-6b42053f7608 self permanent
+33:33:00:00:00:6a dev br-6b42053f7608 self permanent
+01:00:5e:00:00:01 dev br-6b42053f7608 self permanent
+ca:73:e7:8d:49:51 dev br-6b42053f7608 vlan 1 master br-6b42053f7608 permanent
+ca:73:e7:8d:49:51 dev br-6b42053f7608 master br-6b42053f7608 permanent
+33:33:00:00:00:01 dev br-8b9f0f4724c8 self permanent
+01:00:5e:00:00:6a dev br-8b9f0f4724c8 self permanent
+33:33:00:00:00:6a dev br-8b9f0f4724c8 self permanent
+01:00:5e:00:00:01 dev br-8b9f0f4724c8 self permanent
+ce:59:f1:2e:b7:08 dev br-8b9f0f4724c8 vlan 1 master br-8b9f0f4724c8 permanent
+ce:59:f1:2e:b7:08 dev br-8b9f0f4724c8 master br-8b9f0f4724c8 permanent
+9a:c3:61:a0:83:37 dev vethf7ca0ca vlan 1 master docker0 permanent
+9a:c3:61:a0:83:37 dev vethf7ca0ca master docker0 permanent
+33:33:00:00:00:01 dev vethf7ca0ca self permanent
+01:00:5e:00:00:01 dev vethf7ca0ca self permanent
+33:33:ff:a0:83:37 dev vethf7ca0ca self permanent
+ca:ba:1d:80:18:ae dev vethf9001aa vlan 1 master docker0 permanent
+ca:ba:1d:80:18:ae dev vethf9001aa master docker0 permanent
+33:33:00:00:00:01 dev vethf9001aa self permanent
+01:00:5e:00:00:01 dev vethf9001aa self permanent
+33:33:ff:80:18:ae dev vethf9001aa self permanent
+33:33:00:00:00:01 dev s3-eth3 self permanent
+01:00:5e:00:00:01 dev s3-eth3 self permanent
+33:33:ff:68:53:88 dev s3-eth3 self permanent
+33:33:00:00:00:01 dev s3-eth4 self permanent
+01:00:5e:00:00:01 dev s3-eth4 self permanent
+33:33:ff:5b:cd:70 dev s3-eth4 self permanent
+33:33:00:00:00:01 dev s3-eth5 self permanent
+01:00:5e:00:00:01 dev s3-eth5 self permanent
+33:33:ff:42:09:5b dev s3-eth5 self permanent
+33:33:00:00:00:01 dev s3-eth6 self permanent
+01:00:5e:00:00:01 dev s3-eth6 self permanent
+33:33:ff:96:d7:bd dev s3-eth6 self permanent
+33:33:00:00:00:01 dev s4-eth3 self permanent
+01:00:5e:00:00:01 dev s4-eth3 self permanent
+33:33:ff:73:1b:6f dev s4-eth3 self permanent
+33:33:00:00:00:01 dev s4-eth4 self permanent
+01:00:5e:00:00:01 dev s4-eth4 self permanent
+33:33:ff:32:e6:67 dev s4-eth4 self permanent
+33:33:00:00:00:01 dev s4-eth5 self permanent
+01:00:5e:00:00:01 dev s4-eth5 self permanent
+33:33:ff:7b:b4:d9 dev s4-eth5 self permanent
+33:33:00:00:00:01 dev s4-eth6 self permanent
+01:00:5e:00:00:01 dev s4-eth6 self permanent
+33:33:ff:14:03:6d dev s4-eth6 self permanent
+33:33:00:00:00:01 dev s1-eth1 self permanent
+01:00:5e:00:00:01 dev s1-eth1 self permanent
+33:33:ff:9e:09:12 dev s1-eth1 self permanent
+33:33:00:00:00:01 dev s3-eth1 self permanent
+01:00:5e:00:00:01 dev s3-eth1 self permanent
+33:33:ff:18:4c:dd dev s3-eth1 self permanent
+33:33:00:00:00:01 dev s2-eth1 self permanent
+01:00:5e:00:00:01 dev s2-eth1 self permanent
+33:33:ff:1e:45:91 dev s2-eth1 self permanent
+33:33:00:00:00:01 dev s3-eth2 self permanent
+01:00:5e:00:00:01 dev s3-eth2 self permanent
+33:33:ff:cd:87:5f dev s3-eth2 self permanent
+33:33:00:00:00:01 dev s1-eth2 self permanent
+01:00:5e:00:00:01 dev s1-eth2 self permanent
+33:33:ff:ce:d2:df dev s1-eth2 self permanent
+33:33:00:00:00:01 dev s4-eth1 self permanent
+01:00:5e:00:00:01 dev s4-eth1 self permanent
+33:33:ff:01:0c:39 dev s4-eth1 self permanent
+33:33:00:00:00:01 dev s2-eth2 self permanent
+01:00:5e:00:00:01 dev s2-eth2 self permanent
+33:33:ff:80:06:30 dev s2-eth2 self permanent
+33:33:00:00:00:01 dev s4-eth2 self permanent
+01:00:5e:00:00:01 dev s4-eth2 self permanent
+33:33:ff:5f:a4:35 dev s4-eth2 self permanent
+33:33:00:00:00:01 dev ovs-system self permanent
+33:33:00:00:00:01 dev s4 self permanent
+33:33:00:00:00:01 dev s1 self permanent
+33:33:00:00:00:01 dev s3 self permanent
+33:33:00:00:00:01 dev s2 self permanent
+-------------------------------------------------------------
+bridge link show
+-------------------------------------------------------------
+11: vethf7ca0ca@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master docker0 state forwarding priority 32 cost 2 
+12: vethf9001aa@wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master docker0 state forwarding priority 32 cost 2
+-------------------------------------------------------------
+bridge vlan show
+-------------------------------------------------------------
+port              vlan-id  
+docker0           1 PVID Egress Untagged
+br-6b42053f7608   1 PVID Egress Untagged
+br-8b9f0f4724c8   1 PVID Egress Untagged
+vethf7ca0ca       1 PVID Egress Untagged
+vethf9001aa       1 PVID Egress Untagged
+-------------------------------------------------------------
+ip -s link show
+-------------------------------------------------------------
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+     128675029  411836      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+     128675029  411836      0       0       0       0 
+2: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether 50:5a:65:54:ca:cc brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+      17529223   43197      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+      65711726   35230      0       0       0       0 
+8: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 56:0e:5d:a9:18:37 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+           168       6      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+           526       5      0       2       0       0 
+9: br-6b42053f7608: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether ca:73:e7:8d:49:51 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       2       0       0 
+10: br-8b9f0f4724c8: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether ce:59:f1:2e:b7:08 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       2       0       0 
+11: vethf7ca0ca@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether 9a:c3:61:a0:83:37 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    RX:  bytes packets errors dropped  missed   mcast           
+           126       3      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+          1798      23      0       0       0       0 
+12: vethf9001aa@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether ca:ba:1d:80:18:ae brd ff:ff:ff:ff:ff:ff link-netnsid 1
+    RX:  bytes packets errors dropped  missed   mcast           
+           126       3      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+          1576      20      0       0       0       0 
+13: s3-eth3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether ee:1f:42:68:53:88 brd ff:ff:ff:ff:ff:ff link-netnsid 2
+    RX:  bytes packets errors dropped  missed   mcast           
+         14016     168      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3809880   44480      0       0       0       0 
+14: s3-eth4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 66:e5:30:5b:cd:70 brd ff:ff:ff:ff:ff:ff link-netnsid 3
+    RX:  bytes packets errors dropped  missed   mcast           
+         69086    1553      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3816158   44553      0       0       0       0 
+15: s3-eth5@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether ca:00:16:42:09:5b brd ff:ff:ff:ff:ff:ff link-netnsid 4
+    RX:  bytes packets errors dropped  missed   mcast           
+         79572    1826      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3818090   44577      0       0       0       0 
+16: s3-eth6@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 02:fb:aa:96:d7:bd brd ff:ff:ff:ff:ff:ff link-netnsid 5
+    RX:  bytes packets errors dropped  missed   mcast           
+         21194     413      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3816214   44557      0       0       0       0 
+17: s4-eth3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether da:e4:15:73:1b:6f brd ff:ff:ff:ff:ff:ff link-netnsid 6
+    RX:  bytes packets errors dropped  missed   mcast           
+          5916      76      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3818230   44585      0       0       0       0 
+18: s4-eth4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 9a:10:a8:32:e6:67 brd ff:ff:ff:ff:ff:ff link-netnsid 7
+    RX:  bytes packets errors dropped  missed   mcast           
+          1618      27      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3822698   44637      0       0       0       0 
+19: s4-eth5@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 36:a3:1d:7b:b4:d9 brd ff:ff:ff:ff:ff:ff link-netnsid 8
+    RX:  bytes packets errors dropped  missed   mcast           
+          1486      25      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3822950   44643      0       0       0       0 
+20: s4-eth6@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether e6:5d:6f:14:03:6d brd ff:ff:ff:ff:ff:ff link-netnsid 9
+    RX:  bytes packets errors dropped  missed   mcast           
+          8796     110      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       3815770   44561      0       0       0       0 
+21: s1-eth1@s3-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether a6:cb:a0:9e:09:12 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+    8142644000 193851542      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+       2107858     24561      0       0       0       0 
+22: s3-eth1@s1-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 9e:64:51:18:4c:dd brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+       2107858     24561      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+    8142726404 193853504      0       0       0       0 
+23: s2-eth1@s3-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether be:e2:b0:1e:45:91 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+       2260974     27981      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+    8142775154 193854897      0       0       0       0 
+24: s3-eth2@s2-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 46:a1:0c:cd:87:5f brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+    8142857516 193856858      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+       2260974     27981      0       0       0       0 
+25: s1-eth2@s4-eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether fe:6f:c6:ce:d2:df brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+       2116522     24673      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+    8142950128 193858936      0       0       0       0 
+26: s4-eth1@s1-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether a6:ec:84:01:0c:39 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+    8143026064 193860744      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+       2116522     24673      0       0       0       0 
+27: s2-eth2@s4-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 3a:75:71:80:06:30 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+    8143104628 193862602      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+       2112650     24617      0       0       0       0 
+28: s4-eth2@s2-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether ae:3f:a4:5f:a4:35 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes   packets errors dropped  missed   mcast           
+       2112650     24617      0       0       0       0 
+    TX:  bytes   packets errors dropped carrier collsns           
+    8143181236 193864426      0       0       0       0 
+29: ovs-system: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 6a:cf:e5:c5:c5:fb brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       0       0       0 
+30: s4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether f6:e1:a4:36:f2:4d brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       0       0       0 
+31: s1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 76:af:48:7f:a7:4f brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       0       0       0 
+32: s3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 5a:a8:ae:03:71:45 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       0       0       0 
+33: s2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 1e:9c:a7:02:9d:4e brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       0       0       0
+-------------------------------------------------------------
+/proc/net/dev
+-------------------------------------------------------------
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo: 128676625  411849    0    0    0     0          0         0 128676625  411849    0    0    0     0       0          0
+ wlan0: 17529223   43197    0    0    0     0          0         0 65711726   35230    0    0    0     0       0          0
+docker0:     168       6    0    0    0     0          0         0      526       5    0    2    0     0       0          0
+br-6b42053f7608:       0       0    0    0    0     0          0         0        0       0    0    2    0     0       0          0
+br-8b9f0f4724c8:       0       0    0    0    0     0          0         0        0       0    0    2    0     0       0          0
+vethf7ca0ca:     126       3    0    0    0     0          0         0     1798      23    0    0    0     0       0          0
+vethf9001aa:     126       3    0    0    0     0          0         0     1576      20    0    0    0     0       0          0
+s3-eth3:   14016     168    0    0    0     0          0         0  3809880   44480    0    0    0     0       0          0
+s3-eth4:   69086    1553    0    0    0     0          0         0  3816158   44553    0    0    0     0       0          0
+s3-eth5:   79572    1826    0    0    0     0          0         0  3818090   44577    0    0    0     0       0          0
+s3-eth6:   21194     413    0    0    0     0          0         0  3816214   44557    0    0    0     0       0          0
+s4-eth3:    5916      76    0    0    0     0          0         0  3818230   44585    0    0    0     0       0          0
+s4-eth4:    1618      27    0    0    0     0          0         0  3822698   44637    0    0    0     0       0          0
+s4-eth5:    1486      25    0    0    0     0          0         0  3822950   44643    0    0    0     0       0          0
+s4-eth6:    8796     110    0    0    0     0          0         0  3815770   44561    0    0    0     0       0          0
+s1-eth1: 8155529390 194158337    0    0    0     0          0         0  2107858   24561    0    0    0     0       0          0
+s3-eth1: 2107858   24561    0    0    0     0          0         0 8155529516 194158340    0    0    0     0       0          0
+s2-eth1: 2260974   27981    0    0    0     0          0         0 8155497002 194157795    0    0    0     0       0          0
+s3-eth2: 8155497296 194157802    0    0    0     0          0         0  2260974   27981    0    0    0     0       0          0
+s1-eth2: 2116522   24673    0    0    0     0          0         0 8155508296 194157940    0    0    0     0       0          0
+s4-eth1: 8155508800 194157952    0    0    0     0          0         0  2116522   24673    0    0    0     0       0          0
+s2-eth2: 8155511008 194157992    0    0    0     0          0         0  2112650   24617    0    0    0     0       0          0
+s4-eth2: 2112650   24617    0    0    0     0          0         0 8155511218 194157997    0    0    0     0       0          0
+ovs-system:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+    s4:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+    s1:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+    s3:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+    s2:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+-------------------------------------------------------------
+/proc/net/arp
+-------------------------------------------------------------
+IP address       HW type     Flags       HW address            Mask     Device
+10.81.83.135     0x1         0x2         2e:18:c9:90:17:16     *        wlan0
+-------------------------------------------------------------
+/proc/net/route
+-------------------------------------------------------------
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+wlan0	00000000	8753510A	0003	0	0	600	00000000	0	0	0                                                                            
+wlan0	0053510A	00000000	0001	0	0	600	00FFFFFF	0	0	0                                                                            
+docker0	000011AC	00000000	0001	0	0	0	0000FFFF	0	0	0                                                                            
+br-6b42053f7608	000012AC	00000000	0001	0	0	0	0000FFFF	0	0	0                                                                    
+br-8b9f0f4724c8	000013AC	00000000	0001	0	0	0	0000FFFF	0	0	0
+-------------------------------------------------------------
+netstat -rn
+-------------------------------------------------------------
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         10.81.83.135    0.0.0.0         UG        0 0          0 wlan0
+10.81.83.0      0.0.0.0         255.255.255.0   U         0 0          0 wlan0
+172.17.0.0      0.0.0.0         255.255.0.0     U         0 0          0 docker0
+172.18.0.0      0.0.0.0         255.255.0.0     U         0 0          0 br-6b42053f7608
+172.19.0.0      0.0.0.0         255.255.0.0     U         0 0          0 br-8b9f0f4724c8

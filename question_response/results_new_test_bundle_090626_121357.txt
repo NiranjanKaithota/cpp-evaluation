@@ -1,0 +1,271 @@
+================================================================================
+IMPROVED GENERIC PIPELINE EVALUATION
+================================================================================
+
+Model    : command-r-08-2024
+Backend  : cohere
+Date     : 2026-06-09 12:18:19
+Questions: Up to 30 per bundle (Dynamic/Adversarial mode)
+
+================================================================================
+LOG: new_test_bundle
+================================================================================
+Overall Score: 12.5%
+Total Questions Evaluated: 30
+Context: ~282,450 tokens (⚠️ Truncated to 100,000 to fit LLM limits)
+
+Weighted Category Scores (0-100%):
+  causal_reasoning.............................    0.0%  (17.5% weight)
+  context_retrieval............................    0.0%  (12.5% weight)
+  negative_evidence............................   71.4%  (17.5% weight)
+  root_cause_attribution.......................    0.0%  (25.0% weight)
+  semantic_equivalence.........................    0.0%  (12.5% weight)
+  temporal_ordering............................    0.0%  (15.0% weight)
+
+Detailed Results:
+--------------------------------------------------------------------------------
+
+[RC-Q1] ❌ WRONG (Score: 0.00, Weight: 0.20)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What is the root cause of the primary network issue? Identify the specific component that failed and explain the failure mechanism.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI failed to provide an answer, so it cannot be logically evaluated.
+
+[RC-Q2] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What remediation steps would you recommend to resolve this issue? Be specific about which components to check or reconfigure.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's generation failed, resulting in no answer to evaluate.
+
+[RC-Q3] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: medium
+Question  : Classify this failure: (A) Physical layer issue, (B) Configuration error, (C) Protocol/software failure, or (D) Resource exhaustion. Explain your choice.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : classification_with_reasoning
+Judge Note: [Consensus: 3/3 passes] No answer was generated, making it impossible to assess the AI's response.
+
+[RC-Q4] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : Was this a single point of failure, or a cascading failure where one component's crash caused others to fail? Provide evidence.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI's answer is missing, so it cannot be scored.
+
+[RC-Q5] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: easy
+Question  : Based on standard networking practices, what is the severity level of this issue (e.g., Critical outage, Degraded performance, Informational warning)? Justify the severity.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] No response was given, leading to an inability to evaluate the AI's performance.
+
+[CR-Q1] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Trace the causal chain: what event triggered the failure, what symptoms appeared as a result, and what was the final observable impact?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI's generation failure resulted in no answer for evaluation.
+
+[CR-Q2] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Could the observed symptoms have been caused by something OTHER than the identified root cause? If yes, what evidence rules out those alternatives?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] No answer was provided, making it impossible to assess the AI's response.
+
+[CR-Q3] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : Did any automated network recovery mechanisms (e.g., STP reconvergence, BGP route recalculation, Link Aggregation failover) attempt to mitigate this failure? Detail their actions.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI's answer is missing, so it cannot be scored.
+
+[CR-Q4] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : How did this specific failure impact the overall network topology (e.g., routing tables, forwarding paths, neighbor adjacencies)?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] No response was given, leading to an inability to evaluate the AI's performance.
+
+[TO-Q1] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : List the 3-5 most critical events in chronological order. Include approximate timestamps if available.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : temporal_sequence_validation
+Judge Note: [Consensus: 3/3 passes] The AI failed to generate an answer, resulting in no evaluation.
+
+[TO-Q2] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : How long did it take from initial failure detection to complete service disruption? Describe the progression.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : temporal_reasoning
+Judge Note: [Consensus: 3/3 passes] The AI failed to provide an answer, so the temporal ordering and progression cannot be evaluated.
+
+[TO-Q3] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Were there any WARNING-level events BEFORE the first ERROR? If so, summarize them or list up to 3 examples.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : temporal_precedence
+Judge Note: [Consensus: 3/3 passes] Generation failure resulted in no answer, making it impossible to assess the presence of WARNING-level events.
+
+[TO-Q4] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : Are there any cyclic or repeating error patterns indicating a continuous retry/fail loop (e.g., continuous interface flapping or repeated protocol handshakes)?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's inability to generate a response hinders the evaluation of cyclic or repeating error patterns.
+
+[TO-Q5] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Identify the timestamp or approximate time when the system first returned to a stable or fully disconnected state after the chaos.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] Without an answer, it's impossible to pinpoint the timestamp of the system's return to stability.
+
+[SE-Q1] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : Summarize the core network problem in 2-3 sentences using plain language (avoid technical jargon where possible).
+Answer    : [ERROR: Generation Failed]...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's failure to generate a response prevents the evaluation of its ability to summarize the core network problem.
+
+[SE-Q2] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: medium
+Question  : What primary network components or topology elements were affected by this failure? (List the most critical or up to 5 components).
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] No answer was provided, so the identification of affected network components cannot be assessed.
+
+[SE-Q3] ❌ WRONG (Score: 0.00, Weight: 0.10)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : If you were escalating this ticket to a Tier 3 Network Engineer, write the 1-sentence technical TL;DR they need to read first.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's inability to generate a response makes it impossible to evaluate the technical TL;DR for Tier 3 engineers.
+
+[SE-Q4] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: easy
+Question  : Translate this technical failure into its likely business or user-facing impact (e.g., loss of redundancy vs. complete user outage).
+Answer    : [ERROR: Generation Failed]...
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] No answer was given, so the translation of technical failure into business impact cannot be evaluated.
+
+[NE-Q1] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of DNS resolution failures in these logs?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] Generation failure resulted in no answer, making it impossible to assess the presence of DNS resolution failures.
+
+[NE-Q2] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any mention of hardware failures (memory errors, CPU spikes, ASIC faults, disk issues)?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's failure to generate a response hinders the evaluation of hardware-related issues.
+
+[NE-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Does the log contain any security-related events (authentication failures, ACL drops, MAC spoofing, intrusion attempts)?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 2/3 passes] The AI's answer indicates a generation failure, which, under the Absent Entity Rule, is considered correct as it acknowledges the absence of security-related events in the logs.
+
+[NE-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of a power failure, brownout, or unscheduled system reboot?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 2/3 passes] Generation failure response aligns with the Absent Entity Rule, indicating the absence of power-related issues in the logs.
+
+[NE-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Are there any Spanning Tree Protocol (STP) loop detections, topology changes (TCs), or broadcast storms mentioned?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 2/3 passes] The AI's generation failure response is consistent with the rule, suggesting no mention of STP loop detections or related issues in the logs.
+
+[NE-Q6] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Does the context explicitly mention MTU mismatches or packet fragmentation issues?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 2/3 passes] Generation failure response indicates the absence of MTU mismatches or packet fragmentation issues, adhering to the Absent Entity Rule.
+
+[NE-Q7] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there evidence of an OSPF or BGP routing loop (e.g., TTL expired in transit)?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 2/3 passes] The AI's response, indicating a generation failure, aligns with the rule, suggesting no evidence of OSPF or BGP routing loops in the logs.
+
+[CTX-Q1] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: easy
+Question  : How many distinct network devices or physical interfaces are explicitly mentioned in the logs?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : counting_with_tolerance
+Judge Note: [Consensus: 2/3 passes] The AI's failure to provide an answer makes it impossible to evaluate its accuracy.
+
+[CTX-Q2] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: medium
+Question  : What specific OS versions, firmware versions, or software builds are explicitly mentioned in the context?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 2/3 passes] The AI's inability to generate a response prevents an assessment of its accuracy.
+
+[CTX-Q3] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: hard
+Question  : Extract a sample of 5 to 10 exact IP addresses and 5 to 10 MAC addresses from the logs.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 2/3 passes] The AI's lack of response makes it impossible to evaluate its accuracy.
+
+[CTX-Q4] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: medium
+Question  : Identify up to 5 specific VLAN IDs or Virtual Routing and Forwarding (VRF) instances referenced in the logs.
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 2/3 passes] The AI's failure to provide an answer prevents an assessment of its accuracy.
+
+[CTX-Q5] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: easy
+Question  : What diagnostic commands (e.g., 'show tech', 'ping', 'traceroute') were executed to generate these logs, if visible?
+Answer    : [ERROR: Generation Failed]...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 2/3 passes] The AI's inability to generate a response makes it impossible to evaluate its accuracy.
+
+
+================================================================================
+OVERALL AVERAGE: 12.5%
+================================================================================

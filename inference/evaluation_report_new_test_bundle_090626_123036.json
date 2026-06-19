@@ -1,0 +1,21 @@
+{
+  "raw_bundle": "new_test_bundle",
+  "compressed_name": "new_test_bundle",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 1129805,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "kube-system",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "URI_0047=/api/v1/namespaces/kube-system/pods/kube-controller-manager-k8s-master-perfspec",
+      "URI_0048=/api/v1/namespaces/kube-system/pods/kube-controller-manager-k8s-master-perfspec/status",
+      "URI_0049=/apis/rbac.authorization.k8s.io/v1/namespaces/kube-system/roles/system::leader-locking-kube-controller-manager"
+    ],
+    "recommended_action": "Review and correct the configuration for the kube-system namespace, focusing on the roles, pods, and their statuses."
+  },
+  "ground_truth": {}
+}

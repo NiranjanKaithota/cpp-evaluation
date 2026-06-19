@@ -1,0 +1,25 @@
+{
+  "raw_bundle": "bundle_ch",
+  "compressed_name": "bundle_ch",
+  "timestamp": "130626_204007",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 183.11138444228507,
+  "raw_size": 35803769,
+  "comp_size": 195530,
+  "raw_details": {
+    "root_cause_entity": "mock_entity",
+    "root_cause_type": "mock_failure",
+    "recommended_action": "mock_action"
+  },
+  "comp_details": {
+    "root_cause_entity": "mock_entity",
+    "root_cause_type": "mock_failure",
+    "recommended_action": "mock_action"
+  },
+  "ground_truth": {
+    "root_cause_entity": "unknown",
+    "root_cause_type": "unknown",
+    "recommended_action": "unknown"
+  }
+}

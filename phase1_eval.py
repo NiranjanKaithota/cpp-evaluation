@@ -293,6 +293,7 @@ def run_phase1(raw_path: str, compressed_name: str, pipeline_type: str, mock_llm
             print("  [WARNING] Compressed text was empty. Inference skipped.")
             
         bundle_result = {
+            "timestamp": datetime.now().strftime("%d%m%y_%H%M%S"),
             "raw_rcm_passed": raw_eval.get("passed", False),
             "compressed_rcm_passed": comp_eval.get("passed", False),
             "compression_ratio": comp_ratio,

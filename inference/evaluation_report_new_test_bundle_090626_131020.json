@@ -1,0 +1,22 @@
+{
+  "raw_bundle": "new_test_bundle",
+  "compressed_name": "new_test_bundle",
+  "timestamp": "090626_131020",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 151091,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "HST_0000",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "NETWORK_ERROR",
+      "APPLICATION_ERROR",
+      "APPLICATION_ERROR"
+    ],
+    "recommended_action": "Review and rectify the configuration of HST_0000 to address the observed errors."
+  },
+  "ground_truth": {}
+}

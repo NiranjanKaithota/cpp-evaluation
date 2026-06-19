@@ -15,6 +15,7 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import datetime
 from typing import Dict, List, Tuple, Any
+from evaluation.llm_wrapper import LLMEngine
 
 # ═══════════════════════════════════════════════════════════════════════════
 # CONFIGURATION
@@ -474,20 +475,48 @@ def run_evaluation_on_compressed(
 ) -> Dict:
     print(f"\n{'='*80}\n  Evaluating: {log_label}\n{'='*80}")
     
-    actual_tokens = len(compressed_text) // 4
+    # -------------------------------------------------------------------------
+    # EXACT TOKENIZATION & TRUNCATION
+    # -------------------------------------------------------------------------
     is_truncated = False
-    if actual_tokens > MAX_CONTEXT_TOKENS:
-        compressed_text = compressed_text[:MAX_CONTEXT_TOKENS * 4]
-        is_truncated = True
-        print(f"  ⚠️ Context truncated from ~{actual_tokens} to {MAX_CONTEXT_TOKENS} tokens to fit limits.")
+    actual_tokens = 0
+    
+    # Initialize the engine purely to access its tokenizer
+    temp_llm = LLMEngine(mock_mode=False, provider=BACKEND, model_name=MODEL)
+    
+    if hasattr(temp_llm, 'tokenizer') and temp_llm.tokenizer:
+        tokens = temp_llm.tokenizer.encode(compressed_text, disallowed_special=())
+        actual_tokens = len(tokens)
+        
+        # Max tokens for the context (leaves ~18k headroom for questions/answers)
+        SAFE_MAX_TOKENS = 85000 
+        
+        if actual_tokens > SAFE_MAX_TOKENS:
+            print(f"  ⚠️ Context truncated locally from {actual_tokens:,} down to {SAFE_MAX_TOKENS:,} tokens.")
+            truncated_tokens = tokens[:SAFE_MAX_TOKENS]
+            compressed_text = temp_llm.tokenizer.decode(truncated_tokens)
+            is_truncated = True
+            actual_tokens = SAFE_MAX_TOKENS
+        else:
+            print(f"  [Tokenizer] Exact context size is {actual_tokens:,} tokens. (Safe to proceed)")
+    else:
+        # Fallback if the tokenizer fails to load for any reason
+        print("  [WARNING] Tokenizer not found. Falling back to safe character limit heuristic.")
+        actual_tokens = len(compressed_text) // 2
+        SAFE_CHAR_LIMIT = 150000 
+        if len(compressed_text) > SAFE_CHAR_LIMIT:
+            compressed_text = compressed_text[:SAFE_CHAR_LIMIT]
+            is_truncated = True
+            actual_tokens = SAFE_CHAR_LIMIT // 2
         
     # -------------------------------------------------------------------------
-    # API CALL 1: BATCH ANSWER GENERATION (CHUNKED)
+    # API CALL 1: BATCH ANSWER GENERATION (CHUNKED WITH RETRY)
     # -------------------------------------------------------------------------
     print(f"  -> [API Call 1/2] Asking {len(questions)} questions (Chunked to prevent token limits)...")
     
     answers_dict = {}
-    chunk_size = 5  # Small chunk size to guarantee we never hit 4k limits
+    chunk_size = 5  # Small chunk size to guarantee we never hit limits
+    max_retries = 3 # Number of times to retry a failed chunk
     
     for i in range(0, len(questions), chunk_size):
         chunk = questions[i:i + chunk_size]
@@ -504,14 +533,23 @@ def run_evaluation_on_compressed(
         {json.dumps(q_list_for_prompt, indent=2)}
         
         INSTRUCTIONS:
-        Return your answers STRICTLY as a JSON dictionary where the keys are the Question IDs (e.g., "RC-Q1") and the values are your string answers. Do not include any other text."""
+        Return your answers STRICTLY as a JSON dictionary where the keys are the Question IDs (e.g., "RC-Q1") and the values are your string answers. 
+        CRITICAL: Keep your answers direct and concise (1-3 sentences max per question). Do not write essays. Do not include any other text outside the JSON."""
 
-        chunk_answers = query_llm_json("You are an exact JSON outputter.", answer_prompt)
+        chunk_answers = {}
+        for attempt in range(max_retries):
+            chunk_answers = query_llm_json("You are an exact JSON outputter.", answer_prompt)
+            
+            if chunk_answers:
+                break # Success! Break out of the retry loop.
+            else:
+                print(f"       ⚠️ JSON parsing failed on attempt {attempt + 1}/{max_retries}. Retrying...")
+                time.sleep(2) # Brief pause to avoid rate-limit slamming before retry
         
         if chunk_answers:
             answers_dict.update(chunk_answers)
         else:
-            print(f"     ⚠️ Chunk failed to parse. Marking {len(chunk)} questions as failed.")
+            print(f"     ❌ Chunk failed to parse after {max_retries} attempts. Marking {len(chunk)} questions as failed.")
             for q in chunk:
                 answers_dict[q["id"]] = "[ERROR: Generation Failed]"
 

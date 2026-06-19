@@ -1,0 +1,21 @@
+{
+  "raw_bundle": "new_test_bundle",
+  "compressed_name": "new_test_bundle",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 1129805,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "kube-system",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "URI_0116",
+      "URI_0117",
+      "URI_0118"
+    ],
+    "recommended_action": "Review and correct the configuration settings for the kube-system namespace. Ensure that the necessary resources and permissions are properly defined and that any misconfigurations are addressed."
+  },
+  "ground_truth": {}
+}
