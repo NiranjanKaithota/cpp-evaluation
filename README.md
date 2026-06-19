@@ -185,9 +185,3 @@ cpp-evaluation/
   }
 }
 ```
-
----
-
-If you'd like, I can also:
-- add a short troubleshooting section for common environment issues,
-- or run a quick grep to ensure all referenced entrypoints (`orchestrator.py`, `run_eval.py`) exist and wire examples to actual scripts.
