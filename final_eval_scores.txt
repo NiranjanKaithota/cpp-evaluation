@@ -1,0 +1,267 @@
+================================================================================
+  Evaluating: modified_test_toon_001
+================================================================================
+  [Tokenizer] Exact context size is 4,702 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   66.7%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   20.0%
+    semantic_equivalence....................   84.0%
+    temporal_ordering.......................   77.8%
+
+  Overall Score: 74.0%
+  Verdicts: 26 correct, 2 partial, 7 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_002
+================================================================================
+  [Tokenizer] Exact context size is 4,608 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   44.4%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............   55.0%
+    root_cause_attribution..................   20.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   77.8%
+
+  Overall Score: 69.2%
+  Verdicts: 26 correct, 1 partial, 8 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_003
+================================================================================
+  [Tokenizer] Exact context size is 4,533 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   80.0%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   73.3%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   93.3%
+
+  Overall Score: 90.4%
+  Verdicts: 31 correct, 4 partial, 0 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_004
+================================================================================
+  [Tokenizer] Exact context size is 4,482 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   64.3%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   60.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   83.3%
+
+  Overall Score: 83.7%
+  Verdicts: 25 correct, 6 partial, 1 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_005
+================================================================================
+  [Tokenizer] Exact context size is 4,074 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   82.2%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   77.3%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   86.7%
+
+  Overall Score: 90.4%
+  Verdicts: 30 correct, 4 partial, 1 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_006
+================================================================================
+  [Tokenizer] Exact context size is 4,275 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   80.6%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................   80.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   82.5%
+    semantic_equivalence....................   76.0%
+    temporal_ordering.......................   70.0%
+
+  Overall Score: 84.9%
+  Verdicts: 20 correct, 15 partial, 0 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_007
+================================================================================
+  [Tokenizer] Exact context size is 4,581 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   82.2%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................   50.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   72.5%
+    semantic_equivalence....................   78.3%
+    temporal_ordering.......................   81.3%
+
+  Overall Score: 83.7%
+  Verdicts: 24 correct, 11 partial, 0 wrong
+
+================================================================================
+  Evaluating: modified_test_toon_008
+================================================================================
+  [Tokenizer] Exact context size is 4,169 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   80.2%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................   50.0%
+    negative_evidence.......................   94.1%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   80.2%
+    semantic_equivalence....................   83.3%
+    temporal_ordering.......................   78.9%
+
+  Overall Score: 83.9%
+  Verdicts: 21 correct, 14 partial, 0 wrong
+
+================================================================================
+  Evaluating: Hadoop_2k
+================================================================================
+  [Tokenizer] Exact context size is 28,694 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   88.9%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   70.0%
+    semantic_equivalence....................   86.7%
+    temporal_ordering.......................   91.1%
+
+  Overall Score: 89.7%
+  Verdicts: 29 correct, 6 partial, 0 wrong
+
+================================================================================
+  Evaluating: HPC_2k
+================================================================================
+  [Tokenizer] Exact context size is 2,648 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   33.3%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............   53.3%
+    root_cause_attribution..................    0.0%
+    semantic_equivalence....................   74.3%
+    temporal_ordering.......................   53.9%
+
+  Overall Score: 56.9%
+  Verdicts: 17 correct, 8 partial, 10 wrong
+
+================================================================================
+  Evaluating: hpe_messages
+================================================================================
+  ⚠️ Context truncated locally from 137,314 down to 85,000 tokens.
+  Category Breakdown:
+    causal_reasoning........................   22.2%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................   96.7%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................    0.0%
+    semantic_equivalence....................   36.0%
+    temporal_ordering.......................   58.5%
+
+  Overall Score: 54.3%
+  Verdicts: 17 correct, 6 partial, 12 wrong
+
+================================================================================
+  Evaluating: kubernetes (I had only 11 questions defined for kubernetes logs specifically)
+================================================================================
+  ⚠️ Context truncated locally from 638,112 down to 85,000 tokens.
+  Category Breakdown:
+    causal_reasoning........................  100.0%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................   75.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   50.0%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   89.2%
+
+  Overall Score: 88.2%
+  Verdicts: 8 correct, 3 partial, 0 wrong
+
+================================================================================
+  Evaluating: linux_2k
+================================================================================
+  [Tokenizer] Exact context size is 27,220 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   36.7%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................   80.0%
+    negative_evidence.......................   84.4%
+    remediation_actionability...............   96.7%
+    root_cause_attribution..................    0.0%
+    semantic_equivalence....................   80.0%
+    temporal_ordering.......................   61.1%
+
+  Overall Score: 57.9%
+  Verdicts: 17 correct, 8 partial, 10 wrong
+
+================================================================================
+  Evaluating: OpenSSH_2k
+================================================================================
+  [Tokenizer] Exact context size is 17,486 tokens. (Safe to proceed)
+  Category Breakdown:
+    causal_reasoning........................   83.0%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................  100.0%
+    negative_evidence.......................   88.9%
+    remediation_actionability...............   80.0%
+    root_cause_attribution..................   75.3%
+    semantic_equivalence....................    0.0%
+    temporal_ordering.......................   57.8%
+
+  Overall Score: 72.8%
+  Verdicts: 19 correct, 8 partial, 8 wrong
+
+================================================================================
+  Evaluating: Windows_2k
+================================================================================
+  [Tokenizer] Exact context size is 8,845 tokens. (Safe to proceed)
+  -> [API Call 1/2] Asking 35 questions (Chunked to prevent token limits)...
+     Processing questions 1 to 5...
+     Processing questions 6 to 10...
+     Processing questions 11 to 15...
+     Processing questions 16 to 20...
+     Processing questions 21 to 25...
+     Processing questions 26 to 30...
+     Processing questions 31 to 35...
+  -> [API Call 2/2] Grading answers via LLM Judge (3 Passes for Self-Consistency)...
+     Pass 1/3...
+     Pass 2/3...
+     Pass 3/3...
+
+  Category Breakdown:
+    causal_reasoning........................   80.6%
+    context_retrieval.......................  100.0%
+    dynamic_entity_tracing..................   80.0%
+    negative_evidence.......................  100.0%
+    remediation_actionability...............  100.0%
+    root_cause_attribution..................   77.5%
+    semantic_equivalence....................  100.0%
+    temporal_ordering.......................   86.1%
+
+  Overall Score: 89.0%
+  Verdicts: 24 correct, 11 partial, 0 wrong

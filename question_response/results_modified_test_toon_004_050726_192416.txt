@@ -1,0 +1,146 @@
+================================================================================
+IMPROVED GENERIC PIPELINE EVALUATION
+================================================================================
+
+Model    : command-r-08-2024
+Backend  : cohere
+Date     : 2026-07-05 19:30:13
+Questions: Up to 32 per bundle (Dynamic/Adversarial mode)
+
+================================================================================
+LOG: modified_test_toon_004
+================================================================================
+Overall Score: 83.7%
+Total Questions Evaluated: 32
+Context: ~4,482 tokens
+
+Weighted Category Scores (0-100%):
+  causal_reasoning.............................   64.3%  (15.2% weight)
+  context_retrieval............................  100.0%  (10.9% weight)
+  dynamic_entity_tracing.......................  100.0%  ( 6.5% weight)
+  negative_evidence............................  100.0%  (15.2% weight)
+  remediation_actionability....................  100.0%  ( 6.5% weight)
+  root_cause_attribution.......................   60.0%  (21.7% weight)
+  semantic_equivalence.........................  100.0%  (10.9% weight)
+  temporal_ordering............................   83.3%  (13.0% weight)
+
+Detailed Results:
+--------------------------------------------------------------------------------
+
+[RC-Q1] ⚠️ PARTIAL (Score: 0.50, Weight: 0.20)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What is the root cause of the primary network issue? Identify the specific component that failed and explain the failure mechanism.
+Answer    : The primary network issue is caused by a BGP session failure to IP_02 due to a Hold Timer Expiring. This indicates a potential configuration or protocol issue with the BGP session....
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 2/3 passes] The AI correctly identified a BGP session failure as the primary issue, but the root cause attribution to IP_02 is incorrect based on the Ground Truth. The correct root cause entity is 192.168.1.1.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ BGP session failure to IP_02 due to a Hold Timer Expiring
+  └─────────────────────────────────────────────────
+
+[RC-Q2] ⚠️ PARTIAL (Score: 0.50, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What remediation steps would you recommend to resolve this issue? Be specific about which components to check or reconfigure.
+Answer    : Remediation steps should focus on re-establishing the BGP session with IP_02. Check and adjust BGP configuration parameters, especially the Hold Timer, and ensure proper routing updates are propagated....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 2/3 passes] The AI's recommended remediation steps are partially correct. While re-establishing the BGP session is a valid step, the focus should be on the correct component, 192.168.1.1, and its configuration.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Re-establish BGP session with IP_02; check and adjust BGP configuration
+  └─────────────────────────────────────────────────
+
+[RC-Q3] ❌ WRONG (Score: 0.00, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: medium
+Question  : Classify this failure: (A) Physical layer issue, (B) Configuration error, (C) Protocol/software failure, or (D) Resource exhaustion. Explain your choice.
+Answer    : This failure is classified as (C) Protocol/software failure. The BGP session's Hold Timer expiring suggests a software-level issue with the BGP protocol implementation....
+Scoring   : classification_with_reasoning
+Judge Note: [Consensus: 1/3 passes] The classification as a Protocol/software failure is incorrect. The ground truth indicates a routing protocol failure, which is a different category. The explanation also does not align with the ground truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Protocol/software failure due to Hold Timer expiring
+  └─────────────────────────────────────────────────
+
+[RC-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : Was this a single point of failure, or a cascading failure where one component's crash caused others to fail? Provide evidence.
+Answer    : This is a single point of failure. The issue is isolated to the BGP session with IP_02, and there is no evidence of cascading failures affecting other components....
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 2/3 passes] The AI correctly identified this as a single point of failure, which is consistent with the Ground Truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Single point of failure
+  └─────────────────────────────────────────────────
+
+[RC-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: easy
+Question  : Based on standard networking practices, what is the severity level of this issue (e.g., Critical outage, Degraded performance, Informational warning)? Justify the severity.
+Answer    : The severity level is Critical Outage. The loss of a BGP session can disrupt network connectivity and routing, leading to potential service outages and degraded performance....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 2/3 passes] The severity level assessment is accurate and justified, aligning with the Ground Truth's classification.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Critical Outage
+  └─────────────────────────────────────────────────
+
+[CR-Q1] ⚠️ PARTIAL (Score: 0.50, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Trace the causal chain: what event triggered the failure, what symptoms appeared as a result, and what was the final observable impact?
+Answer    : The root cause of the failure was the Hold Timer Expiring (SEM_03), which triggered the BGP session to IP_02 to go down. This resulted in a BGP peer connection loss (SEM_05) and an attempt to reconnect (SEM_04). The final impact was a high-severity network error (NEW_ERROR_TYPE)....
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 2/3 passes] The causal chain is partially correct, but the root cause event should be attributed to 192.168.1.1, not IP_02.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Hold Timer Expiring (SEM_03) -> BGP session down (SEM_05) -> Reconnection attempt (SEM_04)
+  └─────────────────────────────────────────────────
+
+[CR-Q2] ⚠️ PARTIAL (Score: 0.50, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Could the observed symptoms have been caused by something OTHER than the identified root cause? If yes, what evidence rules out those alternatives?
+Answer    : Yes, other potential causes could include a misconfiguration or a hardware failure. However, the evidence rules out these alternatives as the Hold Timer Expiring event is a clear indicator of a timing-related issue, and the subsequent events align with a BGP session failure....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 2/3 passes] The AI acknowledges other potential causes but does not provide a comprehensive analysis. The evidence provided is not sufficient to rule out all alternatives.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Hold Timer Expiring event indicates a timing-related issue
+  └─────────────────────────────────────────────────
+
+[CR-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : Did any automated network recovery mechanisms (e.g., STP reconvergence, BGP route recalculation, Link Aggregation failover) attempt to mitigate this failure? Detail their actions.
+Answer    : No automated network recovery mechanisms were observed. The BGP peer attempted reconnection (SEM_04), but there was no indication of any other mitigation strategies....
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 2/3 passes] The AI correctly states that no automated recovery mechanisms were observed, which is consistent with the Ground Truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ No automated recovery mechanisms
+  └─────────────────────────────────────────────────
+
+[CR-Q4] ⚠️ PARTIAL (Score: 0.50, Weight: 0.05)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : How did this specific failure impact the overall network topology (e.g., routing tables, forwarding paths, neighbor adjacencies)?
+Answer    : The failure impacted the network topology by causing a BGP peer connection loss, which affected the routing tables and potentially disrupted forwarding paths and neighbor adjacencies....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 2/3 passes] The impact on the network topology is partially described. While the BGP peer connection loss is correct, the impact on routing tables and forwarding paths should be more detailed.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ BGP peer connection loss affects routing tables and potentially disrupts forwarding paths
+  └─────────────────────────────────────────────────
+
+[TO-Q1] ⚠️ PARTIAL (Score: 0.50, Weight: 0.10)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : List the 3-5 most critical events in chronological order. Include approximate timestamps if available.
+Answer    : [{'event': 'BGP peer connection lost (SEM_05)', 'timestamp': '27206s'}, {'event': 'BGP session went down (SEM_03)', 'timestamp': '27211s'}, {'event': 'BGP peer attempting reconnection (SEM_04)', 'timestamp': '27214s'}]...
+Scoring   : temporal_sequence_validation
+Judge Note: [Consensus: 2/3 passes] The temporal ordering is partially correct, but the events should be attributed to the correct component, 192.168.1.1, and the timestamps are not provided in the Ground Truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────

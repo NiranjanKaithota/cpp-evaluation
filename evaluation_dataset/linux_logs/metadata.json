@@ -1,0 +1,8 @@
+{
+  "ground_truth": {
+    "failure_timestamp": "Jun 15 04:06:20",
+    "root_cause_entity": "logrotate",
+    "root_cause_type": "Application/Cron Job Failure",
+    "recommended_action": "Investigate why the logrotate cron job is exiting abnormally (exit code 1) — check /etc/logrotate.conf and /etc/logrotate.d/ configuration files for syntax errors, missing/incorrect log file paths, permission issues on log directories, or a misbehaving postrotate script, then run 'logrotate -d /etc/logrotate.conf' in debug mode to identify and fix the root cause, since this recurs daily (Jun 15 through Jul 27) at ~04:00-04:20 across the entire log period."
+  }
+}

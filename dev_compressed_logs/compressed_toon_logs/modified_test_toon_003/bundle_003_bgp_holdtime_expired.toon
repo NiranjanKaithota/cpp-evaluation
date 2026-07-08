@@ -1,0 +1,286 @@
+TOON-X:5.0 FORMAT:syslog FILE:messages.log BASE_TS:1779805937
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:1779805937 span=89993s events=36019 sources=['kernel:14471', 'ovsdb-server:7200', 'ovs-vswitchd:7179', 'acctsyslogd:7166', 'hpe-routing:3']
+ENTITIES:104 RELATIONSHIPS:0 CLUSTERS:97
+[L1]
+NAME:NEW_ERROR_TYPE SEV:E COUNT:1 SPAN:0->end
+  CLUSTERS:@37
+  DESC:1 unique high-severity event types observed
+[SEM]
+SEM_01=APPLICATION.CUSTOM.AUDIT_EVENT
+SEM_02=APPLICATION.CUSTOM.KERNEL_EVENT
+SEM_03=NETWORK.CUSTOM.NETWORK_ERROR
+SEM_04=NETWORK.CUSTOM.NETWORK_EVENT
+SEM_05=NETWORK.CUSTOM.NETWORK_WARNING
+[ENT]
+## IPV4
+IP_01=10.233.131.22
+IP_02=10.233.255.1
+## HOST
+HOST_01=PSCSCTLEAFB03
+## PROCESS
+PROC_01=acctsyslogd
+PROC_02=hpe-routing
+PROC_03=kernel
+PROC_04=ovs-vswitchd
+PROC_05=ovsdb-server
+## INTERFACE
+IF_01=1/1/1
+IF_02=1/1/10
+IF_03=1/1/11
+IF_04=1/1/12
+IF_05=1/1/13
+IF_06=1/1/14
+IF_07=1/1/15
+IF_08=1/1/16
+IF_09=1/1/17
+IF_10=1/1/18
+IF_11=1/1/19
+IF_12=1/1/2
+IF_13=1/1/20
+IF_14=1/1/21
+IF_15=1/1/22
+IF_16=1/1/23
+IF_17=1/1/24
+IF_18=1/1/25
+IF_19=1/1/26
+IF_20=1/1/27
+IF_21=1/1/28
+IF_22=1/1/29
+IF_23=1/1/3
+IF_24=1/1/30
+IF_25=1/1/31
+IF_26=1/1/32
+IF_27=1/1/33
+IF_28=1/1/34
+IF_29=1/1/35
+IF_30=1/1/36
+IF_31=1/1/37
+IF_32=1/1/38
+IF_33=1/1/39
+IF_34=1/1/4
+IF_35=1/1/40
+IF_36=1/1/41
+IF_37=1/1/42
+IF_38=1/1/43
+IF_39=1/1/44
+IF_40=1/1/45
+IF_41=1/1/46
+IF_42=1/1/47
+IF_43=1/1/48
+IF_44=1/1/5
+IF_45=1/1/6
+IF_46=1/1/7
+IF_47=1/1/8
+IF_48=1/1/9
+IF_49=interface 1/1/1
+IF_50=interface 1/1/10
+IF_51=interface 1/1/11
+IF_52=interface 1/1/12
+IF_53=interface 1/1/13
+IF_54=interface 1/1/14
+IF_55=interface 1/1/15
+IF_56=interface 1/1/16
+IF_57=interface 1/1/17
+IF_58=interface 1/1/18
+IF_59=interface 1/1/19
+IF_60=interface 1/1/2
+IF_61=interface 1/1/20
+IF_62=interface 1/1/21
+IF_63=interface 1/1/22
+IF_64=interface 1/1/23
+IF_65=interface 1/1/24
+IF_66=interface 1/1/25
+IF_67=interface 1/1/26
+IF_68=interface 1/1/27
+IF_69=interface 1/1/28
+IF_70=interface 1/1/29
+IF_71=interface 1/1/3
+IF_72=interface 1/1/30
+IF_73=interface 1/1/31
+IF_74=interface 1/1/32
+IF_75=interface 1/1/33
+IF_76=interface 1/1/34
+IF_77=interface 1/1/35
+IF_78=interface 1/1/36
+IF_79=interface 1/1/37
+IF_80=interface 1/1/38
+IF_81=interface 1/1/39
+IF_82=interface 1/1/4
+IF_83=interface 1/1/40
+IF_84=interface 1/1/41
+IF_85=interface 1/1/42
+IF_86=interface 1/1/43
+IF_87=interface 1/1/44
+IF_88=interface 1/1/45
+IF_89=interface 1/1/46
+IF_90=interface 1/1/47
+IF_91=interface 1/1/48
+IF_92=interface 1/1/5
+IF_93=interface 1/1/6
+IF_94=interface 1/1/7
+IF_95=interface 1/1/8
+IF_96=interface 1/1/9
+[T]
+T0=SEM_02|provision <NUM>:<NUM>:<NUM>.0IF_11: Re-enabling RX interrupts and disabling NAPI polling
+T1=SEM_02|provision <NUM>:<NUM>:<NUM> pvnet1: Re-enabling RX interrupts and disabling NAPI polling
+T2=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: IF_77 statistics queried, status OK
+T3=SEM_02|provision <*> Re-enabling RX interrupts and disabling NAPI polling
+T4=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: <*> statistics queried, status OK
+T5=SEM_02|net_ratelimit: <NUM> callbacks suppressed
+T6=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?selector=writable' and method GET and response code <NUM> with payload <STR> which resulted in success at timezone Asia/Calcutta.
+T7=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?selector=configuration&depth=<NUM>' and method GET and response code <NUM> with payload <STR> which resulted in success at ti
+T8=SEM_02|provision <NUM>:<NUM>:<NUM> <*> Re-enabling RX interrupts and disabling NAPI polling
+T9=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?selector=configuration&depth=<NUM>' and method GET and response code <NUM> with payload <STR> which resulted in success at
+T10=SEM_04|ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM> rows inserted
+T11=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?depth=<NUM>&selector=configuration' and method GET and response code <NUM> with payload <STR> which resulted in succe
+T12=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI <*> and method GET and response code <NUM> with payload <STR> which resulted in success at <*>
+T13=SEM_05|ovs|<NUM>|bgp|WARN|BGP peer IP_02 connection lost
+T14=SEM_03|ovs|<NUM>|bgp|ERR|BGP session to IP_02 went down - Hold Timer Expired
+T15=SEM_04|ovs|<NUM>|bgp|INFO|BGP peer IP_02 attempting reconnection
+T16=SEM_04|ovs|<NUM>|ovsdb_server|INFO|transact: success, <NUM> rows updated in Route table for withdrew peer IP_02
+[TIMELINE]
+[0s-6s] @1(1x), @2(1x), @3(1x)
+[27036s-27036s] @36[W](1x)
+[27039s-27042s] @37[E](1x), @38(1x), @39(1x)
+[CAUSE]
+SEM_01>SEM_01|CONF:69 x11 (@7(SEM_01)>@8(SEM_01), @7(SEM_01)>@8(SEM_01), @7(SEM_01)>@10(SEM_01))
+SEM_04>SEM_01|CONF:51 x10 (@11(SEM_04)>@12(SEM_01), @3(SEM_04)>@7(SEM_01), @3(SEM_04)>@8(SEM_01))
+SEM_03>SEM_04|CONF:63 x3 (@37(SEM_03)>@38(SEM_04), @37(SEM_03)>@38(SEM_04), @37(SEM_03)>@39(SEM_04))
+SEM_04>SEM_04|CONF:60 x4 (@38(SEM_04)>@39(SEM_04), @3(SEM_04)>@5(SEM_04), @5(SEM_04)>@11(SEM_04))
+SEM_02>SEM_02|CONF:61 x10 via:HOST_01 (@1(SEM_02)>@2(SEM_02), @1(SEM_02)>@4(SEM_02), @1(SEM_02)>@6(SEM_02))
+SEM_02>SEM_04|CONF:50 x8 via:HOST_01 (@1(SEM_02)>@3(SEM_04), @1(SEM_02)>@5(SEM_04), @2(SEM_02)>@3(SEM_04))
+SEM_02>SEM_01|CONF:50 x14 via:HOST_01 (@1(SEM_02)>@7(SEM_01), @1(SEM_02)>@8(SEM_01), @2(SEM_02)>@7(SEM_01))
+SEM_04>SEM_02|CONF:50 x5 via:HOST_01 (@3(SEM_04)>@4(SEM_02), @3(SEM_04)>@6(SEM_02), @3(SEM_04)>@9(SEM_02))
+SEM_01>SEM_02|CONF:50 x2 via:HOST_01 (@7(SEM_01)>@9(SEM_02), @8(SEM_01)>@9(SEM_02))
+SEM_01>SEM_04|CONF:50 x3 via:HOST_01 (@7(SEM_01)>@11(SEM_04), @8(SEM_01)>@11(SEM_04), @10(SEM_01)>@11(SEM_04))
+SEM_05>SEM_03|CONF:70 x1 via:HOST_01 (@36(SEM_05)>@37(SEM_03))
+SEM_05>SEM_04|CONF:65 x2 via:HOST_01 (@36(SEM_05)>@38(SEM_04), @36(SEM_05)>@39(SEM_04))
+[L4]
+## TIER_1 IMPORTANT
+@37 1x E S4 T14 ^27039 IMP:0.83
+  ENTITIES:HOST_01 PROC_02 IP_02
+  SAMPLES:
+    - ovs|16083|bgp|ERR|BGP session to IP_02 went down - Hold Timer Expired
+## TIER_2 SUPPORTING
+@1 1x I S0 T0 ^0 IMP:0.34
+  ENTITIES:HOST_01 PROC_03 IF_11
+  SAMPLES:
+    - provision 0000:05:00.0IF_11: Re-enabling RX interrupts and disabling NAPI polling
+@2 1x I S0 T1 ^2 IMP:0.34
+  ENTITIES:HOST_01 PROC_03
+  SLOT_LISTS:
+    Slot 1 (provision): <NUM>:<NUM>:<NUM>(1x)
+  SAMPLES:
+    - provision 0000:05:00.0 pvnet1: Re-enabling RX interrupts and disabling NAPI polling
+@3 1x I S1 T2 ^6 IMP:0.35
+  ENTITIES:HOST_01 PROC_04 IF_77
+  SAMPLES:
+    - ovs|03353|bridge|INFO|bridge br0: IF_77 statistics queried, status OK
+@36 1x W S4 T13 ^27036 IMP:0.52
+  ENTITIES:HOST_01 PROC_02 IP_02
+  SAMPLES:
+    - ovs|16082|bgp|WARN|BGP peer IP_02 connection lost
+@38 1x I S4 T15 ^27041 IMP:0.35
+  ENTITIES:HOST_01 PROC_02 IP_02
+  SAMPLES:
+    - ovs|16084|bgp|INFO|BGP peer IP_02 attempting reconnection
+@39 1x I S3 T16 ^27042 IMP:0.35
+  ENTITIES:HOST_01 PROC_05 IP_02
+  SLOT_LISTS:
+    Slot 1 (success): <NUM>(1x)
+  SAMPLES:
+    - ovs|16085|ovsdb_server|INFO|transact: success, 1 rows updated in Route table for withdrew peer IP_02
+## TIER_BACKGROUND (90 clusters)
+  @8: 1x SI T7 [RARE]
+  @19: 1x SI T9 [RARE]
+  @4: 2447x SI T3 [NOISE]
+  @5: 7178x SI T4 [NOISE]
+  @6: 7215x SI T5 [NOISE]
+  @7: 5x SI T6 [NOISE]
+  @9: 4807x SI T8 [NOISE]
+  @10: 57x SI T9 [NOISE]
+  @11: 7199x SI T10 [NOISE]
+  @12: 98x SI T11 [NOISE]
+  @13: 3608x SI T12 [NOISE]
+  @14: 11x SI T6 [NOISE]
+  @15: 49x SI T6 [NOISE]
+  @16: 58x SI T9 [NOISE]
+  @17: 152x SI T6 [NOISE]
+  @18: 36x SI T11 [NOISE]
+  @20: 41x SI T9 [NOISE]
+  @21: 171x SI T11 [NOISE]
+  @22: 17x SI T9 [NOISE]
+  @23: 88x SI T9 [NOISE]
+  @24: 31x SI T6 [NOISE]
+  @25: 14x SI T6 [NOISE]
+  @26: 4x SI T9 [NOISE]
+  @27: 12x SI T6 [NOISE]
+  @28: 41x SI T9 [NOISE]
+  @29: 30x SI T6 [NOISE]
+  @30: 37x SI T11 [NOISE]
+  @31: 49x SI T9 [NOISE]
+  @32: 21x SI T6 [NOISE]
+  @33: 23x SI T11 [NOISE]
+  @34: 84x SI T6 [NOISE]
+  @35: 13x SI T9 [NOISE]
+  @40: 31x SI T9 [NOISE]
+  @41: 19x SI T11 [NOISE]
+  @42: 5x SI T11 [NOISE]
+  @43: 8x SI T9 [NOISE]
+  @44: 4x SI T11 [NOISE]
+  @45: 20x SI T9 [NOISE]
+  @46: 26x SI T11 [NOISE]
+  @47: 23x SI T6 [NOISE]
+  @48: 4x SI T9 [NOISE]
+  @49: 42x SI T11 [NOISE]
+  @50: 74x SI T6 [NOISE]
+  @51: 12x SI T9 [NOISE]
+  @52: 32x SI T9 [NOISE]
+  @53: 2x SI T11 [NOISE]
+  @54: 32x SI T11 [NOISE]
+  @55: 28x SI T9 [NOISE]
+  @56: 7x SI T6 [NOISE]
+  @57: 4x SI T6 [NOISE]
+  @58: 74x SI T9 [NOISE]
+  @59: 17x SI T6 [NOISE]
+  @60: 25x SI T11 [NOISE]
+  @61: 2x SI T6 [NOISE]
+  @62: 14x SI T6 [NOISE]
+  @63: 51x SI T11 [NOISE]
+  @64: 104x SI T6 [NOISE]
+  @65: 8x SI T9 [NOISE]
+  @66: 48x SI T9 [NOISE]
+  @67: 43x SI T11 [NOISE]
+  @68: 80x SI T11 [NOISE]
+  @69: 26x SI T6 [NOISE]
+  @70: 22x SI T9 [NOISE]
+  @71: 36x SI T9 [NOISE]
+  @72: 139x SI T6 [NOISE]
+  @73: 16x SI T11 [NOISE]
+  @74: 77x SI T9 [NOISE]
+  @75: 89x SI T11 [NOISE]
+  @76: 7x SI T9 [NOISE]
+  @77: 14x SI T9 [NOISE]
+  @78: 11x SI T6 [NOISE]
+  @79: 68x SI T9 [NOISE]
+  @80: 61x SI T6 [NOISE]
+  @81: 41x SI T11 [NOISE]
+  @82: 108x SI T11 [NOISE]
+  @83: 106x SI T9 [NOISE]
+  @84: 2x SI T6 [NOISE]
+  @85: 35x SI T6 [NOISE]
+  @86: 11x SI T6 [NOISE]
+  @87: 76x SI T6 [NOISE]
+  @88: 54x SI T11 [NOISE]
+  @89: 88x SI T9 [NOISE]
+  @90: 191x SI T6 [NOISE]
+  @91: 162x SI T11 [NOISE]
+  @92: 3x SI T9 [NOISE]
+  @93: 16x SI T9 [NOISE]
+  @94: 23x SI T9 [NOISE]
+  @95: 49x SI T9 [NOISE]
+  @96: 40x SI T9 [NOISE]
+  @97: 4x SI T6 [NOISE]

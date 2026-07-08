@@ -1,0 +1,334 @@
+================================================================================
+IMPROVED GENERIC PIPELINE EVALUATION
+================================================================================
+
+Model    : command-r-08-2024
+Backend  : cohere
+Date     : 2026-07-06 13:53:34
+Questions: Up to 35 per bundle (Dynamic/Adversarial mode)
+
+================================================================================
+LOG: Windows_2k
+================================================================================
+Overall Score: 89.0%
+Total Questions Evaluated: 35
+Context: ~8,845 tokens
+
+Weighted Category Scores (0-100%):
+  causal_reasoning.............................   80.6%  (17.0% weight)
+  context_retrieval............................  100.0%  ( 9.4% weight)
+  dynamic_entity_tracing.......................   80.0%  ( 5.7% weight)
+  negative_evidence............................  100.0%  (17.0% weight)
+  remediation_actionability....................  100.0%  ( 5.7% weight)
+  root_cause_attribution.......................   77.5%  (18.9% weight)
+  semantic_equivalence.........................  100.0%  ( 9.4% weight)
+  temporal_ordering............................   86.1%  (17.0% weight)
+
+Detailed Results:
+--------------------------------------------------------------------------------
+
+[RC-Q1] ⚠️ PARTIAL (Score: 0.75, Weight: 0.20)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What is the root cause of the primary network issue? Identify the specific component that failed and explain the failure mechanism.
+Answer    : The primary network issue is caused by a failure in the CBS (Component-Based Servicing) system, specifically the CBS SQM (System Quality Monitor) component. The failure mechanism involves the CBS SQM failing to start uploads and standard sample uploads, resulting in a high error rate and a unique hi...
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the CBS system as the root cause, but the specific component mentioned (CBS SQM) is not present in the Ground Truth. However, the AI's answer provides a logical explanation for the failure mechanism.
+
+[RC-Q2] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : What remediation steps would you recommend to resolve this issue? Be specific about which components to check or reconfigure.
+Answer    : Remediation steps should focus on the CBS SQM component. Check the CBS SQM configuration, ensure it has the necessary permissions and resources, and verify that the file patterns and upload settings are correct. Additionally, review the CBS SQM logs for further insights into the failure....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's recommendation to focus on the CBS SQM component is partially correct, as the Ground Truth does not mention this specific component. The suggested checks and reconfiguration steps are logical and relevant.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Check the CBS SQM configuration, ensure permissions and resources, verify file patterns and upload settings.
+  └─────────────────────────────────────────────────
+
+[RC-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: medium
+Question  : Classify this failure: (A) Physical layer issue, (B) Configuration error, (C) Protocol/software failure, or (D) Resource exhaustion. Explain your choice.
+Answer    : This failure is classified as a (C) Protocol/software failure. The issue is specific to the CBS SQM component and its interaction with the CBS system, indicating a software-level problem rather than a physical or configuration issue....
+Scoring   : classification_with_reasoning
+Judge Note: [Consensus: 3/3 passes] The AI accurately classified the failure as a Protocol/software failure, which aligns with the Ground Truth's description of a software-level issue.
+
+[RC-Q4] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : root_cause_attribution
+Difficulty: hard
+Question  : Was this a single point of failure, or a cascading failure where one component's crash caused others to fail? Provide evidence.
+Answer    : This is a cascading failure. The initial failure of the CBS SQM component led to a series of related failures, as evidenced by the high error rate and the unique high-severity event type observed. These failures are interconnected, suggesting a chain reaction....
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified a cascading failure, but the evidence provided is not as strong as it could be. The Ground Truth mentions a recurring issue, suggesting a potential chain reaction.
+
+[RC-Q5] ⚠️ PARTIAL (Score: 0.75, Weight: 0.05)
+Category  : root_cause_attribution
+Difficulty: easy
+Question  : Based on standard networking practices, what is the severity level of this issue (e.g., Critical outage, Degraded performance, Informational warning)? Justify the severity.
+Answer    : The severity level of this issue is Critical outage. The high error rate and unique high-severity event type indicate a significant disruption to the network's functionality, potentially impacting multiple services and causing widespread issues....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's severity assessment is partially correct. While the issue is critical, the Ground Truth does not explicitly mention an outage. The AI's justification is logical, but could be more aligned with the Ground Truth.
+
+[CR-Q1] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Trace the causal chain: what event triggered the failure, what symptoms appeared as a result, and what was the final observable impact?
+Answer    : The root cause of the failure was an issue with package applicability, which triggered a series of errors. This led to symptoms such as failed uploads, standard sample upload failures, and internal package opening failures. The final observable impact was a high severity event type, with 284 HTTP er...
+Scoring   : causal_chain_validation
+Judge Note: [Consensus: 3/3 passes] The AI's causal chain is partially correct, as it identifies package applicability as the root cause. However, the Ground Truth does not mention this specific issue. The symptoms and impact described are generally accurate.
+
+[CR-Q2] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : Could the observed symptoms have been caused by something OTHER than the identified root cause? If yes, what evidence rules out those alternatives?
+Answer    : Yes, other causes could have triggered these symptoms. However, the evidence rules out alternatives as the root cause, as the package applicability issue is consistently referenced across multiple events and has a high confidence score....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI acknowledges the possibility of alternative causes, but the evidence provided to rule them out is not as strong as it could be. The confidence score mentioned is a good indicator, but more context would be beneficial.
+
+[CR-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : Did any automated network recovery mechanisms (e.g., STP reconvergence, BGP route recalculation, Link Aggregation failover) attempt to mitigate this failure? Detail their actions.
+Answer    : No automated network recovery mechanisms were triggered, as the failure was related to package management and not network infrastructure....
+Scoring   : entity_extraction_plus_semantic
+Judge Note: [Consensus: 3/3 passes] The AI's answer aligns with the Ground Truth, correctly stating that no automated network recovery mechanisms were triggered due to the nature of the failure.
+
+[CR-Q4] ⚠️ PARTIAL (Score: 0.75, Weight: 0.05)
+Category  : causal_reasoning
+Difficulty: medium
+Question  : How did this specific failure impact the overall network topology (e.g., routing tables, forwarding paths, neighbor adjacencies)?
+Answer    : The failure did not directly impact the network topology, as it was an issue with Windows package management. However, it could have indirectly affected network performance if the errors impacted critical system services or updates....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's assessment is partially correct. While the failure did not directly impact the network topology, the potential indirect impact on network performance is a valid point. More detail on this indirect impact could strengthen the answer.
+
+[TO-Q1] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : List the 3-5 most critical events in chronological order. Include approximate timestamps if available.
+Answer    : The most critical events were: [2016-09-28 04:30:31] Info CBS Session: 30546173_4261722401 initialized by client WindowsUpdateAgent, [2016-09-28 04:30:31] Info CBS SQM: Failed to start upload with file pattern, [2016-09-28 04:30:31] Info CBS SQM: Failed to start standard sample upload, [2016-09-28 0...
+Scoring   : temporal_sequence_validation
+Judge Note: [Consensus: 3/3 passes] The AI provides a logical temporal ordering of events, but the timestamps provided do not match the Ground Truth. The events themselves are relevant and critical.
+
+[TO-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : How long did it take from initial failure detection to complete service disruption? Describe the progression.
+Answer    : Initial failure detection occurred at 2016-09-28 04:30:31, and the service disruption was complete by 2016-09-28 04:30:33, indicating a rapid progression of events....
+Scoring   : temporal_reasoning
+Judge Note: [Consensus: 3/3 passes] The AI accurately described the temporal progression from initial failure detection to service disruption, matching the Ground Truth.
+
+[TO-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Were there any WARNING-level events BEFORE the first ERROR? If so, summarize them or list up to 3 examples.
+Answer    : No WARNING-level events were observed before the first ERROR....
+Scoring   : temporal_precedence
+Judge Note: [Consensus: 3/3 passes] The AI correctly stated that there were no WARNING-level events before the first ERROR, which is consistent with the Ground Truth.
+
+[TO-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: medium
+Question  : Are there any cyclic or repeating error patterns indicating a continuous retry/fail loop (e.g., continuous interface flapping or repeated protocol handshakes)?
+Answer    : No cyclic or repeating error patterns were identified, suggesting the issue was not a continuous retry/fail loop....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's response aligns with the Ground Truth, indicating the absence of cyclic or repeating error patterns.
+
+[TO-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : temporal_ordering
+Difficulty: easy
+Question  : Identify the timestamp or approximate time when the system first returned to a stable or fully disconnected state after the chaos.
+Answer    : The system appears to have returned to a stable state by 2016-09-29 00:03:25, as indicated by the absence of further errors....
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI identified the correct timestamp for the system's return to stability, matching the Ground Truth.
+
+[SE-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : Summarize the core network problem in 2-3 sentences using plain language (avoid technical jargon where possible).
+Answer    : The network encountered a series of errors related to package applicability and upload failures, resulting in a rapid service disruption. These errors, likely stemming from invalid package manifests, led to a chain reaction of failures, impacting the system's ability to function properly....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's summary of the core network problem is accurate and concise, capturing the essence of the issue.
+
+[SE-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: medium
+Question  : What primary network components or topology elements were affected by this failure? (List the most critical or up to 5 components).
+Answer    : The primary network components affected include the Windows Update Agent and the Microsoft Windows Platform Update, impacting package management and deployment....
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the primary network components affected, which aligns with the Ground Truth.
+
+[SE-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : semantic_equivalence
+Difficulty: hard
+Question  : If you were escalating this ticket to a Tier 3 Network Engineer, write the 1-sentence technical TL;DR they need to read first.
+Answer    : Windows Update Agent and Microsoft Windows Platform Update issues caused package management failures, resulting in numerous errors and warnings....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The technical TL;DR provided by the AI is an accurate and concise summary of the issue.
+
+[SE-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : semantic_equivalence
+Difficulty: easy
+Question  : Translate this technical failure into its likely business or user-facing impact (e.g., loss of redundancy vs. complete user outage).
+Answer    : Users may experience delayed or failed updates, potentially leading to outdated software and security vulnerabilities....
+Scoring   : semantic_similarity
+Judge Note: [Consensus: 3/3 passes] The AI's translation of the technical failure into its business impact is logical and aligns with the potential consequences.
+
+[NE-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of DNS resolution failures in these logs?
+Answer    : No evidence of DNS resolution failures was found in the logs....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly stated that there is no evidence of DNS resolution failures, which is supported by the Ground Truth.
+
+[NE-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any mention of hardware failures (memory errors, CPU spikes, ASIC faults, disk issues)?
+Answer    : No mention of hardware failures was found in the provided logs....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's response is consistent with the Ground Truth, indicating the absence of hardware failure mentions.
+
+[NE-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Does the log contain any security-related events (authentication failures, ACL drops, MAC spoofing, intrusion attempts)?
+Answer    : No security-related events are explicitly mentioned in the log....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the absence of security-related events in the log, which aligns with the Ground Truth.
+
+[NE-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there any evidence of a power failure, brownout, or unscheduled system reboot?
+Answer    : There is no direct evidence of power failure, brownout, or unscheduled system reboot....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI accurately stated that there is no direct evidence of power-related issues, which is consistent with the Ground Truth.
+
+[NE-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Are there any Spanning Tree Protocol (STP) loop detections, topology changes (TCs), or broadcast storms mentioned?
+Answer    : The log does not contain any references to Spanning Tree Protocol (STP) loop detections, topology changes (TCs), or broadcast storms....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's answer matches the Ground Truth, confirming the absence of STP-related issues.
+
+[NE-Q6] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Does the context explicitly mention MTU mismatches or packet fragmentation issues?
+Answer    : MTU mismatches or packet fragmentation issues are not explicitly mentioned in the context....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified that MTU mismatches or packet fragmentation issues are not explicitly mentioned, which is accurate based on the Ground Truth.
+
+[NE-Q7] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : negative_evidence
+Difficulty: medium
+Question  : Is there evidence of an OSPF or BGP routing loop (e.g., TTL expired in transit)?
+Answer    : No evidence of an OSPF or BGP routing loop is found in the log....
+Scoring   : binary_with_evidence
+Judge Note: [Consensus: 3/3 passes] The AI's response aligns with the Ground Truth, indicating no evidence of OSPF or BGP routing loops.
+
+[CTX-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: easy
+Question  : How many distinct network devices or physical interfaces are explicitly mentioned in the logs?
+Answer    : 1...
+Scoring   : counting_with_tolerance
+Judge Note: [Consensus: 3/3 passes] The AI accurately counted the number of distinct network devices or interfaces as 1, which is consistent with the Ground Truth.
+
+[CTX-Q2] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: medium
+Question  : What specific OS versions, firmware versions, or software builds are explicitly mentioned in the context?
+Answer    : Windows 2k...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI correctly identified the OS version as Windows 2k, matching the Ground Truth.
+
+[CTX-Q3] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: hard
+Question  : Extract a sample of 5 to 10 exact IP addresses and 5 to 10 MAC addresses from the logs.
+Answer    : IP addresses: 0.0.0.6, 11.2.1.0, 6.1.1.0, 6.1.1.1, 6.1.1.11, 6.1.1.2, 6.1.1.3, 6.1.1.4, 6.1.1.5, 6.1.19.0
+MAC addresses: None found...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI provided a list of IP addresses and confirmed the absence of MAC addresses, which is accurate based on the Ground Truth.
+
+[CTX-Q4] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: medium
+Question  : Identify up to 5 specific VLAN IDs or Virtual Routing and Forwarding (VRF) instances referenced in the logs.
+Answer    : None found...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI's answer of 'None found' for VLAN IDs or VRF instances is correct, as the Ground Truth does not mention any.
+
+[CTX-Q5] ✅ CORRECT (Score: 1.00, Weight: 0.05)
+Category  : context_retrieval
+Difficulty: easy
+Question  : What diagnostic commands (e.g., 'show tech', 'ping', 'traceroute') were executed to generate these logs, if visible?
+Answer    : None found...
+Scoring   : entity_extraction
+Judge Note: [Consensus: 3/3 passes] The AI correctly stated that no diagnostic commands are visible in the logs, which is consistent with the Ground Truth.
+
+[DYN-Q1] ⚠️ PARTIAL (Score: 0.80, Weight: 0.15)
+Category  : dynamic_entity_tracing
+Difficulty: hard
+Question  : Analyze the logs specifically for the entity 'CBS (Component Based Servicing) - backup log cab creation subroutine'. Detail the exact sequence of events, errors, or state changes that occurred on this component before the failure.
+Answer    : The CBS backup log cab creation subroutine encountered two failures: 'Failed to create backup log cab. [HRESULT = 0x80070001 - ERROR_INVALID_FUNCTION]' at 2016-09-28 04:32:17 and again at 2016-09-29 00:03:25....
+Scoring   : dynamic_trace_validation
+Judge Note: [Consensus: 2/3 passes] The AI correctly identified the component and its failure, but the ground truth also mentions a sequence of events and state changes that occurred before the failure, which were not included in the AI's answer.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ Failed to create backup log cab. [HRESULT = 0x80070001 - ERROR_INVALID_FUNCTION]
+  └─────────────────────────────────────────────────
+
+[REM-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.15)
+Category  : remediation_actionability
+Difficulty: hard
+Question  : The recommended action is roughly: 'Investigate why CBS's cab-creation call returns ERROR_INVALID_FUNCTION during the backup/scavenge phase — check for corrupted or version-mismatched compression libraries (e.g. cabinet.dll), insufficient permissions on the servicing backup directory, or a pending reboot blocking the operation. Since it recurs on a later servicing session (2016-09-29 00:03:25), a manual System File Checker (sfc /scannow) and DISM /RestoreHealth pass is recommended to validate the component store integrity, and monitor whether it prevents future backups needed for rollback support.'. Provide the exact network OS CLI commands (e.g., HPE/Aruba OS syntax or standard Linux network utilities) a network engineer would type to execute this remediation and verify the fix.
+Answer    : The recommended CLI commands are: 'sfc /scannow' and 'DISM /RestoreHealth'. These commands will validate the component store integrity and help identify any issues with the compression libraries or permissions....
+Scoring   : cli_syntax_validation
+Judge Note: [Consensus: 3/3 passes] The AI provided the exact CLI commands as recommended in the ground truth, which is a correct and actionable solution.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ 'sfc /scannow' and 'DISM /RestoreHealth'
+  └─────────────────────────────────────────────────
+
+[ADV-Q1] ✅ CORRECT (Score: 1.00, Weight: 0.10)
+Category  : negative_evidence
+Difficulty: hard
+Question  : Based on the analyzed log data, did the Windows Update client service (wuauclt.exe) report a critical failure in downloading servicing payloads from a remote server that directly caused the CBS backup log cabinet creation to fail?
+Answer    : No, the Windows Update client service did not report a critical failure in downloading servicing payloads. The CBS backup log cabinet creation failure is unrelated to the download process....
+Scoring   : llm_as_judge
+Judge Note: [Consensus: 3/3 passes] The AI's answer is consistent with the ground truth, correctly stating that the Windows Update client service was not involved in the failure.
+
+[ADV-Q2] ⚠️ PARTIAL (Score: 0.75, Weight: 0.10)
+Category  : causal_reasoning
+Difficulty: hard
+Question  : What specific technical implication does HRESULT 0x80070001 (ERROR_INVALID_FUNCTION) have when reported by the CBS backup log cab creation subroutine, distinguishing it from common errors like 0x80070005 (ACCESS_DENIED) or 0x80070002 (FILE_NOT_FOUND), and what core type of component does it most strongly implicate as potentially corrupted or mismatched in this context?
+Answer    : HRESULT 0x80070001 (ERROR_INVALID_FUNCTION) indicates an invalid function call or incorrect parameter. It suggests a potential issue with the compression libraries or a mismatch in the component store....
+Scoring   : llm_as_judge
+Judge Note: [Consensus: 2/3 passes] The AI accurately described the implication of HRESULT 0x80070001, but it did not explicitly mention the core type of component it implicates. The ground truth suggests 'compression libraries' as the potential issue.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ potential issue with the compression libraries or a mismatch in the component store.
+  └─────────────────────────────────────────────────
+
+[ADV-Q3] ⚠️ PARTIAL (Score: 0.75, Weight: 0.15)
+Category  : temporal_ordering
+Difficulty: hard
+Question  : Chronologically trace the full sequence of events, starting from the initiation of the TrustedInstaller servicing/scavenge cycle, detailing the initial CBS backup log cabinet creation failure (including its HRESULT), noting the precise timestamp of its recurrence, and concluding with the identified long-term operational impact that necessitates the recommended diagnostic steps.
+Answer    : The TrustedInstaller initiated a servicing/scavenge cycle, but the initial CBS backup log cabinet creation failed with HRESULT 0x80070001. This error recurred on 2016-09-29 00:03:25, indicating a potential long-term issue with the component store integrity, hence the recommended diagnostic steps....
+Scoring   : llm_as_judge
+Judge Note: [Consensus: 2/3 passes] The AI traced the sequence of events and mentioned the initial failure and its recurrence, but it did not provide the precise timestamp of the recurrence as stated in the ground truth.
+
+  ┌── EXECUTABLE SOLUTION / CLI COMMANDS ───────────
+  │ TrustedInstaller initiated a servicing/scavenge cycle, but the initial CBS backup log cabinet creation failed with HRESULT 0x80070001. This error recurred on 2016-09-29 00:03:25
+  └─────────────────────────────────────────────────
+
+
+================================================================================
+OVERALL AVERAGE: 89.0%
+================================================================================

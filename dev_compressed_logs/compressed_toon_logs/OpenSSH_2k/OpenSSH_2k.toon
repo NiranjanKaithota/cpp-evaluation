@@ -1,0 +1,839 @@
+TOON-X:5.0 FORMAT:syslog FILE:OpenSSH_2k.log BASE_TS:1796409000
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:1796409000 span=0s events=2000 sources=['09:676', '10:554', '11:476', '07:169', '08:118']
+ENTITIES:39 RELATIONSHIPS:6 CLUSTERS:93
+[L1]
+NAME:NEW_ERROR_TYPE SEV:E COUNT:22 SPAN:0->end
+  CLUSTERS:@1,@2,@3,@5,@6,@15,@17,@18,@19,@20,@21,@30,@31,@43,@48,@49,@50,@68,@79,@80,@91,@93
+  DESC:22 unique high-severity event types observed
+NAME:AUTH_BURST SEV:E COUNT:1008 SPAN:0->end
+  CLUSTERS:@2,@3,@5,@6,@9,@10,@12,@13,@17,@20,@21,@23,@29,@30,@34,@35,@37,@38,@40,@41,@43,@44,@49,@50,@52,@53,@54,@57,@58,@61,@70,@74,@75,@77,@78,@79,@80,@82,@84,@85,@86,@88,@89,@91
+  DESC:1008 authentication failures — possible attack
+[SEM]
+SEM_01=APPLICATION.GENERIC.EVENT
+SEM_02=SECURITY.AUTH.FAILURE
+SEM_03=GENERIC.ALERT.ERROR
+SEM_04=WEB.HTTP.2XX
+SEM_05=NETWORK.CONNECTIVITY.ERROR
+SEM_06=NETWORK.CONNECTIVITY.FAILURE
+[ENT]
+## IPV4
+IP_01=1.237.174.253
+IP_02=103.207.39.16
+IP_03=103.207.39.165
+IP_04=103.207.39.212
+IP_05=103.99.0.122
+IP_06=104.192.3.34
+IP_07=106.5.5.195
+IP_08=112.95.230.3
+IP_09=119.137.62.142
+IP_10=119.4.203.64
+IP_11=123.235.32.19
+IP_12=173.234.31.186
+IP_13=175.102.13.6
+IP_14=177.79.82.136
+IP_15=181.214.87.4
+IP_16=183.136.162.51
+IP_17=183.62.140.253
+IP_18=185.190.58.151
+IP_19=187.141.143.180
+IP_20=188.132.244.89
+IP_21=191.210.223.172
+IP_22=194.190.163.22
+IP_23=195.154.37.122
+IP_24=202.100.179.208
+IP_25=212.47.254.145
+IP_26=5.188.10.180
+IP_27=5.36.59.76
+IP_28=52.80.34.196
+IP_29=60.2.12.12
+IP_30=88.147.143.242
+## USER
+USR_01=ftp
+USR_02=git
+USR_03=mysql
+USR_04=root
+USR_05=sshd
+USR_06=uucp
+## CUSTOM
+CUSTOM_01=10
+## CN
+CN_01=cn-north-1
+## CUSTOMER
+CUSTOMER_01=customer-187-141-143-180-sta
+[T]
+T0=SEM_03|<NUM>:<NUM> LabSZ sshd<BRACKET>: reverse mapping checking getaddrinfo for ns.marryaldkfaczcz.com <BRACKET> failed - POSSIBLE BREAK-IN ATTEMPT!
+T1=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: Invalid user webmaster from IP_12
+T2=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: input_userauth_request: invalid user webmaster <BRACKET>
+T3=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:auth): check pass; user unknown
+T4=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:auth): authentication failure; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= rhost=IP_12
+T5=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: Failed password for invalid user webmaster from IP_12 port <NUM> ssh2
+T6=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: <*> <*> <*> <*> <BRACKET>
+T7=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: Invalid user <*> from <*>
+T8=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:auth): authentication failure; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= <*>
+T9=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: Failed password for invalid user <*> from <*> port <NUM> ssh2
+T10=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: Received disconnect from IP_28: <NUM>: Bye Bye <BRACKET>
+T11=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: Received disconnect from <*> <NUM>: Bye Bye <BRACKET>
+T12=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:auth): authentication failure; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= rhost=IP_27.dynamic-dsl-ip.omantel.net.om user=root
+T13=SEM_03|<NUM>:<NUM> LabSZ sshd<BRACKET>: Failed password for root from IP_27 port <NUM> ssh2
+T14=SEM_03|<NUM>:<NUM> LabSZ sshd<BRACKET>: message repeated <NUM> times: [ Failed password for root from IP_27 port <NUM> ssh2]
+T15=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: Disconnecting: Too many authentication failures for root <BRACKET>
+T16=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: PAM <NUM> more authentication failures; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= rhost=IP_27.dynamic-dsl-ip.omantel.net.om user=root
+T17=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: PAM service(sshd) ignoring max retries; <NUM> > <NUM>
+T18=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:auth): authentication failure; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= <*> user=root
+T19=SEM_03|<NUM>:<NUM> LabSZ sshd<BRACKET>: Failed password for root from <*> port <NUM> ssh2
+T20=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: Did not receive identification string from IP_11
+T21=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: Did not receive identification string from <*>
+T22=SEM_04|<NUM>:<NUM> LabSZ sshd<BRACKET>: reverse mapping checking getaddrinfo for <*> <BRACKET> failed - POSSIBLE BREAK-IN ATTEMPT!
+T23=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: error: Received disconnect from IP_23: <NUM>: com.jcraft.jsch.JSchException: Auth fail <BRACKET>
+T24=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:auth): authentication failure; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= <*> <*>
+T25=SEM_03|<NUM>:<NUM> LabSZ sshd<BRACKET>: Failed password for <*> from <*> port <NUM> ssh2
+T26=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: Received disconnect from IP_03: <NUM>: Closed due to user request. <BRACKET>
+T27=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: Failed <*> for invalid user <*> from <*> port <NUM> ssh2
+T28=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: PAM <NUM> more authentication failures; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= rhost=IP_26
+T29=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: PAM <NUM> more authentication <*> logname= uid=<NUM> euid=<NUM> tty=ssh ruser= rhost=IP_26
+T30=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: Received disconnect from <*> <NUM>: Closed due to user request. <BRACKET>
+T31=SEM_03|<NUM>:<NUM> LabSZ sshd<BRACKET>: message repeated <NUM> times: [ Failed password for root from <*> port <NUM> ssh2]
+T32=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: PAM <NUM> more authentication failures; logname= uid=<NUM> euid=<NUM> tty=ssh ruser= <*> user=root
+T33=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: PAM <NUM> more authentication <*> logname= uid=<NUM> euid=<NUM> tty=ssh ruser= <*>
+T34=SEM_03|<NUM>:<NUM> LabSZ sshd<BRACKET>: error: Received disconnect from IP_05: <NUM>: No more user authentication methods available. <BRACKET>
+T35=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: <*> password for <*> from <*> port <NUM> ssh2
+T36=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:session): session opened for user fztu by (uid=<NUM>)
+T37=SEM_05|<NUM>:<NUM> LabSZ sshd<BRACKET>: Received disconnect from <*> <NUM>: <*> <*> <*>
+T38=SEM_01|<NUM>:<NUM> LabSZ sshd<BRACKET>: pam_unix(sshd:session): session closed for user fztu
+T39=SEM_02|<NUM>:<NUM> LabSZ sshd<BRACKET>: Disconnecting: Too many authentication failures for <*> <BRACKET>
+T40=SEM_06|<NUM>:<NUM> LabSZ sshd<BRACKET>: fatal: Write failed: Connection reset by peer <BRACKET>
+[TIMELINE]
+[0s-0s] @1[E](1x), @2[E](1x), @3[E](1x), @4(1x), @5[E](1x), @6[E](1x), @7(1x), @9[E](9x), @10[E](9x), @12[E](9x)
+        @13[E](9x), @14(1x), @15[E](1x), @17[E](1x), @18[E](1x), @19[E](1x), @20[E](1x), @21[E](1x), @22(1x), @23[E](32x)
+        @24[E](32x), @25(1x), @26(3x), @28[E](2x), @29[E](2x), @30[E](1x), @31[E](1x), @32(1x), @34[E](13x), @35[E](13x)
+        @37[E](12x), @38[E](2x), @39(2x), @40[E](21x), @41[E](2x), @42(3x), @43[E](1x), @44[E](3x), @45[E](3x), @46(2x)
+        @47(3x), @48[E](1x), @49[E](1x), @50[E](1x), @51(4x), @52[E](64x), @53[E](64x), @54[E](75x), @57[E](62x), @58[E](4x)
+        @59(2x), @60[E](30x), @61[E](60x), @62[E](60x), @63[E](80x), @65(3x), @66(1x), @67(1x), @68[E](1x), @69(1x)
+        @70[E](154x), @71[E](153x), @74[E](13x), @75[E](13x), @77[E](13x), @78[E](18x), @79[E](1x), @80[E](1x), @81(1x), @82[E](133x)
+        @84[E](133x), @85[E](13x), @86[E](13x), @88[E](13x), @89[E](13x), @90(1x), @91[E](1x), @92[E](15x), @93[C](1x)
+[REL]
+CUSTOM_01:[USR_01,USR_02,USR_03,USR_04,USR_05,USR_06]
+[CAUSE]
+SEM_03>SEM_02|CONF:55 x192 (@1(SEM_03)>@2(SEM_02), @1(SEM_03)>@3(SEM_02), @1(SEM_03)>@5(SEM_02))
+SEM_03>SEM_01|CONF:57 x53 (@1(SEM_03)>@4(SEM_01), @1(SEM_03)>@7(SEM_01), @15(SEM_03)>@16(SEM_01))
+SEM_03>SEM_03|CONF:54 x42 (@1(SEM_03)>@15(SEM_03), @1(SEM_03)>@18(SEM_03), @1(SEM_03)>@19(SEM_03))
+SEM_02>SEM_02|CONF:55 x661 (@2(SEM_02)>@3(SEM_02), @2(SEM_02)>@5(SEM_02), @2(SEM_02)>@6(SEM_02))
+SEM_02>SEM_01|CONF:57 x220 (@2(SEM_02)>@4(SEM_01), @2(SEM_02)>@7(SEM_01), @2(SEM_02)>@8(SEM_01))
+SEM_02>SEM_03|CONF:55 x157 (@2(SEM_02)>@15(SEM_03), @2(SEM_02)>@18(SEM_03), @2(SEM_02)>@19(SEM_03))
+SEM_01>SEM_02|CONF:56 x197 (@4(SEM_01)>@5(SEM_02), @4(SEM_01)>@6(SEM_02), @4(SEM_01)>@9(SEM_02))
+SEM_01>SEM_01|CONF:56 x90 (@4(SEM_01)>@7(SEM_01), @4(SEM_01)>@8(SEM_01), @7(SEM_01)>@8(SEM_01))
+SEM_01>SEM_03|CONF:56 x43 (@11(SEM_01)>@15(SEM_03), @14(SEM_01)>@15(SEM_03), @14(SEM_01)>@18(SEM_03))
+SEM_02>SEM_04|CONF:57 x3 (@21(SEM_02)>@27(SEM_04), @23(SEM_02)>@27(SEM_04), @23(SEM_02)>@27(SEM_04))
+SEM_01>SEM_04|CONF:57 x4 (@22(SEM_01)>@27(SEM_04), @25(SEM_01)>@27(SEM_04), @26(SEM_01)>@27(SEM_04))
+SEM_03>SEM_04|CONF:55 x2 (@24(SEM_03)>@27(SEM_04), @24(SEM_03)>@27(SEM_04))
+SEM_04>SEM_03|CONF:57 x3 (@27(SEM_04)>@28(SEM_03), @27(SEM_04)>@31(SEM_03), @27(SEM_04)>@24(SEM_03))
+SEM_04>SEM_02|CONF:57 x3 (@27(SEM_04)>@29(SEM_02), @27(SEM_04)>@30(SEM_02), @27(SEM_04)>@23(SEM_02))
+SEM_04>SEM_01|CONF:57 x3 (@27(SEM_04)>@32(SEM_01), @27(SEM_04)>@33(SEM_01), @27(SEM_04)>@8(SEM_01))
+SEM_01>SEM_05|CONF:58 x5 (@64(SEM_01)>@68(SEM_05), @65(SEM_01)>@68(SEM_05), @66(SEM_01)>@68(SEM_05))
+SEM_05>SEM_01|CONF:58 x5 (@68(SEM_05)>@69(SEM_01), @68(SEM_05)>@72(SEM_01), @68(SEM_05)>@73(SEM_01))
+SEM_05>SEM_02|CONF:55 x6 (@68(SEM_05)>@70(SEM_02), @68(SEM_05)>@74(SEM_02), @68(SEM_05)>@75(SEM_02))
+SEM_05>SEM_03|CONF:55 x1 (@68(SEM_05)>@71(SEM_03))
+SEM_01>SEM_06|CONF:60 x1 (@90(SEM_01)>@93(SEM_06))
+SEM_02>SEM_06|CONF:60 x1 (@91(SEM_02)>@93(SEM_06))
+SEM_03>SEM_06|CONF:60 x1 (@92(SEM_03)>@93(SEM_06))
+[L4]
+## TIER_0 CRITICAL
+@93 1x C S5 T40 ^0 IMP:1.00
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 03:53 LabSZ sshd[25457]: fatal: Write failed: Connection reset by peer [preauth]
+## TIER_1 IMPORTANT
+@1 1x E S0 T0 ^0 FLOW:FLOW_8 IMP:0.83
+  ENTITIES:IP_12
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 55:46 LabSZ sshd[24200]: reverse mapping checking getaddrinfo for ns.marryaldkfaczcz.com [IP_12] failed - POSSIBLE BREAK-IN ATTEMPT!
+@2 1x E S0 T1 ^0 FLOW:FLOW_8 IMP:0.83
+  ENTITIES:IP_12
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 55:46 LabSZ sshd[24200]: Invalid user webmaster from IP_12
+@3 1x E S0 T2 ^0 FLOW:FLOW_8 IMP:0.83
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 55:46 LabSZ sshd[24200]: input_userauth_request: invalid user webmaster [preauth]
+@5 1x E S0 T4 ^0 FLOW:FLOW_8 IMP:0.81
+  ENTITIES:IP_12
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 55:46 LabSZ sshd[24200]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_12
+@6 1x E S0 T5 ^0 FLOW:FLOW_4 IMP:0.83
+  ENTITIES:IP_12
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 55:48 LabSZ sshd[24200]: Failed password for invalid user webmaster from IP_12 port 38926 ssh2
+@9 9x E S1 T7 ^0->0 burst(rate=9.0/s) FLOW:FLOW_1 IMP:0.61
+  ENTITIES:IP_28 IP_12 IP_24 IP_08 IP_16 IP_23 IP_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(9x)
+    Slot 2 (user): support(2x) test9(1x) webmaster(1x) chen(1x) pgadmin(1x)
+    Slot 3 (from): IP_28(2x) IP_08(2x) IP_12(1x) IP_24(1x) IP_16(1x)
+  SAMPLES:
+    - 07:38 LabSZ sshd[24206]: Invalid user test9 from IP_28
+    - 08:28 LabSZ sshd[24208]: Invalid user webmaster from IP_12
+@10 9x E S1 T6 ^0->0 burst(rate=9.0/s) FLOW:FLOW_1 IMP:0.61
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(9x)
+    Slot 2 (sshdbracket): input_userauth_request:(9x)
+    Slot 3 (sshdbracket): invalid(9x)
+    Slot 4 (sshdbracket): user(9x)
+    Slot 5 (sshdbracket): support(2x) test9(1x) webmaster(1x) chen(1x) pgadmin(1x)
+    Slot 6 (sshdbracket): <BRACKET>(9x)
+  SAMPLES:
+    - 07:38 LabSZ sshd[24206]: input_userauth_request: invalid user test9 [preauth]
+    - 08:28 LabSZ sshd[24208]: input_userauth_request: invalid user webmaster [preauth]
+@12 9x E S1 T8 ^0->0 burst(rate=9.0/s) FLOW:FLOW_1 IMP:0.60
+  ENTITIES:CN_01 IP_12 IP_24 IP_08 IP_16 IP_23 IP_03
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=ec2-<NUM>-<NUM>-<NUM>-<NUM>.CN_01.compute.amazonaws.com.cn] (2x)
+    [<NUM>:<NUM> -> rhost=IP_08] (2x)
+    [<NUM>:<NUM> -> rhost=IP_12] (1x)
+    [<NUM>:<NUM> -> rhost=IP_24] (1x)
+    [<NUM>:<NUM> -> rhost=IP_16] (1x)
+  SAMPLES:
+    - 07:38 LabSZ sshd[24206]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=ec2-52-80-34-196.CN_01.compute.ama...
+    - 08:28 LabSZ sshd[24208]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_12
+@13 9x E S1 T9 ^0->0 burst(rate=9.0/s) FLOW:FLOW_1 IMP:0.60
+  ENTITIES:IP_28 IP_12 IP_24 IP_08 IP_16 IP_23 IP_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(9x)
+    Slot 2 (user): support(2x) test9(1x) webmaster(1x) chen(1x) pgadmin(1x)
+    Slot 3 (from): IP_28(2x) IP_08(2x) IP_12(1x) IP_24(1x) IP_16(1x)
+    Slot 4 (port): <NUM>(9x)
+  SAMPLES:
+    - 07:45 LabSZ sshd[24206]: Failed password for invalid user test9 from IP_28 port 36060 ssh2
+    - 08:30 LabSZ sshd[24208]: Failed password for invalid user webmaster from IP_12 port 39257 ssh2
+@15 1x E S1 T0 ^0 FLOW:FLOW_36 IMP:0.83
+  ENTITIES:IP_12
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 08:28 LabSZ sshd[24208]: reverse mapping checking getaddrinfo for ns.marryaldkfaczcz.com [IP_12] failed - POSSIBLE BREAK-IN ATTEMPT!
+@17 1x E S1 T12 ^0 FLOW:FLOW_27 IMP:0.83
+  ENTITIES:USR_04 IP_27
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 13:31 LabSZ sshd[24227]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_27.dynamic-dsl-ip.omantel.net.o...
+  FIELDS:user=root
+@18 1x E S1 T13 ^0 FLOW:FLOW_27 IMP:0.81
+  ENTITIES:IP_27
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 13:43 LabSZ sshd[24227]: Failed password for root from IP_27 port 42393 ssh2
+@19 1x E S1 T14 ^0 FLOW:FLOW_8 IMP:0.83
+  ENTITIES:IP_27
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (repeated): <NUM>(1x)
+    Slot 3 (port): <NUM>(1x)
+  SAMPLES:
+    - 13:56 LabSZ sshd[24227]: message repeated 5 times: [ Failed password for root from IP_27 port 42393 ssh2]
+@20 1x E S1 T15 ^0 FLOW:FLOW_8 IMP:0.83
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 13:56 LabSZ sshd[24227]: Disconnecting: Too many authentication failures for root [preauth]
+@21 1x E S1 T16 ^0 FLOW:FLOW_8 IMP:0.83
+  ENTITIES:USR_04 IP_27
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 13:56 LabSZ sshd[24227]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_27.dynamic-dsl-ip.omantel.net.om  user=root
+  FIELDS:user=root
+@23 32x E S1 T18 ^0->0 burst(rate=32.0/s) FLOW:FLOW_8 IMP:0.57
+  ENTITIES:IP_08 USR_04 IP_11 IP_21
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_08] (24x)
+    [<NUM>:<NUM> -> rhost=IP_11] (7x)
+    [<NUM>:<NUM> -> rhost=IP_21] (1x)
+  SAMPLES:
+    - 27:50 LabSZ sshd[24235]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_08  user=root
+    - 27:53 LabSZ sshd[24237]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_08  user=root
+  FIELDS:user=root
+@24 32x E S1 T19 ^0->0 burst(rate=32.0/s) FLOW:FLOW_29 IMP:0.57
+  ENTITIES:IP_08 IP_11 IP_21
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(32x)
+    Slot 2 (from): IP_08(24x) IP_11(7x) IP_21(1x)
+    Slot 3 (port): <NUM>(32x)
+  SAMPLES:
+    - 27:52 LabSZ sshd[24235]: Failed password for root from IP_08 port 45378 ssh2
+    - 27:55 LabSZ sshd[24237]: Failed password for root from IP_08 port 47068 ssh2
+@28 2x E S1 T22 ^0->0 burst(rate=2.0/s) FLOW:FLOW_22 IMP:0.66
+  ENTITIES:IP_23
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (for): <NUM>-<NUM>-<NUM>-<NUM>.rev.poneytelecom.eu(2x)
+    Slot 3 (for): <BRACKET>(2x)
+  SAMPLES:
+    - 51:12 LabSZ sshd[24324]: reverse mapping checking getaddrinfo for 195-154-37-122.rev.poneytelecom.eu [IP_23] failed - POSSIBLE BREAK-IN ATTEMPT!
+    - 51:17 LabSZ sshd[24326]: reverse mapping checking getaddrinfo for 195-154-37-122.rev.poneytelecom.eu [IP_23] failed - POSSIBLE BREAK-IN ATTEMPT!
+@29 2x E S1 T23 ^0->0 burst(rate=2.0/s) FLOW:FLOW_22 IMP:0.66
+  ENTITIES:IP_23
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (2x)
+  SAMPLES:
+    - 51:15 LabSZ sshd[24324]: error: Received disconnect from IP_23: 3: com.jcraft.jsch.JSchException: Auth fail [preauth]
+    - 51:20 LabSZ sshd[24326]: error: Received disconnect from IP_23: 3: com.jcraft.jsch.JSchException: Auth fail [preauth]
+@30 1x E S1 T24 ^0 FLOW:FLOW_22 IMP:0.81
+  ENTITIES:IP_23 USR_06
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (ruser): rhost=IP_23(1x)
+    Slot 3 (ruser): user=uucp(1x)
+  SAMPLES:
+    - 51:18 LabSZ sshd[24326]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_23  user=uucp
+  FIELDS:user=uucp
+@31 1x E S1 T25 ^0 FLOW:FLOW_19 IMP:0.81
+  ENTITIES:IP_23
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (for): uucp(1x)
+    Slot 3 (from): IP_23(1x)
+    Slot 4 (port): <NUM>(1x)
+  SAMPLES:
+    - 51:20 LabSZ sshd[24326]: Failed password for uucp from IP_23 port 59266 ssh2
+@34 13x E S2 T7 ^0->0 burst(rate=13.0/s) FLOW:FLOW_1 IMP:0.60
+  ENTITIES:IP_13 IP_26 IP_04 IP_28
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (user): admin(5x) <NUM>(3x) inspur(1x) default(1x) guest(1x)
+    Slot 3 (from): IP_26(9x) IP_04(2x) IP_13(1x) IP_28(1x)
+  SAMPLES:
+    - 08:41 LabSZ sshd[24338]: Invalid user inspur from IP_13
+    - 24:32 LabSZ sshd[24361]: Invalid user  0101 from IP_26
+@35 13x E S2 T6 ^0->0 burst(rate=13.0/s) FLOW:FLOW_1 IMP:0.60
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (sshdbracket): input_userauth_request:(13x)
+    Slot 3 (sshdbracket): invalid(13x)
+    Slot 4 (sshdbracket): user(13x)
+    Slot 5 (sshdbracket): admin(5x) <NUM>(3x) inspur(1x) default(1x) guest(1x)
+    Slot 6 (sshdbracket): <BRACKET>(13x)
+  SAMPLES:
+    - 08:41 LabSZ sshd[24338]: input_userauth_request: invalid user inspur [preauth]
+    - 24:32 LabSZ sshd[24361]: input_userauth_request: invalid user  0101 [preauth]
+@37 12x E S2 T8 ^0->0 burst(rate=12.0/s) FLOW:FLOW_1 IMP:0.60
+  ENTITIES:IP_13 IP_26 IP_04 CN_01
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_26] (8x)
+    [<NUM>:<NUM> -> rhost=IP_04] (2x)
+    [<NUM>:<NUM> -> rhost=IP_13] (1x)
+    [<NUM>:<NUM> -> rhost=ec2-<NUM>-<NUM>-<NUM>-<NUM>.CN_01.compute.amazonaws.com.cn] (1x)
+  SAMPLES:
+    - 08:41 LabSZ sshd[24338]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_13
+    - 24:32 LabSZ sshd[24361]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_26
+@38 2x E S2 T9 ^0->0 burst(rate=2.0/s) FLOW:FLOW_1 IMP:0.64
+  ENTITIES:IP_13 IP_26
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (user): inspur(1x) <NUM>(1x)
+    Slot 3 (from): IP_13(1x) IP_26(1x)
+    Slot 4 (port): <NUM>(2x)
+  SAMPLES:
+    - 08:43 LabSZ sshd[24338]: Failed password for invalid user inspur from IP_13 port 47130 ssh2
+    - 24:35 LabSZ sshd[24361]: Failed password for invalid user  0101 from IP_26 port 36279 ssh2
+@40 21x E S2 T27 ^0->0 burst(rate=21.0/s) FLOW:FLOW_6 IMP:0.58
+  ENTITIES:IP_26 IP_04 IP_28
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(21x)
+    Slot 2 (failed): password(19x) none(2x)
+    Slot 3 (user): admin(13x) <NUM>(3x) default(2x) guest(1x) support(1x)
+    Slot 4 (from): IP_26(18x) IP_04(2x) IP_28(1x)
+    Slot 5 (port): <NUM>(21x)
+  SAMPLES:
+    - 24:40 LabSZ sshd[24363]: Failed none for invalid user 0 from IP_26 port 49811 ssh2
+    - 24:45 LabSZ sshd[24363]: Failed password for invalid user 0 from IP_26 port 49811 ssh2
+@41 2x E S2 T28 ^0->0 burst(rate=2.0/s) FLOW:FLOW_6 IMP:0.66
+  ENTITIES:IP_26
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (2x)
+  SAMPLES:
+    - 25:22 LabSZ sshd[24369]: PAM 4 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_26
+    - 25:41 LabSZ sshd[24371]: PAM 4 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_26
+@43 1x E S2 T29 ^0 FLOW:FLOW_6 IMP:0.83
+  ENTITIES:IP_26
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (pam): <NUM>(1x)
+    Slot 3 (authentication): failure;(1x)
+  SAMPLES:
+    - 26:04 LabSZ sshd[24375]: PAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_26
+@44 3x E S2 T24 ^0->0 burst(rate=3.0/s) FLOW:FLOW_6 IMP:0.64
+  ENTITIES:IP_26 USR_01 IP_04 USR_06 IP_07 USR_04
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (ruser): rhost=IP_26(1x) rhost=IP_04(1x) rhost=IP_07(1x)
+    Slot 3 (ruser): user=ftp(1x) user=uucp(1x) user=root(1x)
+  SAMPLES:
+    - 26:09 LabSZ sshd[24377]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_26  user=ftp
+    - 33:27 LabSZ sshd[24387]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_04  user=uucp
+  FIELDS:user=ftp
+@45 3x E S2 T25 ^0->0 burst(rate=3.0/s) FLOW:FLOW_29 IMP:0.63
+  ENTITIES:IP_26 IP_04 IP_07
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (for): ftp(1x) uucp(1x) root(1x)
+    Slot 3 (from): IP_26(1x) IP_04(1x) IP_07(1x)
+    Slot 4 (port): <NUM>(3x)
+  SAMPLES:
+    - 26:12 LabSZ sshd[24377]: Failed password for ftp from IP_26 port 54715 ssh2
+    - 33:29 LabSZ sshd[24387]: Failed password for uucp from IP_04 port 51528 ssh2
+@48 1x E S2 T31 ^0 FLOW:FLOW_8 IMP:0.83
+  ENTITIES:IP_07
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (repeated): <NUM>(1x)
+    Slot 3 (from): IP_07(1x)
+    Slot 4 (port): <NUM>(1x)
+  SAMPLES:
+    - 39:59 LabSZ sshd[24408]: message repeated 5 times: [ Failed password for root from IP_07 port 50719 ssh2]
+@49 1x E S2 T15 ^0 FLOW:FLOW_8 IMP:0.83
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 39:59 LabSZ sshd[24408]: Disconnecting: Too many authentication failures for root [preauth]
+@50 1x E S2 T32 ^0 FLOW:FLOW_8 IMP:0.83
+  ENTITIES:IP_07 USR_04
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (pam): <NUM>(1x)
+    Slot 3 (ruser): rhost=IP_07(1x)
+  SAMPLES:
+    - 39:59 LabSZ sshd[24408]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_07  user=root
+  FIELDS:user=root
+@52 64x E S3 T7 ^0->0 burst(rate=64.0/s) FLOW:FLOW_8 IMP:0.56
+  ENTITIES:IP_18 IP_05 IP_19 IP_02 IP_06 IP_28 IP_15
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(64x)
+    Slot 2 (user): admin(12x) <NUM>(4x) oracle(4x) support(2x) user(2x)
+    Slot 3 (from): IP_19(29x) IP_05(23x) IP_18(7x) IP_02(2x) IP_06(1x)
+  SAMPLES:
+    - 07:23 LabSZ sshd[24415]: Invalid user 0 from IP_18
+    - 07:56 LabSZ sshd[24417]: Invalid user 123 from IP_18
+@53 64x E S3 T6 ^0->0 burst(rate=64.0/s) FLOW:FLOW_23 IMP:0.55
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(64x)
+    Slot 2 (sshdbracket): input_userauth_request:(64x)
+    Slot 3 (sshdbracket): invalid(64x)
+    Slot 4 (sshdbracket): user(64x)
+    Slot 5 (sshdbracket): admin(12x) <NUM>(4x) oracle(4x) support(2x) user(2x)
+    Slot 6 (sshdbracket): <BRACKET>(64x)
+  SAMPLES:
+    - 07:23 LabSZ sshd[24415]: input_userauth_request: invalid user 0 [preauth]
+    - 07:56 LabSZ sshd[24417]: input_userauth_request: invalid user 123 [preauth]
+@54 75x E S3 T27 ^0->0 burst(rate=75.0/s) FLOW:FLOW_23 IMP:0.54
+  ENTITIES:IP_18 IP_05 IP_19 IP_02 IP_06 IP_28 IP_15
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(75x)
+    Slot 2 (failed): password(73x) none(2x)
+    Slot 3 (user): admin(23x) <NUM>(4x) oracle(4x) support(2x) user(2x)
+    Slot 4 (from): IP_19(29x) IP_05(23x) IP_18(18x) IP_02(2x) IP_06(1x)
+    Slot 5 (port): <NUM>(75x)
+  SAMPLES:
+    - 07:23 LabSZ sshd[24415]: Failed none for invalid user 0 from IP_18 port 55495 ssh2
+    - 07:58 LabSZ sshd[24417]: Failed password for invalid user 123 from IP_18 port 48700 ssh2
+@57 62x E S3 T8 ^0->0 burst(rate=62.0/s) FLOW:FLOW_11 IMP:0.55
+  ENTITIES:IP_18 IP_05 IP_19 IP_02 IP_06 CN_01
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_19] (29x)
+    [<NUM>:<NUM> -> rhost=IP_05] (23x)
+    [<NUM>:<NUM> -> rhost=IP_18] (6x)
+    [<NUM>:<NUM> -> rhost=IP_02] (2x)
+    [<NUM>:<NUM> -> rhost=IP_06] (1x)
+  SAMPLES:
+    - 07:56 LabSZ sshd[24417]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_18
+    - 08:38 LabSZ sshd[24419]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_18
+@58 4x E S3 T33 ^0->0 burst(rate=4.0/s) FLOW:FLOW_11 IMP:0.64
+  ENTITIES:IP_18
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(4x)
+    Slot 2 (pam): <NUM>(4x)
+    Slot 3 (authentication): failures;(3x) failure;(1x)
+    Slot 4 (ruser): rhost=IP_18(4x)
+  SAMPLES:
+    - 08:59 LabSZ sshd[24419]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_18
+    - 10:32 LabSZ sshd[24421]: PAM 4 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_18
+@60 30x E S3 T34 ^0->0 burst(rate=30.0/s) FLOW:FLOW_31 IMP:0.59
+  ENTITIES:IP_05
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (30x)
+  SAMPLES:
+    - 11:22 LabSZ sshd[24439]: error: Received disconnect from IP_05: 14: No more user authentication methods available. [preauth]
+    - 11:26 LabSZ sshd[24441]: error: Received disconnect from IP_05: 14: No more user authentication methods available. [preauth]
+@61 60x E S3 T24 ^0->0 burst(rate=60.0/s) FLOW:FLOW_31 IMP:0.55
+  ENTITIES:IP_05 USR_04 USR_06 USR_05 USR_01 IP_19 USR_02 IP_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(60x)
+    Slot 2 (ruser): rhost=IP_19(51x) rhost=IP_05(7x) rhost=IP_02(1x) rhost=IP_06(1x)
+    Slot 3 (ruser): user=root(51x) user=uucp(2x) user=ftp(2x) user=git(2x) user=mysql(2x)
+  SAMPLES:
+    - 11:29 LabSZ sshd[24445]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_05  user=root
+    - 11:35 LabSZ sshd[24449]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_05  user=root
+  FIELDS:user=root
+@62 60x E S3 T25 ^0->0 burst(rate=60.0/s) IMP:0.55
+  ENTITIES:IP_05 IP_19 IP_02 IP_06
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(60x)
+    Slot 2 (for): root(51x) uucp(2x) ftp(2x) git(2x) mysql(2x)
+    Slot 3 (from): IP_19(51x) IP_05(7x) IP_02(1x) IP_06(1x)
+    Slot 4 (port): <NUM>(60x)
+  SAMPLES:
+    - 11:31 LabSZ sshd[24445]: Failed password for root from IP_05 port 49486 ssh2
+    - 11:37 LabSZ sshd[24449]: Failed password for root from IP_05 port 58123 ssh2
+@63 80x E S3 T22 ^0->0 burst(rate=80.0/s) FLOW:FLOW_29 IMP:0.56
+  ENTITIES:IP_19 CUSTOMER_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(80x)
+    Slot 2 (for): CUSTOMER_01.uninet-ide.com.mx(80x)
+    Slot 3 (for): <BRACKET>(80x)
+  SAMPLES:
+    - 12:46 LabSZ sshd[24503]: reverse mapping checking getaddrinfo for CUSTOMER_01.uninet-ide.com.mx [IP_19] failed - POSSIBLE BREAK-IN ATTEMPT!
+    - 12:51 LabSZ sshd[24505]: reverse mapping checking getaddrinfo for CUSTOMER_01.uninet-ide.com.mx [IP_19] failed - POSSIBLE BREAK-IN ATTEMPT!
+@68 1x E S3 T37 ^0 IMP:0.83
+  ENTITIES:IP_09
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (from): IP_09:(1x)
+    Slot 3 (from): disconnected(1x)
+    Slot 4 (from): by(1x)
+    Slot 5 (from): user(1x)
+  SAMPLES:
+    - 45:06 LabSZ sshd[24761]: Received disconnect from IP_09: 11: disconnected by user
+@70 154x E S4 T24 ^0->0 burst(rate=154.0/s) FLOW:FLOW_27 IMP:0.53
+  ENTITIES:IP_29 USR_04 IP_17 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(154x)
+    Slot 2 (ruser): rhost=IP_17(149x) rhost=IP_29(5x)
+    Slot 3 (ruser): user=root(153x) user=git(1x)
+  SAMPLES:
+    - 04:52 LabSZ sshd[24809]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_29  user=root
+    - 04:54 LabSZ sshd[24811]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_29  user=root
+  FIELDS:user=root
+@71 153x E S4 T35 ^0->0 burst(rate=153.0/s) FLOW:FLOW_27 IMP:0.52
+  ENTITIES:IP_29 IP_17
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(153x)
+    Slot 2 (sshdbracket): Failed(153x)
+    Slot 3 (for): root(152x) git(1x)
+    Slot 4 (from): IP_17(148x) IP_29(5x)
+    Slot 5 (port): <NUM>(153x)
+  SAMPLES:
+    - 04:54 LabSZ sshd[24809]: Failed password for root from IP_29 port 63646 ssh2
+    - 04:56 LabSZ sshd[24811]: Failed password for root from IP_29 port 65244 ssh2
+@74 13x E S4 T7 ^0->0 burst(rate=13.0/s) FLOW:FLOW_1 IMP:0.60
+  ENTITIES:IP_10 IP_28 IP_16 IP_17 IP_24
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (user): oracle(2x) <NUM>(2x) admin(1x) matlab(1x) inspur(1x)
+    Slot 3 (from): IP_17(9x) IP_10(1x) IP_28(1x) IP_16(1x) IP_24(1x)
+  SAMPLES:
+    - 13:59 LabSZ sshd[24833]: Invalid user admin from IP_10
+    - 21:01 LabSZ sshd[24841]: Invalid user matlab from IP_28
+@75 13x E S4 T6 ^0->0 burst(rate=13.0/s) FLOW:FLOW_1 IMP:0.60
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (sshdbracket): input_userauth_request:(13x)
+    Slot 3 (sshdbracket): invalid(13x)
+    Slot 4 (sshdbracket): user(13x)
+    Slot 5 (sshdbracket): oracle(2x) <NUM>(2x) admin(1x) matlab(1x) inspur(1x)
+    Slot 6 (sshdbracket): <BRACKET>(13x)
+  SAMPLES:
+    - 13:59 LabSZ sshd[24833]: input_userauth_request: invalid user admin [preauth]
+    - 21:01 LabSZ sshd[24841]: input_userauth_request: invalid user matlab [preauth]
+@77 13x E S4 T8 ^0->0 burst(rate=13.0/s) FLOW:FLOW_1 IMP:0.59
+  ENTITIES:IP_10 CN_01 IP_16 IP_17 IP_24
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_17] (9x)
+    [<NUM>:<NUM> -> rhost=IP_10] (1x)
+    [<NUM>:<NUM> -> rhost=ec2-<NUM>-<NUM>-<NUM>-<NUM>.CN_01.compute.amazonaws.com.cn] (1x)
+    [<NUM>:<NUM> -> rhost=IP_16] (1x)
+    [<NUM>:<NUM> -> rhost=IP_24] (1x)
+  SAMPLES:
+    - 13:59 LabSZ sshd[24833]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_10
+    - 21:01 LabSZ sshd[24841]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=ec2-52-80-34-196.CN_01.compute.ama...
+@78 18x E S4 T27 ^0->0 burst(rate=18.0/s) FLOW:FLOW_1 IMP:0.58
+  ENTITIES:IP_10 IP_28 IP_16 IP_17 IP_24
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(18x)
+    Slot 2 (failed): password(18x)
+    Slot 3 (user): admin(6x) oracle(2x) <NUM>(2x) matlab(1x) inspur(1x)
+    Slot 4 (from): IP_17(9x) IP_10(6x) IP_28(1x) IP_16(1x) IP_24(1x)
+    Slot 5 (port): <NUM>(18x)
+  SAMPLES:
+    - 14:01 LabSZ sshd[24833]: Failed password for invalid user admin from IP_10 port 2191 ssh2
+    - 14:04 LabSZ sshd[24833]: Failed password for invalid user admin from IP_10 port 2191 ssh2
+@79 1x E S4 T39 ^0 FLOW:FLOW_15 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (for): admin(1x)
+    Slot 3 (for): <BRACKET>(1x)
+  SAMPLES:
+    - 14:13 LabSZ sshd[24833]: Disconnecting: Too many authentication failures for admin [preauth]
+@80 1x E S4 T33 ^0 FLOW:FLOW_15 IMP:0.83
+  ENTITIES:IP_10
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (pam): <NUM>(1x)
+    Slot 3 (authentication): failures;(1x)
+    Slot 4 (ruser): rhost=IP_10(1x)
+  SAMPLES:
+    - 14:13 LabSZ sshd[24833]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_10
+@82 133x E S5 T35 ^0->0 burst(rate=133.0/s) FLOW:FLOW_15 IMP:0.53
+  ENTITIES:IP_17 IP_05
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(133x)
+    Slot 2 (sshdbracket): Failed(133x)
+    Slot 3 (for): root(131x) uucp(1x) sshd(1x)
+    Slot 4 (from): IP_17(129x) IP_05(4x)
+    Slot 5 (port): <NUM>(133x)
+  SAMPLES:
+    - 00:00 LabSZ sshd[25222]: Failed password for root from IP_17 port 40110 ssh2
+    - 00:03 LabSZ sshd[25224]: Failed password for root from IP_17 port 40454 ssh2
+@84 133x E S5 T24 ^0->0 burst(rate=133.0/s) FLOW:FLOW_13 IMP:0.53
+  ENTITIES:IP_17 USR_04 IP_05 USR_06 USR_05
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(133x)
+    Slot 2 (ruser): rhost=IP_17(129x) rhost=IP_05(4x)
+    Slot 3 (ruser): user=root(131x) user=uucp(1x) user=sshd(1x)
+  SAMPLES:
+    - 00:00 LabSZ sshd[25224]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_17  user=root
+    - 00:03 LabSZ sshd[25227]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_17  user=root
+  FIELDS:user=root
+@85 13x E S5 T7 ^0->0 burst(rate=13.0/s) FLOW:FLOW_13 IMP:0.60
+  ENTITIES:IP_30 IP_05
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (user): admin(3x) user(2x) sandeep(1x) support(1x) <NUM>(1x)
+    Slot 3 (from): IP_05(12x) IP_30(1x)
+  SAMPLES:
+    - 00:57 LabSZ sshd[25283]: Invalid user sandeep from IP_30
+    - 03:37 LabSZ sshd[25448]: Invalid user admin from IP_05
+@86 13x E S5 T6 ^0->0 burst(rate=13.0/s) FLOW:FLOW_13 IMP:0.60
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (sshdbracket): input_userauth_request:(13x)
+    Slot 3 (sshdbracket): invalid(13x)
+    Slot 4 (sshdbracket): user(13x)
+    Slot 5 (sshdbracket): admin(3x) user(2x) sandeep(1x) support(1x) <NUM>(1x)
+    Slot 6 (sshdbracket): <BRACKET>(13x)
+  SAMPLES:
+    - 00:57 LabSZ sshd[25283]: input_userauth_request: invalid user sandeep [preauth]
+    - 03:37 LabSZ sshd[25448]: input_userauth_request: invalid user admin [preauth]
+@88 13x E S5 T8 ^0->0 burst(rate=13.0/s) FLOW:FLOW_3 IMP:0.59
+  ENTITIES:IP_30 IP_05
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_05] (12x)
+    [<NUM>:<NUM> -> rhost=IP_30] (1x)
+  SAMPLES:
+    - 00:57 LabSZ sshd[25283]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_30
+    - 03:37 LabSZ sshd[25448]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=IP_05
+@89 13x E S5 T27 ^0->0 burst(rate=13.0/s) FLOW:FLOW_3 IMP:0.59
+  ENTITIES:IP_30 IP_05
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (failed): password(13x)
+    Slot 3 (user): admin(3x) user(2x) sandeep(1x) support(1x) <NUM>(1x)
+    Slot 4 (from): IP_05(12x) IP_30(1x)
+    Slot 5 (port): <NUM>(13x)
+  SAMPLES:
+    - 00:59 LabSZ sshd[25283]: Failed password for invalid user sandeep from IP_30 port 49316 ssh2
+    - 03:39 LabSZ sshd[25448]: Failed password for invalid user admin from IP_05 port 60150 ssh2
+@91 1x E S5 T37 ^0 FLOW:FLOW_3 IMP:0.83
+  ENTITIES:IP_17
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (from): IP_17:(1x)
+    Slot 3 (from): Bye(1x)
+    Slot 4 (from): Bye(1x)
+    Slot 5 (from): <BRACKET>(1x)
+  SAMPLES:
+    - 02:46 LabSZ sshd[25401]: Received disconnect from IP_17: 11: Bye Bye [preauth]
+@92 15x E S5 T34 ^0->0 burst(rate=15.0/s) IMP:0.61
+  ENTITIES:IP_05
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (15x)
+  SAMPLES:
+    - 03:40 LabSZ sshd[25448]: error: Received disconnect from IP_05: 14: No more user authentication methods available. [preauth]
+    - 03:44 LabSZ sshd[25455]: error: Received disconnect from IP_05: 14: No more user authentication methods available. [preauth]
+## TIER_2 SUPPORTING
+@4 1x I S0 T3 ^0 FLOW:FLOW_8 IMP:0.34
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 55:46 LabSZ sshd[24200]: pam_unix(sshd:auth): check pass; user unknown
+@7 1x I S0 T6 ^0 FLOW:FLOW_4 IMP:0.33
+  ENTITIES:IP_12
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (sshdbracket): Connection(1x)
+    Slot 3 (sshdbracket): closed(1x)
+    Slot 4 (sshdbracket): by(1x)
+    Slot 5 (sshdbracket): IP_12(1x)
+    Slot 6 (sshdbracket): <BRACKET>(1x)
+  SAMPLES:
+    - 55:48 LabSZ sshd[24200]: Connection closed by IP_12 [preauth]
+@14 1x I S1 T10 ^0 FLOW:FLOW_36 IMP:0.34
+  ENTITIES:IP_28
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 07:45 LabSZ sshd[24206]: Received disconnect from IP_28: 11: Bye Bye [preauth]
+@22 1x I S1 T17 ^0 FLOW:FLOW_8 IMP:0.34
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (retries): <NUM>(1x)
+    Slot 3 (slot11): <NUM>(1x)
+  SAMPLES:
+    - 13:56 LabSZ sshd[24227]: PAM service(sshd) ignoring max retries; 6 > 3
+@25 1x I S1 T20 ^0 FLOW:FLOW_29 IMP:0.34
+  ENTITIES:IP_11
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 34:33 LabSZ sshd[24301]: Did not receive identification string from IP_11
+@26 3x I S1 T21 ^0->0 burst(rate=3.0/s) FLOW:FLOW_29 IMP:0.31
+  ENTITIES:IP_14 IP_23 IP_03
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> IP_14] (1x)
+    [<NUM>:<NUM> -> IP_23] (1x)
+    [<NUM>:<NUM> -> IP_03] (1x)
+  SAMPLES:
+    - 35:15 LabSZ sshd[24303]: Did not receive identification string from IP_14
+    - 51:09 LabSZ sshd[24323]: Did not receive identification string from IP_23
+@32 1x I S1 T26 ^0 FLOW:FLOW_19 IMP:0.34
+  ENTITIES:IP_03
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (1x)
+  SAMPLES:
+    - 56:15 LabSZ sshd[24334]: Received disconnect from IP_03: 11: Closed due to user request. [preauth]
+@39 2x I S2 T11 ^0->0 burst(rate=2.0/s) FLOW:FLOW_6 IMP:0.33
+  ENTITIES:IP_13 IP_28
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (from): IP_13:(1x) IP_28:(1x)
+    Slot 3 (bye): <BRACKET>(2x)
+  SAMPLES:
+    - 08:43 LabSZ sshd[24338]: Received disconnect from IP_13: 11: Bye Bye [preauth]
+    - 44:27 LabSZ sshd[24410]: Received disconnect from IP_28: 11: Bye Bye [preauth]
+@42 3x I S2 T17 ^0->0 burst(rate=3.0/s) FLOW:FLOW_6 IMP:0.31
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (retries): <NUM>(3x)
+    Slot 3 (slot11): <NUM>(3x)
+  SAMPLES:
+    - 25:22 LabSZ sshd[24369]: PAM service(sshd) ignoring max retries; 5 > 3
+    - 25:41 LabSZ sshd[24371]: PAM service(sshd) ignoring max retries; 5 > 3
+@46 2x I S2 T21 ^0->0 burst(rate=2.0/s) FLOW:FLOW_29 IMP:0.33
+  ENTITIES:IP_26 IP_04
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> IP_26] (1x)
+    [<NUM>:<NUM> -> IP_04] (1x)
+  SAMPLES:
+    - 26:40 LabSZ sshd[24383]: Did not receive identification string from IP_26
+    - 33:23 LabSZ sshd[24384]: Did not receive identification string from IP_04
+@47 3x I S2 T30 ^0->0 burst(rate=3.0/s) FLOW:FLOW_29 IMP:0.32
+  ENTITIES:IP_04
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (from): IP_04:(3x)
+    Slot 3 (request): <BRACKET>(3x)
+  SAMPLES:
+    - 33:26 LabSZ sshd[24385]: Received disconnect from IP_04: 11: Closed due to user request. [preauth]
+    - 33:29 LabSZ sshd[24387]: Received disconnect from IP_04: 11: Closed due to user request. [preauth]
+@51 4x I S3 T21 ^0->0 burst(rate=4.0/s) FLOW:FLOW_8 IMP:0.31
+  ENTITIES:IP_20 IP_18 IP_02 IP_15
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> IP_20] (1x)
+    [<NUM>:<NUM> -> IP_18] (1x)
+    [<NUM>:<NUM> -> IP_02] (1x)
+    [<NUM>:<NUM> -> IP_15] (1x)
+  SAMPLES:
+    - 04:46 LabSZ sshd[24414]: Did not receive identification string from IP_20
+    - 13:22 LabSZ sshd[24511]: Did not receive identification string from IP_18
+@59 2x I S3 T17 ^0->0 burst(rate=2.0/s) FLOW:FLOW_11 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (retries): <NUM>(2x)
+    Slot 3 (slot11): <NUM>(2x)
+  SAMPLES:
+    - 10:32 LabSZ sshd[24421]: PAM service(sshd) ignoring max retries; 5 > 3
+    - 11:41 LabSZ sshd[24437]: PAM service(sshd) ignoring max retries; 5 > 3
+@65 3x I S3 T30 ^0->0 burst(rate=3.0/s) FLOW:FLOW_29 IMP:0.32
+  ENTITIES:IP_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (from): IP_02:(3x)
+    Slot 3 (request): <BRACKET>(3x)
+  SAMPLES:
+    - 18:30 LabSZ sshd[24637]: Received disconnect from IP_02: 11: Closed due to user request. [preauth]
+    - 18:33 LabSZ sshd[24639]: Received disconnect from IP_02: 11: Closed due to user request. [preauth]
+@66 1x I S3 T35 ^0 FLOW:FLOW_35 IMP:0.33
+  ENTITIES:IP_09
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (sshdbracket): Accepted(1x)
+    Slot 3 (for): fztu(1x)
+    Slot 4 (from): IP_09(1x)
+    Slot 5 (port): <NUM>(1x)
+  SAMPLES:
+    - 32:20 LabSZ sshd[24680]: Accepted password for fztu from IP_09 port 49116 ssh2
+@67 1x I S3 T36 ^0 FLOW:FLOW_35 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 32:20 LabSZ sshd[24680]: pam_unix(sshd:session): session opened for user fztu by (uid=0)
+@69 1x I S3 T38 ^0 FLOW:FLOW_27 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 45:06 LabSZ sshd[24680]: pam_unix(sshd:session): session closed for user fztu
+@81 1x I S4 T17 ^0 FLOW:FLOW_15 IMP:0.34
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (retries): <NUM>(1x)
+    Slot 3 (slot11): <NUM>(1x)
+  SAMPLES:
+    - 14:13 LabSZ sshd[24833]: PAM service(sshd) ignoring max retries; 6 > 3
+@90 1x I S5 T6 ^0 FLOW:FLOW_3 IMP:0.33
+  ENTITIES:IP_30
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (sshdbracket): Connection(1x)
+    Slot 3 (sshdbracket): closed(1x)
+    Slot 4 (sshdbracket): by(1x)
+    Slot 5 (sshdbracket): IP_30(1x)
+    Slot 6 (sshdbracket): <BRACKET>(1x)
+  SAMPLES:
+    - 00:59 LabSZ sshd[25283]: Connection closed by IP_30 [preauth]
+## TIER_BACKGROUND (14 clusters)
+  @27: 1x SI T22 [RARE]
+  @8: 4x SI T6 [NOISE]
+  @11: 9x SI T3 [NOISE]
+  @16: 36x SI T11 [NOISE]
+  @33: 14x SI T6 [NOISE]
+  @36: 21x SI T3 [NOISE]
+  @55: 9x SI T6 [NOISE]
+  @56: 73x SI T3 [NOISE]
+  @64: 82x SI T11 [NOISE]
+  @72: 164x SI T37 [NOISE]
+  @73: 5x SI T6 [NOISE]
+  @76: 18x SI T3 [NOISE]
+  @83: 127x SI T37 [NOISE]
+  @87: 13x SI T3 [NOISE]

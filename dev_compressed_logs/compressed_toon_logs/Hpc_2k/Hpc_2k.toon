@@ -1,0 +1,233 @@
+TOON-X:5.0 FORMAT:kv FILE:HPC_2k.log BASE_TS:0
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:0 span=0s events=309 sources=['kv:309']
+ENTITIES:149 RELATIONSHIPS:0 CLUSTERS:8
+[L1]
+NAME:NEW_ERROR_TYPE SEV:E COUNT:1 SPAN:0->end
+  CLUSTERS:@4
+  DESC:1 unique high-severity event types observed
+NAME:AUTH_BURST SEV:E COUNT:14 SPAN:0->end
+  CLUSTERS:@3,@8
+  DESC:14 authentication failures — possible attack
+[SEM]
+SEM_01=APPLICATION.GENERIC.EVENT
+SEM_02=SECURITY.AUTH.FAILURE
+SEM_03=GENERIC.ALERT.ERROR
+SEM_04=WEB.HTTP.5XX
+[ENT]
+## NODE
+NODE_01=node-10
+NODE_02=node-103
+NODE_03=node-104
+NODE_04=node-105
+NODE_05=node-107
+NODE_06=node-108
+NODE_07=node-109
+NODE_08=node-11
+NODE_09=node-110
+NODE_10=node-111
+NODE_100=node-243
+NODE_101=node-244
+NODE_102=node-245
+NODE_103=node-246
+NODE_104=node-247
+NODE_105=node-249
+NODE_106=node-250
+NODE_107=node-255
+NODE_108=node-28
+NODE_109=node-3
+NODE_11=node-112
+NODE_110=node-30
+NODE_111=node-31
+NODE_112=node-33
+NODE_113=node-34
+NODE_114=node-35
+NODE_115=node-36
+NODE_116=node-37
+NODE_117=node-39
+NODE_118=node-41
+NODE_119=node-43
+NODE_12=node-113
+NODE_120=node-45
+NODE_121=node-46
+NODE_122=node-47
+NODE_123=node-48
+NODE_124=node-51
+NODE_125=node-53
+NODE_126=node-54
+NODE_127=node-55
+NODE_128=node-60
+NODE_129=node-63
+NODE_13=node-114
+NODE_130=node-65
+NODE_131=node-66
+NODE_132=node-67
+NODE_133=node-70
+NODE_134=node-71
+NODE_135=node-74
+NODE_136=node-75
+NODE_137=node-78
+NODE_138=node-8
+NODE_139=node-80
+NODE_14=node-115
+NODE_140=node-84
+NODE_141=node-86
+NODE_142=node-88
+NODE_143=node-90
+NODE_144=node-91
+NODE_145=node-93
+NODE_146=node-94
+NODE_147=node-95
+NODE_148=node-97
+NODE_149=node-98
+NODE_15=node-116
+NODE_16=node-117
+NODE_17=node-118
+NODE_18=node-119
+NODE_19=node-12
+NODE_20=node-120
+NODE_21=node-121
+NODE_22=node-122
+NODE_23=node-127
+NODE_24=node-130
+NODE_25=node-132
+NODE_26=node-133
+NODE_27=node-135
+NODE_28=node-137
+NODE_29=node-138
+NODE_30=node-139
+NODE_31=node-14
+NODE_32=node-141
+NODE_33=node-145
+NODE_34=node-148
+NODE_35=node-149
+NODE_36=node-15
+NODE_37=node-152
+NODE_38=node-153
+NODE_39=node-154
+NODE_40=node-157
+NODE_41=node-158
+NODE_42=node-159
+NODE_43=node-16
+NODE_44=node-161
+NODE_45=node-163
+NODE_46=node-165
+NODE_47=node-166
+NODE_48=node-167
+NODE_49=node-168
+NODE_50=node-169
+NODE_51=node-172
+NODE_52=node-173
+NODE_53=node-174
+NODE_54=node-175
+NODE_55=node-176
+NODE_56=node-184
+NODE_57=node-187
+NODE_58=node-188
+NODE_59=node-189
+NODE_60=node-194
+NODE_61=node-196
+NODE_62=node-197
+NODE_63=node-198
+NODE_64=node-199
+NODE_65=node-20
+NODE_66=node-200
+NODE_67=node-203
+NODE_68=node-206
+NODE_69=node-208
+NODE_70=node-21
+NODE_71=node-212
+NODE_72=node-213
+NODE_73=node-214
+NODE_74=node-215
+NODE_75=node-217
+NODE_76=node-218
+NODE_77=node-22
+NODE_78=node-220
+NODE_79=node-222
+NODE_80=node-223
+NODE_81=node-225
+NODE_82=node-226
+NODE_83=node-227
+NODE_84=node-228
+NODE_85=node-229
+NODE_86=node-23
+NODE_87=node-230
+NODE_88=node-231
+NODE_89=node-232
+NODE_90=node-233
+NODE_91=node-234
+NODE_92=node-235
+NODE_93=node-236
+NODE_94=node-237
+NODE_95=node-238
+NODE_96=node-239
+NODE_97=node-240
+NODE_98=node-241
+NODE_99=node-242
+[T]
+T0=SEM_01|<NUM> NODE_103 unix.hw state_change.unavailable <NUM> <NUM> Component State Change: Component \042SCSI-WWID:<NUM>:<NUM>-08b4-<NUM>-00c6-<NUM>-<NUM>-003d-<NUM>\<NUM> in unavailable state (HWID=<NUM>)
+T1=SEM_01|<NUM> <*> unix.hw state_change.unavailable <NUM> <NUM> Component State Change: Component <*> in unavailable state (HWID=<NUM>)
+T2=SEM_03|<NUM> NODE_109 node psu <NUM> <NUM> psu failure\ ambient=<NUM>
+T3=SEM_03|<NUM> <*> node psu <NUM> <NUM> psu failure\ ambient=<NUM>
+T4=SEM_01|<NUM> NODE_71 node temperature <NUM> <NUM> ambient=<NUM>
+T5=SEM_01|<NUM> <*> node temperature <NUM> <NUM> ambient=<NUM>
+[TIMELINE]
+[0s-0s] @3[E](2x), @4[E](1x), @5[E](4x), @8[E](12x)
+[CAUSE]
+SEM_01>SEM_01|CONF:60 x10 (@1(SEM_01)>@2(SEM_01), @6(SEM_01)>@7(SEM_01), @1(SEM_01)>@2(SEM_01))
+SEM_01>SEM_02|CONF:63 x7 (@1(SEM_01)>@3(SEM_02), @2(SEM_01)>@3(SEM_02), @6(SEM_01)>@8(SEM_02))
+SEM_01>SEM_03|CONF:60 x4 (@1(SEM_01)>@4(SEM_03), @2(SEM_01)>@4(SEM_03), @2(SEM_01)>@5(SEM_03))
+SEM_02>SEM_03|CONF:60 x2 (@3(SEM_02)>@4(SEM_03), @3(SEM_02)>@5(SEM_03))
+SEM_02>SEM_01|CONF:65 x4 (@3(SEM_02)>@6(SEM_01), @3(SEM_02)>@7(SEM_01), @8(SEM_02)>@2(SEM_01))
+SEM_03>SEM_03|CONF:60 x1 (@4(SEM_03)>@5(SEM_03))
+SEM_03>SEM_01|CONF:60 x5 (@4(SEM_03)>@6(SEM_01), @4(SEM_03)>@7(SEM_01), @5(SEM_03)>@6(SEM_01))
+SEM_03>SEM_02|CONF:60 x1 (@5(SEM_03)>@8(SEM_02))
+[L4]
+## TIER_1 IMPORTANT
+@3 2x E S0 T1 ^0->0 burst(rate=2.0/s) IMP:0.60
+  ENTITIES:NODE_50 NODE_57
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>(2x)
+    Slot 2 (slot2): NODE_50(1x) NODE_57(1x)
+    Slot 3 (state_changeunavailable): <NUM>(2x)
+    Slot 4 (state_changeunavailable): <NUM>(2x)
+    Slot 5 (component): \042alt0\<NUM>(2x)
+  SAMPLES:
+    - 401569 NODE_50 unix.hw state_change.unavailable 1142550406 1 Component State Change: Component \042alt0\042 is in the unavailable state (HWID=2969)
+    - 401855 NODE_57 unix.hw state_change.unavailable 1142553646 1 Component State Change: Component \042alt0\042 is in the unavailable state (HWID=4159)
+@4 1x E S0 T2 ^0 IMP:0.80
+  ENTITIES:NODE_109
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>(1x)
+    Slot 2 (psu): <NUM>(1x)
+    Slot 3 (psu): <NUM>(1x)
+  SAMPLES:
+    - 51338 NODE_109 node psu 1106496000 1 psu failure\ ambient=28
+@5 4x E S0 T3 ^0->0 burst(rate=4.0/s) IMP:0.60
+  ENTITIES:NODE_95 NODE_03 NODE_17
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>(4x)
+    Slot 2 (slot2): NODE_17(2x) NODE_95(1x) NODE_03(1x)
+    Slot 3 (psu): <NUM>(4x)
+    Slot 4 (psu): <NUM>(4x)
+  SAMPLES:
+    - 191898 NODE_95 node psu 1131240275 1 psu failure\ ambient=28
+    - 236618 NODE_03 node psu 1132434391 1 psu failure\ ambient=28
+@8 12x E S0 T5 ^0->0 burst(rate=12.0/s) IMP:0.54
+  ENTITIES:NODE_84 NODE_41 NODE_88 NODE_98 NODE_96 NODE_124 NODE_119 NODE_33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>(12x)
+    Slot 2 (slot2): NODE_88(2x) NODE_49(2x) NODE_84(1x) NODE_41(1x) NODE_98(1x)
+    Slot 3 (temperature): <NUM>(12x)
+    Slot 4 (temperature): <NUM>(12x)
+  SAMPLES:
+    - 314014 NODE_84 node temperature 1122565110 1 ambient=25
+    - 557 NODE_41 node temperature 1123708507 1 ambient=30
+## TIER_BACKGROUND (4 clusters)
+  @1: 1x SI T0 [RARE]
+  @6: 1x SI T4 [RARE]
+  @2: 9x SI T1 [NOISE]
+  @7: 279x SI T5 [NOISE]

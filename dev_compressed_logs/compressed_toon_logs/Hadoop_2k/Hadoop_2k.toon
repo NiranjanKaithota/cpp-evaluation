@@ -1,0 +1,1076 @@
+TOON-X:5.0 FORMAT:plain FILE:Hadoop_2k.log BASE_TS:1445171507
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:1445171507 span=548s events=2000 sources=['plain:2000']
+ENTITIES:71 RELATIONSHIPS:0 CLUSTERS:147
+[L1]
+NAME:HTTP_ERROR_SURGE SEV:E COUNT:394 SPAN:0->547s
+  CLUSTERS:@6,@7,@8,@39,@40,@41,@42,@43,@44,@70,@71,@72,@79,@80,@83,@84,@86,@88,@89,@90,@91,@92,@93,@94,@95,@96,@97,@98,@99,@100,@101,@102,@103,@104,@105,@118,@120,@121,@146,@147
+  DESC:394 HTTP errors — 90.0% error rate
+NAME:NEW_ERROR_TYPE SEV:E COUNT:20 SPAN:0->end
+  CLUSTERS:@6,@7,@44,@79,@80,@86,@93,@94,@108,@118,@131,@132,@133,@136,@137,@138,@139,@140,@141,@142
+  DESC:20 unique high-severity event types observed
+[SEM]
+SEM_01=SECURITY.AUTH.FAILURE
+SEM_02=SYSTEM.DEPLOY.EVENT
+SEM_03=GENERIC.ALERT.ERROR
+SEM_04=GENERIC.ALERT.INFO
+SEM_05=GENERIC.ALERT.WARNING
+SEM_06=WEB.HTTP.2XX
+SEM_07=WEB.HTTP.3XX
+SEM_08=WEB.HTTP.4XX
+SEM_09=WEB.HTTP.5XX
+SEM_10=SYSTEM.PROCESS.KILLED
+SEM_11=SYSTEM.SERVICE.START
+SEM_12=SYSTEM.SNAPSHOT.EVENT
+SEM_13=SYSTEM.RESOURCE.THREAD
+SEM_14=SYSTEM.PERFORMANCE.TIMEOUT
+[ENT]
+## IPV4
+IP_01=0.0.0.0
+IP_02=10.190.173.170
+IP_03=10.86.169.121
+IP_04=127.0.0.1
+IP_05=172.22.149.145
+## URL
+URL_01=http://wiki.apache.org/hadoop/NoRouteToHost
+## INTERFACE
+IF_01=-41/10
+## APPATTEMPT
+APPATTEM_01=appattempt_1445144423722_0020_000001
+## APPLICATION
+APPLICAT_01=application_1445144423722_0020
+## ATTEMPT
+ATTEMPT_01=attempt_1445144423722_0020_m_000000_0
+ATTEMPT_02=attempt_1445144423722_0020_m_000000_1
+ATTEMPT_03=attempt_1445144423722_0020_m_000001_0
+ATTEMPT_04=attempt_1445144423722_0020_m_000001_1
+ATTEMPT_05=attempt_1445144423722_0020_m_000002_0
+ATTEMPT_06=attempt_1445144423722_0020_m_000002_1
+ATTEMPT_07=attempt_1445144423722_0020_m_000003_0
+ATTEMPT_08=attempt_1445144423722_0020_m_000004_0
+ATTEMPT_09=attempt_1445144423722_0020_m_000005_0
+ATTEMPT_10=attempt_1445144423722_0020_m_000006_0
+ATTEMPT_11=attempt_1445144423722_0020_m_000007_0
+ATTEMPT_12=attempt_1445144423722_0020_m_000008_0
+ATTEMPT_13=attempt_1445144423722_0020_m_000009_0
+ATTEMPT_14=attempt_1445144423722_0020_r_000000_0
+## BLK
+BLK_01=blk_1073743512_2731
+## BP
+BP_01=BP-1347369012-10
+## CONTAINER
+CONTAINE_01=container_1445144423722_0020_01_000002
+CONTAINE_02=container_1445144423722_0020_01_000003
+CONTAINE_03=container_1445144423722_0020_01_000004
+CONTAINE_04=container_1445144423722_0020_01_000005
+CONTAINE_05=container_1445144423722_0020_01_000006
+CONTAINE_06=container_1445144423722_0020_01_000007
+CONTAINE_07=container_1445144423722_0020_01_000008
+CONTAINE_08=container_1445144423722_0020_01_000009
+CONTAINE_09=container_1445144423722_0020_01_000010
+CONTAINE_10=container_1445144423722_0020_01_000011
+CONTAINE_11=container_1445144423722_0020_01_000012
+## DFSCLIENT
+DFSCLIEN_01=DFSClient_NONMAPREDUCE_1537864556_1
+## HADOOP
+HADOOP_01=hadoop-2
+HADOOP_02=hadoop-metrics2
+HADOOP_03=hadoop-yarn-common-2
+## JETTY
+JETTY_01=Jetty_0_0_0_0_62267_mapreduce____
+JETTY_02=jetty-6
+## JOB
+JOB_01=job_1445144423722_0020
+JOB_02=job_1445144423722_0020Job
+JOB_03=job_1445144423722_0020_1
+## JVM
+JVM_01=jvm_1445144423722_0020_m_000002
+JVM_02=jvm_1445144423722_0020_m_000003
+JVM_03=jvm_1445144423722_0020_m_000004
+JVM_04=jvm_1445144423722_0020_m_000005
+JVM_05=jvm_1445144423722_0020_m_000006
+JVM_06=jvm_1445144423722_0020_m_000007
+JVM_07=jvm_1445144423722_0020_m_000008
+JVM_08=jvm_1445144423722_0020_m_000009
+JVM_09=jvm_1445144423722_0020_m_000010
+JVM_10=jvm_1445144423722_0020_m_000011
+## MININT
+MININT_01=MININT-FNANLI5
+## MSRA
+MSRA_01=MSRA-SA-39
+MSRA_02=MSRA-SA-41
+MSRA_03=msra-sa-41
+## TASK
+TASK_01=task_1445144423722_0020_m_000000
+TASK_02=task_1445144423722_0020_m_000001
+TASK_03=task_1445144423722_0020_m_000002
+TASK_04=task_1445144423722_0020_m_000003
+TASK_05=task_1445144423722_0020_m_000004
+TASK_06=task_1445144423722_0020_m_000005
+TASK_07=task_1445144423722_0020_m_000006
+TASK_08=task_1445144423722_0020_m_000007
+TASK_09=task_1445144423722_0020_m_000008
+TASK_10=task_1445144423722_0020_m_000009
+TASK_11=task_1445144423722_0020_r_000000
+## THREAD
+THREAD_01=Thread-50
+[T]
+T0=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Created MRAppMaster for application APPATTEM_01
+T1=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Executing with tokens:
+T2=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Kind: YARN_AM_RM_TOKEN, Service: , Ident: (appAttemptId { application_id { id: <NUM> cluster_timestamp: <NUM> } attemptId: <NUM> } keyId: -<NUM>)
+T3=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.MRAppMaster: <*> <*> <*>
+T4=SEM_07|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.MRAppMaster: <*> <*> <*> <*> <*>
+T5=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.jobhistory.EventType for class org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler
+T6=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class <*>
+T7=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.jobhistory.JobHistoryUtils: Default file system <BRACKET>
+T8=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Emitting job history data to timeline server not enabled
+T9=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from HADOOP_02.properties
+T10=SEM_07|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at <NUM> second(s).
+T11=SEM_11|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*> system <*>
+T12=SEM_07|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Adding job token for JOB_01 to jobTokenSecretManager
+T13=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Not uberizing JOB_01 because: not enabled; too many maps; too much input;
+T14=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Input size for job JOB_01 = <NUM>. Number of splits = <NUM>
+T15=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Number of reduces for job JOB_01 = <NUM>
+T16=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: JOB_02 Transitioned from NEW to INITED
+T17=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.MRAppMaster: MRAppMaster launching normal, non-uberized, multi-container job JOB_01.
+T18=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.ipc.CallQueueManager: Using callQueue class java.util.concurrent.LinkedBlockingQueue
+T19=SEM_11|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.ipc.Server: Starting Socket Reader #<NUM> for port <NUM>
+T20=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.yarn.factories.impl.pb.RpcServerFactoryPBImpl: Adding protocol org.apache.hadoop.mapreduce.v2.api.MRClientProtocolPB to server
+T21=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Instantiated MRClientService at MININT_01.fareast.corp.microsoft.com/IP_03:<NUM>
+T22=SEM_11|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+T23=SEM_11|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.ipc.Server: IPC Server listener on <NUM>: starting
+T24=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+T25=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.mapreduce not defined
+T26=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+T27=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context mapreduce
+T28=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context <*>
+T29=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.http.HttpServer2: adding path spec: /mapreduce/*
+T30=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.http.HttpServer2: adding path spec: <*>
+T31=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.http.HttpServer2: <*> <*> <*> <*> <*>
+T32=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.mortbay.log: JETTY_02.<NUM>
+T33=SEM_12|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.mortbay.log: Extract jar:file:/D:<PATH>!<PATH> to C:\Users\msrabi\AppData\Local\Temp\JETTY_01.8n7xum\webapp
+T34=SEM_11|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.mortbay.log: Started HttpServer2$SelectChannelConnectorWithSafeStartup@IP_01:<NUM>
+T35=SEM_11|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.yarn.webapp.WebApps: Web app /mapreduce started at <NUM>
+T36=SEM_08|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.yarn.webapp.WebApps: Registered webapp guice modules
+T37=SEM_08|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*>
+T38=SEM_08|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*>
+T39=SEM_08|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*> <*>
+T40=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> to <*> <*> <*>
+T41=SEM_13|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Upper limit on thread pool size <NUM>
+T42=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: JOB_02 Transitioned from <*> to <*>
+T43=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler: Processing event EventType: JOB_SETUP
+T44=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*> to <*>
+T45=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: TASK_01 Task Transitioned from NEW to SCHEDULED
+T46=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: <*> Task Transitioned from NEW to SCHEDULED
+T47=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*> Transitioned from NEW to <*>
+T48=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Event Writer setup for JobId: JOB_01, File: hdfs://MSRA_03:<NUM><PATH>
+T49=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Before Scheduling: PendingReds:<NUM> ScheduledMaps:<NUM> ScheduledReds:<NUM> AssignedMaps:<NUM> AssignedReds:<NUM> CompletedMaps:<NUM> CompletedReds:<NUM> ContAlloc:<NUM>
+T50=SEM_02|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: getResources() for APPLICAT_01: ask=<NUM> release= <NUM> newContainers=<NUM> finishedContainers=<NUM> resourcelimit=<memory:<NUM>, vCores:-<NUM>> knownNMs=<NUM>
+T51=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroom=<memory:<NUM>, vCores:-<NUM>>
+T52=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold not met. completedMapsForReduceSlowstart <NUM>
+T53=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: <*> <*> <*> <*>
+T54=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned container CONTAINE_01 to ATTEMPT_01
+T55=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:<NUM> ScheduledMaps:<NUM> ScheduledReds:<NUM> AssignedMaps:<NUM> AssignedReds:<NUM> CompletedMaps:<NUM> CompletedReds:<NUM> ContAlloc:<NUM> Co
+T56=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: job-jar file on remote FS hdfs://MSRA_03:<NUM><PATH>
+T57=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: <*> file on remote FS <*>
+T58=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Adding #<NUM> tokens and #<NUM> secret keys for NM use for launching container
+T59=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Size of containertokens_dob <NUM>
+T60=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: <*> <*> <*> <*> <*>
+T61=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*> Transitioned from <*> to <*>
+T62=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing event EventType: CONTAINER_REMOTE_LAUNCH for container CONTAINE_01 taskAttempt ATTEMPT_01
+T63=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : 04DN8IQ.fareast.corp.microsoft.com:<NUM>
+T64=SEM_08|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Shuffle port returned by ContainerManager for ATTEMPT_01 : <NUM>
+T65=SEM_08|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: TaskAttempt: <BRACKET> using containerId: [CONTAINE_01 on NM: <BRACKET>
+T66=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned container <*> to <*>
+T67=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing event EventType: CONTAINER_REMOTE_LAUNCH for container <*> taskAttempt <*>
+T68=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : <*>
+T69=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Shuffle port returned by ContainerManager for <*> : <NUM>
+T70=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: TaskAttempt: <BRACKET> using containerId: <*> on NM: <*>
+T71=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*> <*> <*> <*>
+T72=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : JVM_01 asked for task
+T73=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: JVM_01 given task: ATTEMPT_01
+T74=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : <*> asked for task
+T75=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: <*> given task: <*>
+T76=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt ATTEMPT_01 : <NUM>
+T77=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt <*> : <NUM>
+T78=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: <*> Scheduling: PendingReds:<NUM> ScheduledMaps:<NUM> ScheduledReds:<NUM> AssignedMaps:<NUM> AssignedReds:<NUM> CompletedMaps:<NUM> CompletedReds:<NUM> ContAlloc:<NUM>
+T79=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Cannot assign container Container: [ContainerId: CONTAINE_11, NodeId: MSRA_01.fareast.corp.microsoft.com:<NUM>, NodeHttpAddress: MSRA_01.far
+T80=SEM_03|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> ERROR <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Container complete event for unknown container id CONTAINE_11
+T81=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> <*> <*> <*> from <*>
+T82=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing event EventType: <*> for container <*> taskAttempt <*>
+T83=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Task succeeded with attempt ATTEMPT_07
+T84=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Num completed Tasks: <NUM>
+T85=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold reached. Scheduling reduces.
+T86=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: All maps assigned. Ramping up all remaining reduces:<NUM>
+T87=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: DefaultSpeculator.addSpeculativeAttempt -- we speculating TASK_01
+T88=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: We launched <NUM> speculations. Sleeping <NUM> milliseconds.
+T89=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: Scheduling redundant attempt for task TASK_01
+T90=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:<NUM> ScheduledMaps:<NUM> ScheduledReds:<NUM> AssignedMaps:<NUM> AssignedReds:<NUM> CompletedMaps:<NUM> CompletedReds:<NUM> ContAlloc:<NUM> <*>
+T91=SEM_10|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from ATTEMPT_07: Container killed by ApplicationMaster.
+T92=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN <BRACKET> org.apache.hadoop.ipc.Client: Address change detected. Old: msra-saIF_01.<NUM>.<NUM>:<NUM> New: MSRA_03:<NUM>
+T93=SEM_09|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN <BRACKET> org.apache.hadoop.hdfs.LeaseRenewer: Failed to renew lease for <BRACKET> for <NUM> seconds. Will retry shortly ...
+T94=SEM_05|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN [ResponseProcessor for block BP-<NUM>-IP_02-<NUM>:BLK_01] org.apache.hadoop.hdfs.DFSClient: Slow ReadProcessor read fields took 65020ms (threshold=30000ms); ack: seqno: -<NUM> status: SUCCESS status: ERROR downstreamAc
+T95=SEM_05|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN [ResponseProcessor for block BP-<NUM>-IP_02-<NUM>:BLK_01] org.apache.hadoop.hdfs.DFSClient: DFSOutputStream ResponseProcessor exception for block BP-<NUM>-IP_02-<NUM>:BLK_01
+T96=SEM_05|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN [DataStreamer for file <PATH> block BP-<NUM>-IP_02-<NUM>:BLK_01] org.apache.hadoop.hdfs.DFSClient: Error Recovery for block BP-<NUM>-IP_02-<NUM>:BL
+T97=SEM_05|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN [DataStreamer for file <PATH> block BP-<NUM>-IP_02-<NUM>:BLK_01] org.apache.hadoop.ipc.Client: Address change detected. Old: msra-saIF_01.<NUM>.<NUM>:<NUM> New:
+T98=SEM_05|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN [DataStreamer for file <PATH> block BP-<NUM>-IP_02-<NUM>:BLK_01] org.apache.hadoop.hdfs.DFSClient: DataStreamer Exception
+T99=SEM_03|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> ERROR <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.
+T100=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA_03:<NUM>. Already tried <NUM> time(s); retry policy RetryUpToMaximumCountWithFixedSleep(maxRetries=<NUM>, sleepTime=<NUM> MILLISECONDS)
+T101=SEM_14|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> FATAL <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: Task: ATTEMPT_05 - exited : java.net.NoRouteToHostException: No Route to Host from MININT_01/IP_04 to MSRA_03:<NUM> failed on socket timeout ex
+T102=SEM_14|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: Diagnostics report from ATTEMPT_05: Error: java.net.NoRouteToHostException: No Route to Host from MININT_01/IP_04 to MSRA_03:<NUM> failed on soc
+T103=SEM_14|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from ATTEMPT_05: Error: java.net.NoRouteToHostException: No Route to Host from MININT_01/IP_04 to MSRA_03:<NUM> fai
+T104=SEM_04|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler: Processing event EventType: <*>
+T105=SEM_05|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN <BRACKET> org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler: Task cleanup failed for attempt ATTEMPT_05
+T106=SEM_03|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> ERROR <BRACKET> org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Error writing History Event: org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent@7317849d
+T107=SEM_03|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> ERROR <BRACKET> org.apache.hadoop.yarn.YarnUncaughtExceptionHandler: Thread Thread<BRACKET> threw Exception.
+T108=SEM_03|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: <NUM> failures on node MININT_01.fareast.corp.microsoft.com
+T109=SEM_03|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Added ATTEMPT_06 to list of failed maps
+T110=SEM_14|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> FATAL <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: Task: <*> - exited : java.net.NoRouteToHostException: No Route to Host from MININT_01/IP_04 to MSRA_03:<NUM> failed on socket timeout <*>
+T111=SEM_14|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapred.TaskAttemptListenerImpl: Diagnostics report from <*> Error: java.net.NoRouteToHostException: No Route to Host from MININT_01/IP_04 to MSRA_03:<NUM> failed on <*>
+T112=SEM_14|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from <*> Error: java.net.NoRouteToHostException: No Route to Host from MININT_01/IP_04 to MSRA_03:<NUM> fai
+T113=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> WARN <BRACKET> org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler: Task cleanup failed for attempt <*>
+T114=SEM_06|<NUM>-<NUM>-<NUM> <NUM>:<NUM>:<NUM>,<NUM> INFO <BRACKET> org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Added <*> to list of failed maps
+[TIMELINE]
+[0s-0s] @5(1x)
+[0s-17s] @6[E](1x), @7[E](1x), @8[E](7x), @13(1x), @14(1x), @15(1x), @22(2x), @25(2x), @26(2x), @37(1x)
+         @38(1x), @39[W](1x), @40[W](1x), @41[W](2x), @42[W](1x), @43[W](2x), @44[E](1x), @47(1x), @56(4x), @70[W](1x)
+         @71[W](1x), @72[W](2x), @79[E](1x), @80[E](1x), @83[E](2x), @84[E](2x)
+[30s-35s] @86[E](1x), @88[W](2x), @89[W](2x), @83[E](2x), @84[E](2x), @90[E](1x)
+[42s-42s] @91[W](1x)
+[54s-56s] @88[W](3x), @89[W](3x)
+[56s-63s] @90[E](2x), @88[W](2x), @92[W](1x), @84[E](3x), @93[E](1x), @94[E](1x), @95[E](1x), @96[E](1x), @83[E](2x), @97[E](1x)
+          @98[E](1x), @99[E](1x)
+[73s-87s] @90[E](4x), @88[W](1x), @89[W](1x), @83[E](2x), @84[E](2x)
+[92s-93s] @88[W](2x), @89[W](2x)
+[94s-95s] @83[E](1x), @84[E](1x), @90[E](1x), @91[W](1x)
+[100s-108s] @83[E](2x), @84[E](2x), @91[W](1x), @90[E](2x)
+[125s-125s] @88[W](2x), @92[W](2x), @89[W](1x), @100[W](1x), @101[W](2x), @72[W](2x)
+[125s-187s] @102[E](3x), @103[E](3x), @104[E](3x), @105[W](1x), @88[W](2x), @92[W](1x), @89[W](1x), @100[W](1x), @101[W](1x), @72[W](1x)
+            @90[E](24x), @97[E](3x), @98[E](2x), @99[E](2x), @96[E](2x), @83[E](2x), @84[E](1x), @91[W](17x), @56(4x), @108[E](1x)
+            @118[E](1x), @119(1x)
+[217s-545s] @120[E](96x), @121[E](62x), @122[W](379x), @123[W](264x), @124[W](1x), @125[W](1x), @126[W](1x), @127[W](1x), @128[W](1x), @129[E](147x)
+            @90[E](1x), @91[W](1x), @131[C](1x), @132[E](1x), @133[E](1x), @95[E](5x), @135[W](1x), @136[E](1x), @137[E](1x), @138[E](1x)
+            @139[E](1x), @140[C](1x), @141[E](1x), @142[E](1x), @146[W](28x), @147[E](34x)
+[CAUSE]
+SEM_04>SEM_04|CONF:63 x271 (@1(SEM_04)>@2(SEM_04), @1(SEM_04)>@3(SEM_04), @2(SEM_04)>@3(SEM_04))
+SEM_04>SEM_06|CONF:62 x21 (@1(SEM_04)>@4(SEM_06), @2(SEM_04)>@4(SEM_06), @3(SEM_04)>@4(SEM_06))
+SEM_04>SEM_07|CONF:57 x14 (@2(SEM_04)>@5(SEM_07), @3(SEM_04)>@5(SEM_07), @9(SEM_04)>@13(SEM_07))
+SEM_04>SEM_09|CONF:62 x36 (@2(SEM_04)>@6(SEM_09), @2(SEM_04)>@7(SEM_09), @2(SEM_04)>@8(SEM_09))
+SEM_06>SEM_07|CONF:60 x1 (@4(SEM_06)>@5(SEM_07))
+SEM_06>SEM_09|CONF:58 x9 (@4(SEM_06)>@6(SEM_09), @4(SEM_06)>@7(SEM_09), @4(SEM_06)>@8(SEM_09))
+SEM_06>SEM_04|CONF:67 x19 (@4(SEM_06)>@9(SEM_04), @4(SEM_06)>@10(SEM_04), @69(SEM_06)>@73(SEM_04))
+SEM_07>SEM_09|CONF:60 x3 (@5(SEM_07)>@6(SEM_09), @5(SEM_07)>@7(SEM_09), @5(SEM_07)>@8(SEM_09))
+SEM_07>SEM_04|CONF:56 x21 (@5(SEM_07)>@9(SEM_04), @5(SEM_07)>@10(SEM_04), @5(SEM_07)>@11(SEM_04))
+SEM_09>SEM_09|CONF:59 x35 (@6(SEM_09)>@7(SEM_09), @6(SEM_09)>@8(SEM_09), @7(SEM_09)>@8(SEM_09))
+SEM_09>SEM_04|CONF:58 x22 (@6(SEM_09)>@9(SEM_04), @6(SEM_09)>@10(SEM_04), @6(SEM_09)>@11(SEM_04))
+SEM_09>SEM_07|CONF:60 x2 (@7(SEM_09)>@13(SEM_07), @8(SEM_09)>@13(SEM_07))
+SEM_09>SEM_11|CONF:60 x1 (@8(SEM_09)>@14(SEM_11))
+SEM_04>SEM_11|CONF:60 x26 (@9(SEM_04)>@14(SEM_11), @10(SEM_04)>@14(SEM_11), @11(SEM_04)>@14(SEM_11))
+SEM_07>SEM_11|CONF:60 x1 (@13(SEM_07)>@14(SEM_11))
+SEM_07>SEM_07|CONF:60 x1 (@13(SEM_07)>@15(SEM_07))
+SEM_11>SEM_07|CONF:60 x1 (@14(SEM_11)>@15(SEM_07))
+SEM_11>SEM_04|CONF:60 x21 (@14(SEM_11)>@16(SEM_04), @14(SEM_11)>@17(SEM_04), @14(SEM_11)>@18(SEM_04))
+SEM_11>SEM_11|CONF:89 x15 (@14(SEM_11)>@22(SEM_11), @14(SEM_11)>@25(SEM_11), @14(SEM_11)>@26(SEM_11))
+SEM_04>SEM_12|CONF:60 x5 (@31(SEM_04)>@36(SEM_12), @32(SEM_04)>@36(SEM_12), @33(SEM_04)>@36(SEM_12))
+SEM_04>SEM_08|CONF:58 x26 (@34(SEM_04)>@39(SEM_08), @35(SEM_04)>@39(SEM_08), @35(SEM_04)>@40(SEM_08))
+SEM_12>SEM_11|CONF:60 x2 (@36(SEM_12)>@37(SEM_11), @36(SEM_12)>@38(SEM_11))
+SEM_12>SEM_08|CONF:60 x3 (@36(SEM_12)>@39(SEM_08), @36(SEM_12)>@40(SEM_08), @36(SEM_12)>@41(SEM_08))
+SEM_11>SEM_08|CONF:60 x10 (@37(SEM_11)>@39(SEM_08), @37(SEM_11)>@40(SEM_08), @37(SEM_11)>@41(SEM_08))
+SEM_08>SEM_08|CONF:58 x23 (@39(SEM_08)>@40(SEM_08), @39(SEM_08)>@41(SEM_08), @39(SEM_08)>@42(SEM_08))
+SEM_08>SEM_09|CONF:58 x29 (@39(SEM_08)>@44(SEM_09), @40(SEM_08)>@44(SEM_09), @41(SEM_08)>@44(SEM_09))
+SEM_08>SEM_13|CONF:65 x5 (@39(SEM_08)>@47(SEM_13), @40(SEM_08)>@47(SEM_13), @41(SEM_08)>@47(SEM_13))
+SEM_08>SEM_04|CONF:58 x33 (@40(SEM_08)>@45(SEM_04), @41(SEM_08)>@45(SEM_04), @41(SEM_08)>@46(SEM_04))
+SEM_09>SEM_13|CONF:60 x1 (@44(SEM_09)>@47(SEM_13))
+SEM_04>SEM_13|CONF:60 x2 (@45(SEM_04)>@47(SEM_13), @46(SEM_04)>@47(SEM_13))
+SEM_13>SEM_04|CONF:60 x5 (@47(SEM_13)>@48(SEM_04), @47(SEM_13)>@49(SEM_04), @47(SEM_13)>@50(SEM_04))
+SEM_04>SEM_02|CONF:60 x5 (@51(SEM_04)>@56(SEM_02), @52(SEM_04)>@56(SEM_02), @53(SEM_04)>@56(SEM_02))
+SEM_02>SEM_04|CONF:60 x5 (@56(SEM_02)>@57(SEM_04), @56(SEM_02)>@58(SEM_04), @56(SEM_02)>@59(SEM_04))
+SEM_06>SEM_06|CONF:55 x13 (@67(SEM_06)>@68(SEM_06), @67(SEM_06)>@69(SEM_06), @68(SEM_06)>@69(SEM_06))
+SEM_06>SEM_08|CONF:59 x14 (@67(SEM_06)>@70(SEM_08), @67(SEM_06)>@71(SEM_08), @68(SEM_06)>@70(SEM_08))
+SEM_09>SEM_08|CONF:61 x11 (@86(SEM_09)>@88(SEM_08), @86(SEM_09)>@89(SEM_08), @102(SEM_09)>@105(SEM_08))
+SEM_04>SEM_03|CONF:57 x4 (@107(SEM_04)>@108(SEM_03), @134(SEM_04)>@136(SEM_03), @134(SEM_04)>@137(SEM_03))
+SEM_04>SEM_10|CONF:57 x3 (@116(SEM_04)>@119(SEM_10), @117(SEM_04)>@119(SEM_10), @111(SEM_04)>@119(SEM_10))
+SEM_09>SEM_10|CONF:60 x1 (@118(SEM_09)>@119(SEM_10))
+SEM_05>SEM_05|CONF:67 x39 (@122(SEM_05)>@123(SEM_05), @124(SEM_05)>@125(SEM_05), @124(SEM_05)>@126(SEM_05))
+SEM_03>SEM_04|CONF:60 x1 (@129(SEM_03)>@130(SEM_04))
+SEM_14>SEM_14|CONF:80 x27 (@131(SEM_14)>@132(SEM_14), @131(SEM_14)>@133(SEM_14), @132(SEM_14)>@133(SEM_14))
+SEM_14>SEM_04|CONF:60 x3 (@131(SEM_14)>@134(SEM_04), @132(SEM_14)>@134(SEM_04), @133(SEM_14)>@134(SEM_04))
+SEM_14>SEM_05|CONF:54 x5 (@132(SEM_14)>@135(SEM_05), @133(SEM_14)>@135(SEM_05), @131(SEM_14)>@135(SEM_05))
+SEM_14>SEM_03|CONF:52 x4 (@133(SEM_14)>@136(SEM_03), @131(SEM_14)>@138(SEM_03), @132(SEM_14)>@138(SEM_03))
+SEM_04>SEM_05|CONF:60 x1 (@134(SEM_04)>@135(SEM_05))
+SEM_05>SEM_03|CONF:60 x3 (@135(SEM_05)>@136(SEM_03), @135(SEM_05)>@137(SEM_03), @135(SEM_05)>@138(SEM_03))
+SEM_03>SEM_03|CONF:57 x8 (@136(SEM_03)>@137(SEM_03), @136(SEM_03)>@138(SEM_03), @136(SEM_03)>@139(SEM_03))
+SEM_03>SEM_14|CONF:55 x12 (@137(SEM_03)>@140(SEM_14), @138(SEM_03)>@140(SEM_14), @138(SEM_03)>@141(SEM_14))
+SEM_14>SEM_06|CONF:54 x15 (@140(SEM_14)>@143(SEM_06), @141(SEM_14)>@143(SEM_06), @141(SEM_14)>@144(SEM_06))
+SEM_07>SEM_08|CONF:50 x1 via:JOB_01 (@15(SEM_07)>@41(SEM_08))
+SEM_08>SEM_06|CONF:57 x6 via:ATTEMPT_01 (@70(SEM_08)>@67(SEM_06), @70(SEM_08)>@68(SEM_06), @71(SEM_08)>@67(SEM_06))
+SEM_06>SEM_10|CONF:50 x2 via:ATTEMPT_07 (@109(SEM_06)>@119(SEM_10), @110(SEM_06)>@119(SEM_10))
+SEM_09>SEM_05|CONF:55 x10 via:IF_01 (@120(SEM_09)>@122(SEM_05), @120(SEM_09)>@127(SEM_05), @120(SEM_09)>@124(SEM_05))
+SEM_05>SEM_04|CONF:50 x3 via:MSRA_03 (@122(SEM_05)>@130(SEM_04), @123(SEM_05)>@130(SEM_04), @127(SEM_05)>@130(SEM_04))
+SEM_05>SEM_14|CONF:50 x6 via:MSRA_03 (@127(SEM_05)>@131(SEM_14), @127(SEM_05)>@132(SEM_14), @127(SEM_05)>@133(SEM_14))
+SEM_04>SEM_14|CONF:50 x6 via:MSRA_03 (@130(SEM_04)>@131(SEM_14), @130(SEM_04)>@132(SEM_14), @130(SEM_04)>@133(SEM_14))
+SEM_03>SEM_06|CONF:52 x4 via:THREAD_01 (@138(SEM_03)>@144(SEM_06), @138(SEM_03)>@145(SEM_06), @139(SEM_03)>@144(SEM_06))
+SEM_06>SEM_14|CONF:50 x6 via:ATTEMPT_03 (@143(SEM_06)>@140(SEM_14), @143(SEM_06)>@141(SEM_14), @143(SEM_06)>@142(SEM_14))
+[L4]
+## TIER_0 CRITICAL
+@131 1x C S0 T101 ^279 FLOW:FLOW_27 IMP:1.00
+  ENTITIES:URL_01 IP_04 ATTEMPT_05 MININT_01 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (fatal): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,029 FATAL [IPC Server handler 13 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Task: ATTEMPT_05 - exited : java.n...
+@140 1x C S0 T110 ^281 FLOW:FLOW_27 IMP:1.00
+  ENTITIES:URL_01 IP_04 ATTEMPT_03 MININT_01 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (fatal): <BRACKET>(1x)
+    Slot 4 (task): ATTEMPT_03(1x)
+    Slot 5 (timeout): exc(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:28,217 FATAL [IPC Server handler 4 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Task: ATTEMPT_03 - exited : java.ne...
+## TIER_1 IMPORTANT
+@6 1x E S0 T3 ^3 FLOW:FLOW_11 IMP:0.81
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (orgapachehadoopmapreducev2appmrappmaster): OutputCommitter(1x)
+    Slot 5 (orgapachehadoopmapreducev2appmrappmaster): is(1x)
+    Slot 6 (orgapachehadoopmapreducev2appmrappmaster): org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:50,509 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileO...
+@7 1x E S0 T5 ^3 FLOW:FLOW_11 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:50,556 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.jobhistory.EventTyp...
+@8 7x E S0 T6 ^3->3 burst(rate=7.0/s) FLOW:FLOW_11 IMP:0.63
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(7x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(7x)
+    Slot 3 (info): <BRACKET>(7x)
+    Slot 4 (class): org.apache.hadoop.mapreduce.v2.app.job.event.JobEventType(1x) org.apache.hadoop.mapreduce.v2.app.job.event.TaskEventType(1x) org.apache.hadoop.mapreduce.v2.app.job.event.TaskAttemptEventType(1x) org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventType(1x) org.apache.hadoop.mapreduce.v2.app.speculate.Speculator$EventType(1x)
+    Slot 5 (class): org.apache.hadoop.mapreduce.v2.app.MRAppMaster$JobEventDispatcher(1x) org.apache.hadoop.mapreduce.v2.app.MRAppMaster$TaskEventDispatcher(1x) org.apache.hadoop.mapreduce.v2.app.MRAppMaster$TaskAttemptEventDispatcher(1x) org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler(1x) org.apache.hadoop.mapreduce.v2.app.MRAppMaster$SpeculatorEventDispatcher(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:50,556 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.Jo...
+    - 2015-10-18 18:01:50,556 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.Ta...
+@44 1x E S0 T40 ^6 FLOW:FLOW_15 IMP:0.81
+  ENTITIES:IF_01 IP_02 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (info): org.apache.hadoop.yarn.client.RMProxy:(1x)
+    Slot 5 (info): Connecting(1x)
+    Slot 6 (to): ResourceManager(1x)
+    Slot 7 (to): at(1x)
+    Slot 8 (to): msra-saIF_01.<NUM>.<NUM>:<NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:53,557 INFO [main] org.apache.hadoop.yarn.client.RMProxy: Connecting to ResourceManager at msra-saIF_01.190.173.170:8030
+@79 1x E S0 T72 ^15 FLOW:FLOW_12 IMP:0.83
+  ENTITIES:JVM_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:02,510 INFO [IPC Server handler 13 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : JVM_01 asked for a task
+@80 1x E S0 T73 ^15 FLOW:FLOW_12 IMP:0.83
+  ENTITIES:JVM_01 ATTEMPT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:02,510 INFO [IPC Server handler 13 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: JVM_01 given task: ATT...
+@83 13x E S0 T53 ^19->185 periodic(~13s) FLOW:FLOW_24 IMP:0.59
+  ENTITIES:CONTAINE_04
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(13x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(13x)
+    Slot 3 (info): <BRACKET>(13x)
+    Slot 4 (orgapachehadoopmapreducev2apprmrmcontainerallocator): Recalculating(12x) Received(1x)
+    Slot 5 (orgapachehadoopmapreducev2apprmrmcontainerallocator): schedule,(12x) completed(1x)
+    Slot 6 (orgapachehadoopmapreducev2apprmrmcontainerallocator): headroom=<memory:<NUM>,(12x) container(1x)
+    Slot 7 (orgapachehadoopmapreducev2apprmrmcontainerallocator): vCores:-<NUM>>(12x) CONTAINE_04(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:06,557 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroo...
+    - 2015-10-18 18:02:07,573 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroo...
+@84 13x E S0 T52 ^19->130 periodic(~9s) FLOW:FLOW_12 IMP:0.61
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(13x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(13x)
+    Slot 3 (info): <BRACKET>(13x)
+    Slot 4 (completedmapsforreduceslowstart): <NUM>(13x)
+  SAMPLES:
+    - 2015-10-18 18:02:06,557 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold not...
+    - 2015-10-18 18:02:07,573 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold not...
+@86 1x E S0 T76 ^33 FLOW:FLOW_20 IMP:0.83
+  ENTITIES:ATTEMPT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (is): <NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:20,558 INFO [IPC Server handler 18 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt ATTEMPT_01 ...
+@90 35x E S0 T77 ^37->262 periodic(~6s) FLOW:FLOW_15 IMP:0.58
+  ENTITIES:ATTEMPT_01 ATTEMPT_03 ATTEMPT_07 ATTEMPT_05 ATTEMPT_08 ATTEMPT_11 ATTEMPT_10 ATTEMPT_09
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(35x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(35x)
+    Slot 3 (info): <BRACKET>(35x)
+    Slot 4 (taskattempt): ATTEMPT_01(11x) ATTEMPT_03(9x) ATTEMPT_07(4x) ATTEMPT_05(3x) ATTEMPT_08(2x)
+    Slot 5 (is): <NUM>(35x)
+  SAMPLES:
+    - 2015-10-18 18:02:24,543 INFO [IPC Server handler 18 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt ATTEMPT_01 ...
+    - 2015-10-18 18:02:46,575 INFO [IPC Server handler 9 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt ATTEMPT_03 i...
+@93 1x E S0 T55 ^60 FLOW:FLOW_15 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:47,513 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:1...
+@94 1x E S0 T44 ^60 FLOW:FLOW_5 IMP:0.81
+  ENTITIES:MSRA_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (info): org.apache.hadoop.yarn.util.RackResolver:(1x)
+    Slot 5 (info): Resolved(1x)
+    Slot 6 (info): MSRA_02.fareast.corp.microsoft.com(1x)
+    Slot 7 (to): /default-rack(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:47,513 INFO [AsyncDispatcher event handler] org.apache.hadoop.yarn.util.RackResolver: Resolved MSRA_02.fareast.corp.microsoft.com ...
+@95 6x E S0 T61 ^60->281 periodic(~37s) FLOW:FLOW_5 IMP:0.61
+  ENTITIES:ATTEMPT_07 ATTEMPT_05 ATTEMPT_06 ATTEMPT_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(6x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(6x)
+    Slot 3 (info): <BRACKET>(6x)
+    Slot 4 (info): org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl:(6x)
+    Slot 5 (info): ATTEMPT_05(3x) ATTEMPT_07(1x) ATTEMPT_06(1x) ATTEMPT_03(1x)
+    Slot 6 (info): TaskAttempt(6x)
+    Slot 7 (from): RUNNING(2x) UNASSIGNED(1x) FAIL_CONTAINER_CLEANUP(1x) FAIL_TASK_CLEANUP(1x) NEW(1x)
+    Slot 8 (to): FAIL_CONTAINER_CLEANUP(2x) ASSIGNED(1x) FAIL_TASK_CLEANUP(1x) FAILED(1x) UNASSIGNED(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:47,513 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: ATTEMPT_07 TaskAttempt Tr...
+    - 2015-10-18 18:06:26,029 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: ATTEMPT_05 TaskAttempt Tr...
+@96 3x E S0 T50 ^61->185 FLOW:FLOW_5 IMP:0.65
+  ENTITIES:APPLICAT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(3x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(3x)
+    Slot 3 (info): <BRACKET>(3x)
+    Slot 4 (release): <NUM>(3x)
+  SAMPLES:
+    - 2015-10-18 18:02:48,529 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: getResources() for APPLICAT_01:...
+    - 2015-10-18 18:03:57,564 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: getResources() for APPLICAT_01:...
+@97 4x E S0 T71 ^63->131 periodic(~17s) FLOW:FLOW_5 IMP:0.62
+  ENTITIES:JOB_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(4x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(4x)
+    Slot 3 (info): <BRACKET>(4x)
+    Slot 4 (info): SecurityLogger.org.apache.hadoop.ipc.Server:(4x)
+    Slot 5 (info): Auth(4x)
+    Slot 6 (info): successful(4x)
+    Slot 7 (info): for(4x)
+    Slot 8 (info): JOB_01(4x)
+    Slot 9 (info): (auth:SIMPLE)(4x)
+  SAMPLES:
+    - 2015-10-18 18:02:50,513 INFO [Socket Reader #1 for port 62270] SecurityLogger.org.apache.hadoop.ipc.Server: Auth successful for JOB_01 (auth:SIMPLE)
+    - 2015-10-18 18:03:57,502 INFO [Socket Reader #1 for port 62270] SecurityLogger.org.apache.hadoop.ipc.Server: Auth successful for JOB_01 (auth:SIMPLE)
+@98 3x E S0 T74 ^63->130 FLOW:FLOW_19 IMP:0.65
+  ENTITIES:JVM_04 JVM_06 JVM_05
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(3x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(3x)
+    Slot 3 (info): <BRACKET>(3x)
+    Slot 4 (id): JVM_04(1x) JVM_06(1x) JVM_05(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:50,560 INFO [IPC Server handler 9 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : JVM_04 asked for a task
+    - 2015-10-18 18:03:57,564 INFO [IPC Server handler 20 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : JVM_06 asked for a task
+@99 3x E S0 T75 ^63->130 FLOW:FLOW_19 IMP:0.65
+  ENTITIES:JVM_04 ATTEMPT_07 JVM_06 ATTEMPT_09 JVM_05 ATTEMPT_08
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(3x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(3x)
+    Slot 3 (info): <BRACKET>(3x)
+    Slot 4 (id): JVM_04(1x) JVM_06(1x) JVM_05(1x)
+    Slot 5 (task): ATTEMPT_07(1x) ATTEMPT_09(1x) ATTEMPT_08(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:50,560 INFO [IPC Server handler 9 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: JVM_04 given task: ATTE...
+    - 2015-10-18 18:03:57,564 INFO [IPC Server handler 20 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: JVM_06 given task: ATT...
+@102 3x E S0 T67 ^128->129 burst(rate=3.0/s) FLOW:FLOW_15 IMP:0.65
+  ENTITIES:CONTAINE_05 ATTEMPT_08 CONTAINE_06 ATTEMPT_09 CONTAINE_07 ATTEMPT_10
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(3x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(3x)
+    Slot 3 (info): <BRACKET>(3x)
+    Slot 4 (container): CONTAINE_05(1x) CONTAINE_06(1x) CONTAINE_07(1x)
+    Slot 5 (taskattempt): ATTEMPT_08(1x) ATTEMPT_09(1x) ATTEMPT_10(1x)
+  SAMPLES:
+    - 2015-10-18 18:03:55,517 INFO [ContainerLauncher #4] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventTy...
+    - 2015-10-18 18:03:55,595 INFO [ContainerLauncher #5] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Processing the event EventTy...
+@103 3x E S0 T37 ^128->129 burst(rate=3.0/s) FLOW:FLOW_11 IMP:0.63
+  ENTITIES:ATTEMPT_08 ATTEMPT_09 ATTEMPT_10
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(3x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(3x)
+    Slot 3 (info): <BRACKET>(3x)
+    Slot 4 (info): org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl:(3x)
+    Slot 5 (info): Launching(3x)
+    Slot 6 (info): ATTEMPT_08(1x) ATTEMPT_09(1x) ATTEMPT_10(1x)
+  SAMPLES:
+    - 2015-10-18 18:03:55,517 INFO [ContainerLauncher #4] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Launching ATTEMPT_08
+    - 2015-10-18 18:03:55,595 INFO [ContainerLauncher #5] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Launching ATTEMPT_09
+@104 3x E S0 T68 ^128->129 burst(rate=3.0/s) FLOW:FLOW_11 IMP:0.65
+  ENTITIES:MSRA_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(3x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(3x)
+    Slot 3 (info): <BRACKET>(3x)
+    Slot 4 (proxy): MSRA_02.fareast.corp.microsoft.com:<NUM>(3x)
+  SAMPLES:
+    - 2015-10-18 18:03:55,517 INFO [ContainerLauncher #4] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA_0...
+    - 2015-10-18 18:03:55,595 INFO [ContainerLauncher #5] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA_0...
+@108 1x E S0 T80 ^144 IMP:0.83
+  ENTITIES:CONTAINE_11
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (error): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:04:11,034 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Container complete event for u...
+@118 1x E S0 T90 ^185 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (contallocnum): C(1x)
+  SAMPLES:
+    - 2015-10-18 18:04:52,552 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:0...
+@120 96x E S0 T92 ^220->546 periodic(~3s) FLOW:FLOW_19 IMP:0.55
+  ENTITIES:IF_01 IP_02 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(96x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(96x)
+    Slot 3 (warn): <BRACKET>(96x)
+  SAMPLES:
+    - 2015-10-18 18:05:27,570 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.ipc.Client: Address change detected. Old: msra-saIF_01.190.173.17...
+    - 2015-10-18 18:05:28,570 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.ipc.Client: Address change detected. Old: msra-saIF_01.190.173.17...
+@121 62x E S0 T93 ^220->423 periodic(~3s) FLOW:FLOW_19 IMP:0.57
+  ENTITIES:MSRA_03 DFSCLIEN_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(62x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(62x)
+    Slot 3 (warn): <BRACKET>(62x)
+    Slot 4 (for): <BRACKET>(62x)
+    Slot 5 (for): <NUM>(62x)
+  SAMPLES:
+    - 2015-10-18 18:05:27,570 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.hdfs.LeaseRenewer: Failed to renew lease for [DFSCLIEN_01] for 30...
+    - 2015-10-18 18:05:28,570 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.hdfs.LeaseRenewer: Failed to renew lease for [DFSCLIEN_01] for 31...
+@129 147x E S0 T99 ^254->547 burst(rate=0.5/s) IMP:0.55
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(147x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(147x)
+    Slot 3 (error): <BRACKET>(147x)
+  SAMPLES:
+    - 2015-10-18 18:06:01,840 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.
+    - 2015-10-18 18:06:03,856 ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM.
+@132 1x E S0 T102 ^279 FLOW:FLOW_27 IMP:0.83
+  ENTITIES:URL_01 IP_04 ATTEMPT_05 MININT_01 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,029 INFO [IPC Server handler 13 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Diagnostics report from ATTEMPT_05:...
+@133 1x E S0 T103 ^279 IMP:0.83
+  ENTITIES:URL_01 IP_04 ATTEMPT_05 MININT_01 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,029 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from A...
+@136 1x E S0 T106 ^279 FLOW:FLOW_28 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (error): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,139 ERROR [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Error writing History Event: org...
+@137 1x E S0 T107 ^279 FLOW:FLOW_28 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (error): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,139 ERROR [eventHandlingThread] org.apache.hadoop.yarn.YarnUncaughtExceptionHandler: Thread Thread[eventHandlingThread,5,main] ...
+@138 1x E S0 T108 ^279 FLOW:FLOW_28 IMP:0.83
+  ENTITIES:THREAD_01 MININT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (orgapachehadoopmapreducev2apprmrmcontainerrequestor): <NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,139 INFO [THREAD_01] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: 1 failures on node MININT_01.fareast.corp.micr...
+@139 1x E S0 T109 ^279 FLOW:FLOW_28 IMP:0.83
+  ENTITIES:THREAD_01 ATTEMPT_06
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,139 INFO [THREAD_01] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Added ATTEMPT_06 to list of failed maps
+@141 1x E S0 T111 ^281 FLOW:FLOW_27 IMP:0.83
+  ENTITIES:URL_01 IP_04 ATTEMPT_03 MININT_01 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (from): ATTEMPT_03:(1x)
+    Slot 5 (on): sock(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:28,217 INFO [IPC Server handler 4 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Diagnostics report from ATTEMPT_03: ...
+@142 1x E S0 T112 ^281 IMP:0.83
+  ENTITIES:URL_01 IP_04 ATTEMPT_03 MININT_01 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (from): ATTEMPT_03:(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:28,217 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from A...
+@147 34x E S0 T100 ^481->547 burst(rate=0.5/s) FLOW:FLOW_22 IMP:0.58
+  ENTITIES:MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(34x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(34x)
+    Slot 3 (info): <BRACKET>(34x)
+    Slot 4 (tried): <NUM>(34x)
+  SAMPLES:
+    - 2015-10-18 18:09:48,510 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA_03:8030. Already tried 0 tim...
+    - 2015-10-18 18:09:50,511 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA_03:8030. Already tried 0 tim...
+## TIER_2 SUPPORTING
+@5 1x I S0 T4 ^3 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (orgapachehadoopmapreducev2appmrappmaster): OutputCommitter(1x)
+    Slot 5 (orgapachehadoopmapreducev2appmrappmaster): set(1x)
+    Slot 6 (orgapachehadoopmapreducev2appmrappmaster): in(1x)
+    Slot 7 (orgapachehadoopmapreducev2appmrappmaster): config(1x)
+    Slot 8 (orgapachehadoopmapreducev2appmrappmaster): null(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:50,353 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: OutputCommitter set in config null
+@13 1x I S0 T10 ^4 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (at): <NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:51,306 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+@14 1x I S0 T11 ^4 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (info): org.apache.hadoop.metrics2.impl.MetricsSystemImpl:(1x)
+    Slot 5 (info): MRAppMaster(1x)
+    Slot 6 (info): metrics(1x)
+    Slot 7 (system): started(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:51,306 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: MRAppMaster metrics system started
+@15 1x I S0 T12 ^4 IMP:0.35
+  ENTITIES:JOB_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:51,322 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Adding job token for JOB_01 to jobTokenSecretManager
+@22 2x I S0 T19 ^4->6 burst(rate=1.0/s) IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(2x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(2x)
+    Slot 3 (info): <BRACKET>(2x)
+    Slot 4 (port): <NUM>(2x)
+  SAMPLES:
+    - 2015-10-18 18:01:51,775 INFO [Socket Reader #1 for port 62260] org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 62260
+    - 2015-10-18 18:01:53,510 INFO [Socket Reader #1 for port 62270] org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 62270
+@25 2x I S0 T22 ^4->6 burst(rate=1.0/s) IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(2x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(2x)
+    Slot 3 (info): <BRACKET>(2x)
+  SAMPLES:
+    - 2015-10-18 18:01:51,806 INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+    - 2015-10-18 18:01:53,510 INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+@26 2x I S0 T23 ^4->6 burst(rate=1.0/s) IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(2x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(2x)
+    Slot 3 (info): <BRACKET>(2x)
+  SAMPLES:
+    - 2015-10-18 18:01:51,806 INFO [IPC Server listener on 62260] org.apache.hadoop.ipc.Server: IPC Server listener on 62260: starting
+    - 2015-10-18 18:01:53,510 INFO [IPC Server listener on 62270] org.apache.hadoop.ipc.Server: IPC Server listener on 62270: starting
+@37 1x I S0 T34 ^5 IMP:0.35
+  ENTITIES:IP_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:52,728 INFO [main] org.mortbay.log: Started HttpServer2$SelectChannelConnectorWithSafeStartup@IP_01:62267
+@38 1x I S0 T35 ^5 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (at): <NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:52,728 INFO [main] org.apache.hadoop.yarn.webapp.WebApps: Web app /mapreduce started at 62267
+@39 1x W S0 T36 ^6 FLOW:FLOW_14 IMP:0.52
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:53,400 INFO [main] org.apache.hadoop.yarn.webapp.WebApps: Registered webapp guice modules
+@40 1x W S0 T18 ^6 FLOW:FLOW_14 IMP:0.52
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:53,400 INFO [main] org.apache.hadoop.ipc.CallQueueManager: Using callQueue class java.util.concurrent.LinkedBlockingQueue
+@41 2x W S0 T37 ^6->10 FLOW:FLOW_14 IMP:0.47
+  ENTITIES:JOB_01 TASK_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(2x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(2x)
+    Slot 3 (info): <BRACKET>(2x)
+    Slot 4 (info): org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator:(2x)
+    Slot 5 (info): JOB_CREATE(1x) ATTEMPT_START(1x)
+    Slot 6 (info): JOB_01(1x) TASK_01(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:53,447 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: JOB_CREATE JOB_01
+    - 2015-10-18 18:01:57,447 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.speculate.DefaultSpeculator: ATTEMPT_START TASK_01
+@42 1x W S0 T38 ^6 FLOW:FLOW_15 IMP:0.49
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (info): org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor:(1x)
+    Slot 5 (info): nodeBlacklistingEnabled:true(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:53,447 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true
+@43 2x W S0 T39 ^6->6 burst(rate=2.0/s) FLOW:FLOW_15 IMP:0.47
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(2x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(2x)
+    Slot 3 (info): <BRACKET>(2x)
+    Slot 4 (info): org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor:(2x)
+    Slot 5 (info): maxTaskFailuresPerNode(1x) blacklistDisablePercent(1x)
+    Slot 6 (info): is(2x)
+    Slot 7 (info): <NUM>(2x)
+  SAMPLES:
+    - 2015-10-18 18:01:53,447 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: maxTaskFailuresPerNode is 3
+    - 2015-10-18 18:01:53,447 INFO [main] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: blacklistDisablePercent is 33
+@47 1x I S0 T41 ^6 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (is): <NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:53,713 INFO [main] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Upper limit on the thread pool size is 500
+@56 8x I S0 T50 ^7->144 periodic(~17s) IMP:0.44
+  ENTITIES:APPLICAT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(8x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(8x)
+    Slot 3 (info): <BRACKET>(8x)
+    Slot 4 (release): <NUM>(8x)
+  SAMPLES:
+    - 2015-10-18 18:01:54,838 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: getResources() for APPLICAT_01:...
+    - 2015-10-18 18:01:57,916 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: getResources() for APPLICAT_01:...
+@70 1x W S0 T64 ^10 FLOW:FLOW_14 IMP:0.52
+  ENTITIES:ATTEMPT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (attempt_01): <NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:57,447 INFO [ContainerLauncher #0] org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncherImpl: Shuffle port returned by Con...
+@71 1x W S0 T65 ^10 FLOW:FLOW_14 IMP:0.52
+  ENTITIES:ATTEMPT_01 CONTAINE_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (taskattempt): <BRACKET>(1x)
+    Slot 5 (nm): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:01:57,447 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: TaskAttempt: [ATTEMPT_01]...
+@72 5x W S0 T61 ^10->129 periodic(~24s) FLOW:FLOW_14 IMP:0.45
+  ENTITIES:ATTEMPT_01 TASK_01 ATTEMPT_08 ATTEMPT_09 ATTEMPT_10
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(5x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(5x)
+    Slot 3 (info): <BRACKET>(5x)
+    Slot 4 (info): org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl:(4x) org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl:(1x)
+    Slot 5 (info): ATTEMPT_01(1x) TASK_01(1x) ATTEMPT_08(1x) ATTEMPT_09(1x) ATTEMPT_10(1x)
+    Slot 6 (info): TaskAttempt(4x) Task(1x)
+    Slot 7 (from): UNASSIGNED(3x) ASSIGNED(1x) SCHEDULED(1x)
+    Slot 8 (to): ASSIGNED(3x) RUNNING(2x)
+  SAMPLES:
+    - 2015-10-18 18:01:57,447 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: ATTEMPT_01 TaskAttempt Tr...
+    - 2015-10-18 18:01:57,447 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl: TASK_01 Task Transitioned from S...
+@88 14x W S0 T53 ^35->129 periodic(~7s) FLOW:FLOW_15 IMP:0.42
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(14x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(14x)
+    Slot 3 (info): <BRACKET>(14x)
+    Slot 4 (orgapachehadoopmapreducev2apprmrmcontainerallocator): Recalculating(11x) Got(3x)
+    Slot 5 (orgapachehadoopmapreducev2apprmrmcontainerallocator): schedule,(11x) allocated(3x)
+    Slot 6 (orgapachehadoopmapreducev2apprmrmcontainerallocator): headroom=<memory:<NUM>,(11x) containers(3x)
+    Slot 7 (orgapachehadoopmapreducev2apprmrmcontainerallocator): vCores:-<NUM>>(11x) <NUM>(3x)
+  SAMPLES:
+    - 2015-10-18 18:02:22,402 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroo...
+    - 2015-10-18 18:02:23,465 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Recalculating schedule, headroo...
+@89 10x W S0 T52 ^35->129 periodic(~9s) FLOW:FLOW_15 IMP:0.45
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(10x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(10x)
+    Slot 3 (info): <BRACKET>(10x)
+    Slot 4 (completedmapsforreduceslowstart): <NUM>(10x)
+  SAMPLES:
+    - 2015-10-18 18:02:22,402 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold not...
+    - 2015-10-18 18:02:23,465 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Reduce slow start threshold not...
+@91 21x W S0 T77 ^45->265 periodic(~10s) FLOW:FLOW_15 IMP:0.43
+  ENTITIES:ATTEMPT_03 ATTEMPT_05 ATTEMPT_07 ATTEMPT_01 ATTEMPT_08 ATTEMPT_11 ATTEMPT_10 ATTEMPT_09
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(21x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(21x)
+    Slot 3 (info): <BRACKET>(21x)
+    Slot 4 (taskattempt): ATTEMPT_03(3x) ATTEMPT_11(3x) ATTEMPT_10(3x) ATTEMPT_09(3x) ATTEMPT_05(2x)
+    Slot 5 (is): <NUM>(21x)
+  SAMPLES:
+    - 2015-10-18 18:02:32,434 INFO [IPC Server handler 9 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt ATTEMPT_03 i...
+    - 2015-10-18 18:03:25,406 INFO [IPC Server handler 12 on 62270] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt ATTEMPT_05 ...
+@92 4x W S0 T66 ^60->129 periodic(~17s) FLOW:FLOW_15 IMP:0.45
+  ENTITIES:CONTAINE_04 ATTEMPT_07 CONTAINE_05 ATTEMPT_08 CONTAINE_06 ATTEMPT_09 CONTAINE_07 ATTEMPT_10
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(4x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(4x)
+    Slot 3 (info): <BRACKET>(4x)
+    Slot 4 (container): CONTAINE_04(1x) CONTAINE_05(1x) CONTAINE_06(1x) CONTAINE_07(1x)
+    Slot 5 (to): ATTEMPT_07(1x) ATTEMPT_08(1x) ATTEMPT_09(1x) ATTEMPT_10(1x)
+  SAMPLES:
+    - 2015-10-18 18:02:47,497 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned container CONTAINE_04 ...
+    - 2015-10-18 18:03:55,408 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: Assigned container CONTAINE_05 ...
+@100 2x W S0 T55 ^128->129 burst(rate=2.0/s) FLOW:FLOW_15 IMP:0.49
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(2x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(2x)
+    Slot 3 (info): <BRACKET>(2x)
+  SAMPLES:
+    - 2015-10-18 18:03:55,408 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:1...
+    - 2015-10-18 18:03:56,455 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerAllocator: After Scheduling: PendingReds:1...
+@101 3x W S0 T44 ^128->129 burst(rate=3.0/s) FLOW:FLOW_15 IMP:0.46
+  ENTITIES:MSRA_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(3x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(3x)
+    Slot 3 (info): <BRACKET>(3x)
+    Slot 4 (info): org.apache.hadoop.yarn.util.RackResolver:(3x)
+    Slot 5 (info): Resolved(3x)
+    Slot 6 (info): MSRA_02.fareast.corp.microsoft.com(3x)
+    Slot 7 (to): /default-rack(3x)
+  SAMPLES:
+    - 2015-10-18 18:03:55,408 INFO [AsyncDispatcher event handler] org.apache.hadoop.yarn.util.RackResolver: Resolved MSRA_02.fareast.corp.microsoft.com ...
+    - 2015-10-18 18:03:55,423 INFO [AsyncDispatcher event handler] org.apache.hadoop.yarn.util.RackResolver: Resolved MSRA_02.fareast.corp.microsoft.com ...
+@105 1x W S0 T50 ^129 IMP:0.51
+  ENTITIES:APPLICAT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+    Slot 4 (release): <NUM>(1x)
+  SAMPLES:
+    - 2015-10-18 18:03:56,455 INFO [RMCommunicator Allocator] org.apache.hadoop.mapreduce.v2.app.rm.RMContainerRequestor: getResources() for APPLICAT_01:...
+@119 1x I S0 T91 ^185 IMP:0.35
+  ENTITIES:ATTEMPT_07
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (info): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:04:52,552 INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl: Diagnostics report from A...
+@122 379x W S0 T92 ^230->548 burst(rate=1.2/s) FLOW:FLOW_6 IMP:0.35
+  ENTITIES:IF_01 IP_02 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(379x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(379x)
+    Slot 3 (warn): <BRACKET>(379x)
+  SAMPLES:
+    - 2015-10-18 18:05:37,617 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.ipc.Client: Address change detected. Old: msra-saIF_01.190.173.17...
+    - 2015-10-18 18:05:38,617 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.ipc.Client: Address change detected. Old: msra-saIF_01.190.173.17...
+@123 264x W S0 T93 ^230->547 burst(rate=0.8/s) FLOW:FLOW_6 IMP:0.36
+  ENTITIES:MSRA_03 DFSCLIEN_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(264x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(264x)
+    Slot 3 (warn): <BRACKET>(264x)
+    Slot 4 (for): <BRACKET>(264x)
+    Slot 5 (for): <NUM>(264x)
+  SAMPLES:
+    - 2015-10-18 18:05:37,617 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.hdfs.LeaseRenewer: Failed to renew lease for [DFSCLIEN_01] for 40...
+    - 2015-10-18 18:05:38,617 WARN [LeaseRenewer:msrabi@MSRA_03:9000] org.apache.hadoop.hdfs.LeaseRenewer: Failed to renew lease for [DFSCLIEN_01] for 41...
+@124 1x W S0 T94 ^250 FLOW:FLOW_6 IMP:0.52
+  ENTITIES:IP_02 IP_03 BP_01 BLK_01
+  TUPLE_FLOWS:
+    [<NUM>-<NUM>-<NUM> -> <NUM>:<NUM>:<NUM>,<NUM>] (1x)
+  SAMPLES:
+    - 2015-10-18 18:05:57,009 WARN [ResponseProcessor for block BP-1347369012-IP_02-1444972147527:BLK_01] org.apache.hadoop.hdfs.DFSClient: Slow ReadProc...
+@125 1x W S0 T95 ^250 FLOW:FLOW_6 IMP:0.52
+  ENTITIES:IP_02 BP_01 BLK_01
+  TUPLE_FLOWS:
+    [<NUM>-<NUM>-<NUM> -> <NUM>:<NUM>:<NUM>,<NUM>] (1x)
+  SAMPLES:
+    - 2015-10-18 18:05:57,009 WARN [ResponseProcessor for block BP-1347369012-IP_02-1444972147527:BLK_01] org.apache.hadoop.hdfs.DFSClient: DFSOutputStre...
+@126 1x W S0 T96 ^250 FLOW:FLOW_6 IMP:0.52
+  ENTITIES:IP_02 IP_03 JOB_01 JOB_03 BP_01 BLK_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (file): <PATH>(1x)
+  SAMPLES:
+    - 2015-10-18 18:05:57,024 WARN [DataStreamer for file /tmp/hadoop-yarn/staging/msrabi/.staging/JOB_01/JOB_03.jhist block BP-1347369012-IP_02-14449721...
+@127 1x W S0 T97 ^250 FLOW:FLOW_26 IMP:0.51
+  ENTITIES:IF_01 IP_02 JOB_01 JOB_03 BP_01 BLK_01 MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (file): <PATH>(1x)
+  SAMPLES:
+    - 2015-10-18 18:05:57,024 WARN [DataStreamer for file /tmp/hadoop-yarn/staging/msrabi/.staging/JOB_01/JOB_03.jhist block BP-1347369012-IP_02-14449721...
+@128 1x W S0 T98 ^250 FLOW:FLOW_26 IMP:0.52
+  ENTITIES:IP_02 JOB_01 JOB_03 BP_01 BLK_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (file): <PATH>(1x)
+  SAMPLES:
+    - 2015-10-18 18:05:57,024 WARN [DataStreamer for file /tmp/hadoop-yarn/staging/msrabi/.staging/JOB_01/JOB_03.jhist block BP-1347369012-IP_02-14449721...
+@135 1x W S0 T105 ^279 IMP:0.52
+  ENTITIES:ATTEMPT_05
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(1x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(1x)
+    Slot 3 (warn): <BRACKET>(1x)
+  SAMPLES:
+    - 2015-10-18 18:06:26,139 WARN [CommitterEvent Processor #1] org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler: Task cleanup failed for...
+@146 28x W S0 T100 ^425->479 burst(rate=0.5/s) FLOW:FLOW_22 IMP:0.42
+  ENTITIES:MSRA_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>-<NUM>-<NUM>(28x)
+    Slot 2 (slot2): <NUM>:<NUM>:<NUM>,<NUM>(28x)
+    Slot 3 (info): <BRACKET>(28x)
+    Slot 4 (tried): <NUM>(28x)
+  SAMPLES:
+    - 2015-10-18 18:08:52,429 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA_03:8030. Already tried 0 tim...
+    - 2015-10-18 18:08:54,429 INFO [RMCommunicator Allocator] org.apache.hadoop.ipc.Client: Retrying connect to server: MSRA_03:8030. Already tried 0 tim...
+## TIER_BACKGROUND (75 clusters)
+  @1: 1x SI T0 [RARE]
+  @2: 1x SI T1 [RARE]
+  @3: 1x SI T2 [RARE]
+  @4: 1x SI T3 [RARE]
+  @10: 1x SI T8 [RARE]
+  @11: 1x SI T6 [RARE]
+  @12: 1x SI T9 [RARE]
+  @16: 1x SI T13 [RARE]
+  @17: 1x SI T14 [RARE]
+  @18: 1x SI T15 [RARE]
+  @19: 1x SI T16 [RARE]
+  @20: 1x SI T17 [RARE]
+  @21: 1x SI T18 [RARE]
+  @23: 1x SI T20 [RARE]
+  @24: 1x SI T21 [RARE]
+  @27: 1x SI T24 [RARE]
+  @28: 1x SI T25 [RARE]
+  @29: 1x SI T26 [RARE]
+  @30: 1x SI T27 [RARE]
+  @31: 1x SI T28 [RARE]
+  @32: 1x SI T29 [RARE]
+  @33: 1x SI T30 [RARE]
+  @34: 1x SI T31 [RARE]
+  @35: 1x SI T32 [RARE]
+  @36: 1x SI T33 [RARE]
+  @49: 1x SI T43 [RARE]
+  @51: 1x SI T45 [RARE]
+  @54: 1x SI T48 [RARE]
+  @55: 1x SI T49 [RARE]
+  @60: 1x SI T54 [RARE]
+  @62: 1x SI T56 [RARE]
+  @63: 1x SI T57 [RARE]
+  @64: 1x SI T58 [RARE]
+  @65: 1x SI T59 [RARE]
+  @66: 1x SI T60 [RARE]
+  @68: 1x SI T62 [RARE]
+  @69: 1x SI T63 [RARE]
+  @85: 1x SI T76 [RARE]
+  @107: 1x SI T79 [RARE]
+  @109: 1x SI T81 [RARE]
+  @111: 1x SI T83 [RARE]
+  @112: 1x SI T84 [RARE]
+  @113: 1x SI T85 [RARE]
+  @114: 1x SI T86 [RARE]
+  @115: 1x SI T87 [RARE]
+  @116: 1x SI T88 [RARE]
+  @117: 1x SI T89 [RARE]
+  @143: 1x SW T113 [RARE]
+  @144: 1x SI T108 [RARE]
+  @145: 1x SI T114 [RARE]
+  @9: 3x SI T7 [NOISE]
+  @45: 2x SI T39 [NOISE]
+  @46: 22x SI T37 [NOISE]
+  @48: 2x SI T42 [NOISE]
+  @50: 35x SI T44 [NOISE]
+  @52: 10x SI T46 [NOISE]
+  @53: 11x SI T47 [NOISE]
+  @57: 2x SI T51 [NOISE]
+  @58: 107x SI T52 [NOISE]
+  @59: 114x SI T53 [NOISE]
+  @61: 5x SI T55 [NOISE]
+  @67: 31x SI T61 [NOISE]
+  @73: 5x SI T66 [NOISE]
+  @74: 6x SI T67 [NOISE]
+  @75: 9x SI T68 [NOISE]
+  @76: 9x SI T69 [NOISE]
+  @77: 9x SI T70 [NOISE]
+  @78: 6x SI T71 [NOISE]
+  @81: 6x SI T74 [NOISE]
+  @82: 6x SI T75 [NOISE]
+  @87: 231x SI T77 [NOISE]
+  @106: 7x SI T78 [NOISE]
+  @110: 3x SI T82 [NOISE]
+  @130: 84x SI T100 [NOISE]
+  @134: 2x SI T104 [NOISE]

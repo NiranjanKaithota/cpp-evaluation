@@ -1,0 +1,484 @@
+TOON-X:5.0 FORMAT:csv FILE:Windows_2k.log BASE_TS:0
+[L_INTENT]
+INTENT=STATE_SNAPSHOT
+[L0]
+Window:0 span=0s events=2000 sources=['unknown:2000']
+ENTITIES:295 RELATIONSHIPS:0 CLUSTERS:39
+[L1]
+NAME:HTTP_ERROR_SURGE SEV:E COUNT:284 SPAN:0->0s
+  CLUSTERS:@2,@14
+  DESC:284 HTTP errors — 100.0% error rate
+NAME:NEW_ERROR_TYPE SEV:E COUNT:1 SPAN:0->end
+  CLUSTERS:@15
+  DESC:1 unique high-severity event types observed
+[SEM]
+SEM_01=SECURITY.AUTH.FAILURE
+SEM_02=SYSTEM.DEPLOY.EVENT
+SEM_03=GENERIC.ALERT.ERROR
+SEM_04=GENERIC.ALERT.INFO
+SEM_05=GENERIC.ALERT.WARNING
+SEM_06=WEB.HTTP.2XX
+SEM_07=WEB.HTTP.4XX
+SEM_08=SYSTEM.SERVICE.START
+SEM_09=TELEMETRY.TRACE.EVENT
+[ENT]
+## IPV4
+IP_01=0.0.0.6
+IP_02=11.2.1.0
+IP_03=6.1.1.0
+IP_04=6.1.1.1
+IP_05=6.1.1.11
+IP_06=6.1.1.2
+IP_07=6.1.1.3
+IP_08=6.1.1.4
+IP_09=6.1.1.5
+IP_10=6.1.19.0
+IP_11=6.1.2.0
+IP_12=6.1.2.5
+IP_13=6.1.3.1
+IP_14=6.1.3.2
+IP_15=6.1.34.0
+IP_16=6.1.4.0
+IP_17=6.1.5.1
+## IPV6
+IP6_01=info                  csi    0000000c icsitransaction::commit calling istorependingtransaction::apply - coldpatching=false applyflags=7
+## UUID
+UUID_01=bf1a281b-ad7b-4476-ac95-f47682990ce7
+UUID_02=d16d444c-56d8-11d5-882d-0080c847b195
+## INTERFACE
+IF_01=2016/9/27
+IF_02=2016/9/28
+## MICROSOFT
+MICROSOF_01=Microsoft-Windows-PlatformUpdate-Win7-SRV08R2-Package-TopLevel
+## PACKAGE
+PACKAGE_01=Package_for_KB2479943
+PACKAGE_02=Package_for_KB2489256
+PACKAGE_03=Package_for_KB2491683
+PACKAGE_04=Package_for_KB2506014
+PACKAGE_05=Package_for_KB2506212
+PACKAGE_06=Package_for_KB2506928
+PACKAGE_07=Package_for_KB2509553
+PACKAGE_08=Package_for_KB2510531
+PACKAGE_09=Package_for_KB2511455
+PACKAGE_10=Package_for_KB2512715
+PACKAGE_100=Package_for_KB2868116
+PACKAGE_101=Package_for_KB2868626
+PACKAGE_102=Package_for_KB2871997
+PACKAGE_103=Package_for_KB2884256
+PACKAGE_104=Package_for_KB2888049
+PACKAGE_105=Package_for_KB2891804
+PACKAGE_106=Package_for_KB2892074
+PACKAGE_107=Package_for_KB2893294
+PACKAGE_108=Package_for_KB2893519
+PACKAGE_109=Package_for_KB2894844
+PACKAGE_11=Package_for_KB2515325
+PACKAGE_110=Package_for_KB2900986
+PACKAGE_111=Package_for_KB2908783
+PACKAGE_112=Package_for_KB2911501
+PACKAGE_113=Package_for_KB2912390
+PACKAGE_114=Package_for_KB2918077
+PACKAGE_115=Package_for_KB2919469
+PACKAGE_116=Package_for_KB2923545
+PACKAGE_117=Package_for_KB2928120
+PACKAGE_118=Package_for_KB2929733
+PACKAGE_119=Package_for_KB2931356
+PACKAGE_12=Package_for_KB2532531
+PACKAGE_120=Package_for_KB2937610
+PACKAGE_121=Package_for_KB2943357
+PACKAGE_122=Package_for_KB2952664
+PACKAGE_123=Package_for_KB2957189
+PACKAGE_124=Package_for_KB2965788
+PACKAGE_125=Package_for_KB2966583
+PACKAGE_126=Package_for_KB2968294
+PACKAGE_127=Package_for_KB2970228
+PACKAGE_128=Package_for_KB2972100
+PACKAGE_129=Package_for_KB2972211
+PACKAGE_13=Package_for_KB2544893
+PACKAGE_130=Package_for_KB2973112
+PACKAGE_131=Package_for_KB2973201
+PACKAGE_132=Package_for_KB2973351
+PACKAGE_133=Package_for_KB2977292
+PACKAGE_134=Package_for_KB2978120
+PACKAGE_135=Package_for_KB2978742
+PACKAGE_136=Package_for_KB2984972
+PACKAGE_137=Package_for_KB2984976
+PACKAGE_138=Package_for_KB2985461
+PACKAGE_139=Package_for_KB2991963
+PACKAGE_14=Package_for_KB2545698
+PACKAGE_140=Package_for_KB2992611
+PACKAGE_141=Package_for_KB2993651
+PACKAGE_142=Package_for_KB3003743
+PACKAGE_143=Package_for_KB3004361
+PACKAGE_144=Package_for_KB3004375
+PACKAGE_145=Package_for_KB3005607
+PACKAGE_146=Package_for_KB3005788
+PACKAGE_147=Package_for_KB3006121
+PACKAGE_148=Package_for_KB3006137
+PACKAGE_149=Package_for_KB3006625
+PACKAGE_15=Package_for_KB2547666
+PACKAGE_150=Package_for_KB3010788
+PACKAGE_151=Package_for_KB3011780
+PACKAGE_152=Package_for_KB3013531
+PACKAGE_153=Package_for_KB3019978
+PACKAGE_154=Package_for_KB3020369
+PACKAGE_155=Package_for_KB3020370
+PACKAGE_156=Package_for_KB3020387
+PACKAGE_157=Package_for_KB3020388
+PACKAGE_158=Package_for_KB3020393
+PACKAGE_159=Package_for_KB3021674
+PACKAGE_16=Package_for_KB2552343
+PACKAGE_160=Package_for_KB3021917
+PACKAGE_161=Package_for_KB3022777
+PACKAGE_162=Package_for_KB3023215
+PACKAGE_163=Package_for_KB3030377
+PACKAGE_164=Package_for_KB3031432
+PACKAGE_165=Package_for_KB3033889
+PACKAGE_166=Package_for_KB3033929
+PACKAGE_167=Package_for_KB3035017
+PACKAGE_168=Package_for_KB3035126
+PACKAGE_169=Package_for_KB3035132
+PACKAGE_17=Package_for_KB2560656
+PACKAGE_170=Package_for_KB3037574
+PACKAGE_171=Package_for_KB3040272
+PACKAGE_172=Package_for_KB3042058
+PACKAGE_173=Package_for_KB3042553
+PACKAGE_174=Package_for_KB3045685
+PACKAGE_175=Package_for_KB3046017
+PACKAGE_176=Package_for_KB3046269
+PACKAGE_177=Package_for_KB3054476
+PACKAGE_178=Package_for_KB3055642
+PACKAGE_179=Package_for_KB3059317
+PACKAGE_18=Package_for_KB2563227
+PACKAGE_180=Package_for_KB3060716
+PACKAGE_181=Package_for_KB3067903
+PACKAGE_182=Package_for_KB3067904
+PACKAGE_183=Package_for_KB3071756
+PACKAGE_184=Package_for_KB3072305
+PACKAGE_185=Package_for_KB3072630
+PACKAGE_186=Package_for_KB3074543
+PACKAGE_187=Package_for_KB3075220
+PACKAGE_188=Package_for_KB3075222
+PACKAGE_189=Package_for_KB3075226
+PACKAGE_19=Package_for_KB2564958
+PACKAGE_190=Package_for_KB3075249
+PACKAGE_191=Package_for_KB3076895
+PACKAGE_192=Package_for_KB3076949
+PACKAGE_193=Package_for_KB3078601
+PACKAGE_194=Package_for_KB3078667
+PACKAGE_195=Package_for_KB3080079
+PACKAGE_196=Package_for_KB3080149
+PACKAGE_197=Package_for_KB3080446
+PACKAGE_198=Package_for_KB3084135
+PACKAGE_199=Package_for_KB3086255
+PACKAGE_20=Package_for_KB2570947
+PACKAGE_200=Package_for_KB3087039
+PACKAGE_201=Package_for_KB3092601
+PACKAGE_202=Package_for_KB3092627
+PACKAGE_203=Package_for_KB3093513
+PACKAGE_204=Package_for_KB3097989
+PACKAGE_205=Package_for_KB3101722
+PACKAGE_206=Package_for_KB3102429
+PACKAGE_207=Package_for_KB3107998
+PACKAGE_208=Package_for_KB3108371
+PACKAGE_209=Package_for_KB3108381
+PACKAGE_21=Package_for_KB2574819
+PACKAGE_210=Package_for_KB3108664
+PACKAGE_211=Package_for_KB3108670
+PACKAGE_212=Package_for_KB3109094
+PACKAGE_213=Package_for_KB3109103
+PACKAGE_214=Package_for_KB3109560
+PACKAGE_215=Package_for_KB3110329
+PACKAGE_216=Package_for_KB3115858
+PACKAGE_217=Package_for_KB3118401
+PACKAGE_218=Package_for_KB3121255
+PACKAGE_219=Package_for_KB3121461
+PACKAGE_22=Package_for_KB2579686
+PACKAGE_220=Package_for_KB3122648
+PACKAGE_221=Package_for_KB3123479
+PACKAGE_222=Package_for_KB3124280
+PACKAGE_223=Package_for_KB3126446
+PACKAGE_224=Package_for_KB3126587
+PACKAGE_225=Package_for_KB3127220
+PACKAGE_226=Package_for_KB3133977
+PACKAGE_227=Package_for_KB3135983
+PACKAGE_228=Package_for_KB3138378
+PACKAGE_229=Package_for_KB3138612
+PACKAGE_23=Package_for_KB2585542
+PACKAGE_230=Package_for_KB3138901
+PACKAGE_231=Package_for_KB3138910
+PACKAGE_232=Package_for_KB3138962
+PACKAGE_233=Package_for_KB3139398
+PACKAGE_234=Package_for_KB3139914
+PACKAGE_235=Package_for_KB3139940
+PACKAGE_236=Package_for_KB3140245
+PACKAGE_237=Package_for_KB3142024
+PACKAGE_238=Package_for_KB3142042
+PACKAGE_239=Package_for_KB3145739
+PACKAGE_24=Package_for_KB2601626
+PACKAGE_240=Package_for_KB3146706
+PACKAGE_241=Package_for_KB3146963
+PACKAGE_242=Package_for_KB3147071
+PACKAGE_243=Package_for_KB3149090
+PACKAGE_244=Package_for_KB3150220
+PACKAGE_245=Package_for_KB3155178
+PACKAGE_246=Package_for_KB3156016
+PACKAGE_247=Package_for_KB3156017
+PACKAGE_248=Package_for_KB3156019
+PACKAGE_249=Package_for_KB3159398
+PACKAGE_25=Package_for_KB2603229
+PACKAGE_250=Package_for_KB3161561
+PACKAGE_251=Package_for_KB3161949
+PACKAGE_252=Package_for_KB3161958
+PACKAGE_253=Package_for_KB3163245
+PACKAGE_254=Package_for_KB3164033
+PACKAGE_255=Package_for_KB3164035
+PACKAGE_256=Package_for_KB3168965
+PACKAGE_257=Package_for_KB3170455
+PACKAGE_258=Package_for_KB3175024
+PACKAGE_259=Package_for_KB3177186
+PACKAGE_26=Package_for_KB2604115
+PACKAGE_260=Package_for_KB3177467
+PACKAGE_261=Package_for_KB3178034
+PACKAGE_262=Package_for_KB3179573
+PACKAGE_263=Package_for_KB3181988
+PACKAGE_264=Package_for_KB3182203
+PACKAGE_265=Package_for_KB3184122
+PACKAGE_266=Package_for_KB3184143
+PACKAGE_267=Package_for_KB3184471
+PACKAGE_268=Package_for_KB3185319
+PACKAGE_269=Package_for_KB3185911
+PACKAGE_27=Package_for_KB2607047
+PACKAGE_270=Package_for_KB947821
+PACKAGE_271=Package_for_KB982018
+PACKAGE_28=Package_for_KB2620704
+PACKAGE_29=Package_for_KB2621146
+PACKAGE_30=Package_for_KB2621440
+PACKAGE_31=Package_for_KB2631813
+PACKAGE_32=Package_for_KB2632503
+PACKAGE_33=Package_for_KB2640148
+PACKAGE_34=Package_for_KB2647753
+PACKAGE_35=Package_for_KB2653956
+PACKAGE_36=Package_for_KB2654428
+PACKAGE_37=Package_for_KB2656356
+PACKAGE_38=Package_for_KB2660075
+PACKAGE_39=Package_for_KB2667402
+PACKAGE_40=Package_for_KB2676562
+PACKAGE_41=Package_for_KB2685811
+PACKAGE_42=Package_for_KB2685813
+PACKAGE_43=Package_for_KB2685939
+PACKAGE_44=Package_for_KB2690533
+PACKAGE_45=Package_for_KB2698365
+PACKAGE_46=Package_for_KB2703157
+PACKAGE_47=Package_for_KB2705219
+PACKAGE_48=Package_for_KB2706045
+PACKAGE_49=Package_for_KB2716513
+PACKAGE_50=Package_for_KB2718704
+PACKAGE_51=Package_for_KB2719033
+PACKAGE_52=Package_for_KB2719857
+PACKAGE_53=Package_for_KB2726535
+PACKAGE_54=Package_for_KB2727528
+PACKAGE_55=Package_for_KB2729094
+PACKAGE_56=Package_for_KB2729452
+PACKAGE_57=Package_for_KB2732059
+PACKAGE_58=Package_for_KB2732487
+PACKAGE_59=Package_for_KB2736422
+PACKAGE_60=Package_for_KB2742599
+PACKAGE_61=Package_for_KB2750841
+PACKAGE_62=Package_for_KB2758857
+PACKAGE_63=Package_for_KB2761217
+PACKAGE_64=Package_for_KB2763523
+PACKAGE_65=Package_for_KB2770660
+PACKAGE_66=Package_for_KB2772930
+PACKAGE_67=Package_for_KB2773072
+PACKAGE_68=Package_for_KB2786081
+PACKAGE_69=Package_for_KB2789645
+PACKAGE_70=Package_for_KB2791765
+PACKAGE_71=Package_for_KB2798162
+PACKAGE_72=Package_for_KB2799926
+PACKAGE_73=Package_for_KB2800095
+PACKAGE_74=Package_for_KB2807986
+PACKAGE_75=Package_for_KB2808679
+PACKAGE_76=Package_for_KB2809215
+PACKAGE_77=Package_for_KB2809900
+PACKAGE_78=Package_for_KB2813347
+PACKAGE_79=Package_for_KB2813430
+PACKAGE_80=Package_for_KB2818604
+PACKAGE_81=Package_for_KB2823180
+PACKAGE_82=Package_for_KB2834140
+PACKAGE_83=Package_for_KB2835174
+PACKAGE_84=Package_for_KB2836942
+PACKAGE_85=Package_for_KB2836943
+PACKAGE_86=Package_for_KB2840631
+PACKAGE_87=Package_for_KB2843630
+PACKAGE_88=Package_for_KB2846960
+PACKAGE_89=Package_for_KB2847927
+PACKAGE_90=Package_for_KB2852386
+PACKAGE_91=Package_for_KB2853587
+PACKAGE_92=Package_for_KB2853952
+PACKAGE_93=Package_for_KB2857650
+PACKAGE_94=Package_for_KB2861698
+PACKAGE_95=Package_for_KB2862152
+PACKAGE_96=Package_for_KB2862330
+PACKAGE_97=Package_for_KB2862335
+PACKAGE_98=Package_for_KB2864202
+PACKAGE_99=Package_for_KB2868038
+## WINDOWS
+WINDOWS_01=windows-servicingstack_31bf3856ad364e35_6
+[T]
+T0=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Loaded Servicing Stack v6.<NUM>.<NUM> with Core: C:\\Windows\\winsxs\\amd64_microsoft-WINDOWS_01.
+T1=SEM_07|{<STR>: <STR>, <STR>: " Info CSI <NUM>@IF_01:<NUM>:<NUM>:<NUM> WcpInitialize (wcp.dll version IP_01) called (stack @<HEX> @<HEX> @<HEX>
+T2=SEM_04|{<STR>: <STR>, <STR>: <STR>, <STR>: <STR>, <STR>: true}
+T3=SEM_04|{<STR>: <STR>, <STR>: " Info CBS SQM: Initializing online with Windows opt-in: False<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T4=SEM_03|{<STR>: <STR>, <STR>: " Info CBS SQM: Failed to start upload with file pattern: C:\\Windows\\servicing\\sqm\\*_std.sqm<STR>null<STR> flags: <HEX> [HRESULT = <HEX>
+T5=SEM_03|{<STR>: <STR>, <STR>: " Info CBS SQM: Failed to start standard sample upload. <BRACKET><STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T6=SEM_04|{<STR>: <STR>, <STR>: " Info CBS SQM: Queued <NUM> file(s) for upload with pattern: C:\\Windows\\servicing\\sqm\\*_all.sqm<STR>null<STR> flags: <HEX><STR>_fmt<STR>csv<STR>
+T7=SEM_05|{<STR>: <STR>, <STR>: " Info CBS SQM: Warning: Failed to upload all unsent reports. <BRACKET><STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T8=SEM_04|{<STR>: <STR>, <STR>: <STR>, <STR>: [<STR>, " or else reboot still pendi
+T9=SEM_04|{<STR>: <STR>, <STR>: " Info CBS NonStart: Checking to ensure startup processing not required.<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T10=SEM_04|{<STR>: <STR>, <STR>: " Info CSI <NUM> IAdvancedInstallerAwareStore_ResolvePendingTransactions (call <NUM>) (flags = <NUM><STR>null<STR> progress = NULL<STR> phas
+T11=SEM_04|{<STR>: <STR>, <STR>: <STR>, <STR>: <BRACKET>, <STR>: <STR>, <STR>: true}
+T12=SEM_04|{<STR>: <STR>, <STR>: " Info CSI <NUM> Created NT transaction (seq <NUM>) result <HEX><STR>null<STR> handle @<HEX><STR>_fmt<STR>csv<STR>_schema_unrecognised": tr
+T13=SEM_01|{<STR>: <STR>, <STR>: " Info CBS Session: 30546173_4261722401 initialized by client WindowsUpdateAgent.<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T14=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Session: <*> initialized by client WindowsUpdateAgent.<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T15=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Expecting attribute name [HRESULT = <HEX> - CBS_E_MANIFEST_INVALID_ITEM]<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T16=SEM_03|{<STR>: <STR>, <STR>: " Info CBS Failed to get next element [HRESULT = <HEX> - CBS_E_MANIFEST_INVALID_ITEM]<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T17=SEM_03|{<STR>: <STR>, <STR>: " Info CBS <*> <*> <*> <*> <*> <*> true}
+T18=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Read out cached package applicability for package: PACKAGE_218~31bf3856ad364e35~amd64~~IP_03<STR>null<STR> ApplicableS
+T19=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Read out cached package applicability for package: <*> ApplicableS
+T20=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Read out cached package applicability for package: <*> <*>
+T21=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Read out cached package applicability for package: MICROSOF_01~31bf3856ad364e3
+T22=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Read out cached package applicability for package: <*>
+T23=SEM_03|{<STR>: <STR>, <STR>: " Info CBS <*> <*> <*> <*> <*> <*> <*> true}
+T24=SEM_02|{<STR>: <STR>, <STR>: " Info CSI <NUM>@IF_01:<NUM>:<NUM>:<NUM> CSI Transaction @<HEX> initialized for deployment engine {UUID_02
+T25=SEM_04|{<STR>: <STR>, <STR>: " Info CSI 0000000a Performing <NUM> operations; <NUM> not lock/unlock and follow:<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T26=SEM_04|{<STR>: <STR>, <STR>: " Info CSI 0000000b Store coherency cookie matches last scavenge cookie<STR>null<STR> skipping scavenge.<STR>_fmt<STR>csv<STR>_schema_unrecogni
+T27=SEM_04|{<STR>: <STR>, <STR>: " Info CSI 0000000c ICSITransaction::Commit calling IStorePendingTransaction::Apply - coldpatching=FALSE applyflags=<NUM><STR>_fmt<STR>csv<STR>_sch
+T28=SEM_04|{<STR>: <STR>, <STR>: " Info CSI <*> Created NT transaction (seq <NUM>) result <HEX><STR>null<STR> handle @<HEX><STR>_fmt<STR>csv<STR>_schema_unrecognised": <*>
+T29=SEM_04|{<STR>: <STR>, <STR>: " Info CSI <NUM>@IF_01:<NUM>:<NUM>:<NUM> CSI Transaction @<HEX> destroyed<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T30=SEM_04|{<STR>: <STR>, <STR>: " Info CSI <*> WcpInitialize (wcp.dll version IP_01) called (stack @<HEX> @<HEX> @<HEX>
+T31=SEM_04|{<STR>: <STR>, <STR>: <STR>, <STR>: <*> <*> <*> <*> <*>
+T32=SEM_04|{<STR>: <STR>, <STR>: " Info CSI <NUM>@IF_02:<NUM>:<NUM>:<NUM> PopulateComponentFamiliesKey - Begin<STR>_fmt<STR>csv<STR>_schema_unrecognised": true}
+T33=SEM_04|{<STR>: <STR>, <STR>: " Info CSI <NUM>@IF_02:<NUM>:<NUM>:<NUM> PopulateComponentFamiliesKey - <*> true}
+T34=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Unloading offline registry hive: {UUID_01}GLOBALROOT<PATH>
+T35=SEM_04|{<STR>: <STR>, <STR>: " Info CBS Unloading offline registry hive: <*>
+[TIMELINE]
+[0s-0s] @2[W](3x)
+[0s-0s] @5[E](2x), @6[E](2x), @8[W](2x), @14[W](281x), @15[E](1x), @18[E](224x), @19[E](21x), @26[E](2x), @27(1x)
+[CAUSE]
+SEM_04>SEM_07|CONF:55 x10 (@1(SEM_04)>@2(SEM_07), @10(SEM_04)>@14(SEM_07), @11(SEM_04)>@14(SEM_07))
+SEM_04>SEM_04|CONF:58 x101 (@1(SEM_04)>@3(SEM_04), @1(SEM_04)>@4(SEM_04), @3(SEM_04)>@4(SEM_04))
+SEM_04>SEM_03|CONF:60 x14 (@1(SEM_04)>@5(SEM_03), @1(SEM_04)>@6(SEM_03), @3(SEM_04)>@5(SEM_03))
+SEM_07>SEM_04|CONF:55 x10 (@2(SEM_07)>@3(SEM_04), @2(SEM_07)>@4(SEM_04), @2(SEM_07)>@7(SEM_04))
+SEM_07>SEM_03|CONF:60 x3 (@2(SEM_07)>@5(SEM_03), @2(SEM_07)>@6(SEM_03), @14(SEM_07)>@18(SEM_03))
+SEM_04>SEM_05|CONF:60 x3 (@3(SEM_04)>@8(SEM_05), @4(SEM_04)>@8(SEM_05), @7(SEM_04)>@8(SEM_05))
+SEM_03>SEM_03|CONF:60 x2 (@5(SEM_03)>@6(SEM_03), @18(SEM_03)>@19(SEM_03))
+SEM_03>SEM_04|CONF:60 x16 (@5(SEM_03)>@7(SEM_04), @5(SEM_03)>@9(SEM_04), @5(SEM_03)>@10(SEM_04))
+SEM_03>SEM_05|CONF:60 x2 (@5(SEM_03)>@8(SEM_05), @6(SEM_03)>@8(SEM_05))
+SEM_05>SEM_04|CONF:60 x5 (@8(SEM_05)>@9(SEM_04), @8(SEM_05)>@10(SEM_04), @8(SEM_05)>@11(SEM_04))
+SEM_04>SEM_01|CONF:60 x3 (@11(SEM_04)>@15(SEM_01), @12(SEM_04)>@15(SEM_01), @13(SEM_04)>@15(SEM_01))
+SEM_07>SEM_01|CONF:60 x1 (@14(SEM_07)>@15(SEM_01))
+SEM_01>SEM_04|CONF:60 x2 (@15(SEM_01)>@16(SEM_04), @15(SEM_01)>@17(SEM_04))
+SEM_01>SEM_03|CONF:60 x2 (@15(SEM_01)>@18(SEM_03), @15(SEM_01)>@19(SEM_03))
+SEM_04>SEM_02|CONF:56 x5 (@23(SEM_04)>@27(SEM_02), @24(SEM_04)>@27(SEM_02), @25(SEM_04)>@27(SEM_02))
+SEM_03>SEM_02|CONF:60 x1 (@26(SEM_03)>@27(SEM_02))
+SEM_02>SEM_04|CONF:56 x5 (@27(SEM_02)>@28(SEM_04), @27(SEM_02)>@29(SEM_04), @27(SEM_02)>@30(SEM_04))
+SEM_07>SEM_07|CONF:50 x2 via:IF_01 (@2(SEM_07)>@14(SEM_07), @14(SEM_07)>@2(SEM_07))
+SEM_07>SEM_02|CONF:50 x2 via:IF_01 (@2(SEM_07)>@27(SEM_02), @14(SEM_07)>@27(SEM_02))
+SEM_02>SEM_07|CONF:50 x2 via:IF_01 (@27(SEM_02)>@2(SEM_07), @27(SEM_02)>@14(SEM_07))
+[L4]
+## TIER_1 IMPORTANT
+@5 2x E S0 T4 ^0->0 burst(rate=2.0/s) FLOW:FLOW_6 IMP:0.66
+  TUPLE_FLOWS:
+    [<HEX> -> <HEX>] (2x)
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CBS    SQM: Failed to start upload with file pattern: C:\\Windows\\servicing\\sqm\\...
+    - {"col0": "2016-09-29 00:00:46", "col1": " Info                  CBS    SQM: Failed to start upload with file pattern: C:\\Windows\\servicing\\sqm\\...
+@6 2x E S0 T5 ^0->0 burst(rate=2.0/s) IMP:0.66
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CBS    SQM: Failed to start standard sample upload. [HRESULT = 0x80004005 - E_FAIL]...
+    - {"col0": "2016-09-29 00:00:46", "col1": " Info                  CBS    SQM: Failed to start standard sample upload. [HRESULT = 0x80004005 - E_FAIL]...
+@15 1x E S0 T13 ^0 IMP:0.83
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CBS    Session: 30546173_4261722401 initialized by client WindowsUpdateAgent.", "_f...
+@18 224x E S0 T16 ^0->0 burst(rate=224.0/s) FLOW:FLOW_6 IMP:0.53
+  SLOT_LISTS:
+    Slot 1 (hresult): <HEX>(224x)
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CBS    Failed to get next element [HRESULT = 0x800f080d - CBS_E_MANIFEST_INVALID_IT...
+    - {"col0": "2016-09-28 04:30:32", "col1": " Info                  CBS    Failed to get next element [HRESULT = 0x800f080d - CBS_E_MANIFEST_INVALID_IT...
+@19 21x E S0 T17 ^0->0 burst(rate=21.0/s) IMP:0.57
+  SLOT_LISTS:
+    Slot 1 (cbs): Failed(18x) Session:(3x)
+    Slot 2 (cbs): to(18x) 30546174_144035245(1x) 30546354_3290750401(1x) 30546354_3312401639(1x)
+    Slot 3 (cbs): internally(18x) initialized(3x)
+    Slot 4 (cbs): open(18x) by(3x)
+    Slot 5 (cbs): package.(18x) client(3x)
+    Slot 6 (cbs): <BRACKET><STR>_fmt<STR>csv<STR>_schema_unrecognised":(18x) WindowsUpdateAgent.<STR>_fmt<STR>csv<STR>_schema_unrecognised":(3x)
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:32", "col1": " Info                  CBS    Failed to internally open package. [HRESULT = 0x800f0805 - CBS_E_INVALID_PAC...
+    - {"col0": "2016-09-28 04:30:33", "col1": " Info                  CBS    Failed to internally open package. [HRESULT = 0x800f0805 - CBS_E_INVALID_PAC...
+@26 2x E S0 T23 ^0->0 burst(rate=2.0/s) IMP:0.64
+  SLOT_LISTS:
+    Slot 1 (cbs): Failed(2x)
+    Slot 2 (cbs): to(2x)
+    Slot 3 (cbs): create(2x)
+    Slot 4 (cbs): backup(2x)
+    Slot 5 (cbs): log(2x)
+    Slot 6 (cbs): cab.(2x)
+    Slot 7 (cbs): <BRACKET><STR>_fmt<STR>csv<STR>_schema_unrecognised":(2x)
+  SAMPLES:
+    - {"col0": "2016-09-28 04:32:17", "col1": " Info                  CBS    Failed to create backup log cab. [HRESULT = 0x80070001 - ERROR_INVALID_FUNCT...
+    - {"col0": "2016-09-29 00:03:25", "col1": " Info                  CBS    Failed to create backup log cab. [HRESULT = 0x80070001 - ERROR_INVALID_FUNCT...
+## TIER_2 SUPPORTING
+@2 3x W S0 T1 ^0->0 burst(rate=3.0/s) IMP:0.48
+  ENTITIES:IF_01 IP_01
+  SLOT_LISTS:
+    Slot 1 (csi): <NUM>@IF_01:<NUM>:<NUM>:<NUM>(3x)
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CSI    00000001@IF_01:20:30:31.455 WcpInitialize (wcp.dll version IP_01) called (st...
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CSI    00000002@IF_01:20:30:31.458 WcpInitialize (wcp.dll version IP_01) called (st...
+@8 2x W S0 T7 ^0->0 burst(rate=2.0/s) IMP:0.50
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CBS    SQM: Warning: Failed to upload all unsent reports. [HRESULT = 0x80004005 - E...
+    - {"col0": "2016-09-29 00:00:46", "col1": " Info                  CBS    SQM: Warning: Failed to upload all unsent reports. [HRESULT = 0x80004005 - E...
+@14 281x W S0 T2 ^0->0 burst(rate=281.0/s) IMP:0.33
+  ENTITIES:IF_01
+  SAMPLES:
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CSI    00000007@IF_01:20:30:31.462 CSI perf trace:", "_fmt": "csv", "_schema_unreco...
+    - {"col0": "2016-09-28 04:30:31", "col1": " Info                  CBS    Warning: Unrecognized packageExtended attribute.", "_fmt": "csv", "_schema_u...
+@27 1x I S0 T24 ^0 IMP:0.49
+  ENTITIES:IF_01 UUID_02
+  SLOT_LISTS:
+    Slot 1 (csi): <NUM>@IF_01:<NUM>:<NUM>:<NUM>(1x)
+  SAMPLES:
+    - {"col0": "2016-09-28 04:40:53", "col1": " Info                  CSI    00000009@IF_01:20:40:53.744 CSI Transaction @0x47e9e0 initialized for deploy...
+## TIER_BACKGROUND (29 clusters)
+  @4: 1x SI T3 [RARE]
+  @13: 1x SI T12 [RARE]
+  @21: 1x SI T18 [RARE]
+  @24: 1x SI T21 [RARE]
+  @28: 1x SI T25 [RARE]
+  @29: 1x SI T26 [RARE]
+  @30: 1x SI T27 [RARE]
+  @32: 1x SI T29 [RARE]
+  @34: 1x SI T23 [RARE]
+  @36: 1x SI T32 [RARE]
+  @37: 1x SI T33 [RARE]
+  @1: 2x SI T0 [NOISE]
+  @3: 27x SI T2 [NOISE]
+  @7: 2x SI T6 [NOISE]
+  @9: 2x SI T8 [NOISE]
+  @10: 2x SI T9 [NOISE]
+  @11: 2x SI T10 [NOISE]
+  @12: 6x SI T11 [NOISE]
+  @16: 2x SI T14 [NOISE]
+  @17: 224x SI T15 [NOISE]
+  @20: 603x SI T17 [NOISE]
+  @22: 11x SI T19 [NOISE]
+  @23: 530x SI T20 [NOISE]
+  @25: 15x SI T22 [NOISE]
+  @31: 2x SI T28 [NOISE]
+  @33: 3x SI T30 [NOISE]
+  @35: 9x SI T31 [NOISE]
+  @38: 6x SI T34 [NOISE]
+  @39: 2x SI T35 [NOISE]

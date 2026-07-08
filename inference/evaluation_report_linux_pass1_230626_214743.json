@@ -1,0 +1,17 @@
+{
+  "raw_bundle": "linux_logs",
+  "compressed_name": "linux_pass1",
+  "timestamp": "230626_214743",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 237937,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "error",
+    "root_cause_type": "error",
+    "recommended_action": "The read operation timed out"
+  },
+  "ground_truth": {}
+}

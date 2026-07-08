@@ -1,0 +1,35 @@
+{
+  "raw_bundle": "bundle_003_bgp_holdtime_expired",
+  "compressed_name": "modified_test_toon_003",
+  "timestamp": "050726_182506",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": true,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 9524,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "10.233.255.1",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "BGP peer IP_02 connection lost",
+      "BGP session to IP_02 went down - Hold Timer Expired",
+      "BGP peer IP_02 attempting reconnection"
+    ],
+    "recommended_action": "Investigate the physical connectivity and ensure the network device associated with IP 10.233.255.1 is operational. Check for any hardware faults or cable issues. If the issue persists, consider a hardware replacement or reconfiguration."
+  },
+  "ground_truth": {
+    "scenario_name": "bgp_neighbor_down",
+    "description": "BGP session to 10.233.255.1 failed",
+    "severity": "critical",
+    "failure_timestamp": "2026-05-27T03:32:22.445000",
+    "root_cause_entity": "10.233.255.1",
+    "root_cause_type": "routing_protocol_failure",
+    "expected_symptoms": [
+      "bgp_session_down",
+      "route_withdrawal",
+      "connectivity_loss"
+    ],
+    "recommended_action": "Verify BGP configuration and network connectivity to 10.233.255.1"
+  }
+}

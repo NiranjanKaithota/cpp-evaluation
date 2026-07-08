@@ -1,0 +1,1399 @@
+TOON-X:5.0 FORMAT:syslog FILE:Linux_2k.log BASE_TS:1780597800
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:1780597800 span=2592000s events=2000 sources=['04:296', '14:159', '23:151', '12:145', '03:112']
+ENTITIES:103 RELATIONSHIPS:24 CLUSTERS:207
+[L1]
+NAME:HTTP_ERROR_SURGE SEV:E COUNT:38 SPAN:0->2592000s
+  CLUSTERS:@29,@57,@63,@66,@69,@85,@109,@156,@171
+  DESC:38 HTTP errors — 40.4% error rate
+NAME:NEW_ERROR_TYPE SEV:E COUNT:13 SPAN:0->end
+  CLUSTERS:@25,@29,@35,@43,@105,@125,@156,@166,@167,@171,@174,@175,@184
+  DESC:13 unique high-severity event types observed
+NAME:AUTH_BURST SEV:E COUNT:538 SPAN:0->end
+  CLUSTERS:@4,@6,@9,@11,@12,@13,@14,@15,@16,@18,@24,@25,@27,@33,@40,@43,@44,@49,@51,@53,@54,@55,@56,@59,@68,@72,@77,@79,@81,@83,@95,@98,@102,@103,@105,@107,@108,@111,@112,@113,@122,@123,@125,@128,@184
+  DESC:538 authentication failures — possible attack
+[SEM]
+SEM_01=APPLICATION.GENERIC.EVENT
+SEM_02=APPLICATION.CUSTOM.AUDIT_EVENT
+SEM_03=SECURITY.AUTH.FAILURE
+SEM_04=GENERIC.ALERT.ERROR
+SEM_05=GENERIC.ALERT.INFO
+SEM_06=WEB.HTTP.2XX
+SEM_07=WEB.HTTP.3XX
+SEM_08=WEB.HTTP.5XX
+SEM_09=SYSTEM.HARDWARE.ERROR
+SEM_10=NETWORK.CONNECTIVITY.FAILURE
+SEM_11=SYSTEM.SERVICE.START
+SEM_12=SYSTEM.PERFORMANCE.TIMEOUT
+[ENT]
+## IPV4
+IP_01=059.45.101.203
+IP_02=150.183.249.110
+IP_03=163.27.187.39
+IP_04=172.181.208.156
+IP_05=193.110.106.11
+IP_06=195.129.24.210
+IP_07=200.60.37.201
+IP_08=202.181.236.180
+IP_09=202.82.200.188
+IP_10=203.101.45.59
+IP_11=203.251.225.101
+IP_12=206.196.21.129
+IP_13=206.47.209.10
+IP_14=207.243.167.114
+IP_15=207.30.238.8
+IP_16=208.62.55.75
+IP_17=209.152.168.249
+IP_18=210.118.170.95
+IP_19=210.223.97.117
+IP_20=210.229.150.228
+IP_21=210.245.165.136
+IP_22=210.76.59.29
+IP_23=211.107.232.1
+IP_24=211.115.206.155
+IP_25=211.137.205.253
+IP_26=211.167.68.59
+IP_27=211.214.161.141
+IP_28=211.42.188.206
+IP_29=211.46.224.253
+IP_30=211.57.88.250
+IP_31=211.72.151.162
+IP_32=211.72.2.106
+IP_33=211.9.58.217
+IP_34=212.0.132.20
+IP_35=212.65.68.82
+IP_36=216.12.111.241
+IP_37=217.187.83.139
+IP_38=217.187.83.50
+IP_39=217.60.212.66
+IP_40=218.146.61.230
+IP_41=218.16.122.48
+IP_42=218.188.2.4
+IP_43=218.22.3.51
+IP_44=218.38.58.3
+IP_45=218.55.234.102
+IP_46=218.69.108.57
+IP_47=220.117.241.87
+IP_48=220.94.205.45
+IP_49=221.4.102.93
+IP_50=222.33.90.199
+IP_51=24.54.76.216
+IP_52=60.30.224.116
+IP_53=61.53.154.93
+IP_54=61.74.96.178
+IP_55=62.99.164.82
+IP_56=63.197.98.106
+IP_57=65.166.159.14
+IP_58=67.170.148.126
+IP_59=67.95.49.172
+IP_60=68.143.156.89
+IP_61=81.171.220.226
+IP_62=82.252.162.81
+IP_63=82.68.222.194
+IP_64=82.68.222.195
+IP_65=82.77.200.128
+IP_66=82.83.227.67
+IP_67=83.116.207.11
+IP_68=84.102.20.2
+IP_69=85.44.47.166
+## USER
+USR_01=guest
+USR_02=root
+USR_03=test
+## INTERFACE
+IF_01=8086/2410
+## CUSTOM
+CUSTOM_01=15
+CUSTOM_02=17
+CUSTOM_03=21
+CUSTOM_04=22
+CUSTOM_05=23
+CUSTOM_06=27
+CUSTOM_07=28
+CUSTOM_08=29
+CUSTOM_09=30
+CUSTOM_10=1
+CUSTOM_11=4
+CUSTOM_12=6
+CUSTOM_13=8
+CUSTOM_14=9
+CUSTOM_15=10
+CUSTOM_16=11
+CUSTOM_17=12
+CUSTOM_18=14
+CUSTOM_19=19
+CUSTOM_20=24
+CUSTOM_21=26
+## ADSL
+ADSL_01=adsl-63-197-98-106
+ADSL_02=adsl-70-242-75-179
+## AML
+AML_01=aml-sfh-3310b
+## BIOS
+BIOS_01=BIOS-e820
+## DQUOT
+DQUOT_01=dquot_6
+## DSL
+DSL_01=dsl-082-083-227-067
+DSL_02=dsl-Chn-static-059
+## LNS
+LNS_01=lns-vlq-45-tou-82-252-162-81
+[T]
+T0=SEM_01|<NUM>:<NUM> combo <*> session opened for user <*> by (uid=<NUM>)
+T1=SEM_01|<NUM>:<NUM> combo <*> session closed for user <*>
+T2=SEM_01|<NUM>:<NUM> combo logrotate: ALERT exited abnormally with <BRACKET>
+T3=SEM_03|<NUM>:<NUM> combo sshd(pam_unix)<BRACKET>: authentication failure; logname= uid=<NUM> euid=<NUM> tty=NODEVssh ruser= <*> <*>
+T4=SEM_01|<NUM>:<NUM> combo sshd(pam_unix)<BRACKET>: check pass; user unknown
+T5=SEM_03|<NUM>:<NUM> combo sshd(pam_unix)<BRACKET>: authentication failure; logname= uid=<NUM> euid=<NUM> tty=NODEVssh ruser= <*>
+T6=SEM_01|<NUM>:<NUM> combo cups: cupsd <*> succeeded
+T7=SEM_01|<NUM>:<NUM> combo syslogd <NUM>.<NUM>: restart.
+T8=SEM_03|<NUM>:<NUM> combo sshd(pam_unix)<BRACKET>: authentication failure; logname= uid=<NUM> euid=<NUM> tty=NODEVssh ruser= rhost=IP_42
+T9=SEM_03|<NUM>:<NUM> combo sshd(pam_unix)<BRACKET>: authentication failure; logname= uid=<NUM> euid=<NUM> tty=NODEVssh ruser= rhost=<NUM>-<NUM>-<NUM>-<NUM>.hinet-ip.hinet.net user=root
+T10=SEM_01|<NUM>:<NUM> combo su(pam_unix)<BRACKET>: session opened for user cyrus by (uid=<NUM>)
+T11=SEM_01|<NUM>:<NUM> combo su(pam_unix)<BRACKET>: session closed for user cyrus
+T12=SEM_01|<NUM>:<NUM> combo su(pam_unix)<BRACKET>: session opened for user <*> by (uid=<NUM>)
+T13=SEM_01|<NUM>:<NUM> combo su(pam_unix)<BRACKET>: session closed for user <*>
+T14=SEM_06|<NUM>:<NUM> combo ftpd<BRACKET>: connection from IP_51 (<NUM>-<NUM>-<NUM>-<NUM>.bflony.adelphia.net) at Fri Jun <NUM> <NUM>:<NUM>:<NUM> <NUM>
+T15=SEM_01|<NUM>:<NUM> combo ftpd<BRACKET>: connection from <*> <*> at Fri Jun <NUM> <NUM>:<NUM>:<NUM> <NUM>
+T16=SEM_01|<NUM>:<NUM> combo ftpd<BRACKET>: connection from <*> <*> at <*> Jun <NUM> <NUM>:<NUM>:<NUM> <NUM>
+T17=SEM_12|<NUM>:<NUM> combo ftpd<BRACKET>: User unknown timed out after <NUM> seconds at Sat Jun <NUM> <NUM>:<NUM>:<NUM> <NUM>
+T18=SEM_01|<NUM>:<NUM> combo cups: cupsd shutdown succeeded
+T19=SEM_01|<NUM>:<NUM> combo snmpd<BRACKET>: Received SNMP packet(s) from IP_58
+T20=SEM_03|<NUM>:<NUM> combo klogind<BRACKET>: Authentication failed from IP_03 (IP_03): Permission denied in replay cache code
+T21=SEM_03|<NUM>:<NUM> combo klogind<BRACKET>: Kerberos authentication failed
+T22=SEM_03|<NUM>:<NUM> combo klogind<BRACKET>: Authentication failed from IP_03 (IP_03): Software caused connection abort
+T23=SEM_01|<NUM>:<NUM> combo ftpd<BRACKET>: connection from <*> <*> at <*> <*> <NUM> <NUM>:<NUM>:<NUM> <NUM>
+T24=SEM_05|<NUM>:<NUM> combo gpm<BRACKET>: *** info <BRACKET>:
+T25=SEM_01|<NUM>:<NUM> combo gpm<BRACKET>: imps2: Auto-detected intellimouse PS/<NUM>
+T26=SEM_01|<NUM>:<NUM> combo <*> session opened for user <*> by <*>
+T27=SEM_01|<NUM>:<NUM> combo -- root<BRACKET>: ROOT LOGIN ON tty2
+T28=SEM_01|<NUM>:<NUM> combo udev<BRACKET>: removing device node '<PATH>'
+T29=SEM_01|<NUM>:<NUM> combo udev<BRACKET>: <*> device node '<PATH>'
+T30=SEM_01|<NUM>:<NUM> combo <*> check pass; user unknown
+T31=SEM_03|<NUM>:<NUM> combo <*> authentication failure; logname= uid=<NUM> euid=<NUM> <*> ruser= <*>
+T32=SEM_01|<NUM>:<NUM> combo gdm-binary<BRACKET>: Couldn't authenticate user
+T33=SEM_01|<NUM>:<NUM> combo ftpd<BRACKET>: ANONYMOUS FTP LOGIN FROM IP_68, (anonymous)
+T34=SEM_01|<NUM>:<NUM> combo named<BRACKET>: notify question section contains no SOA
+T35=SEM_01|<NUM>:<NUM> combo ftpd<BRACKET>: getpeername (ftpd): Transport endpoint not connected
+T36=SEM_10|<NUM>:<NUM> combo xinetd<BRACKET>: warning: can't get client address: Connection reset by peer
+T37=SEM_01|<NUM>:<NUM> combo <*> <*> <*> succeeded
+T38=SEM_11|<NUM>:<NUM> combo kernel: klogd <NUM>.<NUM>, log source = <PATH> started.
+T39=SEM_07|<NUM>:<NUM> combo kernel: Linux version <NUM>.<NUM>-<NUM> (bhcompile@bugs.build.redhat.com) (gcc version <NUM>.<NUM> <NUM> (Red Hat Linux <NUM>.<NUM>-<NUM>)) #<NUM> Sat May <NUM> <NUM>:<NUM>:<NUM> EDT <NUM>
+T40=SEM_01|<NUM>:<NUM> combo kernel: BIOS-provided physical RAM map:
+T41=SEM_01|<NUM>:<NUM> combo kernel: BIOS_01: <NUM> - 00000000000a0000 (usable)
+T42=SEM_01|<NUM>:<NUM> combo kernel: BIOS_01: <*> - <*> <*>
+T43=SEM_01|<NUM>:<NUM> combo kernel: 0MB HIGHMEM available.
+T44=SEM_01|<NUM>:<NUM> combo kernel: <*> <*> available.
+T45=SEM_01|<NUM>:<NUM> combo kernel: <*> <*> <*>
+T46=SEM_01|<NUM>:<NUM> combo kernel: On node <NUM> totalpages: <NUM>
+T47=SEM_01|<NUM>:<NUM> combo kernel: DMA zone: <NUM> pages, LIFO batch:<NUM>
+T48=SEM_01|<NUM>:<NUM> combo kernel: <*> zone: <NUM> pages, LIFO batch:<NUM>
+T49=SEM_01|<NUM>:<NUM> combo kernel: ACPI disabled because your bios from <NUM> and too old
+T50=SEM_01|<NUM>:<NUM> combo kernel: You can enable it with acpi=force
+T51=SEM_01|<NUM>:<NUM> combo kernel: Kernel command line: ro root=LABEL=/ rhgb quiet
+T52=SEM_01|<NUM>:<NUM> combo kernel: mapped 4G/4G trampoline to ffff3000.
+T53=SEM_01|<NUM>:<NUM> combo kernel: Initializing CPU#<NUM>
+T54=SEM_01|<NUM>:<NUM> combo kernel: <*> <*> <*> <*> <*>
+T55=SEM_08|<NUM>:<NUM> combo kernel: PID hash table entries: <NUM> (order <NUM>: <NUM> bytes)
+T56=SEM_06|<NUM>:<NUM> combo kernel: Detected <NUM> MHz processor.
+T57=SEM_11|<NUM>:<NUM> combo rpc.statd<BRACKET>: Version <NUM>.<NUM> Starting
+T58=SEM_01|<NUM>:<NUM> combo kernel: Using tsc for high-res timesource
+T59=SEM_01|<NUM>:<NUM> combo kernel: Console: colour VGA+ 80x25
+T60=SEM_01|<NUM>:<NUM> combo kernel: Memory: 125312k/129720k available (1540k kernel code, 3860k reserved, 599k data, 144k init, 0k highmem)
+T61=SEM_01|<NUM>:<NUM> combo kernel: Calibrating delay loop... <NUM> BogoMIPS
+T62=SEM_01|<NUM>:<NUM> combo kernel: Security Scaffold v1.<NUM> initialized
+T63=SEM_01|<NUM>:<NUM> combo kernel: <*> <*>
+T64=SEM_11|<NUM>:<NUM> combo kernel: SELinux: Starting in permissive mode
+T65=SEM_04|<NUM>:<NUM> combo kernel: There already security framework initialized, register_security failed.
+T66=SEM_04|<NUM>:<NUM> combo kernel: Failure registering capabilities with kernel
+T67=SEM_01|<NUM>:<NUM> combo kernel: selinux_register_security: Registering secondary module capability
+T68=SEM_01|<NUM>:<NUM> combo kernel: Dentry cache hash table entries: <NUM> (order: <NUM>, <NUM> bytes)
+T69=SEM_01|<NUM>:<NUM> combo kernel: <*> hash table entries: <NUM> <*> <*> <NUM> bytes)
+T70=SEM_01|<NUM>:<NUM> combo kernel: CPU: L1 I cache: 16K, L1 D cache: 16K
+T71=SEM_01|<NUM>:<NUM> combo kernel: CPU: L2 cache: 256K
+T72=SEM_09|<NUM>:<NUM> combo kernel: Intel machine check architecture supported.
+T73=SEM_09|<NUM>:<NUM> combo kernel: Intel machine check reporting enabled on CPU#<NUM>.
+T74=SEM_01|<NUM>:<NUM> combo kernel: CPU: Intel Pentium III (Coppermine) stepping <NUM>
+T75=SEM_01|<NUM>:<NUM> combo kernel: Enabling fast FPU save and restore... done.
+T76=SEM_01|<NUM>:<NUM> combo kernel: Enabling <*> <*> <*> <*> <*> done.
+T77=SEM_01|<NUM>:<NUM> combo kernel: Checking 'hlt' instruction... OK.
+T78=SEM_01|<NUM>:<NUM> combo random: Initializing random number generator: succeeded
+T79=SEM_01|<NUM>:<NUM> combo kernel: POSIX conformance testing by UNIFIX
+T80=SEM_01|<NUM>:<NUM> combo kernel: <*> <*> <*> <*> <NUM>
+T81=SEM_01|<NUM>:<NUM> combo kernel: PCI: PCI BIOS revision <NUM> entry at <HEX>, last bus=<NUM>
+T82=SEM_03|<NUM>:<NUM> combo kernel: ACPI: Subsystem revision <NUM>
+T83=SEM_01|<NUM>:<NUM> combo kernel: Linux Plug and Play Support v0.<NUM> (c) Adam Belay
+T84=SEM_01|<NUM>:<NUM> combo kernel: usbcore: registered new driver usbfs
+T85=SEM_01|<NUM>:<NUM> combo kernel: usbcore: registered new driver <*>
+T86=SEM_01|<NUM>:<NUM> combo kernel: ACPI: ACPI tables contain no PCI IRQ routing entries
+T87=SEM_01|<NUM>:<NUM> combo kernel: PCI: Invalid ACPI-PCI IRQ routing table
+T88=SEM_01|<NUM>:<NUM> combo kernel: PCI: Probing PCI hardware
+T89=SEM_01|<NUM>:<NUM> combo kernel: PCI: Probing PCI hardware (bus <NUM>)
+T90=SEM_01|<NUM>:<NUM> combo kernel: Transparent bridge - <NUM>:<NUM>:1e.<NUM>
+T91=SEM_01|<NUM>:<NUM> combo kernel: PCI: Using IRQ router PIIX/ICH <BRACKET> at <NUM>:<NUM>:1f.<NUM>
+T92=SEM_01|<NUM>:<NUM> combo kernel: apm: BIOS version <NUM> Flags <HEX> (Driver version <NUM>.16ac)
+T93=SEM_02|<NUM>:<NUM> combo kernel: audit: initializing netlink socket (disabled)
+T94=SEM_01|<NUM>:<NUM> combo sysctl: kernel.core_uses_pid = <NUM>
+T95=SEM_11|<NUM>:<NUM> combo hcid<BRACKET>: HCI daemon ver <NUM> started
+T96=SEM_01|<NUM>:<NUM> combo network: Setting network parameters: succeeded
+T97=SEM_11|<NUM>:<NUM> combo sdpd<BRACKET>: sdpd v1.<NUM> started
+T98=SEM_01|<NUM>:<NUM> combo network: Bringing up loopback interface: succeeded
+T99=SEM_01|<NUM>:<NUM> combo kernel: VFS: Disk quotas DQUOT_01.<NUM>
+T100=SEM_01|<NUM>:<NUM> combo kernel: SELinux: Registering netfilter hooks
+T101=SEM_01|<NUM>:<NUM> combo kernel: pci_hotplug: PCI Hot Plug PCI Core version: <NUM>
+T102=SEM_01|<NUM>:<NUM> combo kernel: <*> <*> for <*> <*>
+T103=SEM_01|<NUM>:<NUM> combo kernel: isapnp: No Plug & Play device found
+T104=SEM_01|<NUM>:<NUM> combo kernel: Real Time Clock Driver v1.<NUM>
+T105=SEM_01|<NUM>:<NUM> combo kernel: Linux agpgart interface v0.<NUM> (c) Dave Jones
+[TIMELINE]
+[0s-0s] @16[E](2x), @17(1x), @18[E](10x), @19(1x), @20(1x), @3[C](16x), @24[E](12x), @25[E](1x), @11[E](10x), @27[E](5x)
+        @9[E](11x), @29[E](1x), @30(1x), @33[E](10x), @35[E](1x), @36(1x), @7(3x), @8(2x), @38(1x), @40[E](10x)
+        @15[E](20x), @13[E](23x), @6[E](20x), @14[E](10x), @42(1x), @43[E](1x), @44[E](9x), @12[E](15x), @49[E](5x), @4[E](10x)
+        @51[E](13x), @53[E](8x), @54[E](8x), @55[E](23x), @56[E](15x), @57[E](10x)
+[2592000s-2592000s] @59[E](10x), @62[C](27x), @63[E](4x), @66[E](4x), @68[E](13x), @69[E](8x), @72[E](10x), @74(4x), @77[E](3x), @79[E](23x)
+                    @81[E](5x), @83[E](5x), @85[E](6x), @88(1x), @89(1x), @90(1x), @91(1x), @92(2x), @94(4x), @95[E](4x)
+                    @98[E](14x), @102[E](90x), @103[E](10x), @104(1x), @105[E](1x), @106(1x), @107[E](10x), @108[E](10x), @109[E](3x), @110(3x)
+                    @111[E](2x), @112[E](8x), @113[E](14x), @115(2x), @122[E](15x), @123[E](33x), @125[E](1x), @127(2x), @128[E](5x), @129(5x)
+                    @130(3x), @132(1x), @133(1x), @134(4x), @135[E](2x), @137(1x), @139(1x), @140(1x), @141(1x), @142(1x)
+                    @144(1x), @145(1x), @147(1x), @148(1x), @149(2x), @150(1x), @151(1x), @152(1x), @153(1x), @154(1x)
+                    @155(1x), @156[E](1x), @158(1x), @159(1x), @160(1x), @161(1x), @162(1x), @163(1x), @164(2x), @165(1x)
+                    @166[E](1x), @167[E](1x), @168(1x), @169(1x), @170(2x), @171[E](1x), @172(1x), @173(1x), @174[C](1x), @175[C](1x)
+                    @176(1x), @177(1x), @178(1x), @179(1x), @180(1x), @181(1x), @183(1x), @184[E](1x), @185(1x), @186(1x)
+                    @187(1x), @188(1x), @189(1x), @190(1x), @191(1x), @192(1x), @193(1x), @194(1x), @196(1x), @197(1x)
+                    @198(1x), @199(1x), @200(1x), @201(1x), @202(1x), @203(1x), @204(1x), @205(1x), @206(1x), @207(1x)
+[REL]
+USR_02>CUSTOM_01
+CUSTOM_02:[USR_01,USR_02]
+CUSTOM_03:[USR_01,USR_02]
+USR_02>CUSTOM_04
+CUSTOM_05:[USR_01,USR_02]
+USR_02>CUSTOM_06
+USR_02>CUSTOM_07
+USR_02>CUSTOM_08
+USR_02>CUSTOM_09
+USR_02>CUSTOM_10
+USR_02>CUSTOM_11
+USR_02>CUSTOM_12
+USR_03>CUSTOM_13
+USR_02>CUSTOM_14
+USR_02>CUSTOM_15
+USR_02>CUSTOM_16
+USR_02>CUSTOM_17
+USR_02>CUSTOM_18
+USR_02>CUSTOM_19
+USR_02>CUSTOM_20
+USR_02>CUSTOM_21
+[CAUSE]
+SEM_01>SEM_01|CONF:60 x461 (@1(SEM_01)>@2(SEM_01), @1(SEM_01)>@3(SEM_01), @1(SEM_01)>@5(SEM_01))
+SEM_01>SEM_03|CONF:60 x133 (@1(SEM_01)>@4(SEM_03), @1(SEM_01)>@6(SEM_03), @2(SEM_01)>@4(SEM_03))
+SEM_03>SEM_01|CONF:60 x194 (@4(SEM_03)>@5(SEM_01), @4(SEM_03)>@7(SEM_01), @4(SEM_03)>@8(SEM_01))
+SEM_03>SEM_03|CONF:53 x604 (@4(SEM_03)>@6(SEM_03), @4(SEM_03)>@9(SEM_03), @4(SEM_03)>@11(SEM_03))
+SEM_01>SEM_06|CONF:60 x16 (@23(SEM_01)>@28(SEM_06), @26(SEM_01)>@28(SEM_06), @94(SEM_01)>@100(SEM_06))
+SEM_03>SEM_06|CONF:60 x5 (@24(SEM_03)>@28(SEM_06), @25(SEM_03)>@28(SEM_06), @27(SEM_03)>@28(SEM_06))
+SEM_03>SEM_08|CONF:60 x22 (@24(SEM_03)>@29(SEM_08), @25(SEM_03)>@29(SEM_08), @27(SEM_03)>@29(SEM_08))
+SEM_01>SEM_08|CONF:60 x27 (@26(SEM_01)>@29(SEM_08), @60(SEM_01)>@63(SEM_08), @60(SEM_01)>@66(SEM_08))
+SEM_06>SEM_08|CONF:60 x1 (@28(SEM_06)>@29(SEM_08))
+SEM_06>SEM_01|CONF:60 x13 (@28(SEM_06)>@30(SEM_01), @28(SEM_06)>@31(SEM_01), @28(SEM_06)>@32(SEM_01))
+SEM_08>SEM_01|CONF:60 x32 (@29(SEM_08)>@30(SEM_01), @29(SEM_08)>@31(SEM_01), @29(SEM_08)>@32(SEM_01))
+SEM_08>SEM_03|CONF:60 x8 (@29(SEM_08)>@33(SEM_03), @63(SEM_08)>@68(SEM_03), @66(SEM_08)>@68(SEM_03))
+SEM_01>SEM_12|CONF:60 x3 (@31(SEM_01)>@35(SEM_12), @32(SEM_01)>@35(SEM_12), @34(SEM_01)>@35(SEM_12))
+SEM_03>SEM_12|CONF:60 x1 (@33(SEM_03)>@35(SEM_12))
+SEM_12>SEM_01|CONF:60 x4 (@35(SEM_12)>@36(SEM_01), @35(SEM_12)>@37(SEM_01), @35(SEM_12)>@38(SEM_01))
+SEM_08>SEM_08|CONF:60 x3 (@63(SEM_08)>@66(SEM_08), @63(SEM_08)>@69(SEM_08), @66(SEM_08)>@69(SEM_08))
+SEM_03>SEM_05|CONF:60 x4 (@77(SEM_03)>@87(SEM_05), @79(SEM_03)>@87(SEM_05), @81(SEM_03)>@87(SEM_05))
+SEM_01>SEM_05|CONF:60 x4 (@80(SEM_01)>@87(SEM_05), @82(SEM_01)>@87(SEM_05), @84(SEM_01)>@87(SEM_05))
+SEM_08>SEM_05|CONF:60 x1 (@85(SEM_08)>@87(SEM_05))
+SEM_05>SEM_01|CONF:60 x6 (@87(SEM_05)>@88(SEM_01), @87(SEM_05)>@89(SEM_01), @87(SEM_05)>@90(SEM_01))
+SEM_06>SEM_03|CONF:60 x6 (@100(SEM_06)>@102(SEM_03), @100(SEM_06)>@103(SEM_03), @100(SEM_06)>@105(SEM_03))
+SEM_03>SEM_04|CONF:55 x17 (@105(SEM_03)>@166(SEM_04), @105(SEM_03)>@167(SEM_04), @107(SEM_03)>@166(SEM_04))
+SEM_03>SEM_09|CONF:55 x12 (@112(SEM_03)>@174(SEM_09), @112(SEM_03)>@175(SEM_09), @113(SEM_03)>@174(SEM_09))
+SEM_01>SEM_10|CONF:60 x6 (@129(SEM_01)>@135(SEM_10), @130(SEM_01)>@135(SEM_10), @131(SEM_01)>@135(SEM_10))
+SEM_01>SEM_11|CONF:60 x17 (@133(SEM_01)>@139(SEM_11), @134(SEM_01)>@139(SEM_11), @136(SEM_01)>@139(SEM_11))
+SEM_01>SEM_07|CONF:60 x4 (@134(SEM_01)>@140(SEM_07), @136(SEM_01)>@140(SEM_07), @137(SEM_01)>@140(SEM_07))
+SEM_10>SEM_01|CONF:60 x5 (@135(SEM_10)>@136(SEM_01), @135(SEM_10)>@137(SEM_01), @135(SEM_10)>@138(SEM_01))
+SEM_10>SEM_11|CONF:75 x5 (@135(SEM_10)>@139(SEM_11), @135(SEM_10)>@158(SEM_11), @135(SEM_10)>@165(SEM_11))
+SEM_10>SEM_07|CONF:60 x1 (@135(SEM_10)>@140(SEM_07))
+SEM_11>SEM_07|CONF:60 x1 (@139(SEM_11)>@140(SEM_07))
+SEM_11>SEM_01|CONF:60 x19 (@139(SEM_11)>@141(SEM_01), @139(SEM_11)>@142(SEM_01), @139(SEM_11)>@143(SEM_01))
+SEM_11>SEM_11|CONF:90 x10 (@139(SEM_11)>@158(SEM_11), @139(SEM_11)>@165(SEM_11), @139(SEM_11)>@197(SEM_11))
+SEM_07>SEM_01|CONF:60 x6 (@140(SEM_07)>@141(SEM_01), @140(SEM_07)>@142(SEM_01), @140(SEM_07)>@143(SEM_01))
+SEM_08>SEM_06|CONF:60 x1 (@156(SEM_08)>@157(SEM_06))
+SEM_08>SEM_11|CONF:60 x1 (@156(SEM_08)>@158(SEM_11))
+SEM_06>SEM_11|CONF:60 x1 (@157(SEM_06)>@158(SEM_11))
+SEM_01>SEM_04|CONF:60 x7 (@161(SEM_01)>@166(SEM_04), @162(SEM_01)>@166(SEM_04), @162(SEM_01)>@167(SEM_04))
+SEM_11>SEM_04|CONF:60 x2 (@165(SEM_11)>@166(SEM_04), @165(SEM_11)>@167(SEM_04))
+SEM_04>SEM_04|CONF:60 x1 (@166(SEM_04)>@167(SEM_04))
+SEM_04>SEM_01|CONF:60 x7 (@166(SEM_04)>@168(SEM_01), @166(SEM_04)>@169(SEM_01), @166(SEM_04)>@170(SEM_01))
+SEM_04>SEM_08|CONF:60 x2 (@166(SEM_04)>@171(SEM_08), @167(SEM_04)>@171(SEM_08))
+SEM_01>SEM_09|CONF:60 x7 (@169(SEM_01)>@174(SEM_09), @170(SEM_01)>@174(SEM_09), @170(SEM_01)>@175(SEM_09))
+SEM_08>SEM_09|CONF:60 x2 (@171(SEM_08)>@174(SEM_09), @171(SEM_08)>@175(SEM_09))
+SEM_09>SEM_09|CONF:60 x1 (@174(SEM_09)>@175(SEM_09))
+SEM_09>SEM_01|CONF:60 x9 (@174(SEM_09)>@176(SEM_01), @174(SEM_09)>@177(SEM_01), @174(SEM_09)>@178(SEM_01))
+SEM_01>SEM_02|CONF:60 x4 (@191(SEM_01)>@195(SEM_02), @192(SEM_01)>@195(SEM_02), @193(SEM_01)>@195(SEM_02))
+SEM_02>SEM_01|CONF:60 x2 (@195(SEM_02)>@196(SEM_01), @195(SEM_02)>@198(SEM_01))
+SEM_02>SEM_11|CONF:60 x1 (@195(SEM_02)>@197(SEM_11))
+[L4]
+## TIER_0 CRITICAL
+@3 16x C S0 T2 ^0->0 burst(rate=16.0/s) FLOW:FLOW_2 IMP:0.77
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (16x)
+  SAMPLES:
+    - 06:20 combo logrotate: ALERT exited abnormally with [1]
+    - 10:24 combo logrotate: ALERT exited abnormally with [1]
+@62 27x C S0 T2 ^2592000->2592000 burst(rate=27.0/s) FLOW:FLOW_27 IMP:0.76
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <BRACKET>] (27x)
+  SAMPLES:
+    - 05:19 combo logrotate: ALERT exited abnormally with [1]
+    - 04:03 combo logrotate: ALERT exited abnormally with [1]
+@174 1x C S3 T72 ^2592000 IMP:1.00
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Intel machine check architecture supported.
+@175 1x C S3 T73 ^2592000 IMP:1.00
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Intel machine check reporting enabled on CPU#0.
+## TIER_1 IMPORTANT
+@4 10x E S1 T3 ^0->0 burst(rate=10.0/s) FLOW:FLOW_2 IMP:0.59
+  ENTITIES:USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+    Slot 2 (ruser): rhost=csnsu.nsuok.edu(10x)
+    Slot 3 (ruser): user=root(10x)
+  SAMPLES:
+    - 08:19 combo sshd(pam_unix)[15481]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+    - 08:19 combo sshd(pam_unix)[15477]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+  FIELDS:user=root
+@6 20x E S0 T5 ^0->0 burst(rate=20.0/s) FLOW:FLOW_2 IMP:0.57
+  ENTITIES:IP_01
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_01.ip.secureserver.net] (10x)
+    [<NUM>:<NUM> -> rhost=massive.merukuru.org] (10x)
+  SAMPLES:
+    - 30:55 combo sshd(pam_unix)[17129]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_01.ip.secureserver.net
+    - 30:55 combo sshd(pam_unix)[17125]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_01.ip.secureserver.net
+@9 11x E S2 T3 ^0->0 burst(rate=11.0/s) FLOW:FLOW_25 IMP:0.59
+  ENTITIES:IP_29 USR_01 IP_52 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(11x)
+    Slot 2 (ruser): rhost=IP_52(10x) rhost=IP_29(1x)
+    Slot 3 (ruser): user=root(10x) user=guest(1x)
+  SAMPLES:
+    - 43:13 combo sshd(pam_unix)[30565]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_29  user=guest
+    - 03:00 combo sshd(pam_unix)[19088]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_52  user=root
+  FIELDS:user=guest
+@11 10x E S3 T5 ^0->0 burst(rate=10.0/s) FLOW:FLOW_25 IMP:0.59
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=<NUM>.ctinets.com] (10x)
+  SAMPLES:
+    - 53:32 combo sshd(pam_unix)[23661]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=061092085098.ctinets.com
+    - 53:32 combo sshd(pam_unix)[23663]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=061092085098.ctinets.com
+@12 15x E S4 T3 ^0->0 burst(rate=15.0/s) FLOW:FLOW_25 IMP:0.58
+  ENTITIES:USR_02 IP_06
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(15x)
+    Slot 2 (ruser): rhost=<NUM>-<NUM>-<NUM>-<NUM>.dsl.easynet.nl(10x) rhost=IP_06(5x)
+    Slot 3 (ruser): user=root(15x)
+  SAMPLES:
+    - 58:46 combo sshd(pam_unix)[12665]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=62-192-102-94.dsl.easynet.nl  user=root
+    - 58:46 combo sshd(pam_unix)[12666]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=62-192-102-94.dsl.easynet.nl  user=root
+  FIELDS:user=root
+@13 23x E S5 T3 ^0->0 burst(rate=23.0/s) FLOW:FLOW_42 IMP:0.57
+  ENTITIES:USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(23x)
+    Slot 2 (ruser): rhost=n219076184117.netvigator.com(23x)
+    Slot 3 (ruser): user=root(23x)
+  SAMPLES:
+    - 17:26 combo sshd(pam_unix)[16207]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=n219076184117.netvigator.com  user=root
+    - 17:26 combo sshd(pam_unix)[16206]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=n219076184117.netvigator.com  user=root
+  FIELDS:user=root
+@14 10x E S6 T3 ^0->0 burst(rate=10.0/s) FLOW:FLOW_42 IMP:0.59
+  ENTITIES:IP_17 USR_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+    Slot 2 (ruser): rhost=IP_17(10x)
+    Slot 3 (ruser): user=guest(10x)
+  SAMPLES:
+    - 41:29 combo sshd(pam_unix)[18969]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_17  user=guest
+    - 41:29 combo sshd(pam_unix)[18971]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_17  user=guest
+  FIELDS:user=guest
+@15 20x E S7 T3 ^0->0 burst(rate=20.0/s) FLOW:FLOW_42 IMP:0.57
+  ENTITIES:IP_39 USR_01 USR_02 IP_53
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(20x)
+    Slot 2 (ruser): rhost=IP_53(9x) rhost=IP_39(6x) rhost=troi.bluesky-technologies.com(5x)
+    Slot 3 (ruser): user=root(14x) user=guest(6x)
+  SAMPLES:
+    - 56:36 combo sshd(pam_unix)[14281]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_39  user=guest
+    - 56:36 combo sshd(pam_unix)[14279]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_39  user=guest
+  FIELDS:user=guest
+@16 2x E S8 T8 ^0->0 burst(rate=2.0/s) FLOW:FLOW_42 IMP:0.64
+  ENTITIES:IP_42
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+  SAMPLES:
+    - 16:01 combo sshd(pam_unix)[19939]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_42
+    - 16:02 combo sshd(pam_unix)[19937]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_42
+@18 10x E S9 T9 ^0->0 burst(rate=10.0/s) FLOW:FLOW_26 IMP:0.59
+  ENTITIES:USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+  SAMPLES:
+    - 04:59 combo sshd(pam_unix)[20882]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+    - 04:59 combo sshd(pam_unix)[20884]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+  FIELDS:user=root
+@24 12x E S10 T8 ^0->0 burst(rate=12.0/s) FLOW:FLOW_43 IMP:0.59
+  ENTITIES:IP_42
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(12x)
+  SAMPLES:
+    - 12:34 combo sshd(pam_unix)[23397]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_42
+    - 12:34 combo sshd(pam_unix)[23395]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_42
+@25 1x E S10 T4 ^0 FLOW:FLOW_43 IMP:0.82
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 12:34 combo sshd(pam_unix)[23403]: check pass; user unknown
+@27 5x E S4 T5 ^0->0 burst(rate=5.0/s) FLOW:FLOW_43 IMP:0.61
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=d211-<NUM>-<NUM>-<NUM>.rev.krline.net] (5x)
+  SAMPLES:
+    - 05:31 combo sshd(pam_unix)[24138]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=d211-116-254-214.rev.krline.net
+    - 05:31 combo sshd(pam_unix)[24137]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=d211-116-254-214.rev.krline.net
+@29 1x E S4 T0 ^0 FLOW:FLOW_57 IMP:0.82
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(1x)
+    Slot 3 (user): test(1x)
+  SAMPLES:
+    - 29:26 combo sshd(pam_unix)[30631]: session opened for user test by (uid=509)
+@33 10x E S6 T5 ^0->0 burst(rate=10.0/s) FLOW:FLOW_19 IMP:0.59
+  ENTITIES:ADSL_02
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=ADSL_02.dsl.ksc2mo.swbell.net] (10x)
+  SAMPLES:
+    - 30:59 combo sshd(pam_unix)[31201]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ADSL_02.dsl.ksc2mo.swbell.net
+    - 30:59 combo sshd(pam_unix)[31199]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ADSL_02.dsl.ksc2mo.swbell.net
+@35 1x E S9 T17 ^0 IMP:0.81
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (after): <NUM>(1x)
+    Slot 3 (jun): <NUM>(1x)
+    Slot 4 (jun): <NUM>:<NUM>:<NUM>(1x)
+    Slot 5 (jun): <NUM>(1x)
+  SAMPLES:
+    - 23:10 combo ftpd[31277]: User unknown timed out after 900 seconds at Sat Jun 18 02:23:10 2005
+@40 10x E S12 T5 ^0->0 burst(rate=10.0/s) FLOW:FLOW_4 IMP:0.59
+  ENTITIES:IP_57
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_57] (10x)
+  SAMPLES:
+    - 20:05 combo sshd(pam_unix)[10035]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_57
+    - 20:05 combo sshd(pam_unix)[10037]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_57
+@43 1x E S9 T5 ^0 FLOW:FLOW_56 IMP:0.81
+  ENTITIES:IP_07
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_07] (1x)
+  SAMPLES:
+    - 55:14 combo sshd(pam_unix)[19085]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_07
+@44 9x E S14 T3 ^0->0 burst(rate=9.0/s) FLOW:FLOW_56 IMP:0.60
+  ENTITIES:IP_43 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(9x)
+    Slot 2 (ruser): rhost=IP_43(9x)
+    Slot 3 (ruser): user=root(9x)
+  SAMPLES:
+    - 30:03 combo sshd(pam_unix)[26189]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_43  user=root
+    - 30:03 combo sshd(pam_unix)[26188]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_43  user=root
+  FIELDS:user=root
+@49 5x E S16 T5 ^0->0 burst(rate=5.0/s) FLOW:FLOW_14 IMP:0.61
+  ENTITIES:IP_24
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_24] (5x)
+  SAMPLES:
+    - 42:46 combo sshd(pam_unix)[12756]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_24
+    - 42:46 combo sshd(pam_unix)[12753]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_24
+@51 13x E S10 T3 ^0->0 burst(rate=13.0/s) FLOW:FLOW_2 IMP:0.58
+  ENTITIES:USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (ruser): rhost=h64-<NUM>-<NUM>-<NUM>.gtconnect.net(13x)
+    Slot 3 (ruser): user=root(13x)
+  SAMPLES:
+    - 11:53 combo sshd(pam_unix)[15692]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=h64-187-1-131.gtconnect.net  user=root
+    - 11:55 combo sshd(pam_unix)[15694]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=h64-187-1-131.gtconnect.net  user=root
+  FIELDS:user=root
+@53 8x E S10 T5 ^0->0 burst(rate=8.0/s) FLOW:FLOW_42 IMP:0.60
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=biblioteka.wsi.edu.pl] (8x)
+  SAMPLES:
+    - 48:38 combo sshd(pam_unix)[18559]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+    - 48:41 combo sshd(pam_unix)[18557]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+@54 8x E S4 T20 ^0->0 burst(rate=8.0/s) FLOW:FLOW_42 IMP:0.62
+  ENTITIES:IP_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(8x)
+  SAMPLES:
+    - 53:04 combo klogind[19272]: Authentication failed from IP_03 (IP_03): Permission denied in replay cache code
+    - 53:04 combo klogind[19287]: Authentication failed from IP_03 (IP_03): Permission denied in replay cache code
+@55 23x E S4 T21 ^0->0 burst(rate=23.0/s) FLOW:FLOW_42 IMP:0.60
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(23x)
+  SAMPLES:
+    - 53:04 combo klogind[19272]: Kerberos authentication failed
+    - 53:04 combo klogind[19287]: Kerberos authentication failed
+@56 15x E S4 T22 ^0->0 burst(rate=15.0/s) FLOW:FLOW_42 IMP:0.61
+  ENTITIES:IP_03
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(15x)
+  SAMPLES:
+    - 53:04 combo klogind[19274]: Authentication failed from IP_03 (IP_03): Software caused connection abort
+    - 53:06 combo klogind[19266]: Authentication failed from IP_03 (IP_03): Software caused connection abort
+@57 10x E S17 T0 ^0->0 burst(rate=10.0/s) FLOW:FLOW_59 IMP:0.60
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(10x)
+    Slot 3 (user): test(10x)
+  SAMPLES:
+    - 16:32 combo sshd(pam_unix)[19432]: session opened for user test by (uid=509)
+    - 16:32 combo sshd(pam_unix)[19431]: session opened for user test by (uid=509)
+@59 10x E S18 T3 ^2592000->2592000 burst(rate=10.0/s) FLOW:FLOW_59 IMP:0.59
+  ENTITIES:IP_52 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+    Slot 2 (ruser): rhost=IP_52(10x)
+    Slot 3 (ruser): user=root(10x)
+  SAMPLES:
+    - 21:28 combo sshd(pam_unix)[19630]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_52  user=root
+    - 21:28 combo sshd(pam_unix)[19628]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_52  user=root
+  FIELDS:user=root
+@63 4x E S19 T0 ^2592000->2592000 burst(rate=4.0/s) FLOW:FLOW_57 IMP:0.63
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(4x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(4x)
+    Slot 3 (user): test(4x)
+  SAMPLES:
+    - 02:26 combo sshd(pam_unix)[21689]: session opened for user test by (uid=509)
+    - 02:26 combo sshd(pam_unix)[21691]: session opened for user test by (uid=509)
+@66 4x E S12 T0 ^2592000->2592000 burst(rate=4.0/s) FLOW:FLOW_48 IMP:0.63
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(4x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(4x)
+    Slot 3 (user): test(4x)
+  SAMPLES:
+    - 14:43 combo sshd(pam_unix)[22099]: session opened for user test by (uid=509)
+    - 14:43 combo sshd(pam_unix)[22104]: session opened for user test by (uid=509)
+@68 13x E S1 T3 ^2592000->2592000 burst(rate=13.0/s) FLOW:FLOW_58 IMP:0.58
+  ENTITIES:IP_06 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(13x)
+    Slot 2 (ruser): rhost=IP_06(10x) rhost=<NUM>-<NUM>-<NUM>-<NUM>.hinet-ip.hinet.net(3x)
+    Slot 3 (ruser): user=root(13x)
+  SAMPLES:
+    - 56:41 combo sshd(pam_unix)[22272]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_06  user=root
+    - 56:41 combo sshd(pam_unix)[22269]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_06  user=root
+  FIELDS:user=root
+@69 8x E S6 T0 ^2592000->2592000 burst(rate=8.0/s) FLOW:FLOW_58 IMP:0.61
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(8x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(8x)
+    Slot 3 (user): test(8x)
+  SAMPLES:
+    - 41:32 combo sshd(pam_unix)[23533]: session opened for user test by (uid=509)
+    - 41:32 combo sshd(pam_unix)[23534]: session opened for user test by (uid=509)
+@72 10x E S0 T5 ^2592000->2592000 burst(rate=10.0/s) FLOW:FLOW_5 IMP:0.59
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=zummit.com] (10x)
+  SAMPLES:
+    - 15:33 combo sshd(pam_unix)[24588]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+    - 15:33 combo sshd(pam_unix)[24587]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+@77 3x E S12 T3 ^2592000->2592000 burst(rate=3.0/s) FLOW:FLOW_2 IMP:0.63
+  ENTITIES:IP_22 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (ruser): rhost=IP_22(3x)
+    Slot 3 (ruser): user=root(3x)
+  SAMPLES:
+    - 33:09 combo sshd(pam_unix)[2543]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_22  user=root
+    - 33:10 combo sshd(pam_unix)[2544]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_22  user=root
+  FIELDS:user=root
+@79 23x E S2 T3 ^2592000->2592000 burst(rate=23.0/s) FLOW:FLOW_2 IMP:0.57
+  ENTITIES:IP_47 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(23x)
+    Slot 2 (ruser): rhost=IP_47(13x) rhost=p15105218.pureserver.info(10x)
+    Slot 3 (ruser): user=root(23x)
+  SAMPLES:
+    - 15:48 combo sshd(pam_unix)[3378]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_47  user=root
+    - 15:48 combo sshd(pam_unix)[3380]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_47  user=root
+  FIELDS:user=root
+@81 5x E S13 T5 ^2592000->2592000 burst(rate=5.0/s) FLOW:FLOW_37 IMP:0.61
+  ENTITIES:IP_20
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=IP_20] (5x)
+  SAMPLES:
+    - 36:28 combo sshd(pam_unix)[6552]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_20
+    - 36:28 combo sshd(pam_unix)[6554]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_20
+@83 5x E S9 T3 ^2592000->2592000 burst(rate=5.0/s) FLOW:FLOW_37 IMP:0.61
+  ENTITIES:IP_41 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(5x)
+    Slot 2 (ruser): rhost=IP_41(5x)
+    Slot 3 (ruser): user=root(5x)
+  SAMPLES:
+    - 22:31 combo sshd(pam_unix)[7694]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_41  user=root
+    - 22:32 combo sshd(pam_unix)[7702]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_41  user=root
+  FIELDS:user=root
+@85 6x E S11 T0 ^2592000->2592000 burst(rate=6.0/s) FLOW:FLOW_66 IMP:0.62
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(6x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(6x)
+    Slot 3 (user): test(6x)
+  SAMPLES:
+    - 18:12 combo sshd(pam_unix)[12518]: session opened for user test by (uid=509)
+    - 18:12 combo sshd(pam_unix)[12519]: session opened for user test by (uid=509)
+@95 4x E S3 T5 ^2592000->2592000 burst(rate=4.0/s) FLOW:FLOW_4 IMP:0.62
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> rhost=c9063558.virtua.com.br] (4x)
+  SAMPLES:
+    - 18:55 combo sshd(pam_unix)[13317]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c9063558.virtua.com.br
+    - 18:57 combo sshd(pam_unix)[13321]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c9063558.virtua.com.br
+@98 14x E S4 T3 ^2592000->2592000 burst(rate=14.0/s) FLOW:FLOW_64 IMP:0.58
+  ENTITIES:IP_34 USR_03 IP_33 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(14x)
+    Slot 2 (ruser): rhost=IP_33(10x) rhost=IP_34(4x)
+    Slot 3 (ruser): user=root(10x) user=test(4x)
+  SAMPLES:
+    - 14:55 combo sshd(pam_unix)[20963]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_34  user=test
+    - 14:56 combo sshd(pam_unix)[20969]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_34  user=test
+  FIELDS:user=test
+@102 90x E S20 T3 ^2592000->2592000 burst(rate=90.0/s) FLOW:FLOW_31 IMP:0.53
+  ENTITIES:IP_02 USR_02 IP_27
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(90x)
+    Slot 2 (ruser): rhost=IP_02(80x) rhost=IP_27(10x)
+    Slot 3 (ruser): user=root(90x)
+  SAMPLES:
+    - 01:43 combo sshd(pam_unix)[30530]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_02  user=root
+    - 01:44 combo sshd(pam_unix)[30532]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_02  user=root
+  FIELDS:user=root
+@103 10x E S5 T3 ^2592000->2592000 burst(rate=10.0/s) FLOW:FLOW_31 IMP:0.59
+  ENTITIES:IP_65 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+    Slot 2 (ruser): rhost=IP_65(10x)
+    Slot 3 (ruser): user=root(10x)
+  SAMPLES:
+    - 46:14 combo sshd(pam_unix)[31851]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_65  user=root
+    - 46:15 combo sshd(pam_unix)[31848]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_65  user=root
+  FIELDS:user=root
+@105 1x E S21 T31 ^2592000 FLOW:FLOW_31 IMP:0.81
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (combo): gdm(pam_unix)<BRACKET>:(1x)
+    Slot 3 (euidnum): tty=:<NUM>(1x)
+    Slot 4 (ruser): rhost=(1x)
+  SAMPLES:
+    - 33:13 combo gdm(pam_unix)[2803]: authentication failure; logname= uid=0 euid=0 tty=:0 ruser= rhost=
+@107 10x E S22 T3 ^2592000->2592000 burst(rate=10.0/s) FLOW:FLOW_25 IMP:0.59
+  ENTITIES:IP_25 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+    Slot 2 (ruser): rhost=IP_25(10x)
+    Slot 3 (ruser): user=root(10x)
+  SAMPLES:
+    - 58:16 combo sshd(pam_unix)[1325]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_25  user=root
+    - 58:16 combo sshd(pam_unix)[1329]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_25  user=root
+  FIELDS:user=root
+@108 10x E S23 T3 ^2592000->2592000 burst(rate=10.0/s) FLOW:FLOW_25 IMP:0.59
+  ENTITIES:USR_02 IP_60
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(10x)
+    Slot 2 (ruser): rhost=IP_60.nw.nuvox.net(10x)
+    Slot 3 (ruser): user=root(10x)
+  SAMPLES:
+    - 09:43 combo sshd(pam_unix)[4048]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_60.nw.nuvox.net  user=root
+    - 09:44 combo sshd(pam_unix)[4053]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_60.nw.nuvox.net  user=root
+  FIELDS:user=root
+@109 3x E S22 T26 ^2592000->2592000 burst(rate=3.0/s) FLOW:FLOW_59 IMP:0.64
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(3x)
+    Slot 3 (user): test(3x)
+    Slot 4 (by): (uid=<NUM>)(3x)
+  SAMPLES:
+    - 22:28 combo sshd(pam_unix)[8113]: session opened for user test by (uid=509)
+    - 22:28 combo sshd(pam_unix)[8114]: session opened for user test by (uid=509)
+@111 2x E S3 T3 ^2592000->2592000 burst(rate=2.0/s) FLOW:FLOW_59 IMP:0.64
+  ENTITIES:USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (ruser): rhost=<NUM>-<NUM>-<NUM>-<NUM>.adsl.ttn.net(2x)
+    Slot 3 (ruser): user=root(2x)
+  SAMPLES:
+    - 59:42 combo sshd(pam_unix)[11706]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-132-40-29.adsl.ttn.net  user=root
+    - 59:56 combo sshd(pam_unix)[11708]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-132-40-29.adsl.ttn.net  user=root
+  FIELDS:user=root
+@112 8x E S8 T3 ^2592000->2592000 burst(rate=8.0/s) FLOW:FLOW_41 IMP:0.60
+  ENTITIES:USR_02 IP_05
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(8x)
+    Slot 2 (ruser): rhost=<NUM>-<NUM>-<NUM>-<NUM>.adsl.ttn.net(6x) rhost=IP_05(2x)
+    Slot 3 (ruser): user=root(8x)
+  SAMPLES:
+    - 00:09 combo sshd(pam_unix)[11710]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-132-40-29.adsl.ttn.net  user=root
+    - 00:22 combo sshd(pam_unix)[11719]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-132-40-29.adsl.ttn.net  user=root
+  FIELDS:user=root
+@113 14x E S6 T3 ^2592000->2592000 burst(rate=14.0/s) FLOW:FLOW_41 IMP:0.58
+  ENTITIES:USR_02 IP_22
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(14x)
+    Slot 2 (ruser): rhost=c51471f2c.cable.wanadoo.nl(10x) rhost=IP_22(4x)
+    Slot 3 (ruser): user=root(14x)
+  SAMPLES:
+    - 03:48 combo sshd(pam_unix)[12632]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+    - 03:48 combo sshd(pam_unix)[12628]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+  FIELDS:user=root
+@122 15x E S14 T31 ^2592000->2592000 burst(rate=15.0/s) FLOW:FLOW_31 IMP:0.58
+  ENTITIES:IP_45
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(15x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(15x)
+    Slot 3 (euidnum): tty=NODEVssh(15x)
+    Slot 4 (ruser): rhost=<NUM>-<NUM>-<NUM>-<NUM>.ebix.net.tw(10x) rhost=IP_45(5x)
+  SAMPLES:
+    - 01:25 combo sshd(pam_unix)[28975]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211-76-104-65.ebix.net.tw
+    - 01:25 combo sshd(pam_unix)[28977]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211-76-104-65.ebix.net.tw
+@123 33x E S11 T3 ^2592000->2592000 burst(rate=33.0/s) FLOW:FLOW_31 IMP:0.56
+  ENTITIES:IP_08 USR_02 IP_14
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(33x)
+    Slot 2 (ruser): rhost=IP_14(23x) rhost=IP_08(10x)
+    Slot 3 (ruser): user=root(33x)
+  SAMPLES:
+    - 35:41 combo sshd(pam_unix)[30500]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_08  user=root
+    - 35:41 combo sshd(pam_unix)[30510]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_08  user=root
+  FIELDS:user=root
+@125 1x E S21 T3 ^2592000 FLOW:FLOW_31 IMP:0.81
+  ENTITIES:IP_69 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (ruser): rhost=IP_69(1x)
+    Slot 3 (ruser): user=root(1x)
+  SAMPLES:
+    - 46:41 combo sshd(pam_unix)[15385]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_69  user=root
+  FIELDS:user=root
+@128 5x E S7 T3 ^2592000->2592000 burst(rate=5.0/s) FLOW:FLOW_10 IMP:0.61
+  ENTITIES:IP_11 USR_02
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(5x)
+    Slot 2 (ruser): rhost=IP_11(5x)
+    Slot 3 (ruser): user=root(5x)
+  SAMPLES:
+    - 31:57 combo sshd(pam_unix)[22185]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_11  user=root
+    - 31:57 combo sshd(pam_unix)[22184]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_11  user=root
+  FIELDS:user=root
+@135 2x E S14 T36 ^2592000->2592000 burst(rate=2.0/s) IMP:0.66
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+  SAMPLES:
+    - 23:13 combo xinetd[26482]: warning: can't get client address: Connection reset by peer
+    - 23:13 combo xinetd[26484]: warning: can't get client address: Connection reset by peer
+@156 1x E S3 T55 ^2592000 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (entries): <NUM>(1x)
+    Slot 3 (order): <NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: PID hash table entries: 512 (order 9: 4096 bytes)
+@166 1x E S3 T65 ^2592000 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: There is already a security framework initialized, register_security failed.
+@167 1x E S3 T66 ^2592000 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Failure registering capabilities with the kernel
+@171 1x E S3 T69 ^2592000 FLOW:FLOW_47 IMP:0.83
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (kernel): Mount-cache(1x)
+    Slot 3 (entries): <NUM>(1x)
+    Slot 4 (entries): (order:(1x)
+    Slot 5 (entries): <NUM>,(1x)
+    Slot 6 (entries): <NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Mount-cache hash table entries: 512 (order: 0, 4096 bytes)
+@184 1x E S3 T82 ^2592000 FLOW:FLOW_7 IMP:0.83
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:58 combo kernel: ACPI: Subsystem revision 20040326
+## TIER_2 SUPPORTING
+@7 3x I S0 T6 ^0->0 burst(rate=3.0/s) FLOW:FLOW_2 IMP:0.32
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> startup] (2x)
+    [<NUM>:<NUM> -> shutdown] (1x)
+  SAMPLES:
+    - 09:02 combo cups: cupsd startup succeeded
+    - 04:19 combo cups: cupsd shutdown succeeded
+@8 2x I S0 T7 ^0->0 burst(rate=2.0/s) FLOW:FLOW_25 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+  SAMPLES:
+    - 09:11 combo syslogd 1.4.1: restart.
+    - 04:31 combo syslogd 1.4.1: restart.
+@17 1x I S8 T4 ^0 FLOW:FLOW_26 IMP:0.34
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 16:02 combo sshd(pam_unix)[19937]: check pass; user unknown
+@19 1x I S0 T10 ^0 FLOW:FLOW_26 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 06:18 combo su(pam_unix)[21416]: session opened for user cyrus by (uid=0)
+@20 1x I S0 T11 ^0 FLOW:FLOW_22 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 06:19 combo su(pam_unix)[21416]: session closed for user cyrus
+@30 1x I S4 T1 ^0 FLOW:FLOW_57 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(1x)
+    Slot 3 (user): test(1x)
+  SAMPLES:
+    - 34:57 combo sshd(pam_unix)[30631]: session closed for user test
+@36 1x I S0 T18 ^0 FLOW:FLOW_4 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 08:57 combo cups: cupsd shutdown succeeded
+@38 1x I S0 T19 ^0 FLOW:FLOW_4 IMP:0.35
+  ENTITIES:IP_58
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 44:39 combo snmpd[2318]: Received SNMP packet(s) from IP_58
+@42 1x I S9 T4 ^0 FLOW:FLOW_4 IMP:0.34
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 55:14 combo sshd(pam_unix)[19085]: check pass; user unknown
+@74 4x I S0 T7 ^2592000->2592000 burst(rate=4.0/s) FLOW:FLOW_5 IMP:0.31
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(4x)
+  SAMPLES:
+    - 08:03 combo syslogd 1.4.1: restart.
+    - 04:46 combo syslogd 1.4.1: restart.
+@88 1x I S7 T25 ^2592000 FLOW:FLOW_6 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 06:12 combo gpm[2094]: imps2: Auto-detected intellimouse PS/2
+@89 1x I S7 T26 ^2592000 FLOW:FLOW_6 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (combo): login(pam_unix)<BRACKET>:(1x)
+    Slot 3 (user): root(1x)
+    Slot 4 (by): LOGIN(uid=<NUM>)(1x)
+  SAMPLES:
+    - 06:15 combo login(pam_unix)[2421]: session opened for user root by LOGIN(uid=0)
+@90 1x I S7 T27 ^2592000 FLOW:FLOW_6 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 06:15 combo  -- root[2421]: ROOT LOGIN ON tty2
+@91 1x I S7 T1 ^2592000 FLOW:FLOW_6 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (combo): login(pam_unix)<BRACKET>:(1x)
+    Slot 3 (user): root(1x)
+  SAMPLES:
+    - 09:10 combo login(pam_unix)[2421]: session closed for user root
+@92 2x I S7 T28 ^2592000->2592000 burst(rate=2.0/s) FLOW:FLOW_6 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+  SAMPLES:
+    - 09:11 combo udev[12754]: removing device node '/udev/vcsa2'
+    - 09:11 combo udev[12753]: removing device node '/udev/vcs2'
+@94 4x I S3 T4 ^2592000->2592000 burst(rate=4.0/s) FLOW:FLOW_6 IMP:0.30
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(4x)
+  SAMPLES:
+    - 18:55 combo sshd(pam_unix)[13317]: check pass; user unknown
+    - 18:57 combo sshd(pam_unix)[13321]: check pass; user unknown
+@104 1x I S21 T30 ^2592000 FLOW:FLOW_31 IMP:0.34
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> gdm(pam_unix)<BRACKET>:] (1x)
+  SAMPLES:
+    - 33:13 combo gdm(pam_unix)[2803]: check pass; user unknown
+@106 1x I S21 T32 ^2592000 FLOW:FLOW_26 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 33:17 combo gdm-binary[2803]: Couldn't authenticate user
+@110 3x I S22 T1 ^2592000->2592000 burst(rate=3.0/s) FLOW:FLOW_59 IMP:0.30
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+    Slot 2 (combo): sshd(pam_unix)<BRACKET>:(3x)
+    Slot 3 (user): test(3x)
+  SAMPLES:
+    - 22:29 combo sshd(pam_unix)[8113]: session closed for user test
+    - 22:29 combo sshd(pam_unix)[8114]: session closed for user test
+@115 2x I S0 T23 ^2592000->2592000 burst(rate=2.0/s) FLOW:FLOW_7 IMP:0.30
+  ENTITIES:IP_67 AML_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (from): IP_67(2x)
+    Slot 3 (from): (AML_01.adsl.wanadoo.nl)(2x)
+    Slot 4 (at): Sun(2x)
+    Slot 5 (at): Jul(2x)
+    Slot 6 (at): <NUM>(2x)
+    Slot 7 (at): <NUM>:<NUM>:<NUM>(2x)
+    Slot 8 (at): <NUM>(2x)
+  SAMPLES:
+    - 06:32 combo ftpd[19675]: connection from IP_67 (AML_01.adsl.wanadoo.nl) at Sun Jul 17 04:06:32 2005
+    - 06:32 combo ftpd[19674]: connection from IP_67 (AML_01.adsl.wanadoo.nl) at Sun Jul 17 04:06:32 2005
+@127 2x I S9 T33 ^2592000->2592000 burst(rate=2.0/s) FLOW:FLOW_22 IMP:0.33
+  ENTITIES:IP_68
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+  SAMPLES:
+    - 38:23 combo ftpd[16781]: ANONYMOUS FTP LOGIN FROM IP_68,  (anonymous)
+    - 38:23 combo ftpd[16782]: ANONYMOUS FTP LOGIN FROM IP_68,  (anonymous)
+@129 5x I S10 T34 ^2592000->2592000 burst(rate=5.0/s) FLOW:FLOW_10 IMP:0.30
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(5x)
+  SAMPLES:
+    - 09:06 combo named[2306]: notify question section contains no SOA
+    - 18:50 combo named[2306]: notify question section contains no SOA
+@130 3x I S13 T34 ^2592000->2592000 burst(rate=3.0/s) FLOW:FLOW_5 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(3x)
+  SAMPLES:
+    - 33:41 combo named[2306]: notify question section contains no SOA
+    - 41:34 combo named[2306]: notify question section contains no SOA
+@132 1x I S8 T34 ^2592000 FLOW:FLOW_5 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 50:04 combo named[2306]: notify question section contains no SOA
+@133 1x I S20 T34 ^2592000 FLOW:FLOW_3 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 29:20 combo named[2306]: notify question section contains no SOA
+@134 4x I S14 T35 ^2592000->2592000 burst(rate=4.0/s) IMP:0.31
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(4x)
+  SAMPLES:
+    - 23:13 combo ftpd[26463]: getpeername (ftpd): Transport endpoint is not connected
+    - 23:13 combo ftpd[26466]: getpeername (ftpd): Transport endpoint is not connected
+@137 1x I S3 T7 ^2592000 FLOW:FLOW_49 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo syslogd 1.4.1: restart.
+@139 1x I S3 T38 ^2592000 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <PATH>] (1x)
+  SAMPLES:
+    - 41:57 combo kernel: klogd 1.4.1, log source = /proc/kmsg started.
+@140 1x I S3 T39 ^2592000 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (version): <NUM>.<NUM>-<NUM>(1x)
+    Slot 3 (version): <NUM>.<NUM>(1x)
+    Slot 4 (version): <NUM>(1x)
+    Slot 5 (may): <NUM>(1x)
+    Slot 6 (may): <NUM>:<NUM>:<NUM>(1x)
+    Slot 7 (edt): <NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: Linux version 2.6.5-1.358 (bhcompile@bugs.build.redhat.com) (gcc version 3.3.3 20040412 (Red Hat Linux 3.3.3-7)) #1 Sat May 8 0...
+@141 1x I S3 T40 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: BIOS-provided physical RAM map:
+@142 1x I S3 T41 ^2592000 FLOW:FLOW_1 IMP:0.32
+  ENTITIES:BIOS_01
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:57 combo kernel:  BIOS_01: 0000000000000000 - 00000000000a0000 (usable)
+@144 1x I S3 T43 ^2592000 FLOW:FLOW_1 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: 0MB HIGHMEM available.
+@145 1x I S3 T44 ^2592000 FLOW:FLOW_1 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (kernel): 126MB(1x)
+    Slot 3 (kernel): LOWMEM(1x)
+  SAMPLES:
+    - 41:57 combo kernel: 126MB LOWMEM available.
+@147 1x I S3 T46 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (node): <NUM>(1x)
+    Slot 3 (totalpages): <NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: On node 0 totalpages: 32430
+@148 1x I S3 T47 ^2592000 FLOW:FLOW_1 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:57 combo kernel:   DMA zone: 4096 pages, LIFO batch:1
+@149 2x I S3 T48 ^2592000->2592000 burst(rate=2.0/s) FLOW:FLOW_6 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (kernel): Normal(1x) HighMem(1x)
+    Slot 3 (zone): <NUM>(2x)
+  SAMPLES:
+    - 41:57 combo kernel:   Normal zone: 28334 pages, LIFO batch:6
+    - 41:57 combo kernel:   HighMem zone: 0 pages, LIFO batch:1
+@150 1x I S3 T49 ^2592000 FLOW:FLOW_6 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:57 combo kernel: ACPI disabled because your bios is from 2000 and too old
+@151 1x I S3 T50 ^2592000 FLOW:FLOW_6 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: You can enable it with acpi=force
+@152 1x I S3 T51 ^2592000 FLOW:FLOW_6 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: Kernel command line: ro root=LABEL=/ rhgb quiet
+@153 1x I S3 T52 ^2592000 FLOW:FLOW_6 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: mapped 4G/4G trampoline to ffff3000.
+@154 1x I S3 T53 ^2592000 FLOW:FLOW_6 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: Initializing CPU#0
+@155 1x I S3 T54 ^2592000 FLOW:FLOW_6 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (kernel): CPU(1x)
+    Slot 3 (kernel): <NUM>(1x)
+    Slot 4 (kernel): irqstacks,(1x)
+    Slot 5 (kernel): hard=<NUM>(1x)
+    Slot 6 (kernel): soft=<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: CPU 0 irqstacks, hard=02345000 soft=02344000
+@158 1x I S3 T57 ^2592000 FLOW:FLOW_70 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>.<NUM>] (1x)
+  SAMPLES:
+    - 41:57 combo rpc.statd[1618]: Version 1.0.6 Starting
+@159 1x I S3 T58 ^2592000 FLOW:FLOW_70 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:57 combo kernel: Using tsc for high-res timesource
+@160 1x I S3 T59 ^2592000 FLOW:FLOW_18 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Console: colour VGA+ 80x25
+@161 1x I S3 T60 ^2592000 FLOW:FLOW_18 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Memory: 125312k/129720k available (1540k kernel code, 3860k reserved, 599k data, 144k init, 0k highmem)
+@162 1x I S3 T61 ^2592000 FLOW:FLOW_18 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:58 combo kernel: Calibrating delay loop... 1445.88 BogoMIPS
+@163 1x I S3 T62 ^2592000 FLOW:FLOW_18 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Security Scaffold v1.0.0 initialized
+@164 2x I S3 T63 ^2592000->2592000 burst(rate=2.0/s) FLOW:FLOW_18 IMP:0.30
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (kernel): SELinux:(1x) audit(<NUM>:<NUM>):(1x)
+    Slot 3 (kernel): Initializing.(1x) initialized(1x)
+  SAMPLES:
+    - 41:58 combo kernel: SELinux:  Initializing.
+    - 41:59 combo kernel: audit(1122475266.4294965305:0): initialized
+@165 1x I S3 T64 ^2592000 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: SELinux:  Starting in permissive mode
+@168 1x I S3 T67 ^2592000 FLOW:FLOW_47 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: selinux_register_security:  Registering secondary module capability
+@169 1x I S3 T68 ^2592000 FLOW:FLOW_47 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (entries): <NUM>(1x)
+    Slot 3 (order): <NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+@170 2x I S3 T69 ^2592000->2592000 burst(rate=2.0/s) FLOW:FLOW_47 IMP:0.33
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(2x)
+    Slot 2 (kernel): Inode-cache(1x) Dquot-cache(1x)
+    Slot 3 (entries): <NUM>(2x)
+    Slot 4 (entries): (order:(1x) (order(1x)
+    Slot 5 (entries): <NUM>,(2x)
+    Slot 6 (entries): <NUM>(2x)
+  SAMPLES:
+    - 41:58 combo kernel: Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+    - 41:59 combo kernel: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+@172 1x I S3 T70 ^2592000 FLOW:FLOW_62 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: CPU: L1 I cache: 16K, L1 D cache: 16K
+@173 1x I S3 T71 ^2592000 FLOW:FLOW_62 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: CPU: L2 cache: 256K
+@176 1x I S3 T74 ^2592000 FLOW:FLOW_1 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:58 combo kernel: CPU: Intel Pentium III (Coppermine) stepping 06
+@177 1x I S3 T75 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Enabling fast FPU save and restore... done.
+@178 1x I S3 T76 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (enabling): unmasked(1x)
+    Slot 3 (enabling): SIMD(1x)
+    Slot 4 (enabling): FPU(1x)
+    Slot 5 (enabling): exception(1x)
+    Slot 6 (enabling): support...(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Enabling unmasked SIMD FPU exception support... done.
+@179 1x I S3 T77 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Checking 'hlt' instruction... OK.
+@180 1x I S3 T78 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo random: Initializing random number generator:  succeeded
+@181 1x I S3 T79 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: POSIX conformance testing by UNIFIX
+@183 1x I S3 T81 ^2592000 FLOW:FLOW_1 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:58 combo kernel: PCI: PCI BIOS revision 2.10 entry at 0xfc0ce, last bus=1
+@185 1x I S3 T83 ^2592000 FLOW:FLOW_7 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: Linux Plug and Play Support v0.97 (c) Adam Belay
+@186 1x I S3 T84 ^2592000 FLOW:FLOW_7 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: usbcore: registered new driver usbfs
+@187 1x I S3 T85 ^2592000 FLOW:FLOW_7 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> hub] (1x)
+  SAMPLES:
+    - 41:58 combo kernel: usbcore: registered new driver hub
+@188 1x I S3 T86 ^2592000 FLOW:FLOW_7 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:58 combo kernel: ACPI: ACPI tables contain no PCI IRQ routing entries
+@189 1x I S3 T87 ^2592000 FLOW:FLOW_7 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:59 combo kernel: PCI: Invalid ACPI-PCI IRQ routing table
+@190 1x I S3 T88 ^2592000 FLOW:FLOW_7 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:59 combo kernel: PCI: Probing PCI hardware
+@191 1x I S3 T89 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:59 combo kernel: PCI: Probing PCI hardware (bus 00)
+@192 1x I S3 T90 ^2592000 FLOW:FLOW_1 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>:<NUM>:1e.<NUM>] (1x)
+  SAMPLES:
+    - 41:59 combo kernel: Transparent bridge - 0000:00:1e.0
+@193 1x I S3 T91 ^2592000 FLOW:FLOW_62 IMP:0.35
+  ENTITIES:IF_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (piixich): <BRACKET>(1x)
+    Slot 3 (at): <NUM>:<NUM>:1f.<NUM>(1x)
+  SAMPLES:
+    - 41:59 combo kernel: PCI: Using IRQ router PIIX/ICH [IF_01] at 0000:00:1f.0
+@194 1x I S3 T92 ^2592000 FLOW:FLOW_62 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (version): <NUM>(1x)
+    Slot 3 (flags): <HEX>(1x)
+  SAMPLES:
+    - 41:59 combo kernel: apm: BIOS version 1.2 Flags 0x03 (Driver version 1.16ac)
+@196 1x I S3 T94 ^2592000 FLOW:FLOW_69 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:54 combo sysctl: kernel.core_uses_pid = 1
+@197 1x I S3 T95 ^2592000 FLOW:FLOW_69 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:59 combo hcid[1690]: HCI daemon ver 2.4 started
+@198 1x I S3 T96 ^2592000 FLOW:FLOW_69 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:54 combo network: Setting network parameters:  succeeded
+@199 1x I S3 T97 ^2592000 FLOW:FLOW_69 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:59 combo sdpd[1696]: sdpd v1.5 started
+@200 1x I S3 T98 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:54 combo network: Bringing up loopback interface:  succeeded
+@201 1x I S3 T99 ^2592000 FLOW:FLOW_1 IMP:0.35
+  ENTITIES:DQUOT_01
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:59 combo kernel: VFS: Disk quotas DQUOT_01.5.1
+@202 1x I S3 T100 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 41:59 combo kernel: SELinux:  Registering netfilter hooks
+@203 1x I S3 T101 ^2592000 FLOW:FLOW_1 IMP:0.35
+  TUPLE_FLOWS:
+    [<NUM>:<NUM> -> <NUM>] (1x)
+  SAMPLES:
+    - 41:59 combo kernel: pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+@204 1x I S3 T102 ^2592000 FLOW:FLOW_1 IMP:0.32
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+    Slot 2 (kernel): isapnp:(1x)
+    Slot 3 (kernel): Scanning(1x)
+    Slot 4 (for): PnP(1x)
+    Slot 5 (for): cards...(1x)
+  SAMPLES:
+    - 42:00 combo kernel: isapnp: Scanning for PnP cards...
+@205 1x I S3 T103 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 42:00 combo kernel: isapnp: No Plug & Play device found
+@206 1x I S3 T104 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 42:00 combo kernel: Real Time Clock Driver v1.12
+@207 1x I S3 T105 ^2592000 FLOW:FLOW_1 IMP:0.35
+  SLOT_LISTS:
+    Slot 1 (slot1): <NUM>:<NUM>(1x)
+  SAMPLES:
+    - 42:00 combo kernel: Linux agpgart interface v0.100 (c) Dave Jones
+## TIER_BACKGROUND (61 clusters)
+  @87: 1x SI T24 [RARE]
+  @157: 1x SI T56 [RARE]
+  @195: 1x SI T93 [RARE]
+  @1: 26x SI T0 [NOISE]
+  @2: 26x SI T1 [NOISE]
+  @5: 20x SI T4 [NOISE]
+  @10: 10x SI T4 [NOISE]
+  @21: 5x SI T12 [NOISE]
+  @22: 5x SI T13 [NOISE]
+  @23: 19x SI T4 [NOISE]
+  @26: 5x SI T4 [NOISE]
+  @28: 8x SI T14 [NOISE]
+  @31: 7x SI T15 [NOISE]
+  @32: 10x SI T4 [NOISE]
+  @34: 15x SI T16 [NOISE]
+  @37: 35x SI T16 [NOISE]
+  @39: 10x SI T4 [NOISE]
+  @41: 23x SI T16 [NOISE]
+  @45: 13x SI T16 [NOISE]
+  @46: 18x SI T16 [NOISE]
+  @47: 13x SI T16 [NOISE]
+  @48: 5x SI T4 [NOISE]
+  @50: 23x SI T16 [NOISE]
+  @52: 7x SI T16 [NOISE]
+  @58: 10x SI T1 [NOISE]
+  @60: 14x SI T0 [NOISE]
+  @61: 54x SI T1 [NOISE]
+  @64: 4x SI T1 [NOISE]
+  @65: 46x SI T23 [NOISE]
+  @67: 4x SI T1 [NOISE]
+  @70: 8x SI T1 [NOISE]
+  @71: 10x SI T4 [NOISE]
+  @73: 8x SI T6 [NOISE]
+  @75: 24x SI T23 [NOISE]
+  @76: 106x SI T23 [NOISE]
+  @78: 87x SI T23 [NOISE]
+  @80: 5x SI T4 [NOISE]
+  @82: 65x SI T23 [NOISE]
+  @84: 23x SI T23 [NOISE]
+  @86: 6x SI T1 [NOISE]
+  @93: 6x SI T29 [NOISE]
+  @96: 12x SI T23 [NOISE]
+  @97: 40x SI T26 [NOISE]
+  @99: 23x SI T23 [NOISE]
+  @100: 23x SI T23 [NOISE]
+  @101: 44x SI T23 [NOISE]
+  @114: 46x SI T23 [NOISE]
+  @116: 53x SI T23 [NOISE]
+  @117: 55x SI T23 [NOISE]
+  @118: 23x SI T23 [NOISE]
+  @119: 23x SI T23 [NOISE]
+  @120: 23x SI T23 [NOISE]
+  @121: 15x SI T30 [NOISE]
+  @124: 23x SI T23 [NOISE]
+  @126: 23x SI T23 [NOISE]
+  @131: 6x SI T34 [NOISE]
+  @136: 23x SI T23 [NOISE]
+  @138: 9x SI T37 [NOISE]
+  @143: 4x SI T42 [NOISE]
+  @146: 7x SI T45 [NOISE]
+  @182: 3x SI T80 [NOISE]

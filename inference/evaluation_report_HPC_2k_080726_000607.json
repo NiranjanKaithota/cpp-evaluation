@@ -1,0 +1,27 @@
+{
+  "raw_bundle": "HPC_logs",
+  "compressed_name": "HPC_2k",
+  "timestamp": "080726_000607",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 6258,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "node-103, node-109, node-71",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "Component State Change: Component 'SCSI-WWID:<NUM>:<NUM>-08b4-<NUM>-00c6-<NUM>-<NUM>-003d-<NUM>\n<NUM>' in unavailable state (HWID=<NUM>)",
+      "psu failure\\ ambient=<NUM>",
+      "ambient=<NUM>"
+    ],
+    "recommended_action": "Investigate and rectify the physical layer issues with the affected nodes. Check for hardware malfunctions, power supply problems, or environmental factors impacting the nodes' performance."
+  },
+  "ground_truth": {
+    "failure_timestamp": "1076176599",
+    "root_cause_entity": "node-55",
+    "root_cause_type": "Boot Error (HALT Asserted)",
+    "recommended_action": "Inspect node-55 for hardware faults or core configuration issues, clear the HALT state condition, and retry the boot sequence."
+  }
+}

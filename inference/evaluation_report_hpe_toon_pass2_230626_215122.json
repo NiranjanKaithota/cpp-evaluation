@@ -1,0 +1,36 @@
+{
+  "raw_bundle": "hpe_msg",
+  "compressed_name": "hpe_toon_pass2",
+  "timestamp": "230626_215122",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 1579406,
+  "raw_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "Link down detected on port 1/1/3",
+      "Loss of connectivity to device 10.233.255.1",
+      "Multiple errors and retransmissions on the link"
+    ],
+    "recommended_action": "Physically inspect and troubleshoot the network cable and port 1/1/3 for any faults or loose connections. Replace the cable if necessary and ensure proper termination."
+  },
+  "comp_details": {
+    "root_cause_entity": "PSCSCTLEAFB03",
+    "root_cause_type": "network_failure",
+    "observed_symptoms": [
+      "NETWORK_FAILURE",
+      "NET_CONN_FAIL",
+      "NETWORK_FAILURE",
+      "NETWORK_FAILURE"
+    ],
+    "recommended_action": "Investigate and resolve the network connectivity issues with PSCSCTLEAFB03."
+  },
+  "ground_truth": {
+    "root_cause_entity": "unknown",
+    "root_cause_type": "unknown",
+    "recommended_action": "unknown"
+  }
+}

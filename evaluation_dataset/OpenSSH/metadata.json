@@ -1,0 +1,8 @@
+{
+  "ground_truth": {
+    "failure_timestamp": "Dec 10 09:32:20",
+    "root_cause_entity": "sshd[24680] session for user 'fztu' from source IP 119.137.62.142",
+    "root_cause_type": "Successful password authentication amid sustained SSH brute-force/dictionary attack (potential credential compromise)",
+    "recommended_action": "Immediately verify whether the login by 'fztu' from 119.137.62.142 at 09:32:20 was legitimate; if not, disable/reset the account, rotate its credentials, and audit the resulting 13-minute session (09:32:20-09:45:06) for unauthorized activity. Harden the host by disabling password authentication in favor of SSH key-based auth, deploying fail2ban or rate-limiting for repeated invalid-user/reverse-DNS-mismatch attempts, and restricting SSH access via firewall/allowlist where possible."
+  }
+}

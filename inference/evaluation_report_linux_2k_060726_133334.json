@@ -1,0 +1,27 @@
+{
+  "raw_bundle": "linux_logs",
+  "compressed_name": "linux_2k",
+  "timestamp": "060726_133334",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 64272,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "IP_03",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "538 authentication failures - possible attack",
+      "Authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=IP_03 (IP_03): Permission denied in replay cache code",
+      "Kerberos authentication failed"
+    ],
+    "recommended_action": "Investigate and address the authentication issues with IP_03. Implement additional security measures to prevent unauthorized access and mitigate potential attacks."
+  },
+  "ground_truth": {
+    "failure_timestamp": "Jun 15 04:06:20",
+    "root_cause_entity": "logrotate",
+    "root_cause_type": "Application/Cron Job Failure",
+    "recommended_action": "Investigate why the logrotate cron job is exiting abnormally (exit code 1) \u2014 check /etc/logrotate.conf and /etc/logrotate.d/ configuration files for syntax errors, missing/incorrect log file paths, permission issues on log directories, or a misbehaving postrotate script, then run 'logrotate -d /etc/logrotate.conf' in debug mode to identify and fix the root cause, since this recurs daily (Jun 15 through Jul 27) at ~04:00-04:20 across the entire log period."
+  }
+}

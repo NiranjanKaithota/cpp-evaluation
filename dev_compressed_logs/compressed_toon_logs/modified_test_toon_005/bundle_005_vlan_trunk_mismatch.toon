@@ -1,0 +1,255 @@
+TOON-X:5.0 FORMAT:syslog FILE:messages.log BASE_TS:1779805937
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:1779805937 span=90274s events=36015 sources=['kernel:14313', 'acctsyslogd:7336', 'ovs-vswitchd:7291', 'ovsdb-server:7074', 'hpe-routing:1']
+ENTITIES:103 RELATIONSHIPS:0 CLUSTERS:70
+[L1]
+NAME:NEW_ERROR_TYPE SEV:E COUNT:2 SPAN:0->end
+  CLUSTERS:@34,@35
+  DESC:2 unique high-severity event types observed
+[SEM]
+SEM_01=APPLICATION.CUSTOM.AUDIT_EVENT
+SEM_02=APPLICATION.CUSTOM.KERNEL_EVENT
+SEM_03=NETWORK.CUSTOM.NETWORK_ERROR
+SEM_04=NETWORK.CUSTOM.NETWORK_EVENT
+[ENT]
+## IPV4
+IP_01=10.233.131.22
+## HOST
+HOST_01=PSCSCTLEAFB03
+## PROCESS
+PROC_01=acctsyslogd
+PROC_02=hpe-routing
+PROC_03=kernel
+PROC_04=ovs-vswitchd
+PROC_05=ovsdb-server
+## INTERFACE
+IF_01=1/1/1
+IF_02=1/1/10
+IF_03=1/1/11
+IF_04=1/1/12
+IF_05=1/1/13
+IF_06=1/1/14
+IF_07=1/1/15
+IF_08=1/1/16
+IF_09=1/1/17
+IF_10=1/1/18
+IF_11=1/1/19
+IF_12=1/1/2
+IF_13=1/1/20
+IF_14=1/1/21
+IF_15=1/1/22
+IF_16=1/1/23
+IF_17=1/1/24
+IF_18=1/1/25
+IF_19=1/1/26
+IF_20=1/1/27
+IF_21=1/1/28
+IF_22=1/1/29
+IF_23=1/1/3
+IF_24=1/1/30
+IF_25=1/1/31
+IF_26=1/1/32
+IF_27=1/1/33
+IF_28=1/1/34
+IF_29=1/1/35
+IF_30=1/1/36
+IF_31=1/1/37
+IF_32=1/1/38
+IF_33=1/1/39
+IF_34=1/1/4
+IF_35=1/1/40
+IF_36=1/1/41
+IF_37=1/1/42
+IF_38=1/1/43
+IF_39=1/1/44
+IF_40=1/1/45
+IF_41=1/1/46
+IF_42=1/1/47
+IF_43=1/1/48
+IF_44=1/1/5
+IF_45=1/1/6
+IF_46=1/1/7
+IF_47=1/1/8
+IF_48=1/1/9
+IF_49=interface 1/1/1
+IF_50=interface 1/1/10
+IF_51=interface 1/1/11
+IF_52=interface 1/1/12
+IF_53=interface 1/1/13
+IF_54=interface 1/1/14
+IF_55=interface 1/1/15
+IF_56=interface 1/1/16
+IF_57=interface 1/1/17
+IF_58=interface 1/1/18
+IF_59=interface 1/1/19
+IF_60=interface 1/1/2
+IF_61=interface 1/1/20
+IF_62=interface 1/1/21
+IF_63=interface 1/1/22
+IF_64=interface 1/1/23
+IF_65=interface 1/1/24
+IF_66=interface 1/1/25
+IF_67=interface 1/1/26
+IF_68=interface 1/1/27
+IF_69=interface 1/1/28
+IF_70=interface 1/1/29
+IF_71=interface 1/1/3
+IF_72=interface 1/1/30
+IF_73=interface 1/1/31
+IF_74=interface 1/1/32
+IF_75=interface 1/1/33
+IF_76=interface 1/1/34
+IF_77=interface 1/1/35
+IF_78=interface 1/1/36
+IF_79=interface 1/1/37
+IF_80=interface 1/1/38
+IF_81=interface 1/1/39
+IF_82=interface 1/1/4
+IF_83=interface 1/1/40
+IF_84=interface 1/1/41
+IF_85=interface 1/1/42
+IF_86=interface 1/1/43
+IF_87=interface 1/1/44
+IF_88=interface 1/1/45
+IF_89=interface 1/1/46
+IF_90=interface 1/1/47
+IF_91=interface 1/1/48
+IF_92=interface 1/1/5
+IF_93=interface 1/1/6
+IF_94=interface 1/1/7
+IF_95=interface 1/1/8
+IF_96=interface 1/1/9
+[T]
+T0=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?selector=configuration&depth=<NUM>' and method GET and response code <NUM> with payload <STR> which resulted in success at
+T1=SEM_02|net_ratelimit: <NUM> callbacks suppressed
+T2=SEM_02|provision <NUM>:<NUM>:<NUM>.0IF_29: Re-enabling RX interrupts and disabling NAPI polling
+T3=SEM_04|ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM> rows inserted
+T4=SEM_02|provision <*> Re-enabling RX interrupts and disabling NAPI polling
+T5=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: IF_68 statistics queried, status OK
+T6=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: <*> statistics queried, status OK
+T7=SEM_02|provision <NUM>:<NUM>:<NUM> pvnet1: Re-enabling RX interrupts and disabling NAPI polling
+T8=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?selector=writable' and method GET and response code <NUM> with payload <STR> which resulted in success at timezone Asia/Calcutta.
+T9=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?depth=<NUM>&selector=configuration' and method GET and response code <NUM> with payload <STR> which resulted in succe
+T10=SEM_02|provision <NUM>:<NUM>:<NUM> <*> Re-enabling RX interrupts and disabling NAPI polling
+T11=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?depth=<NUM>&selector=status' and method GET and response code <NUM> with payload <STR> which resulted in success at timezone
+T12=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI <*> and method GET and response code <NUM> with payload <STR> which resulted in success at <*>
+T13=SEM_03|ovs|<NUM>|vlan_mgr|ERR|VLAN mismatch onIF_44: expected <NUM>, received <NUM>
+T14=SEM_03|ovs|<NUM>|bridge|ERR|bridge br0: dropping frame with unexpected VLAN tag <NUM> received on IF_92
+T15=SEM_02|IF_44: dropping frame with unexpected VLAN tag <NUM>
+[TIMELINE]
+[0s-30s] @3(1x), @6(1x), @8(2x)
+[27046s-27052s] @34[E](1x), @35[E](1x), @36(1x)
+[CAUSE]
+SEM_03>SEM_03|CONF:50 x2 (@34(SEM_03)>@35(SEM_03), @34(SEM_03)>@35(SEM_03))
+SEM_03>SEM_02|CONF:57 x3 (@35(SEM_03)>@36(SEM_02), @34(SEM_03)>@36(SEM_02), @35(SEM_03)>@36(SEM_02))
+SEM_01>SEM_02|CONF:50 x5 via:HOST_01 (@1(SEM_01)>@2(SEM_02), @1(SEM_01)>@3(SEM_02), @1(SEM_01)>@5(SEM_02))
+SEM_01>SEM_04|CONF:50 x3 via:HOST_01 (@1(SEM_01)>@4(SEM_04), @1(SEM_01)>@6(SEM_04), @1(SEM_01)>@7(SEM_04))
+SEM_02>SEM_02|CONF:62 x6 via:HOST_01 (@2(SEM_02)>@3(SEM_02), @2(SEM_02)>@5(SEM_02), @3(SEM_02)>@5(SEM_02))
+SEM_02>SEM_04|CONF:50 x8 via:HOST_01 (@2(SEM_02)>@4(SEM_04), @2(SEM_02)>@6(SEM_04), @2(SEM_02)>@7(SEM_04))
+SEM_04>SEM_02|CONF:50 x4 via:HOST_01 (@4(SEM_04)>@5(SEM_02), @4(SEM_04)>@8(SEM_02), @6(SEM_04)>@8(SEM_02))
+SEM_04>SEM_04|CONF:57 x3 via:HOST_01 (@4(SEM_04)>@6(SEM_04), @4(SEM_04)>@7(SEM_04), @6(SEM_04)>@7(SEM_04))
+SEM_02>SEM_01|CONF:50 x6 via:HOST_01 (@5(SEM_02)>@9(SEM_01), @8(SEM_02)>@9(SEM_01), @8(SEM_02)>@10(SEM_01))
+SEM_04>SEM_01|CONF:50 x4 via:HOST_01 (@6(SEM_04)>@9(SEM_01), @6(SEM_04)>@10(SEM_01), @7(SEM_04)>@9(SEM_01))
+SEM_01>SEM_01|CONF:70 x7 via:HOST_01 (@9(SEM_01)>@10(SEM_01), @9(SEM_01)>@12(SEM_01), @9(SEM_01)>@13(SEM_01))
+[L4]
+## TIER_1 IMPORTANT
+@34 1x E S4 T13 ^27052 IMP:0.83
+  ENTITIES:HOST_01 PROC_02 IF_44
+  SLOT_LISTS:
+    Slot 1 (received): <NUM>(1x)
+  SAMPLES:
+    - ovs|19934|vlan_mgr|ERR|VLAN mismatch onIF_44: expected 100, received 200
+@35 1x E S3 T14 ^27056 IMP:0.83
+  ENTITIES:HOST_01 PROC_04 IF_92
+  SLOT_LISTS:
+    Slot 1 (tag): <NUM>(1x)
+  SAMPLES:
+    - ovs|19935|bridge|ERR|bridge br0: dropping frame with unexpected VLAN tag 200 received on IF_92
+## TIER_2 SUPPORTING
+@3 1x I S1 T2 ^6 IMP:0.34
+  ENTITIES:HOST_01 PROC_03 IF_29
+  SAMPLES:
+    - provision 0000:05:00.0IF_29: Re-enabling RX interrupts and disabling NAPI polling
+@6 1x I S3 T5 ^22 IMP:0.35
+  ENTITIES:HOST_01 PROC_04 IF_68
+  SAMPLES:
+    - ovs|04569|bridge|INFO|bridge br0: IF_68 statistics queried, status OK
+@8 2x I S1 T7 ^33->36 burst(rate=0.6/s) FLOW:FLOW_6 IMP:0.33
+  ENTITIES:HOST_01 PROC_03
+  SLOT_LISTS:
+    Slot 1 (provision): <NUM>:<NUM>:<NUM>(2x)
+  SAMPLES:
+    - provision 0000:05:00.0 pvnet1: Re-enabling RX interrupts and disabling NAPI polling
+@36 1x I S1 T15 ^27058 FLOW:FLOW_9 IMP:0.35
+  ENTITIES:HOST_01 PROC_03 IF_44
+  SLOT_LISTS:
+    Slot 1 (tag): <NUM>(1x)
+  SAMPLES:
+    - IF_44: dropping frame with unexpected VLAN tag 200
+## TIER_BACKGROUND (64 clusters)
+  @12: 1x SI T11 [RARE]
+  @23: 1x SI T0 [RARE]
+  @1: 9x SI T0 [NOISE]
+  @2: 7232x SI T1 [NOISE]
+  @4: 7074x SI T3 [NOISE]
+  @5: 716x SI T4 [NOISE]
+  @7: 7289x SI T6 [NOISE]
+  @9: 18x SI T8 [NOISE]
+  @10: 48x SI T9 [NOISE]
+  @11: 4697x SI T10 [NOISE]
+  @13: 3609x SI T12 [NOISE]
+  @14: 38x SI T0 [NOISE]
+  @15: 41x SI T8 [NOISE]
+  @16: 72x SI T9 [NOISE]
+  @17: 4x SI T0 [NOISE]
+  @18: 37x SI T8 [NOISE]
+  @19: 4x SI T0 [NOISE]
+  @20: 32x SI T0 [NOISE]
+  @21: 17x SI T9 [NOISE]
+  @22: 8x SI T8 [NOISE]
+  @24: 46x SI T0 [NOISE]
+  @25: 15x SI T8 [NOISE]
+  @26: 265x SI T9 [NOISE]
+  @27: 19x SI T8 [NOISE]
+  @28: 162x SI T8 [NOISE]
+  @29: 6x SI T0 [NOISE]
+  @30: 57x SI T0 [NOISE]
+  @31: 56x SI T0 [NOISE]
+  @32: 172x SI T0 [NOISE]
+  @33: 68x SI T8 [NOISE]
+  @37: 173x SI T9 [NOISE]
+  @38: 1664x SI T4 [NOISE]
+  @39: 24x SI T8 [NOISE]
+  @40: 104x SI T8 [NOISE]
+  @41: 18x SI T0 [NOISE]
+  @42: 39x SI T0 [NOISE]
+  @43: 42x SI T0 [NOISE]
+  @44: 46x SI T8 [NOISE]
+  @45: 103x SI T9 [NOISE]
+  @46: 109x SI T8 [NOISE]
+  @47: 3x SI T0 [NOISE]
+  @48: 99x SI T0 [NOISE]
+  @49: 92x SI T9 [NOISE]
+  @50: 332x SI T8 [NOISE]
+  @51: 288x SI T0 [NOISE]
+  @52: 3x SI T9 [NOISE]
+  @53: 30x SI T9 [NOISE]
+  @54: 217x SI T9 [NOISE]
+  @55: 12x SI T0 [NOISE]
+  @56: 178x SI T0 [NOISE]
+  @57: 8x SI T9 [NOISE]
+  @58: 2x SI T8 [NOISE]
+  @59: 130x SI T8 [NOISE]
+  @60: 12x SI T9 [NOISE]
+  @61: 20x SI T9 [NOISE]
+  @62: 47x SI T9 [NOISE]
+  @63: 37x SI T9 [NOISE]
+  @64: 144x SI T9 [NOISE]
+  @65: 13x SI T8 [NOISE]
+  @66: 55x SI T8 [NOISE]
+  @67: 4x SI T0 [NOISE]
+  @68: 90x SI T0 [NOISE]
+  @69: 7x SI T8 [NOISE]
+  @70: 50x SI T8 [NOISE]

@@ -1,0 +1,8 @@
+{
+  "ground_truth": {
+    "failure_timestamp": "1076176599",
+    "root_cause_entity": "node-55",
+    "root_cause_type": "Boot Error (HALT Asserted)",
+    "recommended_action": "Inspect node-55 for hardware faults or core configuration issues, clear the HALT state condition, and retry the boot sequence."
+  }
+}

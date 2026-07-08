@@ -1,0 +1,22 @@
+{
+  "raw_bundle": "linux_logs",
+  "compressed_name": "linux_pass1",
+  "timestamp": "230626_221818",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 237937,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "AUTH_FAILURE",
+      "HTTP_2XX",
+      "TIMEOUT"
+    ],
+    "recommended_action": "Review and rectify the configuration settings for the affected components."
+  },
+  "ground_truth": {}
+}

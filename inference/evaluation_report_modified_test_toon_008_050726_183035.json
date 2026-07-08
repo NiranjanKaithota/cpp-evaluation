@@ -1,0 +1,35 @@
+{
+  "raw_bundle": "bundle_008_subnet_route_missing",
+  "compressed_name": "modified_test_toon_008",
+  "timestamp": "050726_183035",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": true,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 9017,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "192.168.100.0",
+    "root_cause_type": "missing_route",
+    "observed_symptoms": [
+      "Route to 192.168.100.IF_01 not found in routing table",
+      "Packet destined to 192.168.100.IF_01 dropped - no route to host",
+      "lookup failure: route destination 192.168.100.IF_01 matches no active OVSDB entries"
+    ],
+    "recommended_action": "Check and update the routing table to ensure the correct routes are configured."
+  },
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 192.168.100.0/24 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:32:22.093000",
+    "root_cause_entity": "192.168.100.0/24",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 192.168.100.0/24"
+  }
+}

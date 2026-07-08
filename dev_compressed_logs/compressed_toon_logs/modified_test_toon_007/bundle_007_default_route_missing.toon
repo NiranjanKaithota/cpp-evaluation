@@ -1,0 +1,286 @@
+TOON-X:5.0 FORMAT:syslog FILE:messages.log BASE_TS:1779805937
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:1779805937 span=90753s events=36017 sources=['kernel:14335', 'ovs-vswitchd:7339', 'ovsdb-server:7195', 'acctsyslogd:7146', 'hpe-routing:2']
+ENTITIES:105 RELATIONSHIPS:0 CLUSTERS:103
+[L1]
+NAME:NEW_ERROR_TYPE SEV:E COUNT:1 SPAN:0->end
+  CLUSTERS:@39
+  DESC:1 unique high-severity event types observed
+[SEM]
+SEM_01=APPLICATION.CUSTOM.AUDIT_EVENT
+SEM_02=APPLICATION.CUSTOM.KERNEL_EVENT
+SEM_03=NETWORK.CUSTOM.NETWORK_ERROR
+SEM_04=NETWORK.CUSTOM.NETWORK_EVENT
+SEM_05=NETWORK.CUSTOM.NETWORK_WARNING
+[ENT]
+## IPV4
+IP_01=0.0.0.0
+IP_02=10.233.131.22
+## HOST
+HOST_01=PSCSCTLEAFB03
+## PROCESS
+PROC_01=acctsyslogd
+PROC_02=hpe-routing
+PROC_03=kernel
+PROC_04=ovs-vswitchd
+PROC_05=ovsdb-server
+## INTERFACE
+IF_01=0/0
+IF_02=1/1/1
+IF_03=1/1/10
+IF_04=1/1/11
+IF_05=1/1/12
+IF_06=1/1/13
+IF_07=1/1/14
+IF_08=1/1/15
+IF_09=1/1/16
+IF_10=1/1/17
+IF_11=1/1/18
+IF_12=1/1/19
+IF_13=1/1/2
+IF_14=1/1/20
+IF_15=1/1/21
+IF_16=1/1/22
+IF_17=1/1/23
+IF_18=1/1/24
+IF_19=1/1/25
+IF_20=1/1/26
+IF_21=1/1/27
+IF_22=1/1/28
+IF_23=1/1/29
+IF_24=1/1/3
+IF_25=1/1/30
+IF_26=1/1/31
+IF_27=1/1/32
+IF_28=1/1/33
+IF_29=1/1/34
+IF_30=1/1/35
+IF_31=1/1/36
+IF_32=1/1/37
+IF_33=1/1/38
+IF_34=1/1/39
+IF_35=1/1/4
+IF_36=1/1/40
+IF_37=1/1/41
+IF_38=1/1/42
+IF_39=1/1/43
+IF_40=1/1/44
+IF_41=1/1/45
+IF_42=1/1/46
+IF_43=1/1/47
+IF_44=1/1/48
+IF_45=1/1/5
+IF_46=1/1/6
+IF_47=1/1/7
+IF_48=1/1/8
+IF_49=1/1/9
+IF_50=interface 1/1/1
+IF_51=interface 1/1/10
+IF_52=interface 1/1/11
+IF_53=interface 1/1/12
+IF_54=interface 1/1/13
+IF_55=interface 1/1/14
+IF_56=interface 1/1/15
+IF_57=interface 1/1/16
+IF_58=interface 1/1/17
+IF_59=interface 1/1/18
+IF_60=interface 1/1/19
+IF_61=interface 1/1/2
+IF_62=interface 1/1/20
+IF_63=interface 1/1/21
+IF_64=interface 1/1/22
+IF_65=interface 1/1/23
+IF_66=interface 1/1/24
+IF_67=interface 1/1/25
+IF_68=interface 1/1/26
+IF_69=interface 1/1/27
+IF_70=interface 1/1/28
+IF_71=interface 1/1/29
+IF_72=interface 1/1/3
+IF_73=interface 1/1/30
+IF_74=interface 1/1/31
+IF_75=interface 1/1/32
+IF_76=interface 1/1/33
+IF_77=interface 1/1/34
+IF_78=interface 1/1/35
+IF_79=interface 1/1/36
+IF_80=interface 1/1/37
+IF_81=interface 1/1/38
+IF_82=interface 1/1/39
+IF_83=interface 1/1/4
+IF_84=interface 1/1/40
+IF_85=interface 1/1/41
+IF_86=interface 1/1/42
+IF_87=interface 1/1/43
+IF_88=interface 1/1/44
+IF_89=interface 1/1/45
+IF_90=interface 1/1/46
+IF_91=interface 1/1/47
+IF_92=interface 1/1/48
+IF_93=interface 1/1/5
+IF_94=interface 1/1/6
+IF_95=interface 1/1/7
+IF_96=interface 1/1/8
+IF_97=interface 1/1/9
+[T]
+T0=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_02' through REST session. URI '<PATH>?selector=configuration&depth=<NUM>' and method GET and response code <NUM> with payload <STR> which resulted in success at tim
+T1=SEM_04|ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM> rows inserted
+T2=SEM_02|net_ratelimit: <NUM> callbacks suppressed
+T3=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_02' through REST session. URI '<PATH>?depth=<NUM>&selector=configuration' and method GET and response code <NUM> with payload <STR> which resulted in succe
+T4=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_02' through REST session. URI '<PATH>?selector=writable' and method GET and response code <NUM> with payload <STR> which resulted in success at timezone Asia/Calcutta.
+T5=SEM_02|provision <NUM>:<NUM>:<NUM> pvnet1: Re-enabling RX interrupts and disabling NAPI polling
+T6=SEM_02|provision <NUM>:<NUM>:<NUM> <*> Re-enabling RX interrupts and disabling NAPI polling
+T7=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_02' through REST session. URI '<PATH>?selector=configuration&depth=<NUM>' and method GET and response code <NUM> with payload <STR> which resulted in success at
+T8=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: IF_61 statistics queried, status OK
+T9=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: <*> statistics queried, status OK
+T10=SEM_02|provision <NUM>:<NUM>:<NUM>.0IF_18: Re-enabling RX interrupts and disabling NAPI polling
+T11=SEM_02|provision <*> Re-enabling RX interrupts and disabling NAPI polling
+T12=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_02' through REST session. URI '<PATH>?selector=configuration&depth=<NUM>' and method GET and response code <NUM> with payload <STR> which resulted in success at <*>
+T13=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_02' through REST session. URI <*> and method GET and response code <NUM> with payload <STR> which resulted in success at <*>
+T14=SEM_03|ovs|<NUM>|route_mgr|ERR|Route to <NUM>.<NUM>.IF_01 not found in routing table
+T15=SEM_05|ovs|<NUM>|route_mgr|WARN|Packet destined to <NUM>.<NUM>.IF_01 dropped - no route to host
+T16=SEM_05|ovs|<NUM>|ovsdb_server|WARN|lookup failure: route destination <NUM>.<NUM>.IF_01 matches no active OVSDB entries
+[TIMELINE]
+[0s-33s] @6(1x), @9(1x), @11(1x)
+[27341s-27348s] @39[E](1x), @40[W](1x), @41[W](1x)
+[CAUSE]
+SEM_04>SEM_02|CONF:51 x7 (@2(SEM_04)>@3(SEM_02), @2(SEM_04)>@3(SEM_02), @2(SEM_04)>@6(SEM_02))
+SEM_01>SEM_01|CONF:69 x9 (@5(SEM_01)>@4(SEM_01), @1(SEM_01)>@4(SEM_01), @1(SEM_01)>@5(SEM_01))
+SEM_01>SEM_04|CONF:51 x10 (@8(SEM_01)>@9(SEM_04), @1(SEM_01)>@2(SEM_04), @1(SEM_01)>@9(SEM_04))
+SEM_01>SEM_02|CONF:50 x8 via:HOST_01 (@1(SEM_01)>@3(SEM_02), @1(SEM_01)>@6(SEM_02), @1(SEM_01)>@7(SEM_02))
+SEM_04>SEM_01|CONF:50 x3 via:HOST_01 (@2(SEM_04)>@4(SEM_01), @2(SEM_04)>@5(SEM_01), @2(SEM_04)>@8(SEM_01))
+SEM_04>SEM_04|CONF:57 x3 via:HOST_01 (@2(SEM_04)>@9(SEM_04), @2(SEM_04)>@10(SEM_04), @9(SEM_04)>@10(SEM_04))
+SEM_02>SEM_01|CONF:50 x5 via:HOST_01 (@3(SEM_02)>@4(SEM_01), @3(SEM_02)>@5(SEM_01), @3(SEM_02)>@8(SEM_01))
+SEM_02>SEM_02|CONF:62 x4 via:HOST_01 (@3(SEM_02)>@6(SEM_02), @3(SEM_02)>@7(SEM_02), @6(SEM_02)>@7(SEM_02))
+SEM_02>SEM_04|CONF:50 x6 via:HOST_01 (@3(SEM_02)>@9(SEM_04), @3(SEM_02)>@10(SEM_04), @6(SEM_02)>@9(SEM_04))
+SEM_03>SEM_05|CONF:75 x2 via:HOST_01 (@39(SEM_03)>@40(SEM_05), @39(SEM_03)>@41(SEM_05))
+SEM_05>SEM_05|CONF:70 x1 via:HOST_01 (@40(SEM_05)>@41(SEM_05))
+[L4]
+## TIER_1 IMPORTANT
+@39 1x E S4 T14 ^27352 IMP:0.83
+  ENTITIES:HOST_01 PROC_02 IF_01 IP_01
+  SAMPLES:
+    - ovs|20000|route_mgr|ERR|Route to 0.0.0.IF_01 not found in routing table
+## TIER_2 SUPPORTING
+@6 1x I S2 T5 ^11 IMP:0.34
+  ENTITIES:HOST_01 PROC_03
+  SLOT_LISTS:
+    Slot 1 (provision): <NUM>:<NUM>:<NUM>(1x)
+  SAMPLES:
+    - provision 0000:05:00.0 pvnet1: Re-enabling RX interrupts and disabling NAPI polling
+@9 1x I S3 T8 ^22 IMP:0.35
+  ENTITIES:HOST_01 PROC_04 IF_61
+  SAMPLES:
+    - ovs|06240|bridge|INFO|bridge br0: IF_61 statistics queried, status OK
+@11 1x I S2 T10 ^44 IMP:0.34
+  ENTITIES:HOST_01 PROC_03 IF_18
+  SAMPLES:
+    - provision 0000:05:00.0IF_18: Re-enabling RX interrupts and disabling NAPI polling
+@40 1x W S4 T15 ^27356 IMP:0.52
+  ENTITIES:HOST_01 PROC_02 IF_01 IP_01
+  SAMPLES:
+    - ovs|20001|route_mgr|WARN|Packet destined to 0.0.0.IF_01 dropped - no route to host
+@41 1x W S1 T16 ^27360 IMP:0.52
+  ENTITIES:HOST_01 PROC_05 IF_01 IP_01
+  SAMPLES:
+    - ovs|20002|ovsdb_server|WARN|lookup failure: route destination 0.0.0.IF_01 matches no active OVSDB entries
+## TIER_BACKGROUND (97 clusters)
+  @53: 1x SI T7 [RARE]
+  @1: 2x SI T0 [NOISE]
+  @2: 7194x SI T1 [NOISE]
+  @3: 7107x SI T2 [NOISE]
+  @4: 56x SI T3 [NOISE]
+  @5: 53x SI T4 [NOISE]
+  @7: 4806x SI T6 [NOISE]
+  @8: 4x SI T7 [NOISE]
+  @10: 7338x SI T9 [NOISE]
+  @12: 1322x SI T11 [NOISE]
+  @13: 2x SI T12 [NOISE]
+  @14: 3589x SI T13 [NOISE]
+  @15: 81x SI T7 [NOISE]
+  @16: 74x SI T3 [NOISE]
+  @17: 9x SI T4 [NOISE]
+  @18: 6x SI T4 [NOISE]
+  @19: 6x SI T7 [NOISE]
+  @20: 86x SI T4 [NOISE]
+  @21: 17x SI T7 [NOISE]
+  @22: 70x SI T7 [NOISE]
+  @23: 165x SI T3 [NOISE]
+  @24: 12x SI T7 [NOISE]
+  @25: 32x SI T4 [NOISE]
+  @26: 31x SI T7 [NOISE]
+  @27: 15x SI T4 [NOISE]
+  @28: 52x SI T7 [NOISE]
+  @29: 49x SI T4 [NOISE]
+  @30: 9x SI T3 [NOISE]
+  @31: 5x SI T7 [NOISE]
+  @32: 68x SI T4 [NOISE]
+  @33: 9x SI T7 [NOISE]
+  @34: 52x SI T3 [NOISE]
+  @35: 144x SI T7 [NOISE]
+  @36: 26x SI T4 [NOISE]
+  @37: 4x SI T3 [NOISE]
+  @38: 17x SI T3 [NOISE]
+  @42: 16x SI T4 [NOISE]
+  @43: 90x SI T3 [NOISE]
+  @44: 82x SI T4 [NOISE]
+  @45: 27x SI T7 [NOISE]
+  @46: 49x SI T3 [NOISE]
+  @47: 2x SI T4 [NOISE]
+  @48: 72x SI T4 [NOISE]
+  @49: 33x SI T7 [NOISE]
+  @50: 83x SI T3 [NOISE]
+  @51: 45x SI T7 [NOISE]
+  @52: 20x SI T4 [NOISE]
+  @54: 37x SI T4 [NOISE]
+  @55: 3x SI T7 [NOISE]
+  @56: 9x SI T7 [NOISE]
+  @57: 7x SI T3 [NOISE]
+  @58: 2x SI T7 [NOISE]
+  @59: 5x SI T7 [NOISE]
+  @60: 18x SI T4 [NOISE]
+  @61: 23x SI T3 [NOISE]
+  @62: 61x SI T7 [NOISE]
+  @63: 15x SI T4 [NOISE]
+  @64: 14x SI T3 [NOISE]
+  @65: 43x SI T4 [NOISE]
+  @66: 18x SI T3 [NOISE]
+  @67: 1098x SI T11 [NOISE]
+  @68: 55x SI T3 [NOISE]
+  @69: 31x SI T4 [NOISE]
+  @70: 23x SI T7 [NOISE]
+  @71: 81x SI T7 [NOISE]
+  @72: 6x SI T4 [NOISE]
+  @73: 82x SI T4 [NOISE]
+  @74: 25x SI T3 [NOISE]
+  @75: 33x SI T3 [NOISE]
+  @76: 9x SI T7 [NOISE]
+  @77: 3x SI T3 [NOISE]
+  @78: 71x SI T3 [NOISE]
+  @79: 68x SI T7 [NOISE]
+  @80: 23x SI T4 [NOISE]
+  @81: 10x SI T4 [NOISE]
+  @82: 22x SI T4 [NOISE]
+  @83: 21x SI T3 [NOISE]
+  @84: 13x SI T7 [NOISE]
+  @85: 6x SI T4 [NOISE]
+  @86: 32x SI T7 [NOISE]
+  @87: 144x SI T4 [NOISE]
+  @88: 86x SI T3 [NOISE]
+  @89: 76x SI T7 [NOISE]
+  @90: 176x SI T3 [NOISE]
+  @91: 46x SI T7 [NOISE]
+  @92: 178x SI T4 [NOISE]
+  @93: 83x SI T7 [NOISE]
+  @94: 9x SI T3 [NOISE]
+  @95: 13x SI T3 [NOISE]
+  @96: 44x SI T7 [NOISE]
+  @97: 12x SI T3 [NOISE]
+  @98: 16x SI T3 [NOISE]
+  @99: 18x SI T7 [NOISE]
+  @100: 48x SI T4 [NOISE]
+  @101: 36x SI T3 [NOISE]
+  @102: 15x SI T7 [NOISE]
+  @103: 12x SI T7 [NOISE]

@@ -1,0 +1,8 @@
+{
+  "ground_truth": {
+    "failure_timestamp": "2023-01-27T18:31:26.256834Z",
+    "root_cause_entity": "system:serviceaccount:kube-system:replicaset-controller",
+    "root_cause_type": "Authorization/RBAC (Admission) Denial - HTTP 403 Forbidden on pod creation",
+    "recommended_action": "Review the RBAC ClusterRole/RoleBinding and any admission control policies (e.g., OPA Gatekeeper constraints) applied to the kube-system namespace that are denying 'create pods' for system:serviceaccount:kube-system:replicaset-controller and 'create events' for node service accounts in the loki namespace. Update or exempt the policy/role bindings to restore the required permissions, then verify the affected ReplicaSet (policy-test-5bc859c67f) and Loki pods can successfully create resources."
+  }
+}

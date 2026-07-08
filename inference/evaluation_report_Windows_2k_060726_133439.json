@@ -1,0 +1,27 @@
+{
+  "raw_bundle": "Windows_2k",
+  "compressed_name": "Windows_2k",
+  "timestamp": "060726_133439",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 22436,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "Package_for_KB2512715~31bf3856ad364e35~amd64~~6.1.1.3",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "Info CBS Failed to get next element [HRESULT = 0x800f080d - CBS_E_MANIFEST_INVALID_ITEM]",
+      "Info CBS Failed to internally open package. [HRESULT = 0x800f0805 - CBS_E_INVALID_PACKAGE]",
+      "Info CBS Failed to create backup log cab. [HRESULT = 0x80070001 - ERROR_INVALID_FUNCTION]"
+    ],
+    "recommended_action": "Review and rectify the configuration of Package_for_KB2512715, ensuring it is valid and compatible with the system."
+  },
+  "ground_truth": {
+    "failure_timestamp": "2016-09-28 04:32:17",
+    "root_cause_entity": "CBS (Component Based Servicing) - backup log cab creation subroutine",
+    "root_cause_type": "Backup log cabinet creation failure (HRESULT 0x80070001 - ERROR_INVALID_FUNCTION) during TrustedInstaller servicing/scavenge cycle",
+    "recommended_action": "Investigate why CBS's cab-creation call returns ERROR_INVALID_FUNCTION during the backup/scavenge phase \u2014 check for corrupted or version-mismatched compression libraries (e.g. cabinet.dll), insufficient permissions on the servicing backup directory, or a pending reboot blocking the operation. Since it recurs on a later servicing session (2016-09-29 00:03:25), a manual System File Checker (sfc /scannow) and DISM /RestoreHealth pass is recommended to validate the component store integrity, and monitor whether it prevents future backups needed for rollback support."
+  }
+}

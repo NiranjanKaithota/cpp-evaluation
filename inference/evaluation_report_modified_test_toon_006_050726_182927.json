@@ -1,0 +1,35 @@
+{
+  "raw_bundle": "bundle_006_vlan_access_misconfiguration",
+  "compressed_name": "modified_test_toon_006",
+  "timestamp": "050726_182927",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 9053,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "1/1/4",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "SEM_03|ovs|<NUM>|vlan_mgr|ERR|VLAN mismatch onIF_04: expected <NUM>, received <NUM>",
+      "SEM_03|ovs|<NUM>|bridge|ERR|bridge br0: dropping frame with unexpected VLAN tag <NUM> received on IF_52",
+      "IF_04: dropping frame with unexpected VLAN tag <NUM>"
+    ],
+    "recommended_action": "Review and correct the VLAN configuration for interface 1/1/4. Ensure that the expected VLAN tag matches the received VLAN tag."
+  },
+  "ground_truth": {
+    "scenario_name": "vlan_mismatch",
+    "description": "VLAN mismatch on 1/1/12: expected 10, got 20",
+    "severity": "medium",
+    "failure_timestamp": "2026-05-27T03:32:56.189000",
+    "root_cause_entity": "1/1/12",
+    "root_cause_type": "configuration_error",
+    "expected_symptoms": [
+      "frame_drops",
+      "vlan_violation",
+      "connectivity_partial"
+    ],
+    "recommended_action": "Verify VLAN configuration on 1/1/12 and connected device"
+  }
+}

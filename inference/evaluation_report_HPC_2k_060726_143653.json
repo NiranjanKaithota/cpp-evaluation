@@ -1,0 +1,27 @@
+{
+  "raw_bundle": "HPC_logs",
+  "compressed_name": "HPC_2k",
+  "timestamp": "060726_143653",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 6258,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "node-103, node-109, node-71",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "Component State Change: Component 'SCSI-WWID:<NUM>:<NUM>-08b4-<NUM>-00c6-<NUM>-<NUM>-003d-<NUM><NUM> in unavailable state (HWID=<NUM>)",
+      "psu failure\\ ambient=<NUM>",
+      "ambient=<NUM>"
+    ],
+    "recommended_action": "Investigate and resolve the physical layer failures on the affected nodes. Check for hardware issues, power supply problems, or environmental factors causing the component unavailability and PSU failures."
+  },
+  "ground_truth": {
+    "failure_timestamp": "2004-01-14 23:12:07 (epoch 1074121927)",
+    "root_cause_entity": "node-5",
+    "root_cause_type": "Boot/Console Timeout Failure (risBoot command failed to reach SRM prompt, resulting in an aborted boot sequence \u2014 command 1903)",
+    "recommended_action": "Investigate node-5's console/SRM connectivity and firmware state; check serial/console link and power state of the node, re-issue the risBoot/clusterAddMember command after confirming the SRM console is responsive, and inspect hardware logs for underlying causes (e.g., stalled firmware, unresponsive console server) before re-attempting the boot. Additionally, monitor and remediate the recurring interconnect 'Linkerror event interval expired' messages on the Interconnect-*N*/T* switch modules, and address the recorded PSU failures (node-3, node-238, node-104, node-118) and NIFF network-down events (node-69, node-162) with hardware replacement/reseating as these represent secondary but recurring failure points."
+  }
+}

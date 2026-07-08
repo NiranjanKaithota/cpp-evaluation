@@ -1,0 +1,27 @@
+{
+  "raw_bundle": "OpenSSH",
+  "compressed_name": "OpenSSH_2k",
+  "timestamp": "060726_133407",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 40766,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "IP_12, IP_27, IP_08, IP_11, IP_21, IP_08, IP_11, IP_21, IP_08, IP_11, IP_21, IP_26, IP_04, IP_28, IP_13, IP_26, IP_04, IP_28, IP_18, IP_05, IP_19, IP_02, IP_06, IP_28, IP_15, IP_09, IP_29, IP_17, IP_10, IP_28, IP_16, IP_24, IP_30, IP_05, IP_17, IP_05, IP_30, IP_05",
+    "root_cause_type": "authentication_failure",
+    "observed_symptoms": [
+      "T1: Invalid user webmaster from IP_12",
+      "T2: input_userauth_request: invalid user webmaster",
+      "T3: pam_unix(sshd:auth): check pass; user unknown"
+    ],
+    "recommended_action": "Implement stronger authentication measures, such as two-factor authentication, to mitigate the risk of unauthorized access attempts."
+  },
+  "ground_truth": {
+    "failure_timestamp": "Dec 10 09:32:20",
+    "root_cause_entity": "sshd[24680] session for user 'fztu' from source IP 119.137.62.142",
+    "root_cause_type": "Successful password authentication amid sustained SSH brute-force/dictionary attack (potential credential compromise)",
+    "recommended_action": "Immediately verify whether the login by 'fztu' from 119.137.62.142 at 09:32:20 was legitimate; if not, disable/reset the account, rotate its credentials, and audit the resulting 13-minute session (09:32:20-09:45:06) for unauthorized activity. Harden the host by disabling password authentication in favor of SSH key-based auth, deploying fail2ban or rate-limiting for repeated invalid-user/reverse-DNS-mismatch attempts, and restricting SSH access via firewall/allowlist where possible."
+  }
+}

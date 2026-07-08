@@ -1,0 +1,8 @@
+{
+  "ground_truth": {
+    "failure_timestamp": "2015-10-18 18:06:26,029",
+    "root_cause_entity": "msra-sa-41:9000 (NameNode/ResourceManager host)",
+    "root_cause_type": "Network connectivity failure (No Route to Host) between the MRAppMaster node (MININT-FNANLI5) and the cluster master node msra-sa-41, causing HDFS lease renewal failures, ResourceManager RPC failures ('ERROR IN CONTACTING RM'), and a FATAL java.net.NoRouteToHostException that failed task attempt attempt_1445144423722_0020_m_000002_0",
+    "recommended_action": "Investigate and restore network/routing connectivity between the application master host (MININT-FNANLI5) and msra-sa-41 (NameNode at port 9000 and ResourceManager at port 8030) — check firewall rules, network interfaces, DNS/hostname resolution issues (note the repeated 'Address change detected' warnings suggesting IP-to-hostname resolution instability), and host/network availability. Once connectivity is restored, allow YARN to retry container allocation and re-run the failed map task attempt (the framework will automatically reschedule attempt_1445144423722_0020_m_000002_1)."
+  }
+}

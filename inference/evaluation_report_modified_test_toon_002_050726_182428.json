@@ -1,0 +1,35 @@
+{
+  "raw_bundle": "bundle_002_port_flap_copper",
+  "compressed_name": "modified_test_toon_002",
+  "timestamp": "050726_182428",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 9830,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "1/1/2",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "SEM_02|provision <NUM>:<NUM>:<NUM>.0IF_02: NIC Link Down",
+      "SEM_05|ovs|<NUM>|bridge|WARN|bridge br0: IF_51 link status changed to DOWN",
+      "SEM_03|ovs|<NUM>|interface_mgr|ERR|IF_49 state changed to down"
+    ],
+    "recommended_action": "Investigate and rectify the physical layer issue with interface 1/1/2. Check for any loose connections, damaged cables, or faulty hardware. Ensure proper connectivity and consider replacing any faulty components."
+  },
+  "ground_truth": {
+    "scenario_name": "port_flap",
+    "description": "Interface 1/1/10 experiencing link flapping",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:30:26.723000",
+    "root_cause_entity": "1/1/10",
+    "root_cause_type": "physical_layer_failure",
+    "expected_symptoms": [
+      "link_state_change",
+      "packet_loss",
+      "connection_timeout"
+    ],
+    "recommended_action": "Check physical cable and transceiver on 1/1/10"
+  }
+}

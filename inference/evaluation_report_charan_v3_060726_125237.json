@@ -1,4 +1,23 @@
 {
+  "raw_bundle": "bundle_ch",
+  "compressed_name": "charan_v3",
+  "timestamp": "060726_125237",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 284133,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "192.168.100.11",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "HOST_2100=11:09:02",
+      "HOST_2101=11:09:04",
+      "HOST_2102=11:09:07"
+    ],
+    "recommended_action": "Check the configuration of the device at 192.168.100.11 and ensure it is correctly set up. Verify any recent changes and roll back if necessary. Review the device's logs for any error messages or indications of misconfiguration."
+  },
   "ground_truth": {
     "failure_timestamp": "2026-06-03T10:10:04",
     "root_cause_entity": "/etc/frr/vtysh.conf (spine1, spine2, leaf1, leaf2)",

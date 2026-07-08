@@ -1,0 +1,8 @@
+{
+  "ground_truth": {
+    "failure_timestamp": "2026-02-25T12:13:17.416272+05:30",
+    "root_cause_entity": "dcmd",
+    "root_cause_type": "Daemon Process Failure / Missing PID File",
+    "recommended_action": "Restart the dcmd daemon service or reboot the switch (PSCSCTLEAFB03) to recreate the missing '/var/run/openvswitch/dcmd.pid' file and restore management process communication."
+  }
+}

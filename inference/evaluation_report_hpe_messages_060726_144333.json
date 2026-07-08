@@ -1,0 +1,27 @@
+{
+  "raw_bundle": "hpe_msg",
+  "compressed_name": "hpe_messages",
+  "timestamp": "060726_144333",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": true,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 331194,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "1/1/3",
+    "root_cause_type": "physical_layer_failure",
+    "observed_symptoms": [
+      "Event|2927|LOG_INFO|AMM|IF_03|Get request for BGP_Route",
+      "Event|2928|LOG_INFO|AMM|IF_03|Get request for BGP_Update_Group",
+      "Event|404|LOG_INFO|AMM|IF_03|Link status for IF_33 is down"
+    ],
+    "recommended_action": "Investigate and rectify the physical layer failure on interface 1/1/3."
+  },
+  "ground_truth": {
+    "failure_timestamp": "2026-02-25T11:53:13.980239+05:30",
+    "root_cause_entity": "Interface 1/1/3 (m1s1p3) - VSX ISL member of LAG3 on switch PSCSCTLEAFB03",
+    "root_cause_type": "Intermittent physical link flap on VSX inter-switch link (LAG3), causing MC-LAG/VSX state-machine instability and LACP partner desync (recurred at 11:53:13 and 11:59:20)",
+    "recommended_action": "Inspect and reseat/replace the transceiver and cable on interface 1/1/3; check optical/RS-FEC error counters and CRC/error stats on the port; verify the peer-side port for matching symptoms; if flapping persists, fail over the ISL to a spare link and open a hardware RMA for the SFP/port. Also consider provisioning a redundant VSX ISL member so a single-link flap cannot destabilize the keepalive."
+  }
+}

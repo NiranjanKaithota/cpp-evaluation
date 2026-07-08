@@ -1,0 +1,276 @@
+TOON-X:5.0 FORMAT:syslog FILE:messages.log BASE_TS:1779805937
+[L_INTENT]
+INTENT=EVENT_STREAM
+[L0]
+Window:1779805937 span=90476s events=36042 sources=['kernel:14320', 'acctsyslogd:7439', 'ovsdb-server:7154', 'ovs-vswitchd:7123', 'hpe-routing:6']
+ENTITIES:104 RELATIONSHIPS:0 CLUSTERS:75
+[SEM]
+SEM_01=APPLICATION.CUSTOM.AUDIT_EVENT
+SEM_02=APPLICATION.CUSTOM.KERNEL_EVENT
+SEM_03=NETWORK.CUSTOM.NETWORK_ERROR
+SEM_04=NETWORK.CUSTOM.NETWORK_EVENT
+SEM_05=NETWORK.CUSTOM.NETWORK_WARNING
+[ENT]
+## IPV4
+IP_01=10.233.131.22
+## HOST
+HOST_01=PSCSCTLEAFB03
+## PROCESS
+PROC_01=acctsyslogd
+PROC_02=hpe-routing
+PROC_03=kernel
+PROC_04=ovs-vswitchd
+PROC_05=ovsdb-server
+## INTERFACE
+IF_01=1/1/1
+IF_02=1/1/10
+IF_03=1/1/11
+IF_04=1/1/12
+IF_05=1/1/13
+IF_06=1/1/14
+IF_07=1/1/15
+IF_08=1/1/16
+IF_09=1/1/17
+IF_10=1/1/18
+IF_11=1/1/19
+IF_12=1/1/2
+IF_13=1/1/20
+IF_14=1/1/21
+IF_15=1/1/22
+IF_16=1/1/23
+IF_17=1/1/24
+IF_18=1/1/25
+IF_19=1/1/26
+IF_20=1/1/27
+IF_21=1/1/28
+IF_22=1/1/29
+IF_23=1/1/3
+IF_24=1/1/30
+IF_25=1/1/31
+IF_26=1/1/32
+IF_27=1/1/33
+IF_28=1/1/34
+IF_29=1/1/35
+IF_30=1/1/36
+IF_31=1/1/37
+IF_32=1/1/38
+IF_33=1/1/39
+IF_34=1/1/4
+IF_35=1/1/40
+IF_36=1/1/41
+IF_37=1/1/42
+IF_38=1/1/43
+IF_39=1/1/44
+IF_40=1/1/45
+IF_41=1/1/46
+IF_42=1/1/47
+IF_43=1/1/48
+IF_44=1/1/5
+IF_45=1/1/6
+IF_46=1/1/7
+IF_47=1/1/8
+IF_48=1/1/9
+IF_49=Interface 1/1/10
+IF_50=interface 1/1/1
+IF_51=interface 1/1/10
+IF_52=interface 1/1/11
+IF_53=interface 1/1/12
+IF_54=interface 1/1/13
+IF_55=interface 1/1/14
+IF_56=interface 1/1/15
+IF_57=interface 1/1/16
+IF_58=interface 1/1/17
+IF_59=interface 1/1/18
+IF_60=interface 1/1/19
+IF_61=interface 1/1/2
+IF_62=interface 1/1/20
+IF_63=interface 1/1/21
+IF_64=interface 1/1/22
+IF_65=interface 1/1/23
+IF_66=interface 1/1/24
+IF_67=interface 1/1/25
+IF_68=interface 1/1/26
+IF_69=interface 1/1/27
+IF_70=interface 1/1/28
+IF_71=interface 1/1/29
+IF_72=interface 1/1/3
+IF_73=interface 1/1/30
+IF_74=interface 1/1/31
+IF_75=interface 1/1/32
+IF_76=interface 1/1/33
+IF_77=interface 1/1/34
+IF_78=interface 1/1/35
+IF_79=interface 1/1/36
+IF_80=interface 1/1/37
+IF_81=interface 1/1/38
+IF_82=interface 1/1/39
+IF_83=interface 1/1/4
+IF_84=interface 1/1/40
+IF_85=interface 1/1/41
+IF_86=interface 1/1/42
+IF_87=interface 1/1/43
+IF_88=interface 1/1/44
+IF_89=interface 1/1/45
+IF_90=interface 1/1/46
+IF_91=interface 1/1/47
+IF_92=interface 1/1/48
+IF_93=interface 1/1/5
+IF_94=interface 1/1/6
+IF_95=interface 1/1/7
+IF_96=interface 1/1/8
+IF_97=interface 1/1/9
+[T]
+T0=SEM_04|ovs|<NUM>|ovsdb_server|INFO|transact: success, transaction <NUM> completed, <NUM> rows inserted
+T1=SEM_02|net_ratelimit: <NUM> callbacks suppressed
+T2=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: IF_60 statistics queried, status OK
+T3=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?depth=<NUM>&selector=configuration' and method GET and response code <NUM> with payload <STR> which resulted in succe
+T4=SEM_02|provision <NUM>:<NUM>:<NUM>.0IF_36: Re-enabling RX interrupts and disabling NAPI polling
+T5=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?selector=configuration&depth=<NUM>' and method GET and response code <NUM> with payload <STR> which resulted in success at
+T6=SEM_02|provision <NUM>:<NUM>:<NUM> pvnet0: Re-enabling RX interrupts and disabling NAPI polling
+T7=SEM_02|provision <*> Re-enabling RX interrupts and disabling NAPI polling
+T8=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: <*> statistics queried, status OK
+T9=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?depth=<NUM>&selector=status' and method GET and response code <NUM> with payload <STR> which resulted in success at timezone
+T10=SEM_02|provision <NUM>:<NUM>:<NUM> <*> Re-enabling RX interrupts and disabling NAPI polling
+T11=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI '<PATH>?selector=writable' and method GET and response code <NUM> with payload <STR> which resulted in success at timezone Asia/Calcutta.
+T12=SEM_01|AUDIT|REST URI executed by user 'afc_admin' from address 'IP_01' through REST session. URI <*> and method GET and response code <NUM> with payload <STR> which resulted in success at <*>
+T13=SEM_02|provision <NUM>:<NUM>:<NUM>.0IF_02: NIC Link Down
+T14=SEM_05|ovs|<NUM>|bridge|WARN|bridge br0: IF_51 link status changed to DOWN
+T15=SEM_03|ovs|<NUM>|interface_mgr|ERR|IF_49 state changed to down
+T16=SEM_02|provision <NUM>:<NUM>:<NUM>.0IF_02: NIC Link Up <NUM> Mbps Full Duplex
+T17=SEM_04|ovs|<NUM>|bridge|INFO|bridge br0: IF_51 link status changed to UP
+T18=SEM_04|ovs|<NUM>|interface_mgr|INFO|IF_49 state changed to up
+[TIMELINE]
+[0s-14s] @3(1x), @5(1x), @7(1x)
+[26897s-26901s] @34(1x), @35[W](1x)
+[26906s-26991s] @36[E](3x), @37(3x), @38(3x), @39(3x), @34(2x), @35[W](2x)
+[CAUSE]
+SEM_04>SEM_02|CONF:51 x9 (@1(SEM_04)>@2(SEM_02), @1(SEM_04)>@2(SEM_02), @1(SEM_04)>@5(SEM_02))
+SEM_02>SEM_02|CONF:62 x8 (@7(SEM_02)>@8(SEM_02), @2(SEM_02)>@5(SEM_02), @2(SEM_02)>@7(SEM_02))
+SEM_02>SEM_01|CONF:51 x8 (@11(SEM_02)>@12(SEM_01), @2(SEM_02)>@4(SEM_01), @2(SEM_02)>@6(SEM_01))
+SEM_03>SEM_02|CONF:55 x2 (@36(SEM_03)>@37(SEM_02), @36(SEM_03)>@37(SEM_02))
+SEM_04>SEM_04|CONF:55 x4 via:HOST_01 (@1(SEM_04)>@3(SEM_04), @1(SEM_04)>@9(SEM_04), @3(SEM_04)>@9(SEM_04))
+SEM_04>SEM_01|CONF:50 x5 via:HOST_01 (@1(SEM_04)>@4(SEM_01), @1(SEM_04)>@6(SEM_01), @3(SEM_04)>@4(SEM_01))
+SEM_02>SEM_04|CONF:50 x9 via:HOST_01 (@2(SEM_02)>@3(SEM_04), @2(SEM_02)>@9(SEM_04), @5(SEM_02)>@9(SEM_04))
+SEM_01>SEM_02|CONF:50 x6 via:HOST_01 (@4(SEM_01)>@5(SEM_02), @4(SEM_01)>@7(SEM_02), @4(SEM_01)>@8(SEM_02))
+SEM_01>SEM_01|CONF:70 x3 via:HOST_01 (@4(SEM_01)>@6(SEM_01), @6(SEM_01)>@10(SEM_01), @10(SEM_01)>@12(SEM_01))
+SEM_01>SEM_04|CONF:50 x2 via:HOST_01 (@4(SEM_01)>@9(SEM_04), @6(SEM_01)>@9(SEM_04))
+SEM_02>SEM_05|CONF:50 x1 via:HOST_01 (@34(SEM_02)>@35(SEM_05))
+SEM_02>SEM_03|CONF:50 x1 via:HOST_01 (@34(SEM_02)>@36(SEM_03))
+SEM_05>SEM_03|CONF:50 x1 via:HOST_01 (@35(SEM_05)>@36(SEM_03))
+SEM_05>SEM_02|CONF:50 x1 via:HOST_01 (@35(SEM_05)>@37(SEM_02))
+SEM_05>SEM_04|CONF:60 x2 via:HOST_01 (@35(SEM_05)>@38(SEM_04), @35(SEM_05)>@39(SEM_04))
+SEM_03>SEM_04|CONF:60 x2 via:HOST_01 (@36(SEM_03)>@38(SEM_04), @36(SEM_03)>@39(SEM_04))
+[L4]
+## TIER_1 IMPORTANT
+@36 3x E S4 T15 ^26912->26992 IMP:0.66
+  ENTITIES:HOST_01 PROC_02 IF_49
+  SAMPLES:
+    - ovs|12496|interface_mgr|ERR|IF_49 state changed to down
+    - ovs|13612|interface_mgr|ERR|IF_49 state changed to down
+## TIER_2 SUPPORTING
+@3 1x I S2 T2 ^5 FLOW:FLOW_7 IMP:0.34
+  ENTITIES:HOST_01 PROC_04 IF_60
+  SAMPLES:
+    - ovs|07155|bridge|INFO|bridge br0: IF_60 statistics queried, status OK
+@5 1x I S1 T4 ^13 FLOW:FLOW_9 IMP:0.34
+  ENTITIES:HOST_01 PROC_03 IF_36
+  SAMPLES:
+    - provision 0000:05:00.0IF_36: Re-enabling RX interrupts and disabling NAPI polling
+@7 1x I S1 T6 ^20 FLOW:FLOW_9 IMP:0.34
+  ENTITIES:HOST_01 PROC_03
+  SLOT_LISTS:
+    Slot 1 (provision): <NUM>:<NUM>:<NUM>(1x)
+  SAMPLES:
+    - provision 0000:05:00.0 pvnet0: Re-enabling RX interrupts and disabling NAPI polling
+@34 3x I S1 T13 ^26902->26985 IMP:0.32
+  ENTITIES:HOST_01 PROC_03 IF_02
+  SAMPLES:
+    - provision 0000:04:00.0IF_02: NIC Link is Down
+@35 3x W S2 T14 ^26907->26988 IMP:0.49
+  ENTITIES:HOST_01 PROC_04 IF_51
+  SAMPLES:
+    - ovs|12495|bridge|WARN|bridge br0: IF_51 link status changed to DOWN
+    - ovs|13611|bridge|WARN|bridge br0: IF_51 link status changed to DOWN
+@37 3x I S1 T16 ^26913->26993 FLOW:FLOW_7 IMP:0.32
+  ENTITIES:HOST_01 PROC_03 IF_02
+  SLOT_LISTS:
+    Slot 1 (up): <NUM>(3x)
+  SAMPLES:
+    - provision 0000:04:00.0IF_02: NIC Link is Up 25000 Mbps Full Duplex
+@38 3x I S2 T17 ^26915->26993 FLOW:FLOW_7 IMP:0.32
+  ENTITIES:HOST_01 PROC_04 IF_51
+  SAMPLES:
+    - ovs|12497|bridge|INFO|bridge br0: IF_51 link status changed to UP
+    - ovs|13613|bridge|INFO|bridge br0: IF_51 link status changed to UP
+@39 3x I S4 T18 ^26919->26997 FLOW:FLOW_8 IMP:0.32
+  ENTITIES:HOST_01 PROC_02 IF_49
+  SAMPLES:
+    - ovs|12498|interface_mgr|INFO|IF_49 state changed to up
+    - ovs|13614|interface_mgr|INFO|IF_49 state changed to up
+## TIER_BACKGROUND (66 clusters)
+  @31: 1x SI T11 [RARE]
+  @68: 1x SI T5 [RARE]
+  @1: 7154x SI T0 [NOISE]
+  @2: 7200x SI T1 [NOISE]
+  @4: 34x SI T3 [NOISE]
+  @6: 87x SI T5 [NOISE]
+  @8: 2416x SI T7 [NOISE]
+  @9: 7116x SI T8 [NOISE]
+  @10: 2x SI T9 [NOISE]
+  @11: 4696x SI T10 [NOISE]
+  @12: 4x SI T11 [NOISE]
+  @13: 3697x SI T12 [NOISE]
+  @14: 27x SI T11 [NOISE]
+  @15: 43x SI T11 [NOISE]
+  @16: 16x SI T3 [NOISE]
+  @17: 65x SI T3 [NOISE]
+  @18: 140x SI T11 [NOISE]
+  @19: 23x SI T5 [NOISE]
+  @20: 64x SI T3 [NOISE]
+  @21: 27x SI T5 [NOISE]
+  @22: 138x SI T5 [NOISE]
+  @23: 4x SI T3 [NOISE]
+  @24: 42x SI T3 [NOISE]
+  @25: 55x SI T11 [NOISE]
+  @26: 3x SI T3 [NOISE]
+  @27: 17x SI T3 [NOISE]
+  @28: 242x SI T3 [NOISE]
+  @29: 63x SI T11 [NOISE]
+  @30: 28x SI T5 [NOISE]
+  @32: 72x SI T5 [NOISE]
+  @33: 23x SI T11 [NOISE]
+  @40: 15x SI T11 [NOISE]
+  @41: 74x SI T11 [NOISE]
+  @42: 24x SI T5 [NOISE]
+  @43: 9x SI T5 [NOISE]
+  @44: 101x SI T5 [NOISE]
+  @45: 2x SI T11 [NOISE]
+  @46: 173x SI T11 [NOISE]
+  @47: 112x SI T3 [NOISE]
+  @48: 18x SI T5 [NOISE]
+  @49: 168x SI T5 [NOISE]
+  @50: 83x SI T3 [NOISE]
+  @51: 58x SI T11 [NOISE]
+  @52: 29x SI T3 [NOISE]
+  @53: 55x SI T11 [NOISE]
+  @54: 134x SI T3 [NOISE]
+  @55: 61x SI T5 [NOISE]
+  @56: 80x SI T11 [NOISE]
+  @57: 126x SI T5 [NOISE]
+  @58: 46x SI T11 [NOISE]
+  @59: 19x SI T3 [NOISE]
+  @60: 23x SI T3 [NOISE]
+  @61: 27x SI T11 [NOISE]
+  @62: 15x SI T3 [NOISE]
+  @63: 143x SI T11 [NOISE]
+  @64: 77x SI T5 [NOISE]
+  @65: 214x SI T3 [NOISE]
+  @66: 81x SI T5 [NOISE]
+  @67: 5x SI T5 [NOISE]
+  @69: 151x SI T5 [NOISE]
+  @70: 65x SI T11 [NOISE]
+  @71: 144x SI T3 [NOISE]
+  @72: 13x SI T11 [NOISE]
+  @73: 95x SI T11 [NOISE]
+  @74: 58x SI T5 [NOISE]
+  @75: 23x SI T11 [NOISE]

@@ -1,0 +1,27 @@
+{
+  "raw_bundle": "k8s_test_bundle",
+  "compressed_name": "kubernetes",
+  "timestamp": "060726_133529",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": false,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 1174013,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "kube-prometheus-stack",
+    "root_cause_type": "configuration_error",
+    "observed_symptoms": [
+      "alertmanager-my-kube-prometheus-stack-alertmanager-0.173e3de28444279f",
+      "alertmanager-my-kube-prometheus-stack-alertmanager-0.173e3de28a9a7aca",
+      "my-kube-prometheus-stack-grafana-69665d5c64-jhgmh.173e3de1d8827bdc"
+    ],
+    "recommended_action": "Check the configuration of kube-prometheus-stack and ensure it is correctly set up and configured."
+  },
+  "ground_truth": {
+    "failure_timestamp": "2023-01-27T18:31:26.256834Z",
+    "root_cause_entity": "system:serviceaccount:kube-system:replicaset-controller",
+    "root_cause_type": "Authorization/RBAC (Admission) Denial - HTTP 403 Forbidden on pod creation",
+    "recommended_action": "Review the RBAC ClusterRole/RoleBinding and any admission control policies (e.g., OPA Gatekeeper constraints) applied to the kube-system namespace that are denying 'create pods' for system:serviceaccount:kube-system:replicaset-controller and 'create events' for node service accounts in the loki namespace. Update or exempt the policy/role bindings to restore the required permissions, then verify the affected ReplicaSet (policy-test-5bc859c67f) and Loki pods can successfully create resources."
+  }
+}

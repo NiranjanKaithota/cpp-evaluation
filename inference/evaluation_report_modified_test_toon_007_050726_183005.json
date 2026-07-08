@@ -1,0 +1,35 @@
+{
+  "raw_bundle": "bundle_007_default_route_missing",
+  "compressed_name": "modified_test_toon_007",
+  "timestamp": "050726_183005",
+  "raw_rcm_passed": false,
+  "compressed_rcm_passed": true,
+  "compression_ratio": 0,
+  "raw_size": 0,
+  "comp_size": 9677,
+  "raw_details": {},
+  "comp_details": {
+    "root_cause_entity": "0/0",
+    "root_cause_type": "missing_route",
+    "observed_symptoms": [
+      "SEM_03|ovs|20000|route_mgr|ERR|Route to 0.0.0.IF_01 not found in routing table",
+      "SEM_05|ovs|20001|route_mgr|WARN|Packet destined to 0.0.0.IF_01 dropped - no route to host",
+      "SEM_05|ovs|20002|ovsdb_server|WARN|lookup failure: route destination 0.0.0.IF_01 matches no active OVSDB entries"
+    ],
+    "recommended_action": "Verify and update the routing table to ensure the correct route is present for the affected interface."
+  },
+  "ground_truth": {
+    "scenario_name": "missing_route",
+    "description": "Route to 0.0.0.0/0 missing from routing table",
+    "severity": "high",
+    "failure_timestamp": "2026-05-27T03:37:52.526000",
+    "root_cause_entity": "0.0.0.0/0",
+    "root_cause_type": "routing_table_error",
+    "expected_symptoms": [
+      "packet_drops",
+      "unreachable_destination",
+      "icmp_host_unreachable"
+    ],
+    "recommended_action": "Add static route or verify dynamic routing protocol for 0.0.0.0/0"
+  }
+}
